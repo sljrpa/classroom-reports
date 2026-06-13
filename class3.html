@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>高三三班 · 课堂表现报告</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  min-height: 100vh;
+  color: #2c3e50;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.top-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #e67e22, #9b59b6);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px 16px 40px;
+}
+
+/* 顶部导航 */
+.nav {
+  margin-bottom: 20px;
+}
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e67e22;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: background 0.2s;
+}
+.nav a:hover {
+  background: #fef5ec;
+}
+.nav a:active {
+  background: #fde8d0;
+}
+
+/* 页面标题 */
+.page-header {
+  text-align: center;
+  padding: 20px 0 24px;
+}
+.page-header .badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #e67e22, #9b59b6);
+  color: white;
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+.page-header .desc {
+  font-size: 14px;
+  color: #95a5a6;
+  margin-top: 6px;
+}
+
+/* 班级总报告卡片 */
+.overview-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(135deg, #2d1b4e, #3c1f5c, #4a1f6e);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 16px rgba(45,27,78,0.3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.overview-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(45,27,78,0.35);
+}
+.overview-card:active {
+  transform: translateY(0);
+}
+.overview-card::after {
+  content: '›';
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: rgba(255,255,255,0.4);
+}
+.overview-card .ov-badge {
+  display: inline-block;
+  background: #e67e22;
+  color: white;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.overview-card .ov-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.overview-card .ov-desc {
+  color: #c9b8d8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 小组卡片区域 */
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  padding-left: 12px;
+  border-left: 3px solid #e67e22;
+}
+
+.group-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.group-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+.group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+}
+.group-card:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.group-card .gc-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+.group-card .gc-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+.group-card .gc-tag {
+  font-size: 12px;
+  color: #7f8c8d;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.group-card .gc-arrow {
+  position: absolute;
+  right: 12px;
+  top: 18px;
+  color: #ddd;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+.group-card:hover .gc-arrow {
+  color: #aaa;
+}
+
+/* 各组颜色 */
+.gc-color-1 { background: linear-gradient(135deg, #e67e22, #d35400); }
+.gc-color-2 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.gc-color-3 { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.gc-color-4 { background: linear-gradient(135deg, #3498db, #2980b9); }
+.gc-color-5 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.gc-color-6 { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.gc-color-7 { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.gc-color-8 { background: linear-gradient(135deg, #e91e63, #c2185b); }
+
+/* 底部 */
+.footer {
+  text-align: center;
+  padding: 20px 16px;
+  color: #bdc3c7;
+  font-size: 12px;
+}
+
+/* 平板 */
+@media (min-width: 600px) {
+  .group-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .page-header h1 { font-size: 28px; }
+  .overview-card { padding: 32px 28px; }
+  .overview-card .ov-title { font-size: 22px; }
+}
+
+/* 桌面 */
+@media (min-width: 960px) {
+  .container { padding: 24px 24px 48px; }
+  .page-header h1 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="container">
+  <!-- 返回导航 -->
+  <div class="nav">
+    <a href="index.html">← 返回首页</a>
+  </div>
+
+  <!-- 页面标题 -->
+  <div class="page-header">
+    <div class="badge">两周追踪</div>
+    <h1>📙 高三三班</h1>
+    <p class="desc">8个学习小组 · 课堂表现两周对比</p>
+  </div>
+
+  <!-- 班级总报告 -->
+  <a class="overview-card" href="class3/overview.html">
+    <div class="ov-badge">📋 班级总报告</div>
+    <div class="ov-title">高三三班两周课堂表现对比</div>
+    <div class="ov-desc">纵览全班两周数据变化，掌握整体课堂参与趋势</div>
+  </a>
+
+  <!-- 各组报告 -->
+  <div class="section-title">各组课堂表现报告</div>
+
+  <div class="group-grid">
+    <a class="group-card" href="class3/group1.html">
+      <div class="gc-num gc-color-1">1</div>
+      <div class="gc-name">第1组 · 马铄</div>
+      <div class="gc-tag">🔥 W2回落70分——蓄力再出发</div>
+      <span class="gc-arrow">›</span>
+    </a>
+
+    <a class="group-card" href="class3/group2.html">
+      <div class="gc-num gc-color-2">2</div>
+      <div class="gc-name">第2组 · 巩子华</div>
+      <div class="gc-tag">🔥 W2回落30分——蓄力再出发</div>
+      <span class="gc-arrow">›</span>
+    </a>
+
+    <a class="group-card" href="class3/group3.html">
+      <div class="gc-num gc-color-3">3</div>
+      <div class="gc-name">第3组 · 吴浩铭</div>
+      <div class="gc-tag">🔥 W2回落70分——蓄力再出发</div>
+      <span class="gc-arrow">›</span>
+    </a>
+
+    <a class="group-card" href="class3/group4.html">
+      <div class="gc-num gc-color-4">4</div>
+      <div class="gc-name">第4组 · 高洪宇</div>
+      <div class="gc-tag">🔥 W2回落80分——蓄力再出发</div>
+      <span class="gc-arrow">›</span>
+    </a>
+
+    <a class="group-card" href="class3/group5.html">
+      <div class="gc-num gc-color-5">5</div>
+      <div class="gc-name">第5组 · 王潇</div>
+      <div class="gc-tag">🔥 W2上升70分——持续发力</div>
+      <span class="gc-arrow">›</span>
+    </a>
+
+    <a class="group-card" href="class3/group6.html">
+      <div class="gc-num gc-color-6">6</div>
+      <div class="gc-name">第6组 · 单子玉</div>
+      <div class="gc-tag">🔥 W2回落100分——蓄力再出发</div>
+      <span class="gc-arrow">›</span>
+    </a>
+
+    <a class="group-card" href="class3/group7.html">
+      <div class="gc-num gc-color-7">7</div>
+      <div class="gc-name">第7组 · 任思羽</div>
+      <div class="gc-tag">🔥 W2回落160分——蓄力再出发</div>
+      <span class="gc-arrow">›</span>
+    </a>
+
+    <a class="group-card" href="class3/group8.html">
+      <div class="gc-num gc-color-8">8</div>
+      <div class="gc-name">第8组 · 孙悦瑄</div>
+      <div class="gc-tag">🔥 W2上升30分——持续发力</div>
+      <span class="gc-arrow">›</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    课堂表现报告 · 高三三班
+  </div>
+</div>
+
+</body>
+</html>
