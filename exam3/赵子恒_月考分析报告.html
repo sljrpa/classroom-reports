@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赵子恒 · 月考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e74c3c; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
+  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
+  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
+  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
+  .communicate-item:last-child { border-bottom: none; }
+  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
+  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
+  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .path-icon.urgent { background: #e74c3c; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
+  .score-bar .fill { height: 100%; border-radius: 9px; }
+  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
+  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+  <h1>赵子恒 · 月考分析报告</h1>
+  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 9号</div>
+  <div class="score-big">89 / 150</div>
+  <div class="score-label">预估分</div>
+</div>
+
+<!-- 板块1：整体得分概览 -->
+<div class="section">
+<h2>📊 整体得分概览</h2>
+<div class="table-wrap"><table>
+  <tr>
+    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  </tr>
+  <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>40</td><td>100%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:100%"></div></div></td>
+  </tr>
+  <tr>
+    <td>多选题 (Q9-Q11)</td><td>18</td><td>9</td><td>50.0%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:50.0%"></div></div></td>
+  </tr>
+  <tr>
+    <td>填空题 (Q12-Q14)</td><td>15</td><td>5</td><td>33.3%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
+  </tr>
+  <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>54</td><td>74.0%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:74.0%"></div></div></td>
+  </tr>
+  <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>35 估</td><td>45.5%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:45.5%"></div></div></td>
+  </tr>
+  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>预估分</td><td>150</td><td>89</td><td>59.3%</td>
+    <td><div class="score-bar"><div class="fill blue" style="width:59.3%"></div></div></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块2：未掌握知识点汇总 -->
+<div class="section">
+<h2>❌ 未掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+  <tr>
+    <td>Q11</td><td>导数综合</td><td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">错选D，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q12</td><td>三角恒等变换</td><td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">答案6/√2非常离谱，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">答案6/15很离谱，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q16(2)</td><td>角平分线长度</td><td><span class="tag-fail">未掌握</span></td>
+    <td>不会</td>
+  </tr>
+  <tr>
+    <td>Q17(1)</td><td>线面垂直证明</td><td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">一顿胡证，不知道面面垂直性质定理是啥</td>
+  </tr>
+  <tr>
+    <td>Q18(3)</td><td>递推与范围</td><td><span class="tag-fail">未掌握</span></td>
+    <td>一点没写</td>
+  </tr>
+  <tr>
+    <td>Q19(2)</td><td>零点求参数范围</td><td><span class="tag-fail">未掌握</span></td>
+    <td>没写</td>
+  </tr>
+  <tr>
+    <td>Q19(3)</td><td>极值点偏移证明</td><td><span class="tag-fail">未掌握</span></td>
+    <td>没写</td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块3：部分掌握知识点汇总 -->
+<div class="section">
+<h2>⚠️ 部分掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+  <tr>
+    <td>Q9</td><td>三角函数图象变换</td><td><span class="tag-partial">部分掌握</span></td><td>3/6</td>
+    <td class="wrap-cell">只选B没选D</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>为什么没选D？</td>
+  </tr>
+  <tr>
+    <td>Q15(2)</td><td>裂项求和</td><td><span class="tag-partial">部分掌握</span></td><td>4/7 估</td>
+    <td class="wrap-cell">约分4n+2/2n上下同除2，应得(2n+1)/n，写成了(n+1)/n</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q16(1)</td><td>正弦定理求角</td><td><span class="tag-partial">部分掌握</span></td><td>4/7 估</td>
+    <td class="wrap-cell">π/3结果对但过程骗人——约sinB不写sinB=0，正弦定理啥都不写</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q19(1)</td><td>切线方程</td><td><span class="tag-partial">部分掌握</span></td><td>2/4 估</td>
+    <td class="wrap-cell">1/3×0=1/3，荒谬的计算错误</td>
+    <td></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块4：已掌握知识点汇总 -->
+<div class="section">
+<h2>✅ 已掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
+  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q3</td><td>向量</td><td>5/5 ✓</td></tr>
+  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
+  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
+  <tr><td>Q6</td><td>排列组合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q7</td><td>圆台外接球</td><td>5/5 ✓</td></tr>
+  <tr><td>Q8</td><td>分段函数零点</td><td>5/5 ✓</td></tr>
+  <tr><td>Q10</td><td>正四棱柱综合</td><td>6/6 ✓</td></tr>
+  <tr><td>Q14</td><td>切线与曲线相切</td><td>5/5 ✓</td></tr>
+  <tr><td>Q15(1)</td><td>等差数列通项</td><td>6/6 ✓</td></tr>
+  <tr><td>Q17(2)</td><td>二面角</td><td>8/8 估 ✓</td></tr>
+  <tr><td>Q18(1)</td><td>全概率公式</td><td>5/5 估 ✓</td></tr>
+  <tr><td>Q18(2)</td><td>分布列与期望</td><td>6/6 估 ✓</td></tr>
+</table></div>
+</div>
+
+<!-- 板块5：师生待沟通 -->
+<div class="section">
+<h2>💬 师生待沟通</h2>
+<div class="communicate-box">
+<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+<div class="communicate-item">
+  <strong>Q9（三角函数图象变换）：</strong>只选B没选D，D为什么没选？是没看到还是不确定？
+</div>
+<div class="communicate-item">
+  <strong>Q11（导数综合）：</strong>错选D，需要确认解题思路
+</div>
+<div class="communicate-item">
+  <strong>Q12（三角恒等变换）：</strong>答案6/√2非常离谱——三角函数值不可能出现√2在分母还不化简的情况，到底是怎么算出来的？
+</div>
+<div class="communicate-item">
+  <strong>Q13（线性回归残差）：</strong>答案6/15很离谱——残差是个具体数值，6/15是什么意思？需要确认理解了残差的定义没有
+</div>
+</div>
+</div>
+
+<!-- 板块6：错题与部分掌握题详细分析 -->
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+
+<div class="question-box wrong">
+  <div class="q-title">Q11 | 导数综合 | 0/6</div>
+  <div class="q-content">f(x)=eˣ(2x+1)/x，判断零点/对称中心/切线/单调性四个说法</div>
+  <div class="q-answer">✅ 正确答案：AC</div>
+  <div class="q-student">❌ 赵子恒作答：错选D</div>
+  <div class="q-error">⚠️ 待沟通：为什么选D？D选项是什么内容让你觉得对？</div>
+</div>
+
+<div class="question-box wrong">
+  <div class="q-title">Q12 | 三角恒等变换 | 0/5</div>
+  <div class="q-student">❌ 赵子恒作答：6/√2</div>
+  <div class="q-error">🔴 答案非常离谱。三角函数化简的结果不应该出现√2在分母还不有理化的情况，而且数值本身就不对。需要沟通到底怎么算出这个结果的</div>
+</div>
+
+<div class="question-box wrong">
+  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
+  <div class="q-student">❌ 赵子恒作答：6/15</div>
+  <div class="q-error">🔴 答案很离谱。残差是观测值与预测值之差，是一个具体数值，6/15是什么？需要确认是否理解残差的定义</div>
+</div>
+
+<div class="question-box partial">
+  <div class="q-title">Q15(2) | 裂项求和 | 估4/7</div>
+  <div class="q-content">bₙ=1/(aₙ·aₙ₊₁)，求Sₙ</div>
+  <div class="q-answer">✅ 正确答案：Sₙ = n/(2n+1)</div>
+  <div class="q-student">⚠️ 赵子恒作答：前面都对，到约分时(4n+2)/2n上下同除2</div>
+  <div class="q-error">🔴 (4n+2)/2n上下同除2：<strong>分子4n+2÷2=2n+1，分母2n÷2=n</strong>，结果是(2n+1)/n。但你算成了(n+1)/n——4n÷2=2n，不是n！你把4n÷2算成了n，4÷2=2你都不算了？<br><br>这是整张卷子<strong>能看清楚原因的离谱错误</strong>之一：约分时对分子做除法，4n+2除以2，4n÷2=2n，2÷2=1，合起来2n+1。你直接跳过了4n÷2这一步。</div>
+  <div class="q-tip">💡 建议：约分时逐项操作——先分别对每一项除以2，4n÷2=2n，2÷2=1，再合并。不要跳步</div>
+</div>
+
+<div class="question-box partial">
+  <div class="q-title">Q16(1) | 正弦定理求角 | 估4/7</div>
+  <div class="q-content">利用正弦定理求角B</div>
+  <div class="q-answer">✅ 正确答案：B = π/3</div>
+  <div class="q-student">⚠️ 赵子恒作答：π/3结果对了，但过程是骗人的</div>
+  <div class="q-error">🔴 两个严重问题：<br><strong>① 约sinB不写sinB≠0：</strong>等式两边约sinB时，必须先说明sinB≠0（在三角形中显然成立），你什么都不写就约了，这在高考中会被扣步骤分。<br><strong>② 用正弦定理啥都不写：</strong>正弦定理的公式a/sinA=b/sinB要写出来，不是直接跳到结果。"结果对但过程是骗人的"——老师不仔细看会被你骗过去，但阅卷老师不会放过。</div>
+  <div class="q-tip">💡 建议：证明题/解答题每一步都要有依据。约分前注明条件，定理要写出公式再代入</div>
+</div>
+
+<div class="question-box wrong">
+  <div class="q-title">Q16(2) | 角平分线长度 | 估0/8</div>
+  <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
+  <div class="q-student">❌ 赵子恒作答：不会</div>
+</div>
+
+<div class="question-box wrong">
+  <div class="q-title">Q17(1) | 线面垂直证明 | 估0/7</div>
+  <div class="q-content">证明线面垂直</div>
+  <div class="q-student">❌ 赵子恒作答：一顿胡证</div>
+  <div class="q-error">🔴 不知道面面垂直的性质定理是什么！这是几何证明的基础工具——<strong>面面垂直的性质定理：如果两个平面垂直，那么一个平面内垂直于交线的直线垂直于另一个平面。</strong>你连这个定理都不知道，是怎么背几何定理公式的？</div>
+  <div class="q-tip">💡 建议：把立体几何的核心定理整理成卡片，每天看一遍：面面垂直判定定理、面面垂直性质定理、线面垂直判定定理、线面垂直性质定理，四个定理必须能默写</div>
+</div>
+
+<div class="question-box">
+  <div class="q-title">Q17(2) | 二面角 ✅ | 估8/8</div>
+  <div class="q-student">✅ 算对了，算的不错</div>
+</div>
+
+<div class="question-box">
+  <div class="q-title">Q18(1)(2) | 全概率公式+分布列与期望 ✅ | 估11/11</div>
+  <div class="q-student">✅ 前两问算对了</div>
+</div>
+
+<div class="question-box partial">
+  <div class="q-title">Q19(1) | 切线方程 | 估2/4</div>
+  <div class="q-content">a=1时，求f(x)在(0,f(0))处的切线方程</div>
+  <div class="q-student">⚠️ 赵子恒作答：1/3×0=1/3</div>
+  <div class="q-error">🔴 这是整张卷子的<strong>第二个荒谬错误</strong>：1/3×0=1/3？？？任何数乘以0都等于0，这是小学的知识。1/3×0=0，不是1/3。你把乘以0当成了乘以1？<br><br>这种错误不是"不会"，而是<strong>"算的时候脑子不在"。</strong></div>
+  <div class="q-tip">💡 建议：计算时每一步都要过脑子，尤其是乘以0和乘以1这两种情况，最容易搞混</div>
+</div>
+
+</div>
+
+<!-- 板块7：教师评价 -->
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="teacher-comment">
+<h3>💪 赵子恒的答卷亮点</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>1. 单选全对！特别漂亮！</strong>8道单选40/40满分，包括Q7圆台外接球和Q8分段函数零点都拿下了，单选能力全班顶级。<br><br>
+<strong>2. Q10正四棱柱综合全对！</strong>6分拿满，这道题很多同学都栽了。<br><br>
+<strong>3. Q17(2)二面角算对了！</strong>计算能力不错。<br><br>
+<strong>4. Q18(1)(2)全对！</strong>概率统计基础扎实。<br><br>
+<strong>5. 客观题得分率74.0%，基础确实不错。</strong>
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题1：解答题堪称荒谬——离谱错误一个接一个</h3>
+<p style="font-size:14px; line-height:1.8;">
+赵子恒这张卷子最令人震惊的不是"不会"，而是<strong>解答题里出现了多个能看清楚原因的荒谬性错误</strong>：<br><br>
+<strong>① Q15(2)约分4n+2/2n：</strong>4n÷2=2n，你算成了n。4÷2=2你不算了？<br><br>
+<strong>② Q16(1)π/3是骗人的：</strong>结果对但过程骗人——约sinB不写sinB≠0，用正弦定理啥都不写。老师不仔细看会被你骗过去。<br><br>
+<strong>③ Q19(1) 1/3×0=1/3：</strong>任何数乘以0都等于0，这是小学知识。你把乘以0当成了乘以1？<br><br>
+<strong>这些错误不是"不会做"，而是"做了但脑子不在"。</strong>赵子恒有能力做对这些题，但计算时的注意力严重不足。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题2：面面垂直性质定理不会——几何定理基础缺失</h3>
+<p style="font-size:14px; line-height:1.8;">
+Q17(1)一顿胡证，显然不知道面面垂直的性质定理是什么。这是立体几何最核心的定理之一：<br><br>
+<strong>面面垂直的性质定理：如果两个平面垂直，那么一个平面内垂直于交线的直线垂直于另一个平面。</strong><br><br>
+你连这个定理都不知道，Q17(1)7分直接丢了。而且Q17(2)二面角算对了说明建系计算没问题，问题就出在定理不熟。<br><br>
+<strong>四个核心定理必须能默写：面面垂直判定、面面垂直性质、线面垂直判定、线面垂直性质。</strong>
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题3：填空题答案离谱——6/√2和6/15</h3>
+<p style="font-size:14px; line-height:1.8;">
+Q12答案6/√2、Q13答案6/15，这两个答案本身就很离谱：<br><br>
+<strong>① 6/√2：</strong>三角函数化简的结果不应该出现根号在分母还不有理化，而且数值不对。<br><br>
+<strong>② 6/15：</strong>残差是一个具体数值，6/15是什么？2/5化简后？还是什么？<br><br>
+<strong>填空题写答案前要有"结果合理性"的判断意识——如果你的答案看起来就很奇怪，大概率算错了。</strong>
+</p>
+</div>
+</div>
+
+<!-- 板块8：能力诊断与提分路径 -->
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 最紧急：计算时"脑子要在"（预计提15-20分）</strong><br>
+  Q15(2) 4n÷2=n、Q19(1) 1/3×0=1/3，两个荒谬计算错误：<br>
+  ① 每一步计算写完后，花3秒回头确认——这个除法/乘法对不对？<br>
+  ② 乘以0和乘以1最容易搞混，遇到时强制双重检查<br>
+  ③ 约分时逐项操作，不要跳步
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon urgent">2</div>
+  <div><strong>🔥 立体几何四大定理默写（预计提7-15分）</strong><br>
+  Q17(1)面面垂直性质定理不会，7分直接丢：<br>
+  ① 整理面面垂直判定/性质、线面垂直判定/性质四个定理<br>
+  ② 每天默写一遍，确保能完整表述<br>
+  ③ 理解每个定理的条件和结论，不能只背形式
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">3</div>
+  <div><strong>📌 解答题过程规范（预计提5-10分）</strong><br>
+  Q16(1)约sinB不写条件、正弦定理不写公式：<br>
+  ① 约分前注明条件（如sinB≠0）<br>
+  ② 使用定理时先写出公式，再代入数值<br>
+  ③ 每步有依据，结果对但过程骗人也会被扣分
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">4</div>
+  <div><strong>📌 填空题结果合理性检查（预计提5-10分）</strong><br>
+  Q12的6/√2和Q13的6/15一看就不对：<br>
+  ① 填空题写答案前判断"这个结果看起来合理吗？"<br>
+  ② 根号在分母要有理化，分数要化简<br>
+  ③ 不合理的答案大概率算错了，回头检查
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">5</div>
+  <div><strong>✅ 长期攻克：Q16(2)角平分线+Q18(3)递推+Q19(2)(3)导数压轴</strong><br>
+  在计算稳定性和定理基础巩固后系统突破</div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杨子涵 · 月考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .section h3 { font-size: 16px; color: #34495e; margin: 14px 0 8px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e74c3c; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
+  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
+  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
+  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
+  .communicate-item:last-child { border-bottom: none; }
+  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
+  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
+  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .path-icon.urgent { background: #e74c3c; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
+  .score-bar .fill { height: 100%; border-radius: 9px; }
+  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
+  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+  <h1>杨子涵 · 月考分析报告</h1>
+  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 42号</div>
+  <div class="score-big">95 / 150</div>
+  <div class="score-label">得分率 63.3%</div>
+</div>
+
+<!-- 板块1：整体得分概览 -->
+<div class="section">
+<h2>📊 整体得分概览</h2>
+<div class="table-wrap"><table>
+  <tr>
+    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  </tr>
+  <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>35</td><td>87.5%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:87.5%"></div></div></td>
+  </tr>
+  <tr>
+    <td>多选题 (Q9-Q11)</td><td>18</td><td>15</td><td>83.3%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:83.3%"></div></div></td>
+  </tr>
+  <tr>
+    <td>填空题 (Q12-Q14)</td><td>15</td><td>5</td><td>33.3%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
+  </tr>
+  <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>55</td><td>75.3%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:75.3%"></div></div></td>
+  </tr>
+  <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>40</td><td>51.9%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:51.9%"></div></div></td>
+  </tr>
+  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>总分</td><td>150</td><td>95</td><td>63.3%</td>
+    <td><div class="score-bar"><div class="fill blue" style="width:63.3%"></div></div></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块2：未掌握知识点汇总 -->
+<div class="section">
+<h2>❌ 未掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+  <tr>
+    <td>Q7</td><td>圆台与外接球</td><td><span class="tag-fail">完全不会</span></td>
+    <td>不会做</td>
+  </tr>
+  <tr>
+    <td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">概念不清</span></td>
+    <td>概念不清楚</td>
+  </tr>
+  <tr>
+    <td>Q16(1)</td><td>正弦定理求角</td><td><span class="tag-fail">错误</span></td>
+    <td>cosBcosC写成sinBsinC，化简路径全错</td>
+  </tr>
+  <tr>
+    <td>Q16(2)</td><td>角平分线长度</td><td><span class="tag-fail">错误</span></td>
+    <td>因第一问错导致后续全错</td>
+  </tr>
+  <tr>
+    <td>Q19(3)</td><td>极值点偏移证明</td><td><span class="tag-fail">未作答</span></td>
+    <td>没写</td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块3：部分掌握知识点汇总 -->
+<div class="section">
+<h2>⚠️ 部分掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+  <tr>
+    <td>Q10</td><td>正四棱柱综合</td><td><span class="tag-partial">部分得分</span></td><td>3/6</td>
+    <td class="wrap-cell">选BC（正确BD）</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>为什么选C</td>
+  </tr>
+  <tr>
+    <td>Q12</td><td>三角恒等变换</td><td><span class="tag-fail">错误</span></td><td>0/5</td>
+    <td class="wrap-cell">填空题错了</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>怎么算错的</td>
+  </tr>
+  <tr>
+    <td>Q15(2)</td><td>裂项求和</td><td><span class="tag-partial">部分得分</span></td><td>5/7</td>
+    <td class="wrap-cell">变通项对，求和漏了前项"1"</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q17(2)</td><td>二面角</td><td><span class="tag-partial">部分得分</span></td><td>4/8</td>
+    <td class="wrap-cell">坐标对，一个法向量对，第二个错，未检验</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q18(3)</td><td>马尔科夫链</td><td><span class="tag-partial">部分得分</span></td><td>1/6</td>
+    <td class="wrap-cell">有尝试但P₁=1/4（应为3/4）</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q19(2)</td><td>零点求参数范围</td><td><span class="tag-partial">部分得分</span></td><td>2/6</td>
+    <td class="wrap-cell">求了导，划掉部分如不算错应有得分</td>
+    <td></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块4：已掌握知识点汇总 -->
+<div class="section">
+<h2>✅ 已掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
+  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q3</td><td>向量</td><td>5/5 ✓</td></tr>
+  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
+  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
+  <tr><td>Q6</td><td>排列组合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q8</td><td>分段函数零点/函数综合图像分析</td><td>5/5 ✓</td></tr>
+  <tr><td>Q9</td><td>三角函数的图像变化与性质</td><td>6/6 ✓</td></tr>
+  <tr><td>Q11</td><td>导数综合</td><td>6/6 ✓</td></tr>
+  <tr><td>Q14</td><td>切线与曲线相切</td><td>5/5 ✓</td></tr>
+  <tr><td>Q15(1)</td><td>等差数列通项</td><td>6/6 ✓</td></tr>
+  <tr><td>Q17(1)</td><td>面面垂直的性质定理</td><td>7/7 ✓</td></tr>
+  <tr><td>Q18(1)</td><td>全概率公式</td><td>5/5 ✓</td></tr>
+  <tr><td>Q18(2)</td><td>分布列与期望</td><td>6/6 ✓</td></tr>
+  <tr><td>Q19(1)</td><td>切线方程</td><td>4/4 ✓</td></tr>
+</table></div>
+</div>
+
+<!-- 板块5：师生待沟通 -->
+<div class="section">
+<h2>💬 师生待沟通</h2>
+<div class="communicate-box">
+<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+<div class="communicate-item">
+  <strong>Q10（正四棱柱综合）：</strong>选了BC（正确BD），B选对了但为什么选了C？需确认是审题问题还是空间想象不到位
+</div>
+<div class="communicate-item">
+  <strong>Q12（三角恒等变换）：</strong>填空题错了，需沟通确认怎么算错的
+</div>
+</div>
+</div>
+
+<!-- 板块6：错题与部分掌握题详细分析 -->
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+
+<!-- Q7 -->
+<div class="question-box wrong">
+  <div class="q-title">Q7 | 圆台与外接球 | 0/5</div>
+  <div class="q-content">圆台下底半径=2倍上底半径，侧面积3√10π，体积7π，求外接球表面积</div>
+  <div class="q-answer">✅ 正确答案：D（20π）</div>
+  <div class="q-student">❌ 杨子涵作答：不会做</div>
+  <div class="q-analysis">分析：圆台公式+外接球构造，属于立体几何较难题</div>
+</div>
+
+<!-- Q10 -->
+<div class="question-box partial">
+  <div class="q-title">Q10 | 正四棱柱综合 | 3/6</div>
+  <div class="q-content">正四棱柱AA₁=2AB=2，O为DCC₁D₁对角线交点，判断四个结论</div>
+  <div class="q-answer">✅ 正确答案：BD</div>
+  <div class="q-student">⚠️ 杨子涵作答：选BC</div>
+  <div class="q-error">⚠️ 待沟通：B选对了，但为什么选了C？需确认是审题还是空间想象问题</div>
+</div>
+
+<!-- Q12 -->
+<div class="question-box wrong">
+  <div class="q-title">Q12 | 三角恒等变换 | 0/5</div>
+  <div class="q-content">cos(α−π/3)=cosα，求cos2α</div>
+  <div class="q-answer">✅ 正确答案：13/14</div>
+  <div class="q-student">❌ 杨子涵作答：填空题错了</div>
+  <div class="q-error">⚠️ 待沟通：需确认怎么算错的</div>
+</div>
+
+<!-- Q13 -->
+<div class="question-box wrong">
+  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
+  <div class="q-content">ŷ=0.4x+â，x̄=20，ȳ=7，数据(30,n)残差0.6，求n</div>
+  <div class="q-answer">✅ 正确答案：11.6</div>
+  <div class="q-student">❌ 杨子涵作答：概念不清楚</div>
+  <div class="q-analysis">分析：残差概念未掌握——残差=观测值−预测值，需先算ŷ(30)再由n−ŷ=0.6求解</div>
+</div>
+
+<!-- Q15(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q15(2) | 裂项求和 | 5/7</div>
+  <div class="q-content">bₙ=1/(aₙ·aₙ₊₁)，求Sₙ</div>
+  <div class="q-answer">✅ 正确答案：Sₙ = n/(2n+1)</div>
+  <div class="q-student">⚠️ 杨子涵作答：变通项对，求和漏了前项"1"</div>
+  <div class="q-analysis">分析：写成½·(-1/(2n+1))，应为½·(1-1/(2n+1))，漏了消项后的"1"</div>
+  <div class="q-tip">💡 书写反思：这个"1"你自己写的，但自己也看不太清楚——是否因为卷面书写不够清晰，导致自己检查时也看漏了？</div>
+</div>
+
+<!-- Q16(1) -->
+<div class="question-box wrong">
+  <div class="q-title">Q16(1) | 正弦定理求角 | 0/7</div>
+  <div class="q-content">csinB+√3·bcosC=√3·a，求角B</div>
+  <div class="q-answer">✅ 正确答案：B=60°</div>
+  <div class="q-student">❌ 杨子涵作答：第一步就把√3·cosB·cosC写成√3·sinB·sinC，化简路径全错</div>
+  <div class="q-analysis">分析：这是书写导致的错误——cosBcosC被自己写成sinBsinC，一步错导致整题化简方向偏移，最终无法得到正确答案</div>
+  <div class="q-tip">💡 书写反思：cos和sin在卷面上是否写得不够清楚，导致自己也看混了？这类错误不是"不会"，而是"写错→看错→算错"的连锁反应</div>
+</div>
+
+<!-- Q16(2) -->
+<div class="question-box wrong">
+  <div class="q-title">Q16(2) | 角平分线长度 | 0/8</div>
+  <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
+  <div class="q-answer">✅ 正确答案：BD=√6/6</div>
+  <div class="q-student">❌ 杨子涵作答：因第一问错导致后续全错</div>
+  <div class="q-analysis">分析：连锁反应——第一问化简方向错误，后续无法展开</div>
+</div>
+
+<!-- Q17(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q17(2) | 二面角 | 4/8</div>
+  <div class="q-content">求二面角B−PD−C的余弦值</div>
+  <div class="q-answer">✅ 正确答案：√6/3</div>
+  <div class="q-student">⚠️ 杨子涵作答：坐标对，一个法向量对，第二个法向量没求对，未检验</div>
+  <div class="q-analysis">分析：建系和描点能力扎实，但法向量计算不够稳定，且没有检验习惯</div>
+  <div class="q-tip">💡 建议：每次求出法向量后，30秒做点积检验：n·v₁=0? n·v₂=0?</div>
+</div>
+
+<!-- Q18(3) -->
+<div class="question-box partial">
+  <div class="q-title">Q18(3) | 马尔科夫链 | 1/6</div>
+  <div class="q-content">求Pᵢ的取值范围</div>
+  <div class="q-answer">✅ 正确答案：3/4 ≤ Pᵢ < 10/13</div>
+  <div class="q-student">⚠️ 杨子涵作答：有尝试但P₁=1/4（应为3/4），写的不靠谱</div>
+  <div class="q-analysis">分析：有递推意识，但初始值P₁搞错了，导致后续递推全偏</div>
+</div>
+
+<!-- Q19(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q19(2) | 零点求参数范围 | 2/6</div>
+  <div class="q-content">f'(x)有三个不同零点，求a的取值范围</div>
+  <div class="q-answer">✅ 正确答案：a∈(0, 6/e³)</div>
+  <div class="q-student">⚠️ 杨子涵作答：求了导，但划掉的部分如果不算错应有得分</div>
+  <div class="q-analysis">分析：有分离参数的意识，但可能计算不自信划掉了。划掉的内容如果正确可以得分，考试中不要轻易划掉已写步骤</div>
+  <div class="q-tip">💡 建议：考试中写过的步骤不要划掉！即使后面发现方向不对，已写步骤也可能拿到部分分</div>
+</div>
+
+<!-- Q19(3) -->
+<div class="question-box wrong">
+  <div class="q-title">Q19(3) | 极值点偏移证明 | 0/7</div>
+  <div class="q-content">h(x)有三个极值点x₁,x₂,x₃，证明h(x₁)·h(x₂)·h(x₃)≥−1/e−1</div>
+  <div class="q-answer">✅ 正确答案：a∈[1/e², 1/e)时成立</div>
+  <div class="q-student">❌ 杨子涵作答：没写</div>
+</div>
+
+</div>
+
+<!-- 板块7：教师评价 -->
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="teacher-comment">
+<h3>💪 杨子涵的答卷亮点</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>1. 整体作答不错！</strong>在高三第一次综合性复习中表现良好，客观题得分率75.3%，选择题尤其出色。<br><br>
+<strong>2. 单选和多选都很漂亮。</strong>单选8道只错1道（Q7），多选Q9和Q11全对，说明基础方法和概念掌握扎实。<br><br>
+<strong>3. 解答题有方法有思路。</strong>Q17(1)面面垂直的性质定理掌握了（这个很多同学不会），Q18前两问全对，概率统计基础很好。<br><br>
+<strong>4. 计算错误并不多。</strong>相比计算失分型同学，杨子涵的丢分更多集中在个别关键环节，整体计算稳定性不错。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题：书写不清导致自己看错自己写的东西</h3>
+<p style="font-size:14px; line-height:1.8;">
+杨子涵最大的隐患不是"不会"，而是<strong>"写的东西自己看不清"</strong>：<br><br>
+<strong>① 数列裂项求和（Q15(2)）：</strong>消项后的"1"是自己写的，但自己也看不见——是否因为书写太潦草，检查时看漏了？<br><br>
+<strong>② 三角恒等变换（Q16(1)）：</strong>cosBcosC被自己写成sinBsinC——cos和sin在卷面上是否写得太像？一步看错，整题方向偏移，Q16两问共15分全部丢掉。<br><br>
+<strong>这不是粗心，是书写习惯问题。</strong>不会的题可以慢慢学，但"自己写的东西自己看不清"会在每一科、每一道题上反复丢分，而且这种丢分是最可惜的。请务必重视书写！
+</p>
+</div>
+</div>
+
+<!-- 板块8：能力诊断与提分路径 -->
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 最紧急：改善书写习惯（预计提15-20分）</strong><br>
+  Q16两问15分+Q15(2)的2分，都和书写不清直接相关。建议：<br>
+  ① cos/sin/tan等三角函数符号必须写清楚，不能连笔<br>
+  ② 数字1和字母l、系数和变量之间留空隙<br>
+  ③ 每写完一步，回头看一眼确认写的是自己想写的
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">2</div>
+  <div><strong>📌 法向量检验习惯（预计提4分）</strong><br>
+  Q17(2)坐标对但第二个法向量错，未检验。建议：每次求出法向量后30秒点积检验
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">3</div>
+  <div><strong>📌 填空题三角函数+概率概念（预计提10分）</strong><br>
+  Q12三角恒等变换+Q13残差概念，填空题只对1道。建议：<br>
+  ① Q12需沟通确认怎么算错的，可能是书写问题也可能方法问题<br>
+  ② Q13残差概念需重新学习：残差=观测值−预测值
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">4</div>
+  <div><strong>✅ 保持：考试不划掉已写步骤</strong><br>
+  Q19(2)划掉的部分如果正确可以得分。考试中写过的步骤不要划掉，即使后续发现方向不对，已写内容也可能拿部分分
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">5</div>
+  <div><strong>✅ 长期攻克：立体几何较难题+导数压轴+马尔科夫链</strong><br>
+  Q7圆台外接球、Q18(3)马尔科夫链、Q19(2)(3)导数压轴属于高难度题，在书写习惯和基础稳固后系统突破
+  </div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

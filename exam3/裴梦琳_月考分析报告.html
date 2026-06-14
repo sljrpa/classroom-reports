@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>裴梦琳 · 月考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e74c3c; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
+  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
+  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
+  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
+  .communicate-item:last-child { border-bottom: none; }
+  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
+  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
+  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .path-icon.urgent { background: #e74c3c; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
+  .score-bar .fill { height: 100%; border-radius: 9px; }
+  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
+  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+  <h1>裴梦琳 · 月考分析报告</h1>
+  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 39号</div>
+  <div class="score-big">107 / 150</div>
+  <div class="score-label">预估分 · 得分率 71.3%</div>
+</div>
+
+<!-- 板块1：整体得分概览 -->
+<div class="section">
+<h2>📊 整体得分概览</h2>
+<div class="table-wrap"><table>
+  <tr>
+    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  </tr>
+  <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>30</td><td>75.0%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:75.0%"></div></div></td>
+  </tr>
+  <tr>
+    <td>多选题 (Q9-Q11)</td><td>18</td><td>6</td><td>33.3%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
+  </tr>
+  <tr>
+    <td>填空题 (Q12-Q14)</td><td>15</td><td>5</td><td>33.3%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
+  </tr>
+  <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>41</td><td>56.2%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:56.2%"></div></div></td>
+  </tr>
+  <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>66 估</td><td>85.7%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:85.7%"></div></div></td>
+  </tr>
+  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>总分</td><td>150</td><td>107 估</td><td>71.3%</td>
+    <td><div class="score-bar"><div class="fill blue" style="width:71.3%"></div></div></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块2：未掌握知识点汇总 -->
+<div class="section">
+<h2>❌ 未掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+  <tr>
+    <td>Q6</td><td>排列组合</td><td><span class="tag-fail">概念错误</span></td>
+    <td class="wrap-cell">选A，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q7</td><td>圆台与外接球</td><td><span class="tag-fail">概念错误</span></td>
+    <td class="wrap-cell">选C，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q9</td><td>三角函数图象变换</td><td><span class="tag-fail">审题/方法错误</span></td>
+    <td class="wrap-cell">错选A，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">方法错误</span></td>
+    <td class="wrap-cell">没答对，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q14</td><td>切线与曲线相切</td><td><span class="tag-fail">计算错误</span></td>
+    <td class="wrap-cell">答3，正确-3，符号反了，待沟通</td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块3：部分掌握知识点汇总 -->
+<div class="section">
+<h2>⚠️ 部分掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+  <tr>
+    <td>Q8</td><td>分段函数零点</td><td><span class="tag-partial">选对但待沟通</span></td><td>5/5</td>
+    <td class="wrap-cell">选对了，但解题过程可能有问题，待沟通</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span></td>
+  </tr>
+  <tr>
+    <td>Q10</td><td>正四棱柱综合</td><td><span class="tag-partial">漏选</span></td><td>3/6</td>
+    <td class="wrap-cell">只选D没选B，漏选</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span></td>
+  </tr>
+  <tr>
+    <td>Q11</td><td>导数综合</td><td><span class="tag-partial">漏选</span></td><td>3/6</td>
+    <td class="wrap-cell">只选C没选A，漏选</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span></td>
+  </tr>
+  <tr>
+    <td>Q18(3)</td><td>递推与范围</td><td><span class="tag-partial">部分得分</span></td><td>1/6 估</td>
+    <td class="wrap-cell">有写P1=3/4，非常好，但未完整</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q19(2)</td><td>导数零点/极值</td><td><span class="tag-partial">部分得分</span></td><td>1/6 估</td>
+    <td class="wrap-cell">解出a>0，很棒，但未完整</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q19(3)</td><td>极值点偏移证明</td><td><span class="tag-partial">有尝试</span></td><td>2/7 估</td>
+    <td class="wrap-cell">有尝试写，非常好</td>
+    <td></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块4：已掌握知识点汇总 -->
+<div class="section">
+<h2>✅ 已掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
+  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q3</td><td>向量</td><td>5/5 ✓</td></tr>
+  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
+  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
+  <tr><td>Q12</td><td>三角恒等变换</td><td>5/5 ✓</td></tr>
+  <tr><td>Q15(1)</td><td>等差数列通项</td><td>6/6 ✓</td></tr>
+  <tr><td>Q15(2)</td><td>裂项求和</td><td>7/7 ✓</td></tr>
+  <tr><td>Q16(1)</td><td>正弦定理求角</td><td>7/7 ✓</td></tr>
+  <tr><td>Q16(2)</td><td>角平分线长度</td><td>8/8 估 ✓</td></tr>
+  <tr><td>Q17(1)</td><td>线面垂直证明</td><td>7/7 估 ✓</td></tr>
+  <tr><td>Q17(2)</td><td>二面角</td><td>8/8 估 ✓</td></tr>
+  <tr><td>Q18(1)</td><td>全概率公式</td><td>5/5 估 ✓</td></tr>
+  <tr><td>Q18(2)</td><td>分布列与期望</td><td>6/6 估 ✓</td></tr>
+  <tr><td>Q19(1)</td><td>切线方程</td><td>4/4 估 ✓</td></tr>
+</table></div>
+</div>
+
+<!-- 板块5：师生待沟通 -->
+<div class="section">
+<h2>💬 师生待沟通</h2>
+<div class="communicate-box">
+<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+<div class="communicate-item">
+  <strong>Q6（排列组合）：</strong>选A，分类还是分步的问题？待沟通确认卡点
+</div>
+<div class="communicate-item">
+  <strong>Q7（圆台与外接球）：</strong>选C，外接球公式有没有记住？待沟通
+</div>
+<div class="communicate-item">
+  <strong>Q8（分段函数零点）：</strong>虽然选对了，但解题过程需要确认，待沟通
+</div>
+<div class="communicate-item">
+  <strong>Q9（三角函数图象变换）：</strong>错选A，到底怎么选的？三角函数图象变换规则需要梳理
+</div>
+<div class="communicate-item">
+  <strong>Q10（正四棱柱综合）：</strong>只选D没选B，B为什么漏了？审题还是计算问题？
+</div>
+<div class="communicate-item">
+  <strong>Q11（导数综合）：</strong>只选C没选A，A选项验证过了吗？多选题验证意识要加强
+</div>
+<div class="communicate-item">
+  <strong>Q13（线性回归残差）：</strong>没答对，残差概念和计算方法需要确认
+</div>
+<div class="communicate-item">
+  <strong>Q14（切线与曲线相切）：</strong>答3，正确-3，符号反了。最后一步符号有没有检查的习惯？
+</div>
+</div>
+</div>
+
+<!-- 板块6：错题与部分掌握题详细分析 -->
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+
+<!-- Q6 -->
+<div class="question-box wrong">
+  <div class="q-title">Q6 | 排列组合 | 0/5</div>
+  <div class="q-content">排列组合题</div>
+  <div class="q-answer">✅ 正确答案：C</div>
+  <div class="q-student">❌ 裴梦琳作答：选A</div>
+  <div class="q-error">⚠️ 待沟通——分类vs分步有没有搞清楚？</div>
+</div>
+
+<!-- Q7 -->
+<div class="question-box wrong">
+  <div class="q-title">Q7 | 圆台与外接球 | 0/5</div>
+  <div class="q-content">圆台下底半径=2倍上底半径，侧面积3√10π，体积7π，求外接球表面积</div>
+  <div class="q-answer">✅ 正确答案：D（20π）</div>
+  <div class="q-student">❌ 裴梦琳作答：选C</div>
+  <div class="q-error">⚠️ 待沟通——外接球公式有没有记住？</div>
+</div>
+
+<!-- Q8 -->
+<div class="question-box partial">
+  <div class="q-title">Q8 | 分段函数零点 | 5/5（选对但待沟通）</div>
+  <div class="q-content">f(x)={eˣ−1,x≤0; lnx+x²,x>0}，g(x)=f(x)−m有两个零点，求m范围</div>
+  <div class="q-answer">✅ 正确答案：C（(−1,0]）</div>
+  <div class="q-student">✅ 裴梦琳作答：选对了</div>
+  <div class="q-error">⚠️ 选对了但解题过程待沟通确认，是真正理解还是蒙的？</div>
+</div>
+
+<!-- Q9 -->
+<div class="question-box wrong">
+  <div class="q-title">Q9 | 三角函数图象变换 | 0/6</div>
+  <div class="q-content">三角函数图象变换多选题</div>
+  <div class="q-answer">✅ 正确答案：BD</div>
+  <div class="q-student">❌ 裴梦琳作答：错选A</div>
+  <div class="q-error">⚠️ 待沟通——三角函数图象变换规则需要梳理</div>
+</div>
+
+<!-- Q10 -->
+<div class="question-box partial">
+  <div class="q-title">Q10 | 正四棱柱综合 | 3/6</div>
+  <div class="q-content">正四棱柱AA₁=2AB=2，O为DCC₁D₁对角线交点，判断四个结论</div>
+  <div class="q-answer">✅ 正确答案：BD</div>
+  <div class="q-student">⚠️ 裴梦琳作答：只选D（漏选B）</div>
+  <div class="q-error">⚠️ B为什么漏了？审题没注意到还是计算没验证？待沟通</div>
+</div>
+
+<!-- Q11 -->
+<div class="question-box partial">
+  <div class="q-title">Q11 | 导数综合 | 3/6</div>
+  <div class="q-content">f(x)=eˣ(2x+1)/x，判断零点/对称中心/切线/单调性四个说法</div>
+  <div class="q-answer">✅ 正确答案：AC</div>
+  <div class="q-student">⚠️ 裴梦琳作答：只选C（漏选A）</div>
+  <div class="q-error">⚠️ A选项验证过了吗？多选题每个选项都要验证，不能"觉得不像"就不选</div>
+</div>
+
+<!-- Q13 -->
+<div class="question-box wrong">
+  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
+  <div class="q-content">线性回归残差</div>
+  <div class="q-answer">✅ 正确答案：6/15</div>
+  <div class="q-student">❌ 裴梦琳作答：没答对</div>
+  <div class="q-error">⚠️ 待沟通——残差概念和计算方法需要确认</div>
+</div>
+
+<!-- Q14 -->
+<div class="question-box wrong">
+  <div class="q-title">Q14 | 切线与曲线相切 | 0/5</div>
+  <div class="q-content">y=x+lnx在(1,1)处切线与y=x²−2x−a相切，求a</div>
+  <div class="q-answer">✅ 正确答案：−3</div>
+  <div class="q-student">❌ 裴梦琳作答：3（正确答案-3，符号反了）</div>
+  <div class="q-error">🔴 计算过程应该没问题，就是最后一步符号搞反了！填空题做完一定要检验——代入验证或回头看符号</div>
+</div>
+
+<!-- Q18(3) -->
+<div class="question-box partial">
+  <div class="q-title">Q18(3) | 递推与范围 | 估1/6</div>
+  <div class="q-content">递推与范围</div>
+  <div class="q-answer">✅ 正确答案：（略）</div>
+  <div class="q-student">⚠️ 裴梦琳作答：有写P1=3/4</div>
+  <div class="q-analysis">第三问能写出P1=3/4已经很好了，说明方法方向对，再往下推进就能拿到更多分</div>
+</div>
+
+<!-- Q19(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q19(2) | 导数零点/极值 | 估1/6</div>
+  <div class="q-content">讨论函数零点个数</div>
+  <div class="q-answer">✅ 正确答案：分离变量→求导→分析→判断零点</div>
+  <div class="q-student">⚠️ 裴梦琳作答：有解除a>0，很棒</div>
+  <div class="q-analysis">解出a>0说明分离变量和求导方向正确，差最后一步对参数范围的完整讨论</div>
+</div>
+
+<!-- Q19(3) -->
+<div class="question-box partial">
+  <div class="q-title">Q19(3) | 极值点偏移证明 | 估2/7</div>
+  <div class="q-content">极值点偏移证明</div>
+  <div class="q-answer">✅ 正确答案：（略）</div>
+  <div class="q-student">⚠️ 裴梦琳作答：有尝试写</div>
+  <div class="q-analysis">第三问能尝试写就已经超过大部分同学了，继续保持这种不放弃的态度</div>
+</div>
+
+</div>
+
+<!-- 板块7：教师评价 -->
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="teacher-comment">
+<h3>🔥 裴梦琳，这次考试进步非常大！</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>裴梦琳这次考试进步非常大，打出了自己的水平和实力，应该就是这个分数段的学生了！</strong><br><br>
+<strong>1. 解答题全班最漂亮！</strong>Q15两问全对、Q16第二问算对了（非常难得！）、Q17两问全对、Q18前两问全对且第三问有写P1=3/4、Q19第一问对了且第二问解出a>0、第三问也有尝试。整个大题应该是<strong>全班最漂亮的一份大题</strong>，解答题得分率85.7%，太强了！<br><br>
+<strong>2. Q16(2)算对了——非常难得！</strong>这道题全班算对的人屈指可数，你能拿下说明解三角形的综合应用已经真正掌握了。<br><br>
+<strong>3. Q17两问全对！</strong>面面垂直性质定理会用，二面角也能算，立体几何基本过关了。<br><br>
+<strong>4. Q18第三问有写、Q19第二问第三问都有尝试。</strong>不放弃每一道题，这种态度非常棒，也是解答题能拿高分的关键。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 小题需要再稳一稳——客观题还有很大提分空间</h3>
+<p style="font-size:14px; line-height:1.8;">
+大题已经是全班最好的水平了，但客观题56.2%和你的实力不匹配：<br><br>
+<strong>① 多选6/18只拿到三分之一：</strong>Q9错选、Q10和Q11都是漏选。多选题的策略要调整——每个选项都要验证，不能"觉得不像"就不选。漏一个选项丢3分，比选错还亏。<br><br>
+<strong>② Q14答案3，正确-3，符号反了！</strong>计算过程应该没问题，就差最后一步检验。5分就这么丢了，太可惜。<br><br>
+<strong>③ Q6/Q7单选两道错，待沟通确认卡点。</strong>如果这两道也能拿下，单选就是35/40，非常漂亮。<br><br>
+<strong>客观题从41分提升到55-60分，总分就能稳定在120+，这个目标完全可达！</strong>因为你的大题已经证明你的方法能力足够，只是小题细节需要再打磨。
+</p>
+</div>
+</div>
+
+<!-- 板块8：能力诊断与提分路径 -->
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 最紧急：多选题策略调整（预计提6-12分）</strong><br>
+  Q9错选0分+Q10漏选3/6+Q11漏选3/6，多选只拿了6/18。<br>
+  ① 每个选项都要独立验证，不能凭直觉排除<br>
+  ② 选了一个确定选项后，再逐个验证其他选项——哪怕只验证出一个，就多3分<br>
+  ③ Q9错选A说明对三角函数图象变换规则不熟，待沟通梳理
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon urgent">2</div>
+  <div><strong>🔥 填空题必验（预计提5分）</strong><br>
+  Q14答3正确-3，符号反了丢5分——如果做完检验一遍就不至于丢：<br>
+  ① 填空题做完必须把答案代回去检验<br>
+  ② 特别注意符号：负号丢了是高中最常见低级错误<br>
+  ③ 5分一道填空题，验一遍1分钟，值不值？
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">3</div>
+  <div><strong>📌 Q6/Q7卡点确认（预计提5-10分）</strong><br>
+  两道单选错了待沟通，沟通后搞清楚是概念还是方法问题：<br>
+  ① Q6排列组合：分类vs分步<br>
+  ② Q7外接球：公式法要记住<br>
+  ③ 如果这两道能拿下，单选就是35/40
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">4</div>
+  <div><strong>📌 Q18(3)和Q19(2)(3)的"最后一公里"（预计提8-12分）</strong><br>
+  你已经有了很好的基础——P1=3/4、a>0、第三问有尝试。只需要再往前推一步：<br>
+  ① Q18(3)：P1=3/4之后，P2怎么算？递推关系建立起来了吗？<br>
+  ② Q19(2)：a>0之后，参数范围怎么完整讨论？<br>
+  ③ 你和大题满分的差距，就是"再坚持一步"的距离
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">5</div>
+  <div><strong>✅ 长期巩固：保持大题优势，小题细节打磨到稳</strong><br>
+  解答题85.7%已经是全班最漂亮的水准，保持住！只需要客观题从56.2%提升到70%+，总分就能稳定在120+。<br>
+  目标路径：大题稳+小题验+多选策略调整 = 120+
+  </div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

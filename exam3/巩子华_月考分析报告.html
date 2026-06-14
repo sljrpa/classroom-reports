@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>巩子华 · 月考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e74c3c; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
+  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
+  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
+  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
+  .communicate-item:last-child { border-bottom: none; }
+  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
+  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
+  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .path-icon.urgent { background: #e74c3c; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
+  .score-bar .fill { height: 100%; border-radius: 9px; }
+  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
+  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+  <h1>巩子华 · 月考分析报告</h1>
+  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 7号</div>
+  <div class="score-big">106 / 150</div>
+  <div class="score-label">得分率 70.7%</div>
+</div>
+
+<!-- 板块1：整体得分概览 -->
+<div class="section">
+<h2>📊 整体得分概览</h2>
+<div class="table-wrap"><table>
+  <tr>
+    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  </tr>
+  <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>35</td><td>87.5%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:87.5%"></div></div></td>
+  </tr>
+  <tr>
+    <td>多选题 (Q9-Q11)</td><td>18</td><td>12</td><td>66.7%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:66.7%"></div></div></td>
+  </tr>
+  <tr>
+    <td>填空题 (Q12-Q14)</td><td>15</td><td>10</td><td>66.7%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:66.7%"></div></div></td>
+  </tr>
+  <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>57</td><td>78.1%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:78.1%"></div></div></td>
+  </tr>
+  <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>50</td><td>64.9%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:64.9%"></div></div></td>
+  </tr>
+  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>总分</td><td>150</td><td>107</td><td>71.3%</td>
+    <td><div class="score-bar"><div class="fill blue" style="width:71.3%"></div></div></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块2：未掌握知识点汇总 -->
+<div class="section">
+<h2>❌ 未掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+  <tr>
+    <td>Q7</td><td>圆台与外接球</td><td><span class="tag-fail">不会</span></td>
+    <td>不会做</td>
+  </tr>
+  <tr>
+    <td>Q11</td><td>导数综合</td><td><span class="tag-fail">选错</span></td>
+    <td class="wrap-cell">不知道为什么会选错，待沟通</td>
+  </tr>
+  <tr>
+    <td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">概念不清</span></td>
+    <td>概念不清楚</td>
+  </tr>
+  <tr>
+    <td>Q19(3)</td><td>极值点偏移证明</td><td><span class="tag-fail">未作答</span></td>
+    <td>没写</td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块3：部分掌握知识点汇总 -->
+<div class="section">
+<h2>⚠️ 部分掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+  <tr>
+    <td>Q16(2)</td><td>余弦定理求角平分线</td><td><span class="tag-partial">部分得分</span></td><td>2/8</td>
+    <td class="wrap-cell">用了余弦定理，看出来了，但没算出来，比较遗憾</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q17(2)</td><td>二面角</td><td><span class="tag-partial">部分得分</span></td><td>2/8</td>
+    <td class="wrap-cell">算出A×C面积但没带回去；法向量算错cos=0非常离谱</td>
+    <td class="wrap-cell"></td>
+  </tr>
+  <tr>
+    <td>Q18(3)</td><td>递推与范围</td><td><span class="tag-partial">部分得分</span></td><td>2/6</td>
+    <td class="wrap-cell">有尝试算P1P2P3，不错</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q19(2)</td><td>导数单调性讨论</td><td><span class="tag-partial">部分得分</span></td><td>2/6</td>
+    <td class="wrap-cell">有参变量分离，但求出-2e不对</td>
+    <td></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块4：已掌握知识点汇总 -->
+<div class="section">
+<h2>✅ 已掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
+  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q3</td><td>向量</td><td>5/5 ✓</td></tr>
+  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
+  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
+  <tr><td>Q6</td><td>排列组合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q8</td><td>分段函数零点</td><td>5/5 ✓</td></tr>
+  <tr><td>Q9</td><td>三角函数图象变换</td><td>6/6 ✓</td></tr>
+  <tr><td>Q10</td><td>正四棱柱综合</td><td>6/6 ✓</td></tr>
+  <tr><td>Q12</td><td>三角恒等变换</td><td>5/5 ✓</td></tr>
+  <tr><td>Q14</td><td>切线与曲线相切</td><td>5/5 ✓</td></tr>
+  <tr><td>Q15(1)</td><td>等差数列通项</td><td>6/6 ✓</td></tr>
+  <tr><td>Q15(2)</td><td>裂项求和</td><td>7/7 ✓</td></tr>
+  <tr><td>Q16(1)</td><td>正弦定理求角</td><td>7/7 ✓</td></tr>
+  <tr><td>Q17(1)</td><td>线面垂直证明</td><td>7/7 ✓</td></tr>
+  <tr><td>Q18(1)</td><td>全概率公式</td><td>5/5 ✓</td></tr>
+  <tr><td>Q18(2)</td><td>分布列与期望</td><td>6/6 ✓</td></tr>
+  <tr><td>Q19(1)</td><td>切线方程</td><td>4/4 ✓</td></tr>
+</table></div>
+</div>
+
+<!-- 板块5：师生待沟通 -->
+<div class="section">
+<h2>💬 师生待沟通</h2>
+<div class="communicate-box">
+<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+<div class="communicate-item">
+  <strong>Q11（导数综合）：</strong>不知道为什么会选错——需要搞清楚是审题问题还是理解偏差
+</div>
+<div class="communicate-item">
+  <strong>Q13（线性回归残差）：</strong>概念不清楚——需要厘清残差的定义和计算方式
+</div>
+</div>
+</div>
+
+<!-- 板块6：错题与部分掌握题详细分析 -->
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+
+<!-- Q7 -->
+<div class="question-box wrong">
+  <div class="q-title">Q7 | 圆台与外接球 | 0/5</div>
+  <div class="q-content">圆台下底半径=2倍上底半径，侧面积3√10π，体积7π，求外接球表面积</div>
+  <div class="q-answer">✅ 正确答案：D（20π）</div>
+  <div class="q-student">❌ 巩子华作答：不会做</div>
+</div>
+
+<!-- Q11 -->
+<div class="question-box wrong">
+  <div class="q-title">Q11 | 导数综合 | 0/6</div>
+  <div class="q-content">f(x)=eˣ(2x+1)/x，判断零点/对称中心/切线/单调性四个说法</div>
+  <div class="q-answer">✅ 正确答案：AC</div>
+  <div class="q-student">❌ 巩子华作答：选错</div>
+  <div class="q-error">⚠️ 不知道为什么会选错，待沟通——是审题问题还是理解偏差？</div>
+</div>
+
+<!-- Q13 -->
+<div class="question-box wrong">
+  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
+  <div class="q-content">线性回归残差相关问题</div>
+  <div class="q-answer">✅ 正确答案：（略）</div>
+  <div class="q-student">❌ 巩子华作答：概念不清楚</div>
+  <div class="q-analysis">分析：残差的概念需要厘清——残差=观测值-预测值，方向不能搞反</div>
+</div>
+
+<!-- Q16(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q16(2) | 余弦定理求角平分线 | 2/8</div>
+  <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
+  <div class="q-answer">✅ 正确答案：BD=√6/6</div>
+  <div class="q-student">⚠️ 巩子华作答：用了余弦定理，看出来了方向是对的，但没算出来</div>
+  <div class="q-analysis">分析：方法选对了，方向也对，但最终没算出来——比较遗憾。第一问已经算出角B，余弦定理的框架也有了，差最后一步计算</div>
+  <div class="q-tip">💡 建议：方法对了就坚持算下去，不要半途而废。余弦定理列式后耐心化简</div>
+</div>
+
+<!-- Q17(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q17(2) | 二面角 | 2/8</div>
+  <div class="q-content">求二面角B−PD−C的余弦值</div>
+  <div class="q-answer">✅ 正确答案：√6/3</div>
+  <div class="q-student">⚠️ 巩子华作答：算出A×C的面积，但没有带回去；法向量算错cos=0</div>
+  <div class="q-error">🔴 cos=0？范围是0~180°，你算出0那意思就是两个向量平行？这怎么可能呢？你不回头检查吗？</div>
+  <div class="q-tip">💡 建议：① A×C面积算出来了，要带回去代入公式才能得到最终结果，不能算到一半就停了；② 法向量求完后必须做点积检验——n·v₁=0? n·v₂=0? ③ cos值如果算出0或±1这种极端值，要立刻警觉，大概率是算错了</div>
+</div>
+
+<!-- Q18(3) -->
+<div class="question-box partial">
+  <div class="q-title">Q18(3) | 递推与范围 | 2/6</div>
+  <div class="q-content">利用递推关系求范围</div>
+  <div class="q-student">⚠️ 巩子华作答：有尝试算P1P2P3，思路是对的</div>
+  <div class="q-analysis">分析：能尝试递推计算说明方法方向对，但可能计算或逻辑链不完整</div>
+  <div class="q-tip">💡 肯定：有尝试的意识很好，继续巩固递推方法</div>
+</div>
+
+<!-- Q19(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q19(2) | 导数单调性讨论 | 2/6</div>
+  <div class="q-content">讨论f(x)的单调性</div>
+  <div class="q-student">⚠️ 巩子华作答：有参变量分离，但求出-2e不对</div>
+  <div class="q-analysis">分析：参变量分离的方法选对了，但计算结果有误——为什么不对自己也清楚，说明知道错在哪</div>
+  <div class="q-tip">💡 建议：参变量分离后求临界值要仔细，检验方法：将-2e代入原式验证是否满足等式</div>
+</div>
+
+</div>
+
+<!-- 板块7：教师评价 -->
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="teacher-comment">
+<h3>💪 巩子华的答卷亮点</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>1. 第一梯队的实力！</strong>总分107/150，得分率71.3%，班级前列。<br><br>
+<strong>2. 数列两问全对，很漂亮！</strong>Q15(1)和Q15(2)都拿下，裂项相消会用，这比很多同学强。<br><br>
+<strong>3. 概率统计扎实！</strong>Q18(1)(2)全对，Q18(3)还有尝试，11分拿了13分。<br><br>
+<strong>4. Q16用了余弦定理！</strong>虽然没算出来，但方向是对的，看出来了，说明方法意识到位。<br><br>
+<strong>5. Q19有参变量分离！</strong>导数题的方法选择很好，只是计算出了问题。<br><br>
+<strong>6. Q18(3)有尝试！</strong>算P1P2P3，有探索精神，不错。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题1：算到一半就停了——A×C面积不带回去、余弦定理不坚持算</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>Q17(2)：</strong>A×C的面积都算出来了，但没有带回去代入公式——这个面积是有用的啊！算出来不带回去，等于白算了。<br><br>
+<strong>Q16(2)：</strong>余弦定理方向对了，看出来了，但没算下去——比较遗憾。<br><br>
+<strong>建议：算出来的中间结果一定要用上！</strong>如果算出一个量但后面没用到，先问问自己：这个量该带到哪里？
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题2：法向量cos=0——不回头检查太可惜</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>Q17(2)法向量算错：</strong>cos=0？范围是0~180°，你算出0，那意思就是两个向量平行？这怎么可能呢？你不回头检查吗？<br><br>
+这种"离谱结果"是最容易被发现的——cos值如果算出0或±1，立刻警觉：<br>
+① 做点积检验：法向量与两个方向向量点积是否为0<br>
+② 检查法向量计算过程是否有符号错误<br>
+③ 这种错误只要30秒检验就能发现和修正，不检查等于白丢分
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题3：填空Q13概念不清+Q16(2)没算出来——本可更高</h3>
+<p style="font-size:14px; line-height:1.8;">
+作为第一梯队的选手，Q13概念不清和Q16(2)没算出来都是比较遗憾的：<br>
+① Q13残差概念——这是基础概念题，不应该丢分<br>
+② Q16(2)余弦定理方向对了但没算出来——坚持算下去就多6-8分<br>
+③ Q17(2)A×C面积算出来不带回去——带回去就多4-6分<br><br>
+<strong>这几个问题如果都解决，总分可以到120+。</strong>
+</p>
+</div>
+</div>
+
+<!-- 板块8：能力诊断与提分路径 -->
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 最紧急：中间结果一定要用！算到一半不能停（预计提10-15分）</strong><br>
+  Q17(2)面积算出不带回去、Q16(2)余弦定理方向对了不坚持——这两个问题解决就能多10分以上。建议：<br>
+  ① 算出中间量后，立即问自己：这个量该代入哪个公式？<br>
+  ② 方法对了就坚持算下去，不要半途而废<br>
+  ③ 在草稿纸上标注"待代入"，避免算出后遗忘
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon urgent">2</div>
+  <div><strong>🔥 法向量/关键结果必须检验（预计提6-8分）</strong><br>
+  Q17(2)cos=0这种离谱结果不检查，白白丢分。建议：<br>
+  ① 法向量求完后30秒做点积检验<br>
+  ② cos值如果出现0、±1，立刻警觉重新检查<br>
+  ③ 养成"算完关键步骤→花30秒验证"的习惯
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">3</div>
+  <div><strong>📌 Q11/Q13搞清楚——为什么选错？概念不清？（预计提11分）</strong><br>
+  Q11(6分)+Q13(5分)=11分，作为第一梯队不应该丢。待沟通后：<br>
+  ① Q11搞清楚是审题问题还是理解偏差，针对性纠正<br>
+  ② Q13残差概念要厘清：残差=观测值-预测值，方向不能反
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">4</div>
+  <div><strong>📌 Q19(2)参变量分离计算要精确（预计提4分）</strong><br>
+  方法选对了但-2e算错，说明分离后的代数运算不够仔细。建议：<br>
+  ① 参变量分离后，将临界值代回原式验证<br>
+  ② 分离过程中注意不等号方向的变化
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">5</div>
+  <div><strong>✅ 长期攻克：圆台外接球+极值点偏移证明</strong><br>
+  Q7/Q19(3)属于中高难度题，当前能力已有基础，在检验习惯和计算稳定性提升后系统突破
+  </div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

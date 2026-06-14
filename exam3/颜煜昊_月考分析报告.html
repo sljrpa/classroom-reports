@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>颜煜昊 · 月考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e74c3c; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
+  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
+  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
+  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
+  .communicate-item:last-child { border-bottom: none; }
+  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
+  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
+  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .path-icon.urgent { background: #e74c3c; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
+  .score-bar .fill { height: 100%; border-radius: 9px; }
+  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
+  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+  <h1>颜煜昊 · 月考分析报告</h1>
+  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 29号</div>
+  <div class="score-big">94 / 150</div>
+  <div class="score-label">预估分 · 得分率 62.7%</div>
+</div>
+
+<!-- 板块1：整体得分概览 -->
+<div class="section">
+<h2>📊 整体得分概览</h2>
+<div class="table-wrap"><table>
+  <tr>
+    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  </tr>
+  <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>35</td><td>87.5%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:87.5%"></div></div></td>
+  </tr>
+  <tr>
+    <td>多选题 (Q9-Q11)</td><td>18</td><td>15</td><td>83.3%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:83.3%"></div></div></td>
+  </tr>
+  <tr>
+    <td>填空题 (Q12-Q14)</td><td>15</td><td>5</td><td>33.3%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
+  </tr>
+  <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>55</td><td>75.3%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:75.3%"></div></div></td>
+  </tr>
+  <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>39 估</td><td>50.6%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:50.6%"></div></div></td>
+  </tr>
+  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>总分</td><td>150</td><td>94 预估分</td><td>62.7%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:62.7%"></div></div></td>
+  </tr>
+</table></div>
+</div>
+
+<div class="section">
+<h2>❌ 未掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+  <tr><td>Q7</td><td>圆台与外接球</td><td><span class="tag-fail">不会</span></td><td class="wrap-cell">不会做</td></tr>
+  <tr><td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">不会</span></td><td class="wrap-cell">不会做</td></tr>
+  <tr><td>Q14</td><td>切线与曲线相切</td><td><span class="tag-fail">不会</span></td><td class="wrap-cell">不会做</td></tr>
+  <tr><td>Q16_2</td><td>角平分线长度</td><td><span class="tag-fail">未作答</span></td><td class="wrap-cell">正弦定理后就不会了，第二问做不了</td></tr>
+  <tr><td>Q17_1</td><td>线面垂直证明</td><td><span class="tag-fail">不会</span></td><td class="wrap-cell">面面垂直的性质定理不知道是什么</td></tr>
+  <tr><td>Q18_3</td><td>递推与范围</td><td><span class="tag-fail">不会</span></td><td class="wrap-cell">不会</td></tr>
+  <tr><td>Q19_2</td><td>零点与参数范围</td><td><span class="tag-fail">概念错误</span></td><td class="wrap-cell">不懂零点是y=0不是x=0，第二问没得分</td></tr>
+  <tr><td>Q19_3</td><td>极值点偏移证明</td><td><span class="tag-fail">有尝试</span></td><td class="wrap-cell">有尝试写但估计没分</td></tr>
+</table></div>
+</div>
+
+<div class="section">
+<h2>⚠️ 部分掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+  <tr><td>Q10</td><td>正四棱柱综合</td><td><span class="tag-partial">部分得分</span></td><td>3/6</td><td class="wrap-cell">选C和D，D对C错</td><td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>为什么选D而不选A？</td></tr>
+  <tr><td>Q16_1</td><td>正弦定理求角</td><td><span class="tag-partial">部分得分</span></td><td>3/7 估</td><td class="wrap-cell">正弦定理用了但之后不会了，方程里有三个角不知道sinA=sin(B+C)</td><td class="wrap-cell"></td></tr>
+</table></div>
+</div>
+
+<div class="section">
+<h2>✅ 已掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
+  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q3</td><td>向量</td><td>5/5 ✓</td></tr>
+  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
+  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
+  <tr><td>Q6</td><td>排列组合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q8</td><td>分段函数零点</td><td>5/5 ✓</td></tr>
+  <tr><td>Q9</td><td>三角函数图象变换</td><td>6/6 ✓</td></tr>
+  <tr><td>Q11</td><td>导数综合</td><td>6/6 ✓</td></tr>
+  <tr><td>Q12</td><td>三角恒等变换</td><td>5/5 ✓</td></tr>
+  <tr><td>Q15_1</td><td>等差数列通项</td><td>6/6 估 ✓</td></tr>
+  <tr><td>Q15_2</td><td>裂项求和</td><td>7/7 估 ✓</td></tr>
+  <tr><td>Q17_2</td><td>二面角</td><td>8/8 估 ✓</td></tr>
+  <tr><td>Q18_1</td><td>全概率公式</td><td>5/5 估 ✓</td></tr>
+  <tr><td>Q18_2</td><td>分布列与期望</td><td>6/6 估 ✓</td></tr>
+  <tr><td>Q19_1</td><td>切线方程</td><td>4/4 估 ✓</td></tr>
+</table></div>
+</div>
+
+<div class="section">
+<h2>💬 师生待沟通</h2>
+<div class="communicate-box">
+<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+<div class="communicate-item"><strong>Q7 圆台与外接球</strong>：应该是不会</div>
+<div class="communicate-item"><strong>Q10 正四棱柱综合</strong>：为什么选D而不选A？</div>
+<div class="communicate-item"><strong>Q13 线性回归残差</strong>：不会，待沟通</div>
+<div class="communicate-item"><strong>Q14 切线与曲线相切</strong>：不会，待沟通</div>
+</div>
+</div>
+
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+<!-- Q7 -->
+<div class="question-box wrong">
+  <div class="q-title">Q7 | 圆台与外接球 | 0/5</div>
+  <div class="q-content">圆台下底半径=2倍上底半径，侧面积3√10π，体积7π，求外接球表面积</div>
+  <div class="q-answer">✅ 正确答案：D（20π）</div>
+  <div class="q-student">❌ 颜煜昊作答：不会做</div>
+</div>
+
+<!-- Q10 -->
+<div class="question-box partial">
+  <div class="q-title">Q10 | 正四棱柱综合 | 3/6</div>
+  <div class="q-content">正四棱柱AA₁=2AB=2，O为DCC₁D₁对角线交点，判断四个结论</div>
+  <div class="q-answer">✅ 正确答案：BD</div>
+  <div class="q-student">❌ 颜煜昊作答：选C和D，D对C错</div>
+</div>
+
+<!-- Q13 -->
+<div class="question-box wrong">
+  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
+  <div class="q-content">线性回归残差</div>
+  <div class="q-student">❌ 颜煜昊作答：不会做</div>
+</div>
+
+<!-- Q14 -->
+<div class="question-box wrong">
+  <div class="q-title">Q14 | 切线与曲线相切 | 0/5</div>
+  <div class="q-content">y=x+lnx在(1,1)处切线与y=x²−2x−a相切，求a</div>
+  <div class="q-answer">✅ 正确答案：−3</div>
+  <div class="q-student">❌ 颜煜昊作答：不会做</div>
+</div>
+
+<!-- Q16_1 -->
+<div class="question-box partial">
+  <div class="q-title">Q16_1 | 正弦定理求角 | 估3/7</div>
+  <div class="q-content">正弦定理求角B</div>
+  <div class="q-answer">✅ 正确答案：B=π/3</div>
+  <div class="q-student">❌ 颜煜昊作答：正弦定理用了但之后不会了，方程里有三个角不知道sinA=sin(B+C)</div>
+  <div class="q-error">🔴 方程里有三个角，不知道把sinA换成sin(B+C)消元！这是正弦定理应用的核心技巧</div>
+  <div class="q-tip">💡 正弦定理得到方程后，如果角太多，用A=π-(B+C)消元，sinA=sin(B+C)</div>
+</div>
+
+<!-- Q16_2 -->
+<div class="question-box wrong">
+  <div class="q-title">Q16_2 | 角平分线长度 | 估0/8</div>
+  <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
+  <div class="q-answer">✅ 正确答案：BD=√6/6</div>
+  <div class="q-student">❌ 颜煜昊作答：正弦定理后就不会了，第二问做不了</div>
+</div>
+
+<!-- Q17_1 -->
+<div class="question-box wrong">
+  <div class="q-title">Q17_1 | 线面垂直证明 | 估0/7</div>
+  <div class="q-content">证明线面垂直</div>
+  <div class="q-student">❌ 颜煜昊作答：面面垂直的性质定理不知道是什么</div>
+  <div class="q-error">🔴 面面垂直的性质定理不知道是什么！公式抄20遍！</div>
+  <div class="q-tip">💡 面面垂直性质定理：两个平面垂直，一个平面内垂直于交线的直线垂直于另一个平面。公式抄20遍！</div>
+</div>
+
+<!-- Q18_3 -->
+<div class="question-box wrong">
+  <div class="q-title">Q18_3 | 递推与范围 | 估0/6</div>
+  <div class="q-content">递推与范围</div>
+  <div class="q-student">❌ 颜煜昊作答：不会</div>
+</div>
+
+<!-- Q19_2 -->
+<div class="question-box wrong">
+  <div class="q-title">Q19_2 | 零点与参数范围 | 估0/6</div>
+  <div class="q-content">f(x)有三个零点，求a的范围</div>
+  <div class="q-student">❌ 颜煜昊作答：不懂零点是y=0不是x=0，第二问没得分</div>
+  <div class="q-error">🔴 零点是f(x)=0的x值，不是x=0！你写的x=0说明你根本不知道零点的定义</div>
+  <div class="q-tip">💡 零点定义：f(x)=0的x值叫零点。令y=0解x，不是令x=0</div>
+</div>
+
+<!-- Q19_3 -->
+<div class="question-box wrong">
+  <div class="q-title">Q19_3 | 极值点偏移证明 | 估0/7</div>
+  <div class="q-content">极值点偏移证明</div>
+  <div class="q-student">❌ 颜煜昊作答：有尝试写但估计没分</div>
+</div>
+
+</div>
+
+<!-- 板块7：教师评价 -->
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="teacher-comment">
+<h3>💪 颜煜昊的答卷亮点</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>1. 单选只错了第7题！</strong>7/8=87.5%，非常不错！<br><br>
+<strong>2. Q9Q11多选全对！</strong>12分满分，多选判断力强。<br><br>
+<strong>3. Q15全对！</strong>数列题13分满分，等差数列通项+裂项求和都掌握了。<br><br>
+<strong>4. Q17(2)二面角算对了！</strong>建系+计算能力不错。<br><br>
+<strong>5. Q18(1)(2)都对了！</strong>概率统计基础扎实。<br><br>
+<strong>6. 客观题得分率高，大题Q15Q17(2)Q18都不错！</strong>
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题1：面面垂直性质定理不知道——公式抄20遍！</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>Q17(1)面面垂直的性质定理不知道是什么！</strong>这是立体几何最基本的定理之一，不会这个就无法证明线面垂直。<br><br>
+<strong>面面垂直性质定理：</strong>两个平面垂直，一个平面内垂直于交线的直线垂直于另一个平面。<br><br>
+<strong>公式抄20遍！</strong>抄到你能默写为止。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题2：Q16正弦定理后不会消元——非常离谱！</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>正弦定理用了但方程里有三个角，不知道sinA=sin(B+C)消元！</strong>这非常离谱，哥们！<br><br>
+在三角形中，A+B+C=π，所以sinA=sin(B+C)。这是正弦定理应用中最核心的消元技巧。方程里有三个未知数当然解不出来，必须消元！
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题3：零点概念搞反了</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>Q19(2)写的x=0——零点是y=0不是x=0！</strong><br><br>
+零点的定义：使f(x)=0的x值叫零点。所以是令y=f(x)=0，解出x，这些x值就是零点。<br><br>
+你写x=0说明你以为零点就是x轴上的0点，这是概念完全搞反了。
+</p>
+</div>
+
+</div>
+
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 最紧急：面面垂直性质定理抄20遍！（预计提7分）</strong><br>
+  Q17(1)完全不会。面面垂直性质定理：两个平面垂直→一个平面内垂直于交线的直线垂直于另一个平面。抄20遍！
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon urgent">2</div>
+  <div><strong>🔥 正弦定理消元技巧sinA=sin(B+C)（预计提7-15分）</strong><br>
+  Q16(1)方程里三个角不会消元。建议：<br>① 在三角形中A=π-(B+C)，所以sinA=sin(B+C)<br>② 正弦定理得到方程后，角太多就用这个关系消元<br>③ 这是解三角形最核心的消元技巧
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">3</div>
+  <div><strong>📌 零点概念纠正（预计提6分）</strong><br>
+  Q19(2)零点是f(x)=0的x值。建议：<br>① 零点=令y=0解出的x值<br>② 不是x=0！是f(x)=0<br>③ 三个零点意味着f(x)=0有三个不同的x解
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">4</div>
+  <div><strong>📌 Q10多选漏选+Q13Q14填空不会</strong><br>
+  Q10选CD漏A，Q13Q14不会做。建议：<br>① 多选题不确定的选项用代入验证<br>② Q13残差公式=实际值-预测值<br>③ Q14切线与曲线相切联立方程
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">5</div>
+  <div><strong>✅ 长期攻克：Q7圆台外接球+Q18(3)递推+Q19(3)极值点偏移</strong><br>
+  基础定理和概念纠正后，系统突破这些中高难度题
+  </div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

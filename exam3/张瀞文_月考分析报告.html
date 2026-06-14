@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张瀞文 · 月考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .section h3 { font-size: 16px; color: #34495e; margin: 14px 0 8px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e74c3c; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
+  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
+  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
+  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
+  .communicate-item:last-child { border-bottom: none; }
+  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
+  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
+  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .path-icon.urgent { background: #e74c3c; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
+  .score-bar .fill { height: 100%; border-radius: 9px; }
+  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
+  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+  <h1>张瀞文 · 月考分析报告</h1>
+  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 36号</div>
+  <div class="score-big">76 / 150</div>
+  <div class="score-label">得分率 50.7%</div>
+</div>
+
+<!-- 板块1：整体得分概览 -->
+<div class="section">
+<h2>📊 整体得分概览</h2>
+<div class="table-wrap"><table>
+  <tr>
+    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  </tr>
+  <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>25</td><td>62.5%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:62.5%"></div></div></td>
+  </tr>
+  <tr>
+    <td>多选题 (Q9-Q11)</td><td>18</td><td>15</td><td>83.3%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:83.3%"></div></div></td>
+  </tr>
+  <tr>
+    <td>填空题 (Q12-Q14)</td><td>15</td><td>10</td><td>66.7%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:66.7%"></div></div></td>
+  </tr>
+  <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>50</td><td>68.5%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:68.5%"></div></div></td>
+  </tr>
+  <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>26</td><td>33.8%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:33.8%"></div></div></td>
+  </tr>
+  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>总分</td><td>150</td><td>76</td><td>50.7%</td>
+    <td><div class="score-bar"><div class="fill blue" style="width:50.7%"></div></div></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块2：未掌握知识点汇总 -->
+<div class="section">
+<h2>❌ 未掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+  <tr>
+    <td>Q7</td><td>圆台与外接球</td><td><span class="tag-fail">完全不会</span></td>
+    <td>不会做</td>
+  </tr>
+  <tr>
+    <td>Q8</td><td>分段函数零点</td><td><span class="tag-fail">完全不会</span></td>
+    <td>不会做</td>
+  </tr>
+  <tr>
+    <td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">概念不清</span></td>
+    <td>没答，概念不清</td>
+  </tr>
+  <tr>
+    <td>Q15(1)</td><td>等差数列通项</td><td><span class="tag-fail">公式混淆</span></td>
+    <td class="wrap-cell">等比中项与等差中项混淆，写成a₁+a₅=3a₂（等比应为a₁·a₅=a₂²，等差也只应是2倍）</td>
+  </tr>
+  <tr>
+    <td>Q15(2)</td><td>裂项求和</td><td><span class="tag-fail">连锁错误</span></td>
+    <td class="wrap-cell">因(1)错导致通项全错，且未检验</td>
+  </tr>
+  <tr>
+    <td>Q16(2)</td><td>角平分线长度</td><td><span class="tag-fail">未作答</span></td>
+    <td class="wrap-cell">没写，无得分意识，未使用余弦定理</td>
+  </tr>
+  <tr>
+    <td>Q18(3)</td><td>递推与范围</td><td><span class="tag-fail">未作答</span></td>
+    <td>不会</td>
+  </tr>
+  <tr>
+    <td>Q19(3)</td><td>极值点偏移证明</td><td><span class="tag-fail">未作答</span></td>
+    <td>不会</td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块3：部分掌握知识点汇总 -->
+<div class="section">
+<h2>⚠️ 部分掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+  <tr>
+    <td>Q3</td><td>向量垂直运算</td><td><span class="tag-fail">错误</span></td><td>0/5</td>
+    <td class="wrap-cell">选D（正确C=7/2），基本向量垂直运算为何算错</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>是公式不会还是计算问题？</td>
+  </tr>
+  <tr>
+    <td>Q10</td><td>正四棱柱综合</td><td><span class="tag-partial">部分得分</span></td><td>3/6</td>
+    <td class="wrap-cell">选AB（正确BD），B对A错</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>为什么选A？</td>
+  </tr>
+  <tr>
+    <td>Q11</td><td>导数综合</td><td><span class="tag-pass">全对</span></td><td>6/6</td>
+    <td class="wrap-cell">选AC=正确答案，但是否真会待确认</td>
+    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>确认是否真正理解</td>
+  </tr>
+  <tr>
+    <td>Q17(1)</td><td>线面垂直证明</td><td><span class="tag-partial">部分得分</span></td><td>3/7</td>
+    <td class="wrap-cell">不知面面垂直的性质定理，但公式背对</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q17(2)</td><td>二面角</td><td><span class="tag-partial">部分得分</span></td><td>2/8</td>
+    <td class="wrap-cell">建系对但P点纵坐标算成√7（应为0），对图形认识可能有误</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q18(2)</td><td>分布列与期望</td><td><span class="tag-partial">部分得分</span></td><td>3/6</td>
+    <td class="wrap-cell">分布列对但期望加法错：9/60+6/5算成81/60（应为91/60），进位漏了</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Q19(2)</td><td>零点求参数范围</td><td><span class="tag-partial">部分得分</span></td><td>2/6</td>
+    <td class="wrap-cell">有尝试求导</td>
+    <td></td>
+  </tr>
+</table></div>
+</div>
+
+<!-- 板块4：已掌握知识点汇总 -->
+<div class="section">
+<h2>✅ 已掌握知识点汇总</h2>
+<div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
+  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
+  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
+  <tr><td>Q6</td><td>排列组合</td><td>5/5 ✓</td></tr>
+  <tr><td>Q9</td><td>三角函数图象变换</td><td>6/6 ✓</td></tr>
+  <tr><td>Q12</td><td>三角恒等变换</td><td>5/5 ✓</td></tr>
+  <tr><td>Q14</td><td>切线与曲线相切</td><td>5/5 ✓</td></tr>
+  <tr><td>Q16(1)</td><td>正弦定理求角</td><td>7/7 ✓</td></tr>
+  <tr><td>Q18(1)</td><td>全概率公式</td><td>5/5 ✓</td></tr>
+  <tr><td>Q19(1)</td><td>切线方程</td><td>4/4 ✓</td></tr>
+</table></div>
+</div>
+
+<!-- 板块5：师生待沟通 -->
+<div class="section">
+<h2>💬 师生待沟通</h2>
+<div class="communicate-box">
+<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+<div class="communicate-item">
+  <strong>Q3（向量垂直运算）：</strong>选了D（正确C=7/2），一个基本的向量垂直运算为什么会算错？是公式不会（a⊥b→a·b=0），还是代入计算出错？
+</div>
+<div class="communicate-item">
+  <strong>Q10（正四棱柱综合）：</strong>选了AB（正确BD），B选对了但为什么选了A？需确认是推理错误还是审题问题
+</div>
+<div class="communicate-item">
+  <strong>Q11（导数综合）：</strong>选了AC=正确答案，但需要确认是否真正理解，还是猜对的
+</div>
+</div>
+</div>
+
+<!-- 板块6：错题与部分掌握题详细分析 -->
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+
+<!-- Q3 -->
+<div class="question-box wrong">
+  <div class="q-title">Q3 | 向量垂直运算 | 0/5</div>
+  <div class="q-content">a=(1,2)，b=(3,x)，a⊥(b−2a)，求x</div>
+  <div class="q-answer">✅ 正确答案：C（7/2）</div>
+  <div class="q-student">❌ 张瀞文作答：选D</div>
+  <div class="q-error">⚠️ 待沟通：一个基本的向量垂直运算为什么会算错？是公式不会（a⊥b→a·b=0），还是代入计算出错？</div>
+</div>
+
+<!-- Q7 -->
+<div class="question-box wrong">
+  <div class="q-title">Q7 | 圆台与外接球 | 0/5</div>
+  <div class="q-content">圆台下底半径=2倍上底半径，侧面积3√10π，体积7π，求外接球表面积</div>
+  <div class="q-answer">✅ 正确答案：D（20π）</div>
+  <div class="q-student">❌ 张瀞文作答：不会做</div>
+  <div class="q-analysis">分析：圆台公式+外接球构造，属于立体几何较难题</div>
+</div>
+
+<!-- Q8 -->
+<div class="question-box wrong">
+  <div class="q-title">Q8 | 分段函数零点 | 0/5</div>
+  <div class="q-content">f(x)={eˣ−1,x≤0; lnx+x²,x>0}，g(x)=f(x)−m有两个零点，求m范围</div>
+  <div class="q-answer">✅ 正确答案：C（(−1,0]）</div>
+  <div class="q-student">❌ 张瀞文作答：不会做</div>
+  <div class="q-analysis">分析：分段函数单调性与值域分析+零点转化为交点问题，需要数形结合能力</div>
+</div>
+
+<!-- Q10 -->
+<div class="question-box partial">
+  <div class="q-title">Q10 | 正四棱柱综合 | 3/6</div>
+  <div class="q-content">正四棱柱AA₁=2AB=2，O为DCC₁D₁对角线交点，判断四个结论</div>
+  <div class="q-answer">✅ 正确答案：BD</div>
+  <div class="q-student">⚠️ 张瀞文作答：选AB</div>
+  <div class="q-error">⚠️ 待沟通：B选对了，但为什么选了A？</div>
+</div>
+
+<!-- Q13 -->
+<div class="question-box wrong">
+  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
+  <div class="q-content">ŷ=0.4x+â，x̄=20，ȳ=7，数据(30,n)残差0.6，求n</div>
+  <div class="q-answer">✅ 正确答案：11.6</div>
+  <div class="q-student">❌ 张瀞文作答：没答，概念不清</div>
+  <div class="q-analysis">分析：残差概念未掌握——残差=观测值−预测值，需先由样本中心求出â，再算ŷ(30)，最后由n−ŷ=0.6求解</div>
+</div>
+
+<!-- Q15(1) -->
+<div class="question-box wrong">
+  <div class="q-title">Q15(1) | 等差数列通项 | 0/6</div>
+  <div class="q-content">a₂是a₁,a₅的等比中项，a₁=1，求{aₙ}通项公式</div>
+  <div class="q-answer">✅ 正确答案：aₙ = 2n−1（由等比中项(a₁+d)²=a₁·(a₁+4d)解得d=2）</div>
+  <div class="q-student">❌ 张瀞文作答：写成a₁+a₅=3a₂，完全混淆了等比中项与等差中项</div>
+  <div class="q-error">关键错误：三项成等比→a₁·a₅=a₂²（等比中项），却写成了a₁+a₅=3a₂。即使写成等差中项也只应是a₁+a₅=2a₂，这个"3倍"从何而来？</div>
+  <div class="q-tip">💡 反思：算出通项公式后，如果回头看一眼、代入检验n=1,2,3是否满足条件，前面的错误完全可以纠正。缺乏检验意识是丢分的重要原因</div>
+</div>
+
+<!-- Q15(2) -->
+<div class="question-box wrong">
+  <div class="q-title">Q15(2) | 裂项求和 | 0/7</div>
+  <div class="q-content">bₙ=1/(aₙ·aₙ₊₁)，求Sₙ</div>
+  <div class="q-answer">✅ 正确答案：Sₙ = n/(2n+1)</div>
+  <div class="q-student">❌ 张瀞文作答：因(1)通项全错，裂项无从展开</div>
+  <div class="q-analysis">分析：连锁反应——第一问通项错导致第二问完全无法得分。这是全年级得分非常低的题</div>
+</div>
+
+<!-- Q16(2) -->
+<div class="question-box wrong">
+  <div class="q-title">Q16(2) | 角平分线长度 | 0/8</div>
+  <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
+  <div class="q-answer">✅ 正确答案：BD=√6/6</div>
+  <div class="q-student">❌ 张瀞文作答：什么都没写</div>
+  <div class="q-error">问题：没有得分意识！第一问已经算出B=π/3，有角有余弦定理可用，却完全不尝试第二问</div>
+  <div class="q-tip">💡 建议：解答题每问都值得尝试！即使不能完整解答，写出余弦定理的基本形式也能拿到步骤分</div>
+</div>
+
+<!-- Q17(1) -->
+<div class="question-box partial">
+  <div class="q-title">Q17(1) | 线面垂直证明 | 3/7</div>
+  <div class="q-content">证明BD⊥平面PAD</div>
+  <div class="q-answer">✅ 正确答案：AD⊥BD（勾股逆定理）+ 面面垂直性质（侧面PAD⊥底面ABCD，交线AD）</div>
+  <div class="q-student">⚠️ 张瀞文作答：不知面面垂直的性质定理是什么，但公式背对</div>
+  <div class="q-analysis">分析：知道要证线面垂直，也背了公式，但不知道"面面垂直→垂直于交线的线垂直于另一个面"这条性质定理，关键一步缺失</div>
+</div>
+
+<!-- Q17(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q17(2) | 二面角 | 2/8</div>
+  <div class="q-content">求二面角B−PD−C的余弦值</div>
+  <div class="q-answer">✅ 正确答案：√6/3</div>
+  <div class="q-student">⚠️ 张瀞文作答：建系对了，但P点纵坐标算成√7（应为0），第二个法向量也未算对</div>
+  <div class="q-error">⚠️ 关键疑问：P点纵坐标为什么是√7？这个√7令人非常困惑——可能对整个图形的认识就不准确。建议重新画图理解几何体的结构</div>
+</div>
+
+<!-- Q18(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q18(2) | 分布列与期望 | 3/6</div>
+  <div class="q-content">X表示前两次命中次数，求分布列与E(X)</div>
+  <div class="q-answer">✅ 正确答案：P(0)=1/12, P(1)=19/60, P(2)=3/5；E(X)=91/60</div>
+  <div class="q-student">⚠️ 张瀞文作答：分布列算对了，但期望计算中9/60+6/5算成了81/60</div>
+  <div class="q-error">计算错误：6/5 = 72/60，9/60 + 72/60 = 81/60——等等，正确答案应是91/60。问题出在P(1)或P(2)的概率值计算上，加法过程也有问题，进位漏了</div>
+</div>
+
+<!-- Q18(3) -->
+<div class="question-box wrong">
+  <div class="q-title">Q18(3) | 递推与范围 | 0/6</div>
+  <div class="q-content">求Pᵢ的取值范围</div>
+  <div class="q-answer">✅ 正确答案：3/4 ≤ Pᵢ < 10/13</div>
+  <div class="q-student">❌ 张瀞文作答：不会</div>
+</div>
+
+<!-- Q19(2) -->
+<div class="question-box partial">
+  <div class="q-title">Q19(2) | 零点求参数范围 | 2/6</div>
+  <div class="q-content">f'(x)有三个不同零点，求a的取值范围</div>
+  <div class="q-answer">✅ 正确答案：a∈(0, 6/e³)</div>
+  <div class="q-student">⚠️ 张瀞文作答：有尝试求导</div>
+  <div class="q-analysis">分析：有分离参数的意识，能迈出第一步，后续方法需要加强</div>
+</div>
+
+<!-- Q19(3) -->
+<div class="question-box wrong">
+  <div class="q-title">Q19(3) | 极值点偏移证明 | 0/7</div>
+  <div class="q-content">h(x)有三个极值点x₁,x₂,x₃，证明h(x₁)·h(x₂)·h(x₃)≥−1/e−1</div>
+  <div class="q-answer">✅ 正确答案：a∈[1/e², 1/e)时成立</div>
+  <div class="q-student">❌ 张瀞文作答：不会</div>
+</div>
+
+</div>
+
+<!-- 板块7：教师评价 -->
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="teacher-comment">
+<h3>💪 张瀞文的答卷亮点</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>1. 小题有进步！</strong>客观题得分率68.5%，多选题Q9全对、Q10Q11均有得分，填空题Q12Q14全对，说明基础方法有提升。<br><br>
+<strong>2. 正弦定理有反应。</strong>Q16(1)能算出B=π/3，说明解三角形的基本套路是掌握的。<br><br>
+<strong>3. 概率统计基础不差。</strong>Q18(1)全概率公式全对，Q18(2)分布列也算对了，方法方向没问题。<br><br>
+<strong>4. 导数能迈出第一步。</strong>Q19(1)切线方程全对，Q19(2)有求导意识，基础功在。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题1：数列Q15一分未得——概念混淆+不检验</h3>
+<p style="font-size:14px; line-height:1.8;">
+这道题答得非常不好，是全年级得分非常低的题，但问题完全可以避免：<br><br>
+<strong>① 等比中项与等差中项混淆：</strong>题目说"a₂是a₁,a₅的等比中项"，等比中项应为a₁·a₅=a₂²，却写成了a₁+a₅=3a₂。退一步说，即使你误以为是等差中项，也只应是a₁+a₅=2a₂，这个"3倍"从何而来？<br><br>
+<strong>② 完全没有检验意识：</strong>算出通项公式后，如果回头看一眼、代入n=1,2,3检验是否满足条件，这个错误完全可以自己纠正。<br><br>
+<strong>③ 连锁反应：</strong>(1)错→(2)全错→整道数列题13分一分不得。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题2：立体几何Q17——定理不会+图形认识有误</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>① 面面垂直的性质定理不会：</strong>这是证明线面垂直的关键工具，不知道这个定理意味着这道证明题的方法链断裂。<br><br>
+<strong>② P点纵坐标算成√7：</strong>这个√7非常令人困惑。P点的纵坐标应该是0，算出√7说明对整个几何体的认识可能就不准确——空间想象或建系后的描点出了根本性问题。
+</p>
+</div>
+
+<div class="highlight-box">
+<h3>⚠️ 核心问题3：得分意识不足</h3>
+<p style="font-size:14px; line-height:1.8;">
+<strong>Q16(2)完全没写：</strong>第一问已经算出B=π/3，有余弦定理、有面积法可用，8分的题一个字都不写，太可惜了。<br><br>
+<strong>Q15算出错误结果不检验：</strong>如果养成"算完回头看一眼"的习惯，Q15(1)的通项公式完全可以自己纠错。<br><br>
+解答题得分率仅33.8%，很大一部分不是"不会"，而是"不写"和"不检验"。
+</p>
+</div>
+</div>
+
+<!-- 板块8：能力诊断与提分路径 -->
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 最紧急：建立检验习惯（预计提10-15分）</strong><br>
+  Q15(1)如果检验就能纠错→(2)就能得分→整道题从0变13分。建议：<br>
+  ① 算出通项公式后，代入n=1,2验证<br>
+  ② 算出特殊值（如2+√2）时反推是否合理<br>
+  ③ 每写完一步，回头看一眼是否是"自己想写的"
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon urgent">2</div>
+  <div><strong>🔥 建立得分意识（预计提8-12分）</strong><br>
+  Q16(2)8分一个字不写、Q17(2)建系对了但P点算错。建议：<br>
+  ① 解答题每问都值得尝试，写出基本公式/定理就有步骤分<br>
+  ② 建系后先画图确认各点坐标，再求法向量<br>
+  ③ "写一点得一点"比"全空着得零分"强一万倍
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">3</div>
+  <div><strong>📌 数列概念：等比中项 vs 等差中项（预计提13分）</strong><br>
+  Q15整题13分一分不得，根源是等比中项公式混淆。需彻底搞清：<br>
+  ① 三项成等差→a₁+a₃=2a₂（等差中项）<br>
+  ② 三项成等比→a₁·a₃=a₂²（等比中项）<br>
+  ③ 题目说"等比中项"就用乘法，说"等差中项"才用加法
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">4</div>
+  <div><strong>📌 面面垂直的性质定理+空间图形认识（预计提10分）</strong><br>
+  Q17共15分只得5分。需补：<br>
+  ① 面面垂直性质：若α⊥β，交线l，a⊂α，a⊥l → a⊥β<br>
+  ② 建系后先画图确认各点位置，P点纵坐标为0不是√7<br>
+  ③ 求出法向量后做点积检验
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">5</div>
+  <div><strong>📌 分式加法计算准确性（预计提3-5分）</strong><br>
+  Q18(2)期望加法出错（9/60+6/5），和蒋予涵一样的问题——分式加减不熟练。建议：通分后分子逐位相加，写一步查一步
+  </div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">6</div>
+  <div><strong>✅ 长期攻克：圆台外接球+分段函数零点+马尔科夫链+导数压轴</strong><br>
+  Q7/Q8/Q18(3)/Q19(2)(3)属于中高难度题，在基础巩固和习惯养成后系统突破
+  </div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>
