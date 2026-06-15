@@ -1,0 +1,2818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>高三三班月考数学成绩分析报告</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Microsoft YaHei',sans-serif; background:#f5f7fa; color:#2c3e50; line-height:1.6; }
+.container { max-width:1400px; margin:0 auto; padding:20px; }
+h1 { text-align:center; color:#2c3e50; font-size:28px; margin-bottom:8px; }
+.subtitle { text-align:center; color:#7f8c8d; font-size:14px; margin-bottom:30px; }
+h2 { color:#2c3e50; font-size:20px; margin:30px 0 15px; padding-left:12px; border-left:4px solid #3498db; }
+h3 { color:#34495e; font-size:16px; margin:20px 0 10px; }
+.card { background:#fff; border-radius:10px; padding:24px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,0.06); overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:13px; table-layout:auto; }
+.overflow-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -2px; }
+th { background:#4472C4; color:#fff; padding:8px 6px; text-align:center; font-weight:500; }
+td { padding:7px 6px; text-align:center; border-bottom:1px solid #ecf0f1; }
+tr:hover td { background:#f0f4ff; }
+.up { color:#27ae60; font-weight:bold; }
+.down { color:#e67e22; font-weight:bold; }
+.stable { color:#f39c12; font-weight:bold; }
+.tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; color:#fff; margin:1px; }
+.tag-high { background:#27ae60; }
+.tag-mid { background:#f39c12; }
+.tag-low { background:#e67e22; }
+.bar-container { display:flex; align-items:center; margin:3px 0; }
+.bar-label { width:60px; text-align:right; font-size:12px; margin-right:8px; flex-shrink:0; }
+.bar-track { flex:1; height:22px; background:#ecf0f1; border-radius:4px; position:relative; overflow:hidden; }
+.bar-fill { height:100%; border-radius:4px; display:flex; align-items:center; padding-left:6px; font-size:11px; color:#fff; font-weight:500; min-width:30px; }
+.summary-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:15px 0; }
+.summary-item { background:#f8f9fa; border-radius:8px; padding:12px; text-align:center; }
+.summary-item .num { font-size:24px; font-weight:bold; color:#2c3e50; }
+.summary-item .label { font-size:12px; color:#7f8c8d; margin-top:4px; }
+.segment-bar { display:flex; height:30px; border-radius:6px; overflow:hidden; margin:10px 0; }
+.segment-bar div { display:flex; align-items:center; justify-content:center; font-size:11px; color:#fff; font-weight:500; }
+.group-card { border:1px solid #e0e0e0; border-radius:8px; padding:16px; margin:10px 0; }
+.group-header { font-size:15px; font-weight:bold; margin-bottom:8px; }
+.flex-row { display:flex; flex-wrap:wrap; gap:8px; margin:6px 0; }
+.name-pill { display:inline-block; padding:2px 10px; border-radius:12px; font-size:12px; margin:2px; }
+.score-rate { display:inline-block; padding:2px 6px; border-radius:3px; font-size:11px; font-weight:bold; }
+.mastery-high { background:#d5f5e3; color:#27ae60; }
+.mastery-mid { background:#fef9e7; color:#f39c12; }
+.mastery-low { background:#fadbd8; color:#e67e22; }
+.page-break { page-break-before:always; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>高三三班 · 月考数学成绩分析报告</h1>
+<p class="subtitle">2026年6月月考 | 期中→月考对比分析<br>注：戴孟澔答题卡未扫描，不计入统计</p>
+
+<div class="card">
+<h2>一、排名变化分析</h2>
+<h3>1.1 全员排名变化（按进步幅度排序）</h3>
+<table><tr><th>姓名</th><th>组</th><th>期中得分</th><th>期中校次</th><th>月考得分</th><th>月考校次</th><th>趋势</th></tr>
+<tr><td>杨子涵</td><td>8组</td><td>70</td><td>257</td><td>89</td><td>57</td><td><span class="up">↑200</span></td></tr>
+<tr><td>裴梦琳</td><td>6组</td><td>78</td><td>210</td><td>99</td><td>20</td><td><span class="up">↑190</span></td></tr>
+<tr><td>蒋予涵</td><td>1组</td><td>61</td><td>301</td><td>75</td><td>126</td><td><span class="up">↑175</span></td></tr>
+<tr><td>张伊璇</td><td>1组</td><td>65</td><td>286</td><td>76</td><td>118</td><td><span class="up">↑168</span></td></tr>
+<tr><td>颜煜昊</td><td>1组</td><td>81</td><td>194</td><td>89</td><td>57</td><td><span class="up">↑137</span></td></tr>
+<tr><td>张静茹</td><td>5组</td><td>71</td><td>249</td><td>74</td><td>132</td><td><span class="up">↑117</span></td></tr>
+<tr><td>高洪宇</td><td>4组</td><td>89</td><td>157</td><td>92</td><td>44</td><td><span class="up">↑113</span></td></tr>
+<tr><td>李果轩</td><td>3组</td><td>91</td><td>144</td><td>91</td><td>49</td><td><span class="up">↑95</span></td></tr>
+<tr><td>冯洪冉</td><td>4组</td><td>82</td><td>187</td><td>80</td><td>94</td><td><span class="up">↑93</span></td></tr>
+<tr><td>吴俊晖</td><td>6组</td><td>74</td><td>233</td><td>70</td><td>160</td><td><span class="up">↑73</span></td></tr>
+<tr><td>王喻婕</td><td>2组</td><td>78</td><td>210</td><td>73</td><td>140</td><td><span class="up">↑70</span></td></tr>
+<tr><td>曹家瑞</td><td>8组</td><td>56</td><td>322</td><td>56</td><td>257</td><td><span class="up">↑65</span></td></tr>
+<tr><td>刘鑫昶</td><td>6组</td><td>85</td><td>172</td><td>77</td><td>110</td><td><span class="up">↑62</span></td></tr>
+<tr><td>韦天宇</td><td>8组</td><td>101</td><td>75</td><td>99</td><td>20</td><td><span class="up">↑55</span></td></tr>
+<tr><td>王芊琪</td><td>2组</td><td>63</td><td>294</td><td>58</td><td>244</td><td><span class="up">↑50</span></td></tr>
+<tr><td>王潇</td><td>5组</td><td>99</td><td>89</td><td>89</td><td>57</td><td><span class="up">↑32</span></td></tr>
+<tr><td>赵子恒</td><td>3组</td><td>100</td><td>80</td><td>89</td><td>57</td><td><span class="up">↑23</span></td></tr>
+<tr><td>权容同</td><td>5组</td><td>92</td><td>140</td><td>76</td><td>118</td><td><span class="up">↑22</span></td></tr>
+<tr><td>孙悦瑄</td><td>8组</td><td>88</td><td>164</td><td>72</td><td>143</td><td><span class="up">↑21</span></td></tr>
+<tr><td>雷清和</td><td>8组</td><td>97</td><td>105</td><td>82</td><td>86</td><td><span class="up">↑19</span></td></tr>
+<tr><td>王艺润</td><td>1组</td><td>79</td><td>207</td><td>65</td><td>190</td><td><span class="up">↑17</span></td></tr>
+<tr><td>贾翔云</td><td>7组</td><td>107</td><td>46</td><td>96</td><td>30</td><td><span class="up">↑16</span></td></tr>
+<tr><td>巩子华</td><td>2组</td><td>119</td><td>13</td><td>109</td><td>3</td><td><span class="up">↑10</span></td></tr>
+<tr><td>单子玉</td><td>6组</td><td>117</td><td>17</td><td>105</td><td>7</td><td><span class="up">↑10</span></td></tr>
+<tr><td>马铄</td><td>1组</td><td>122</td><td>10</td><td>118</td><td>1</td><td><span class="up">↑9</span></td></tr>
+<tr><td>刘亦霄</td><td>5组</td><td>93</td><td>130</td><td>75</td><td>126</td><td><span class="up">↑4</span></td></tr>
+<tr><td>张瀞文</td><td>7组</td><td>84</td><td>177</td><td>68</td><td>173</td><td><span class="up">↑4</span></td></tr>
+<tr><td>李炫增</td><td>5组</td><td>106</td><td>51</td><td>91</td><td>49</td><td><span class="up">↑2</span></td></tr>
+<tr><td>邸明启</td><td>6组</td><td>96</td><td>112</td><td>77</td><td>110</td><td><span class="up">↑2</span></td></tr>
+<tr><td>吴浩铭</td><td>3组</td><td>126</td><td>6</td><td>104</td><td>10</td><td><span class="down">↓4</span></td></tr>
+<tr><td>郑智遥</td><td>2组</td><td>123</td><td>8</td><td>103</td><td>13</td><td><span class="down">↓5</span></td></tr>
+<tr><td>冯柯锦</td><td>7组</td><td>90</td><td>153</td><td>70</td><td>160</td><td><span class="down">↓7</span></td></tr>
+<tr><td>段云思源</td><td>3组</td><td>90</td><td>153</td><td>70</td><td>160</td><td><span class="down">↓7</span></td></tr>
+<tr><td>李宗锴</td><td>4组</td><td>73</td><td>240</td><td>57</td><td>254</td><td><span class="down">↓14</span></td></tr>
+<tr><td>韩利泽</td><td>3组</td><td>56</td><td>322</td><td>44</td><td>336</td><td><span class="down">↓14</span></td></tr>
+<tr><td>张子昱</td><td>6组</td><td>72</td><td>245</td><td>55</td><td>268</td><td><span class="down">↓23</span></td></tr>
+<tr><td>曹钰蔚</td><td>4组</td><td>91</td><td>144</td><td>68</td><td>173</td><td><span class="down">↓29</span></td></tr>
+<tr><td>马悦瑄</td><td>1组</td><td>89</td><td>157</td><td>65</td><td>190</td><td><span class="down">↓33</span></td></tr>
+<tr><td>高祎凡</td><td>8组</td><td>103</td><td>64</td><td>79</td><td>98</td><td><span class="down">↓34</span></td></tr>
+<tr><td>李丹妮</td><td>7组</td><td>104</td><td>58</td><td>78</td><td>105</td><td><span class="down">↓47</span></td></tr>
+<tr><td>姜程洋</td><td>4组</td><td>97</td><td>105</td><td>66</td><td>183</td><td><span class="down">↓78</span></td></tr>
+<tr><td>任思羽</td><td>7组</td><td>103</td><td>64</td><td>72</td><td>143</td><td><span class="down">↓79</span></td></tr>
+<tr><td>高翊洋</td><td>4组</td><td>73</td><td>240</td><td>47</td><td>323</td><td><span class="down">↓83</span></td></tr>
+<tr><td>李明远</td><td>2组</td><td>71</td><td>249</td><td>42</td><td>344</td><td><span class="down">↓95</span></td></tr>
+<tr><td>姬瑾萱</td><td>6组</td><td>113</td><td>31</td><td>74</td><td>132</td><td><span class="down">↓101</span></td></tr>
+<tr><td>王祖雄</td><td>8组</td><td>119</td><td>13</td><td>75</td><td>126</td><td><span class="down">↓113</span></td></tr>
+<tr><td>梁卿瑜</td><td>3组</td><td>99</td><td>89</td><td>62</td><td>211</td><td><span class="down">↓122</span></td></tr>
+<tr><td>陆奕彤</td><td>2组</td><td>116</td><td>20</td><td>70</td><td>160</td><td><span class="down">↓140</span></td></tr>
+<tr><td>俞成辉</td><td>7组</td><td>100</td><td>80</td><td>58</td><td>244</td><td><span class="down">↓164</span></td></tr>
+</table>
+<h3>1.2 排名变化分段统计</h3>
+<div class="segment-bar"><div style="width:32.6530612244898%;background:#27ae60" title="大幅进步(↑30+)">16人</div><div style="width:16.3265306122449%;background:#2ecc71" title="明显进步(↑10~29)">8人</div><div style="width:18.367346938775512%;background:#f39c12" title="基本持平(-9~+9)">9人</div><div style="width:8.16326530612245%;background:#e67e22" title="明显退步(↓10~29)">4人</div><div style="width:24.489795918367346%;background:#e67e22" title="大幅退步(↓30+)">12人</div></div>
+<div style="display:flex;justify-content:space-around;font-size:12px;margin:6px 0"><div style="flex:1;text-align:center"><span style="color:#27ae60;font-weight:bold">● 大幅进步(↑30+)</span><br>16人<br><span style="font-size:11px;color:#7f8c8d">韦天宇(+55)、王潇(+32)、李果轩(+95)、高洪宇(+113)、刘鑫昶(+62)、冯洪冉(+93)、颜煜昊(+137)、裴梦琳(+190)…</span></div><div style="flex:1;text-align:center"><span style="color:#2ecc71;font-weight:bold">● 明显进步(↑10~29)</span><br>8人<br><span style="font-size:11px;color:#7f8c8d">巩子华(+10)、单子玉(+10)、贾翔云(+16)、赵子恒(+23)、雷清和(+19)、权容同(+22)、孙悦瑄(+21)、王艺润(+17)</span></div><div style="flex:1;text-align:center"><span style="color:#f39c12;font-weight:bold">● 基本持平(-9~+9)</span><br>9人<br><span style="font-size:11px;color:#7f8c8d">吴浩铭(-4)、郑智遥(-5)、马铄(+9)、李炫增(+2)、邸明启(+2)、刘亦霄(+4)、冯柯锦(-7)、段云思源(-7)…</span></div><div style="flex:1;text-align:center"><span style="color:#e67e22;font-weight:bold">● 明显退步(↓10~29)</span><br>4人<br><span style="font-size:11px;color:#7f8c8d">曹钰蔚(-29)、李宗锴(-14)、张子昱(-23)、韩利泽(-14)</span></div><div style="flex:1;text-align:center"><span style="color:#e67e22;font-weight:bold">● 大幅退步(↓30+)</span><br>12人<br><span style="font-size:11px;color:#7f8c8d">王祖雄(-113)、陆奕彤(-140)、姬瑾萱(-101)、李丹妮(-47)、任思羽(-79)、高祎凡(-34)、俞成辉(-164)、梁卿瑜(-122)…</span></div></div>
+<h3>1.3 成绩考前且稳定的同学（期中校次≤30 且 月考校次≤30）</h3>
+<table><tr><th>姓名</th><th>组</th><th>期中校次</th><th>月考校次</th><th>变化</th></tr>
+<tr><td>巩子华</td><td>2组</td><td>13</td><td>3</td><td class="up">+10</td></tr>
+<tr><td>单子玉</td><td>6组</td><td>17</td><td>7</td><td class="up">+10</td></tr>
+<tr><td>马铄</td><td>1组</td><td>10</td><td>1</td><td class="up">+9</td></tr>
+<tr><td>吴浩铭</td><td>3组</td><td>6</td><td>10</td><td class="down">-4</td></tr>
+<tr><td>郑智遥</td><td>2组</td><td>8</td><td>13</td><td class="down">-5</td></tr>
+</table></div>
+<div class="card page-break">
+<h2>二、各组月考成绩信息</h2>
+<h3>2.1 组均分与排名</h3>
+<table><tr><th>排名</th><th>组别</th><th>人数</th><th>均分</th><th>最高分</th><th>最低分</th><th>高分(≥90)</th><th>中段(60-89)</th><th>低分(&lt;60)</th></tr>
+<tr><td>1</td><td>1组</td><td>6</td>
+    <td><b>81.3</b></td><td>118</td><td>65</td>
+    <td><span class="tag tag-high">1人</span></td>
+    <td><span class="tag tag-mid">5人</span></td>
+    <td><span class="tag tag-low">0人</span></td></tr>
+<tr><td>2</td><td>5组</td><td>5</td>
+    <td><b>81.0</b></td><td>91</td><td>74</td>
+    <td><span class="tag tag-high">1人</span></td>
+    <td><span class="tag tag-mid">4人</span></td>
+    <td><span class="tag tag-low">0人</span></td></tr>
+<tr><td>3</td><td>6组</td><td>7</td>
+    <td><b>79.6</b></td><td>105</td><td>55</td>
+    <td><span class="tag tag-high">2人</span></td>
+    <td><span class="tag tag-mid">4人</span></td>
+    <td><span class="tag tag-low">1人</span></td></tr>
+<tr><td>4</td><td>8组</td><td>7</td>
+    <td><b>78.9</b></td><td>99</td><td>56</td>
+    <td><span class="tag tag-high">1人</span></td>
+    <td><span class="tag tag-mid">5人</span></td>
+    <td><span class="tag tag-low">1人</span></td></tr>
+<tr><td>5</td><td>3组</td><td>6</td>
+    <td><b>76.7</b></td><td>104</td><td>44</td>
+    <td><span class="tag tag-high">2人</span></td>
+    <td><span class="tag tag-mid">3人</span></td>
+    <td><span class="tag tag-low">1人</span></td></tr>
+<tr><td>6</td><td>2组</td><td>6</td>
+    <td><b>75.8</b></td><td>109</td><td>42</td>
+    <td><span class="tag tag-high">2人</span></td>
+    <td><span class="tag tag-mid">2人</span></td>
+    <td><span class="tag tag-low">2人</span></td></tr>
+<tr><td>7</td><td>7组</td><td>6</td>
+    <td><b>73.7</b></td><td>96</td><td>58</td>
+    <td><span class="tag tag-high">1人</span></td>
+    <td><span class="tag tag-mid">4人</span></td>
+    <td><span class="tag tag-low">1人</span></td></tr>
+<tr><td>8</td><td>4组</td><td>6</td>
+    <td><b>68.3</b></td><td>92</td><td>47</td>
+    <td><span class="tag tag-high">1人</span></td>
+    <td><span class="tag tag-mid">3人</span></td>
+    <td><span class="tag tag-low">2人</span></td></tr>
+</table>
+<h3>2.2 各组分数段分布</h3>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">1组（均分81.3，排名第1）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:16.666666666666664%;background:#27ae60">1人</div><div style="width:83.33333333333334%;background:#f39c12">5人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">马铄 118</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">颜煜昊 89</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">张伊璇 76</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">蒋予涵 75</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">马悦瑄 65</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">王艺润 65</span></div></div>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">5组（均分81.0，排名第2）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:20.0%;background:#27ae60">1人</div><div style="width:80.0%;background:#f39c12">4人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">李炫增 91</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">王潇 89</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">权容同 76</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">刘亦霄 75</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">张静茹 74</span><span class="name-pill" style="background:#e8e8e8;color:#999">戴孟澔 <span style="font-size:10px">未扫描</span></span></div></div>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">6组（均分79.6，排名第3）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:28.57142857142857%;background:#27ae60">2人</div><div style="width:57.14285714285714%;background:#f39c12">4人</div><div style="width:14.285714285714285%;background:#e67e22">1人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">单子玉 105</span><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">裴梦琳 99</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">邸明启 77</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">刘鑫昶 77</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">姬瑾萱 74</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">吴俊晖 70</span><span class="name-pill" style="background:#e8e8e8;color:#555">张子昱 55</span></div></div>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">8组（均分78.9，排名第4）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:14.285714285714285%;background:#27ae60">1人</div><div style="width:71.42857142857143%;background:#f39c12">5人</div><div style="width:14.285714285714285%;background:#e67e22">1人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">韦天宇 99</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">杨子涵 89</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">雷清和 82</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">高祎凡 79</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">王祖雄 75</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">孙悦瑄 72</span><span class="name-pill" style="background:#e8e8e8;color:#555">曹家瑞 56</span></div></div>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">3组（均分76.7，排名第5）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:33.33333333333333%;background:#27ae60">2人</div><div style="width:50.0%;background:#f39c12">3人</div><div style="width:16.666666666666664%;background:#e67e22">1人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">吴浩铭 104</span><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">李果轩 91</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">赵子恒 89</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">段云思源 70</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">梁卿瑜 62</span><span class="name-pill" style="background:#e8e8e8;color:#555">韩利泽 44</span></div></div>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">2组（均分75.8，排名第6）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:33.33333333333333%;background:#27ae60">2人</div><div style="width:33.33333333333333%;background:#f39c12">2人</div><div style="width:33.33333333333333%;background:#e67e22">2人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">巩子华 109</span><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">郑智遥 103</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">王喻婕 73</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">陆奕彤 70</span><span class="name-pill" style="background:#e8e8e8;color:#555">王芊琪 58</span><span class="name-pill" style="background:#e8e8e8;color:#555">李明远 42</span></div></div>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">7组（均分73.7，排名第7）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:16.666666666666664%;background:#27ae60">1人</div><div style="width:66.66666666666666%;background:#f39c12">4人</div><div style="width:16.666666666666664%;background:#e67e22">1人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">贾翔云 96</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">李丹妮 78</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">任思羽 72</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">冯柯锦 70</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">张瀞文 68</span><span class="name-pill" style="background:#e8e8e8;color:#555">俞成辉 58</span></div></div>
+<div style="margin:8px 0">
+    <div style="font-weight:bold;margin-bottom:4px">4组（均分68.3，排名第8）</div>
+    <div class="segment-bar" style="height:24px"><div style="width:16.666666666666664%;background:#27ae60">1人</div><div style="width:50.0%;background:#f39c12">3人</div><div style="width:33.33333333333333%;background:#e67e22">2人</div></div>
+    <div class="flex-row"><span class="name-pill" style="background:#d5f5e3;color:#2c3e50">高洪宇 92</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">冯洪冉 80</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">曹钰蔚 68</span><span class="name-pill" style="background:#fef9e7;color:#2c3e50">姜程洋 66</span><span class="name-pill" style="background:#e8e8e8;color:#555">李宗锴 57</span><span class="name-pill" style="background:#e8e8e8;color:#555">高翊洋 47</span></div></div>
+</div>
+<div class="card page-break">
+<h2>三、各组题型均分与排名</h2>
+<h3>单选题均分（满分40分）</h3>
+<table><tr><th>排名</th><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1</td><td>1组</td><td>31.7</td><td>79.2%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:79.16666666666667%;background:#27ae60">31.7</div></div></div></td></tr>
+<tr><td>2</td><td>7组</td><td>31.7</td><td>79.2%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:79.16666666666667%;background:#27ae60">31.7</div></div></div></td></tr>
+<tr><td>3</td><td>6组</td><td>31.4</td><td>78.6%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:78.57142857142857%;background:#27ae60">31.4</div></div></div></td></tr>
+<tr><td>4</td><td>8组</td><td>30.7</td><td>76.8%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:76.78571428571429%;background:#27ae60">30.7</div></div></div></td></tr>
+<tr><td>5</td><td>5组</td><td>30.0</td><td>75.0%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:75.0%;background:#27ae60">30.0</div></div></div></td></tr>
+<tr><td>6</td><td>2组</td><td>29.2</td><td>72.9%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:72.91666666666667%;background:#27ae60">29.2</div></div></div></td></tr>
+<tr><td>7</td><td>3组</td><td>29.2</td><td>72.9%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:72.91666666666667%;background:#27ae60">29.2</div></div></div></td></tr>
+<tr><td>8</td><td>4组</td><td>25.8</td><td>64.6%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:64.58333333333333%;background:#f39c12">25.8</div></div></div></td></tr>
+</table>
+<h3>多选题均分（满分18分）</h3>
+<table><tr><th>排名</th><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1</td><td>4组</td><td>10.0</td><td>55.6%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:55.55555555555556%;background:#f39c12">10.0</div></div></div></td></tr>
+<tr><td>2</td><td>5组</td><td>9.6</td><td>53.3%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:53.333333333333336%;background:#f39c12">9.6</div></div></div></td></tr>
+<tr><td>3</td><td>1组</td><td>9.0</td><td>50.0%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#f39c12">9.0</div></div></div></td></tr>
+<tr><td>4</td><td>3组</td><td>9.0</td><td>50.0%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#f39c12">9.0</div></div></div></td></tr>
+<tr><td>5</td><td>8组</td><td>8.6</td><td>47.6%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:47.61904761904761%;background:#e67e22">8.6</div></div></div></td></tr>
+<tr><td>6</td><td>6组</td><td>8.1</td><td>45.2%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:45.238095238095234%;background:#e67e22">8.1</div></div></div></td></tr>
+<tr><td>7</td><td>7组</td><td>7.0</td><td>38.9%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:38.88888888888889%;background:#e67e22">7.0</div></div></div></td></tr>
+<tr><td>8</td><td>2组</td><td>6.5</td><td>36.1%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:36.11111111111111%;background:#e67e22">6.5</div></div></div></td></tr>
+</table>
+<h3>解答题均分（满分92分）</h3>
+<table><tr><th>排名</th><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1</td><td>5组</td><td>41.4</td><td>45.0%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:45.0%;background:#e67e22">41.4</div></div></div></td></tr>
+<tr><td>2</td><td>1组</td><td>40.7</td><td>44.2%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:44.20289855072463%;background:#e67e22">40.7</div></div></div></td></tr>
+<tr><td>3</td><td>2组</td><td>40.2</td><td>43.7%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:43.65942028985507%;background:#e67e22">40.2</div></div></div></td></tr>
+<tr><td>4</td><td>6组</td><td>40.0</td><td>43.5%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:43.47826086956522%;background:#e67e22">40.0</div></div></div></td></tr>
+<tr><td>5</td><td>8组</td><td>39.6</td><td>43.0%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:43.01242236024844%;background:#e67e22">39.6</div></div></div></td></tr>
+<tr><td>6</td><td>3组</td><td>38.5</td><td>41.8%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:41.84782608695652%;background:#e67e22">38.5</div></div></div></td></tr>
+<tr><td>7</td><td>7组</td><td>35.0</td><td>38.0%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:38.04347826086957%;background:#e67e22">35.0</div></div></div></td></tr>
+<tr><td>8</td><td>4组</td><td>32.5</td><td>35.3%</td>
+
+        <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:35.32608695652174%;background:#e67e22">32.5</div></div></div></td></tr>
+</table>
+</div>
+<div class="card page-break">
+<h2>四、组维度知识点掌握情况</h2>
+<h3>4.1 各组各题得分率矩阵</h3>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th>
+<th style="font-size:10px;line-height:1.3">Q1<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th>
+<th style="font-size:10px;line-height:1.3">Q2<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th>
+<th style="font-size:10px;line-height:1.3">Q3<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th>
+<th style="font-size:10px;line-height:1.3">Q4<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th>
+<th style="font-size:10px;line-height:1.3">Q5<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th>
+<th style="font-size:10px;line-height:1.3">Q6<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th>
+<th style="font-size:10px;line-height:1.3">Q7<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th>
+<th style="font-size:10px;line-height:1.3">Q8<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th>
+<th style="font-size:10px;line-height:1.3">Q9<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th>
+<th style="font-size:10px;line-height:1.3">Q10<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th>
+<th style="font-size:10px;line-height:1.3">Q11<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th>
+<th style="font-size:10px;line-height:1.3">Q12<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th>
+<th style="font-size:10px;line-height:1.3">Q15<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th>
+<th style="font-size:10px;line-height:1.3">Q16<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th>
+<th style="font-size:10px;line-height:1.3">Q17<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th>
+<th style="font-size:10px;line-height:1.3">Q18<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th>
+<th style="font-size:10px;line-height:1.3">Q19<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th>
+</tr>
+<tr><td style="font-weight:bold">1组</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">0%</td>
+<td style="background:rgb(113,206,113);color:#fff;font-size:11px;font-weight:500">67%</td>
+<td style="background:rgb(94,196,94);color:#fff;font-size:11px;font-weight:500">75%</td>
+<td style="background:rgb(181,226,174);color:#2c3e50;font-size:11px;font-weight:500">42%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(188,229,182);color:#2c3e50;font-size:11px;font-weight:500">39%</td>
+<td style="background:rgb(92,195,92);color:#fff;font-size:11px;font-weight:500">76%</td>
+<td style="background:rgb(222,241,220);color:#2c3e50;font-size:11px;font-weight:500">26%</td>
+<td style="background:rgb(133,214,132);color:#2c3e50;font-size:11px;font-weight:500">59%</td>
+<td style="background:rgb(190,229,184);color:#2c3e50;font-size:11px;font-weight:500">38%</td>
+<td style="background:rgb(200,233,195);color:#2c3e50;font-size:11px;font-weight:500">34%</td>
+</tr>
+<tr><td style="font-weight:bold">5组</td>
+<td style="background:rgb(82,190,82);color:#fff;font-size:11px;font-weight:500">80%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(82,190,82);color:#fff;font-size:11px;font-weight:500">80%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">0%</td>
+<td style="background:rgb(186,228,179);color:#2c3e50;font-size:11px;font-weight:500">40%</td>
+<td style="background:rgb(82,190,82);color:#fff;font-size:11px;font-weight:500">80%</td>
+<td style="background:rgb(186,228,179);color:#2c3e50;font-size:11px;font-weight:500">40%</td>
+<td style="background:rgb(186,228,179);color:#2c3e50;font-size:11px;font-weight:500">40%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(168,223,163);color:#2c3e50;font-size:11px;font-weight:500">46%</td>
+<td style="background:rgb(174,225,169);color:#2c3e50;font-size:11px;font-weight:500">44%</td>
+<td style="background:rgb(114,206,114);color:#fff;font-size:11px;font-weight:500">67%</td>
+<td style="background:rgb(153,219,150);color:#2c3e50;font-size:11px;font-weight:500">52%</td>
+<td style="background:rgb(212,237,209);color:#2c3e50;font-size:11px;font-weight:500">29%</td>
+</tr>
+<tr><td style="font-weight:bold">6组</td>
+<td style="background:rgb(69,185,86);color:#fff;font-size:11px;font-weight:500">86%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(138,216,137);color:#2c3e50;font-size:11px;font-weight:500">57%</td>
+<td style="background:rgb(214,238,211);color:#2c3e50;font-size:11px;font-weight:500">29%</td>
+<td style="background:rgb(138,216,137);color:#2c3e50;font-size:11px;font-weight:500">57%</td>
+<td style="background:rgb(138,216,137);color:#2c3e50;font-size:11px;font-weight:500">57%</td>
+<td style="background:rgb(196,231,191);color:#2c3e50;font-size:11px;font-weight:500">36%</td>
+<td style="background:rgb(178,226,172);color:#2c3e50;font-size:11px;font-weight:500">43%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(92,195,92);color:#fff;font-size:11px;font-weight:500">76%</td>
+<td style="background:rgb(224,241,222);color:#2c3e50;font-size:11px;font-weight:500">25%</td>
+<td style="background:rgb(127,212,127);color:#fff;font-size:11px;font-weight:500">61%</td>
+<td style="background:rgb(180,226,174);color:#2c3e50;font-size:11px;font-weight:500">42%</td>
+<td style="background:rgb(210,236,206);color:#2c3e50;font-size:11px;font-weight:500">30%</td>
+</tr>
+<tr><td style="font-weight:bold">8组</td>
+<td style="background:rgb(69,185,86);color:#fff;font-size:11px;font-weight:500">86%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(138,216,137);color:#2c3e50;font-size:11px;font-weight:500">57%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">14%</td>
+<td style="background:rgb(138,216,137);color:#2c3e50;font-size:11px;font-weight:500">57%</td>
+<td style="background:rgb(85,191,85);color:#fff;font-size:11px;font-weight:500">79%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">14%</td>
+<td style="background:rgb(158,221,154);color:#2c3e50;font-size:11px;font-weight:500">50%</td>
+<td style="background:rgb(190,229,184);color:#2c3e50;font-size:11px;font-weight:500">38%</td>
+<td style="background:rgb(144,217,142);color:#2c3e50;font-size:11px;font-weight:500">55%</td>
+<td style="background:rgb(195,231,189);color:#2c3e50;font-size:11px;font-weight:500">36%</td>
+<td style="background:rgb(135,215,134);color:#2c3e50;font-size:11px;font-weight:500">58%</td>
+<td style="background:rgb(170,224,165);color:#2c3e50;font-size:11px;font-weight:500">45%</td>
+<td style="background:rgb(214,238,211);color:#2c3e50;font-size:11px;font-weight:500">29%</td>
+</tr>
+<tr><td style="font-weight:bold">3组</td>
+<td style="background:rgb(113,206,113);color:#fff;font-size:11px;font-weight:500">67%</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(113,206,113);color:#fff;font-size:11px;font-weight:500">67%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">17%</td>
+<td style="background:rgb(158,221,154);color:#2c3e50;font-size:11px;font-weight:500">50%</td>
+<td style="background:rgb(94,196,94);color:#fff;font-size:11px;font-weight:500">75%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(181,226,174);color:#2c3e50;font-size:11px;font-weight:500">42%</td>
+<td style="background:rgb(216,239,213);color:#2c3e50;font-size:11px;font-weight:500">28%</td>
+<td style="background:rgb(114,206,114);color:#fff;font-size:11px;font-weight:500">67%</td>
+<td style="background:rgb(191,230,185);color:#2c3e50;font-size:11px;font-weight:500">38%</td>
+<td style="background:rgb(122,210,122);color:#fff;font-size:11px;font-weight:500">63%</td>
+<td style="background:rgb(185,227,178);color:#2c3e50;font-size:11px;font-weight:500">40%</td>
+<td style="background:rgb(232,244,231);color:#2c3e50;font-size:11px;font-weight:500">22%</td>
+</tr>
+<tr><td style="font-weight:bold">2组</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(158,221,154);color:#2c3e50;font-size:11px;font-weight:500">50%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(158,221,154);color:#2c3e50;font-size:11px;font-weight:500">50%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(223,241,221);color:#2c3e50;font-size:11px;font-weight:500">25%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">17%</td>
+<td style="background:rgb(117,207,117);color:#fff;font-size:11px;font-weight:500">65%</td>
+<td style="background:rgb(164,222,159);color:#2c3e50;font-size:11px;font-weight:500">48%</td>
+<td style="background:rgb(119,208,119);color:#fff;font-size:11px;font-weight:500">64%</td>
+<td style="background:rgb(177,225,171);color:#2c3e50;font-size:11px;font-weight:500">43%</td>
+<td style="background:rgb(212,237,209);color:#2c3e50;font-size:11px;font-weight:500">29%</td>
+</tr>
+<tr><td style="font-weight:bold">7组</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">17%</td>
+<td style="background:rgb(202,234,198);color:#2c3e50;font-size:11px;font-weight:500">33%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">0%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">17%</td>
+<td style="background:rgb(216,239,213);color:#2c3e50;font-size:11px;font-weight:500">28%</td>
+<td style="background:rgb(179,226,173);color:#2c3e50;font-size:11px;font-weight:500">42%</td>
+<td style="background:rgb(219,240,217);color:#2c3e50;font-size:11px;font-weight:500">27%</td>
+<td style="background:rgb(127,212,127);color:#fff;font-size:11px;font-weight:500">61%</td>
+<td style="background:rgb(171,224,166);color:#2c3e50;font-size:11px;font-weight:500">45%</td>
+<td style="background:rgb(219,240,217);color:#2c3e50;font-size:11px;font-weight:500">26%</td>
+</tr>
+<tr><td style="font-weight:bold">4组</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(39,174,96);color:#fff;font-size:11px;font-weight:500">100%</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(158,221,154);color:#2c3e50;font-size:11px;font-weight:500">50%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">0%</td>
+<td style="background:rgb(236,246,236);color:#2c3e50;font-size:11px;font-weight:500">0%</td>
+<td style="background:rgb(74,187,84);color:#fff;font-size:11px;font-weight:500">83%</td>
+<td style="background:rgb(181,226,174);color:#2c3e50;font-size:11px;font-weight:500">42%</td>
+<td style="background:rgb(181,226,174);color:#2c3e50;font-size:11px;font-weight:500">42%</td>
+<td style="background:rgb(188,229,182);color:#2c3e50;font-size:11px;font-weight:500">39%</td>
+<td style="background:rgb(150,219,148);color:#2c3e50;font-size:11px;font-weight:500">53%</td>
+<td style="background:rgb(227,243,226);color:#2c3e50;font-size:11px;font-weight:500">23%</td>
+<td style="background:rgb(179,226,173);color:#2c3e50;font-size:11px;font-weight:500">42%</td>
+<td style="background:rgb(207,235,203);color:#2c3e50;font-size:11px;font-weight:500">31%</td>
+<td style="background:rgb(217,239,214);color:#2c3e50;font-size:11px;font-weight:500">27%</td>
+</tr>
+</table></div>
+<h3>4.2 各组薄弱知识点（得分率&lt;50%）</h3>
+<div style="margin:4px 0"><b>1组：</b>Q7(圆台外接球) 0%、Q16(解三角形(正弦定理+角平分线)) 26%、Q11(导数综合) 33%、Q19(导数大题(切线+零点+极值点偏移)) 34%、Q18(概率(全概率+分布列+递推)) 38%、Q12(填空题) 39%、Q10(正四棱柱综合) 42%</div>
+<div style="margin:4px 0"><b>5组：</b>Q7(圆台外接球) 0%、Q19(导数大题(切线+零点+极值点偏移)) 29%、Q12(填空题) 33%、Q8(分段函数零点) 40%、Q10(正四棱柱综合) 40%、Q11(导数综合) 40%、Q16(解三角形(正弦定理+角平分线)) 44%、Q15(等差数列(通项+裂项求和)) 46%</div>
+<div style="margin:4px 0"><b>6组：</b>Q16(解三角形(正弦定理+角平分线)) 25%、Q7(圆台外接球) 29%、Q19(导数大题(切线+零点+极值点偏移)) 30%、Q12(填空题) 33%、Q10(正四棱柱综合) 36%、Q18(概率(全概率+分布列+递推)) 42%、Q11(导数综合) 43%</div>
+<div style="margin:4px 0"><b>8组：</b>Q7(圆台外接球) 14%、Q10(正四棱柱综合) 14%、Q19(导数大题(切线+零点+极值点偏移)) 29%、Q16(解三角形(正弦定理+角平分线)) 36%、Q12(填空题) 38%、Q18(概率(全概率+分布列+递推)) 45%</div>
+<div style="margin:4px 0"><b>3组：</b>Q7(圆台外接球) 17%、Q19(导数大题(切线+零点+极值点偏移)) 22%、Q12(填空题) 28%、Q10(正四棱柱综合) 33%、Q16(解三角形(正弦定理+角平分线)) 38%、Q18(概率(全概率+分布列+递推)) 40%、Q11(导数综合) 42%</div>
+<div style="margin:4px 0"><b>2组：</b>Q12(填空题) 17%、Q11(导数综合) 25%、Q19(导数大题(切线+零点+极值点偏移)) 29%、Q10(正四棱柱综合) 33%、Q7(圆台外接球) 33%、Q8(分段函数零点) 33%、Q18(概率(全概率+分布列+递推)) 43%、Q16(解三角形(正弦定理+角平分线)) 48%</div>
+<div style="margin:4px 0"><b>7组：</b>Q10(正四棱柱综合) 0%、Q11(导数综合) 17%、Q7(圆台外接球) 17%、Q19(导数大题(切线+零点+极值点偏移)) 26%、Q16(解三角形(正弦定理+角平分线)) 27%、Q12(填空题) 28%、Q8(分段函数零点) 33%、Q15(等差数列(通项+裂项求和)) 42%、Q18(概率(全概率+分布列+递推)) 45%</div>
+<div style="margin:4px 0"><b>4组：</b>Q7(圆台外接球) 0%、Q8(分段函数零点) 0%、Q16(解三角形(正弦定理+角平分线)) 23%、Q19(导数大题(切线+零点+极值点偏移)) 27%、Q18(概率(全概率+分布列+递推)) 31%、Q12(填空题) 39%、Q10(正四棱柱综合) 42%、Q11(导数综合) 42%、Q17(立体几何(线面垂直+二面角)) 42%</div>
+<h3>4.3 各组优势知识点（得分率≥70% 或组排名前3）</h3>
+<div style="margin:4px 0"><b>1组：</b>Q2(集合) 100%[第1名]、Q3(向量) 100%[第1名]、Q4(余弦定理) 100%[第1名]、Q5(等差数列) 100%[第1名]、Q1(复数) 83%[第4名]、Q6(排列组合) 83%[第2名]、Q15(等差数列(通项+裂项求和)) 76%[第2名]、Q9(三角函数图象变换) 75%[第5名]、Q8(分段函数零点) 67%[第1名]、Q10(正四棱柱综合) 42%[第1名]、Q12(填空题) 39%[第1名]、Q19(导数大题(切线+零点+极值点偏移)) 34%[第1名]</div>
+<div style="margin:4px 0"><b>5组：</b>Q2(集合) 100%[第4名]、Q3(向量) 100%[第5名]、Q4(余弦定理) 100%[第4名]、Q5(等差数列) 100%[第4名]、Q1(复数) 80%[第7名]、Q6(排列组合) 80%[第3名]、Q9(三角函数图象变换) 80%[第3名]、Q17(立体几何(线面垂直+二面角)) 67%[第1名]、Q18(概率(全概率+分布列+递推)) 52%[第1名]、Q16(解三角形(正弦定理+角平分线)) 44%[第2名]、Q10(正四棱柱综合) 40%[第3名]</div>
+<div style="margin:4px 0"><b>6组：</b>Q2(集合) 100%[第5名]、Q3(向量) 100%[第6名]、Q4(余弦定理) 100%[第5名]、Q5(等差数列) 100%[第5名]、Q1(复数) 86%[第2名]、Q15(等差数列(通项+裂项求和)) 76%[第1名]、Q8(分段函数零点) 57%[第2名]、Q11(导数综合) 43%[第2名]、Q19(导数大题(切线+零点+极值点偏移)) 30%[第2名]、Q7(圆台外接球) 29%[第2名]</div>
+<div style="margin:4px 0"><b>8组：</b>Q2(集合) 100%[第7名]、Q3(向量) 100%[第7名]、Q4(余弦定理) 100%[第7名]、Q5(等差数列) 100%[第7名]、Q1(复数) 86%[第3名]、Q9(三角函数图象变换) 79%[第4名]、Q8(分段函数零点) 57%[第3名]、Q11(导数综合) 50%[第1名]、Q18(概率(全概率+分布列+递推)) 45%[第2名]、Q12(填空题) 38%[第3名]</div>
+<div style="margin:4px 0"><b>3组：</b>Q3(向量) 100%[第3名]、Q4(余弦定理) 100%[第2名]、Q5(等差数列) 100%[第3名]、Q2(集合) 83%[第8名]、Q9(三角函数图象变换) 75%[第6名]、Q15(等差数列(通项+裂项求和)) 67%[第3名]、Q17(立体几何(线面垂直+二面角)) 63%[第3名]、Q11(导数综合) 42%[第3名]、Q16(解三角形(正弦定理+角平分线)) 38%[第3名]、Q7(圆台外接球) 17%[第3名]</div>
+<div style="margin:4px 0"><b>2组：</b>Q2(集合) 100%[第2名]、Q3(向量) 100%[第2名]、Q5(等差数列) 100%[第2名]、Q1(复数) 83%[第5名]、Q4(余弦定理) 83%[第8名]、Q17(立体几何(线面垂直+二面角)) 64%[第2名]、Q16(解三角形(正弦定理+角平分线)) 48%[第1名]、Q7(圆台外接球) 33%[第1名]、Q19(导数大题(切线+零点+极值点偏移)) 29%[第3名]</div>
+<div style="margin:4px 0"><b>7组：</b>Q1(复数) 100%[第1名]、Q2(集合) 100%[第6名]、Q4(余弦定理) 100%[第6名]、Q5(等差数列) 100%[第6名]、Q6(排列组合) 100%[第1名]、Q9(三角函数图象变换) 100%[第1名]、Q3(向量) 83%[第8名]、Q18(概率(全概率+分布列+递推)) 45%[第3名]</div>
+<div style="margin:4px 0"><b>4组：</b>Q2(集合) 100%[第3名]、Q3(向量) 100%[第4名]、Q4(余弦定理) 100%[第3名]、Q1(复数) 83%[第6名]、Q5(等差数列) 83%[第8名]、Q9(三角函数图象变换) 83%[第2名]、Q10(正四棱柱综合) 42%[第2名]、Q12(填空题) 39%[第2名]</div>
+</div>
+<div class="card page-break">
+<h2>五、各组逐题得分明细</h2>
+<h3>第1组（6人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>马铄</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(82,190,82);color:#fff">12</td>
+<td style="background:rgb(53,179,91);color:#fff">14</td>
+<td style="background:rgb(39,174,96);color:#fff">17</td>
+<td style="background:rgb(166,223,161);color:#2c3e50">8</td>
+<td><b>118</b></td></tr>
+<tr><td>颜煜昊</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>89</b></td></tr>
+<tr><td>张伊璇</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>76</b></td></tr>
+<tr><td>蒋予涵</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>75</b></td></tr>
+<tr><td>马悦瑄</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(126,212,126);color:#fff">8</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>65</b></td></tr>
+<tr><td>王艺润</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(98,198,98);color:#fff">11</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>65</b></td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>马铄</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span><br>
+&nbsp;&nbsp;<b>颜煜昊</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>张伊璇</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>蒋予涵</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>马悦瑄</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>王艺润</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#e67e22">Q9(三角函数图象变换) 3/6</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+</div>
+<h3>第5组（6人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>李炫增</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>91</b></td></tr>
+<tr><td>王潇</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(126,212,126);color:#fff">8</td>
+<td style="background:rgb(98,198,98);color:#fff">11</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(227,242,225);color:#2c3e50">4</td>
+<td><b>89</b></td></tr>
+<tr><td>权容同</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(130,214,130);color:#fff">9</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>76</b></td></tr>
+<tr><td>刘亦霄</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td style="background:rgb(149,218,147);color:#2c3e50">9</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>75</b></td></tr>
+<tr><td>张静茹</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>74</b></td></tr>
+<tr><td style="color:#999">戴孟澔</td>
+<td colspan="17" style="color:#999;font-size:11px">未扫描</td>
+<td style="color:#999">-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>李炫增</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>王潇</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>权容同</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>刘亦霄</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>张静茹</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+</div>
+<h3>第6组（7人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>单子玉</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>105</b></td></tr>
+<tr><td>裴梦琳</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>99</b></td></tr>
+<tr><td>邸明启</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(126,212,126);color:#fff">8</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(98,198,98);color:#fff">11</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>77</b></td></tr>
+<tr><td>刘鑫昶</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>77</b></td></tr>
+<tr><td>姬瑾萱</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>74</b></td></tr>
+<tr><td>吴俊晖</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>70</b></td></tr>
+<tr><td>张子昱</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(126,212,126);color:#fff">8</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(227,242,225);color:#2c3e50">4</td>
+<td><b>55</b></td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>单子玉</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span><br>
+&nbsp;&nbsp;<b>裴梦琳</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>邸明启</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>刘鑫昶</b>：<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>姬瑾萱</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>吴俊晖</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span><br>
+&nbsp;&nbsp;<b>张子昱</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+</div>
+<h3>第8组（7人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>韦天宇</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(72,186,85);color:#fff">11</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(53,179,91);color:#fff">14</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>99</b></td></tr>
+<tr><td>杨子涵</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(72,186,85);color:#fff">11</td>
+<td style="background:rgb(219,240,217);color:#2c3e50">4</td>
+<td style="background:rgb(82,190,82);color:#fff">12</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>89</b></td></tr>
+<tr><td>雷清和</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(186,228,179);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>82</b></td></tr>
+<tr><td>高祎凡</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(126,212,126);color:#fff">8</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(98,198,98);color:#fff">11</td>
+<td style="background:rgb(182,227,176);color:#2c3e50">7</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>79</b></td></tr>
+<tr><td>王祖雄</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(149,218,147);color:#2c3e50">9</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>75</b></td></tr>
+<tr><td>孙悦瑄</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(182,227,176);color:#2c3e50">7</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>72</b></td></tr>
+<tr><td>曹家瑞</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td><b>56</b></td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>韦天宇</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>杨子涵</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span><br>
+&nbsp;&nbsp;<b>雷清和</b>：<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span><br>
+&nbsp;&nbsp;<b>高祎凡</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>王祖雄</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>孙悦瑄</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#e67e22">Q9(三角函数图象变换) 3/6</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>曹家瑞</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+</div>
+<h3>第3组（6人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>吴浩铭</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(130,214,130);color:#fff">9</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>104</b></td></tr>
+<tr><td>李果轩</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(55,180,90);color:#fff">12</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(82,190,82);color:#fff">12</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(182,227,176);color:#2c3e50">7</td>
+<td><b>91</b></td></tr>
+<tr><td>赵子恒</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(55,180,90);color:#fff">12</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(98,198,98);color:#fff">11</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td><b>89</b></td></tr>
+<tr><td>段云思源</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(126,212,126);color:#fff">8</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td><b>70</b></td></tr>
+<tr><td>梁卿瑜</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>62</b></td></tr>
+<tr><td>韩利泽</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>44</b></td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>吴浩铭</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span><br>
+&nbsp;&nbsp;<b>李果轩</b>：<span style="color:#c0392b">Q2(集合) 0/5</span>，<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span><br>
+&nbsp;&nbsp;<b>赵子恒</b>：<span style="color:#e67e22">Q9(三角函数图象变换) 3/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>段云思源</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>梁卿瑜</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>韩利泽</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+</div>
+<h3>第2组（6人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>巩子华</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(82,190,82);color:#fff">12</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(149,218,147);color:#2c3e50">9</td>
+<td><b>109</b></td></tr>
+<tr><td>郑智遥</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(39,174,96);color:#fff">13</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>103</b></td></tr>
+<tr><td>王喻婕</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(53,179,91);color:#fff">14</td>
+<td style="background:rgb(182,227,176);color:#2c3e50">7</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>73</b></td></tr>
+<tr><td>陆奕彤</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(67,184,86);color:#fff">13</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>70</b></td></tr>
+<tr><td>王芊琪</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(130,214,130);color:#fff">9</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>58</b></td></tr>
+<tr><td>李明远</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(186,228,179);color:#2c3e50">6</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td><b>42</b></td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>巩子华</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>郑智遥</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>王喻婕</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>陆奕彤</b>：<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q9(三角函数图象变换) 3/6</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>王芊琪</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q9(三角函数图象变换) 3/6</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>李明远</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q4(余弦定理) 0/5</span>，<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q9(三角函数图象变换) 0/6</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+</div>
+<h3>第7组（6人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>贾翔云</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(89,193,89);color:#fff">10</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>96</b></td></tr>
+<tr><td>李丹妮</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(126,212,126);color:#fff">8</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(149,218,147);color:#2c3e50">9</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>78</b></td></tr>
+<tr><td>任思羽</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(228,243,227);color:#2c3e50">3</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(53,179,91);color:#fff">14</td>
+<td style="background:rgb(166,223,161);color:#2c3e50">8</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td><b>72</b></td></tr>
+<tr><td>冯柯锦</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(189,229,183);color:#2c3e50">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(182,227,176);color:#2c3e50">7</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>70</b></td></tr>
+<tr><td>张瀞文</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(182,227,176);color:#2c3e50">7</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>68</b></td></tr>
+<tr><td>俞成辉</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td><b>58</b></td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>贾翔云</b>：<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>李丹妮</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>任思羽</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>冯柯锦</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>张瀞文</b>：<span style="color:#c0392b">Q3(向量) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span><br>
+&nbsp;&nbsp;<b>俞成辉</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+</div>
+<h3>第4组（6人）</h3>
+<div class="overflow-wrap"><table style="font-size:11px">
+<tr><th>姓名</th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q1(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">复数</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q2(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">集合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q3(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">向量</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q4(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">余弦定理</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q5(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q6(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">排列组合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q7(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">圆台外接球</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q8(5)<br><span style="font-weight:400;font-size:9px;opacity:0.85">分段函数零点</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q9(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">三角函数图象变换</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q10(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">正四棱柱综合</span></th><th style="background:#5B9BD5;font-size:10px;line-height:1.3">Q11(6)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数综合</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q12(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">填空题</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q15(13)<br><span style="font-weight:400;font-size:9px;opacity:0.85">等差数列(通项+裂项求和)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q16(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">解三角形(正弦定理+角平分线)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q17(15)<br><span style="font-weight:400;font-size:9px;opacity:0.85">立体几何(线面垂直+二面角)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q18(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">概率(全概率+分布列+递推)</span></th><th style="background:#ED7D31;font-size:10px;line-height:1.3">Q19(17)<br><span style="font-weight:400;font-size:9px;opacity:0.85">导数大题(切线+零点+极值点偏移)</span></th><th>总分</th></tr>
+<tr><td>高洪宇</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(167,223,162);color:#2c3e50">7</td>
+<td style="background:rgb(186,228,179);color:#2c3e50">6</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>92</b></td></tr>
+<tr><td>冯洪冉</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td style="background:rgb(39,174,96);color:#fff">15</td>
+<td style="background:rgb(133,214,132);color:#2c3e50">10</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>80</b></td></tr>
+<tr><td>曹钰蔚</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(107,202,107);color:#fff">9</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td style="background:rgb(148,218,146);color:#2c3e50">8</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td><b>68</b></td></tr>
+<tr><td>姜程洋</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(114,206,114);color:#fff">10</td>
+<td style="background:rgb(147,218,145);color:#2c3e50">7</td>
+<td style="background:rgb(186,228,179);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">3</td>
+<td style="background:rgb(197,232,192);color:#2c3e50">6</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>66</b></td></tr>
+<tr><td>李宗锴</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(39,174,96);color:#fff">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(202,234,198);color:#2c3e50">5</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">2</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td><b>57</b></td></tr>
+<tr><td>高翊洋</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(39,174,96);color:#fff">5</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(158,221,154);color:#2c3e50">3</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">0</td>
+<td style="background:rgb(168,223,163);color:#2c3e50">6</td>
+<td style="background:rgb(236,246,236);color:#2c3e50">1</td>
+<td style="background:rgb(219,240,217);color:#2c3e50">4</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td style="background:rgb(212,237,209);color:#2c3e50">5</td>
+<td><b>47</b></td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级均分</td>
+<td>4.18</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>4.90</td>
+<td>3.37</td>
+<td>0.71</td>
+<td>2.14</td>
+<td>4.47</td>
+<td>1.78</td>
+<td>2.20</td>
+<td>4.80</td>
+<td>7.86</td>
+<td>4.94</td>
+<td>8.90</td>
+<td>7.14</td>
+<td>4.84</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">班级得分率%</td>
+<td>83.7%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>98.0%</td>
+<td>67.3%</td>
+<td>14.3%</td>
+<td>42.9%</td>
+<td>74.5%</td>
+<td>29.6%</td>
+<td>36.7%</td>
+<td>32.0%</td>
+<td>60.4%</td>
+<td>32.9%</td>
+<td>59.3%</td>
+<td>42.0%</td>
+<td>28.4%</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级均分</td>
+<td>3.88</td>
+<td>4.72</td>
+<td>4.69</td>
+<td>4.75</td>
+<td>4.61</td>
+<td>2.73</td>
+<td>0.89</td>
+<td>1.90</td>
+<td>3.18</td>
+<td>1.95</td>
+<td>2.07</td>
+<td>3.05</td>
+<td>7.33</td>
+<td>4.01</td>
+<td>7.04</td>
+<td>6.31</td>
+<td>3.99</td>
+<td>-</td></tr>
+<tr style="background:#f8f9fa;font-size:10px">
+<td style="font-weight:bold">年级得分率%</td>
+<td>77.7%</td>
+<td>94.4%</td>
+<td>93.9%</td>
+<td>95.0%</td>
+<td>92.3%</td>
+<td>54.5%</td>
+<td>17.8%</td>
+<td>38.0%</td>
+<td>52.9%</td>
+<td>32.6%</td>
+<td>34.4%</td>
+<td>20.3%</td>
+<td>56.4%</td>
+<td>26.7%</td>
+<td>47.0%</td>
+<td>37.1%</td>
+<td>23.5%</td>
+<td>-</td></tr>
+</table></div>
+<div style="margin:8px 0;font-size:12px">
+<b>客观题错题速览：</b><br>
+&nbsp;&nbsp;<b>高洪宇</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span><br>
+&nbsp;&nbsp;<b>冯洪冉</b>：<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>曹钰蔚</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>姜程洋</b>：<span style="color:#c0392b">Q5(等差数列) 0/5</span>，<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q9(三角函数图象变换) 3/6</span>，<span style="color:#e67e22">Q10(正四棱柱综合) 3/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+&nbsp;&nbsp;<b>李宗锴</b>：<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#c0392b">Q11(导数综合) 0/6</span><br>
+&nbsp;&nbsp;<b>高翊洋</b>：<span style="color:#c0392b">Q1(复数) 0/5</span>，<span style="color:#c0392b">Q6(排列组合) 0/5</span>，<span style="color:#c0392b">Q7(圆台外接球) 0/5</span>，<span style="color:#c0392b">Q8(分段函数零点) 0/5</span>，<span style="color:#e67e22">Q9(三角函数图象变换) 3/6</span>，<span style="color:#c0392b">Q10(正四棱柱综合) 0/6</span>，<span style="color:#e67e22">Q11(导数综合) 3/6</span><br>
+</div>
+</div>
+<div class="card page-break">
+<h2>六、逐题知识点分析（个人维度）</h2>
+<h3>6.1 各题得分率总览</h3>
+<table><tr><th>题号</th><th>知识点</th><th>满分</th><th>班级得分率</th><th>年级得分率</th><th>掌握度</th></tr>
+<tr><td>Q1</td><td style="text-align:left">复数</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.7%;background:#27ae60">83.7%</div></div></div></td>
+    <td>77.7%</td>
+    <td><span class="score-rate mastery-high">✅ 已掌握</span></td></tr>
+<tr><td>Q2</td><td style="text-align:left">集合</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:98.0%;background:#27ae60">98.0%</div></div></div></td>
+    <td>94.4%</td>
+    <td><span class="score-rate mastery-high">✅ 已掌握</span></td></tr>
+<tr><td>Q3</td><td style="text-align:left">向量</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:98.0%;background:#27ae60">98.0%</div></div></div></td>
+    <td>93.9%</td>
+    <td><span class="score-rate mastery-high">✅ 已掌握</span></td></tr>
+<tr><td>Q4</td><td style="text-align:left">余弦定理</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:98.0%;background:#27ae60">98.0%</div></div></div></td>
+    <td>95.0%</td>
+    <td><span class="score-rate mastery-high">✅ 已掌握</span></td></tr>
+<tr><td>Q5</td><td style="text-align:left">等差数列</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:98.0%;background:#27ae60">98.0%</div></div></div></td>
+    <td>92.3%</td>
+    <td><span class="score-rate mastery-high">✅ 已掌握</span></td></tr>
+<tr><td>Q6</td><td style="text-align:left">排列组合</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:67.3%;background:#f39c12">67.3%</div></div></div></td>
+    <td>54.5%</td>
+    <td><span class="score-rate mastery-mid">⚠️ 基本掌握</span></td></tr>
+<tr><td>Q7</td><td style="text-align:left">圆台外接球</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:#e67e22">14.3%</div></div></div></td>
+    <td>17.8%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+<tr><td>Q8</td><td style="text-align:left">分段函数零点</td><td>5</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:42.9%;background:#e67e22">42.9%</div></div></div></td>
+    <td>38.0%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+<tr><td>Q9</td><td style="text-align:left">三角函数图象变换</td><td>6</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:74.5%;background:#27ae60">74.5%</div></div></div></td>
+    <td>52.9%</td>
+    <td><span class="score-rate mastery-high">✅ 已掌握</span></td></tr>
+<tr><td>Q10</td><td style="text-align:left">正四棱柱综合</td><td>6</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:29.6%;background:#e67e22">29.6%</div></div></div></td>
+    <td>32.6%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+<tr><td>Q11</td><td style="text-align:left">导数综合</td><td>6</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:36.7%;background:#e67e22">36.7%</div></div></div></td>
+    <td>34.4%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+<tr><td>Q12</td><td style="text-align:left">填空题</td><td>15</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:32.0%;background:#e67e22">32.0%</div></div></div></td>
+    <td>20.3%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+<tr><td>Q15</td><td style="text-align:left">等差数列(通项+裂项求和)</td><td>13</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:60.4%;background:#f39c12">60.4%</div></div></div></td>
+    <td>56.4%</td>
+    <td><span class="score-rate mastery-mid">⚠️ 基本掌握</span></td></tr>
+<tr><td>Q16</td><td style="text-align:left">解三角形(正弦定理+角平分线)</td><td>15</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:32.9%;background:#e67e22">32.9%</div></div></div></td>
+    <td>26.7%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+<tr><td>Q17</td><td style="text-align:left">立体几何(线面垂直+二面角)</td><td>15</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:59.3%;background:#f39c12">59.3%</div></div></div></td>
+    <td>47.0%</td>
+    <td><span class="score-rate mastery-mid">⚠️ 基本掌握</span></td></tr>
+<tr><td>Q18</td><td style="text-align:left">概率(全概率+分布列+递推)</td><td>17</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:42.0%;background:#e67e22">42.0%</div></div></div></td>
+    <td>37.1%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+<tr><td>Q19</td><td style="text-align:left">导数大题(切线+零点+极值点偏移)</td><td>17</td>
+    <td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:28.5%;background:#e67e22">28.5%</div></div></div></td>
+    <td>23.5%</td>
+    <td><span class="score-rate mastery-low">❌ 需加强</span></td></tr>
+</table>
+<h3>6.2 逐题得分详情</h3>
+<div class="group-header" style="margin:12px 0 4px">
+Q1 · 复数（满分5分）
+<span class="score-rate mastery-high">得分率83.7% ✅ 已掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:83.6734693877551%;background:#27ae60">满分41</div>
+<div style="width:16.3265306122449%;background:#e67e22">零分8</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>7组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>4.3</td><td>85.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:85.71428571428571%;background:#27ae60">4.3</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>4.3</td><td>85.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:85.71428571428571%;background:#27ae60">4.3</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>4.0</td><td>80.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:80.0%;background:#27ae60">4.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>3.3</td><td>66.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:66.66666666666667%;background:#f39c12">3.3</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：李炫增、高祎凡、梁卿瑜、高翊洋、张子昱、李明远、张伊璇、韩利泽</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q2 · 集合（满分5分）
+<span class="score-rate mastery-high">得分率98.0% ✅ 已掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:97.95918367346938%;background:#27ae60">满分48</div>
+<div style="width:2.0408163265306123%;background:#e67e22">零分1</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：李果轩</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q3 · 向量（满分5分）
+<span class="score-rate mastery-high">得分率98.0% ✅ 已掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:97.95918367346938%;background:#27ae60">满分48</div>
+<div style="width:2.0408163265306123%;background:#e67e22">零分1</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：张瀞文</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q4 · 余弦定理（满分5分）
+<span class="score-rate mastery-high">得分率98.0% ✅ 已掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:97.95918367346938%;background:#27ae60">满分48</div>
+<div style="width:2.0408163265306123%;background:#e67e22">零分1</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：李明远</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q5 · 等差数列（满分5分）
+<span class="score-rate mastery-high">得分率98.0% ✅ 已掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:97.95918367346938%;background:#27ae60">满分48</div>
+<div style="width:2.0408163265306123%;background:#e67e22">零分1</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：姜程洋</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q6 · 排列组合（满分5分）
+<span class="score-rate mastery-mid">得分率67.3% ⚠️ 基本掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:67.3469387755102%;background:#27ae60">满分33</div>
+<div style="width:32.6530612244898%;background:#e67e22">零分16</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>7组</td><td>5.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>4.2</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">4.2</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>4.0</td><td>80.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:80.0%;background:#27ae60">4.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>3.3</td><td>66.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:66.66666666666667%;background:#f39c12">3.3</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>2.9</td><td>57.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:57.14285714285714%;background:#f39c12">2.9</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>2.9</td><td>57.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:57.14285714285714%;background:#f39c12">2.9</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>2.5</td><td>50.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#f39c12">2.5</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>2.5</td><td>50.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#f39c12">2.5</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：王祖雄、姬瑾萱、韦天宇、梁卿瑜、姜程洋、刘亦霄、李果轩、孙悦瑄、冯洪冉、裴梦琳、王喻婕、高翊洋、张子昱、李明远、张伊璇、王芊琪</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q7 · 圆台外接球（满分5分）
+<span class="score-rate mastery-low">得分率14.3% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:14.285714285714285%;background:#27ae60">满分7</div>
+<div style="width:85.71428571428571%;background:#e67e22">零分42</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>2组</td><td>1.7</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.333333333333336%;background:#e67e22">1.7</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>1.4</td><td>28.6%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:28.57142857142857%;background:#e67e22">1.4</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>0.8</td><td>16.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:16.666666666666668%;background:#e67e22">0.8</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>0.8</td><td>16.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:16.666666666666668%;background:#e67e22">0.8</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>0.7</td><td>14.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:14.285714285714285%;background:#e67e22">0.7</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>0.0</td><td>0.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#e67e22">0.0</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>0.0</td><td>0.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#e67e22">0.0</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>0.0</td><td>0.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#e67e22">0.0</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：吴浩铭、郑智遥、马铄、巩子华、王祖雄、单子玉、李炫增、李丹妮、任思羽、高祎凡、韦天宇、俞成辉、王潇、梁卿瑜、姜程洋、邸明启、刘亦霄、权容同、曹钰蔚、李果轩、冯柯锦、段云思源、高洪宇、马悦瑄、孙悦瑄、张瀞文、冯洪冉、颜煜昊、王艺润、裴梦琳、吴俊晖、李宗锴、高翊洋、张子昱、李明远、张静茹、杨子涵、张伊璇、王芊琪、蒋予涵、韩利泽、曹家瑞</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q8 · 分段函数零点（满分5分）
+<span class="score-rate mastery-low">得分率42.9% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:42.857142857142854%;background:#27ae60">满分21</div>
+<div style="width:57.14285714285714%;background:#e67e22">零分28</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>3.3</td><td>66.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:66.66666666666667%;background:#f39c12">3.3</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>2.9</td><td>57.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:57.14285714285714%;background:#f39c12">2.9</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>2.9</td><td>57.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:57.14285714285714%;background:#f39c12">2.9</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>2.5</td><td>50.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#f39c12">2.5</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>2.0</td><td>40.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:40.0%;background:#e67e22">2.0</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>1.7</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.333333333333336%;background:#e67e22">1.7</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>1.7</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.333333333333336%;background:#e67e22">1.7</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>0.0</td><td>0.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#e67e22">0.0</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：吴浩铭、王祖雄、陆奕彤、姬瑾萱、李炫增、任思羽、高祎凡、俞成辉、王潇、姜程洋、邸明启、权容同、曹钰蔚、李果轩、冯柯锦、高洪宇、马悦瑄、刘鑫昶、张瀞文、冯洪冉、王喻婕、李宗锴、高翊洋、李明远、张伊璇、王芊琪、韩利泽、曹家瑞</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q9 · 三角函数图象变换（满分6分）
+<span class="score-rate mastery-high">得分率74.5% ✅ 已掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:67.3469387755102%;background:#27ae60">满分33</div>
+<div style="width:14.285714285714285%;background:#f39c12">部分7</div>
+<div style="width:18.367346938775512%;background:#e67e22">零分9</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>7组</td><td>6.0</td><td>100.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#27ae60">6.0</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>5.0</td><td>83.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:83.33333333333334%;background:#27ae60">5.0</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>4.8</td><td>80.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:80.0%;background:#27ae60">4.8</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>4.7</td><td>78.6%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:78.57142857142857%;background:#27ae60">4.7</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>4.5</td><td>75.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:75.0%;background:#27ae60">4.5</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>4.5</td><td>75.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:75.0%;background:#27ae60">4.5</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>3.4</td><td>57.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:57.14285714285714%;background:#f39c12">3.4</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>3.0</td><td>50.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#f39c12">3.0</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：马铄、姬瑾萱、韦天宇、梁卿瑜、邸明启、权容同、裴梦琳、王喻婕、李明远</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q10 · 正四棱柱综合（满分6分）
+<span class="score-rate mastery-low">得分率29.6% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:18.367346938775512%;background:#27ae60">满分9</div>
+<div style="width:22.448979591836736%;background:#f39c12">部分11</div>
+<div style="width:59.183673469387756%;background:#e67e22">零分29</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>2.5</td><td>41.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#e67e22">2.5</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>2.5</td><td>41.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#e67e22">2.5</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>2.4</td><td>40.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:40.0%;background:#e67e22">2.4</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>2.1</td><td>35.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:35.714285714285715%;background:#e67e22">2.1</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>2.0</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%;background:#e67e22">2.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>2.0</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%;background:#e67e22">2.0</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>0.9</td><td>14.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:14.285714285714285%;background:#e67e22">0.9</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>0.0</td><td>0.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:0.0%;background:#e67e22">0.0</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：吴浩铭、郑智遥、陆奕彤、姬瑾萱、贾翔云、李丹妮、任思羽、高祎凡、韦天宇、俞成辉、王潇、梁卿瑜、雷清和、刘亦霄、曹钰蔚、冯柯锦、段云思源、马悦瑄、张瀞文、冯洪冉、王艺润、吴俊晖、高翊洋、张静茹、杨子涵、王芊琪、蒋予涵、韩利泽、曹家瑞</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q11 · 导数综合（满分6分）
+<span class="score-rate mastery-low">得分率36.7% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:18.367346938775512%;background:#27ae60">满分9</div>
+<div style="width:36.734693877551024%;background:#f39c12">部分18</div>
+<div style="width:44.89795918367347%;background:#e67e22">零分22</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>8组</td><td>3.0</td><td>50.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#f39c12">3.0</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>2.6</td><td>42.9%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:42.85714285714286%;background:#e67e22">2.6</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>2.5</td><td>41.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#e67e22">2.5</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>2.5</td><td>41.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#e67e22">2.5</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>2.4</td><td>40.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:40.0%;background:#e67e22">2.4</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>2.0</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%;background:#e67e22">2.0</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>1.5</td><td>25.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:25.0%;background:#e67e22">1.5</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>1.0</td><td>16.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:16.666666666666664%;background:#e67e22">1.0</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：巩子华、王祖雄、陆奕彤、姬瑾萱、贾翔云、李丹妮、任思羽、俞成辉、赵子恒、王潇、梁卿瑜、邸明启、曹钰蔚、冯柯锦、段云思源、马悦瑄、孙悦瑄、刘鑫昶、颜煜昊、王艺润、李宗锴、李明远</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q12 · 填空题（满分15分）
+<span class="score-rate mastery-low">得分率32.0% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:4.081632653061225%;background:#27ae60">满分2</div>
+<div style="width:65.3061224489796%;background:#f39c12">部分32</div>
+<div style="width:30.612244897959183%;background:#e67e22">零分15</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>5.8</td><td>38.9%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:38.88888888888889%;background:#e67e22">5.8</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>5.8</td><td>38.9%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:38.88888888888889%;background:#e67e22">5.8</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>5.7</td><td>38.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:38.0952380952381%;background:#e67e22">5.7</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>5.0</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%;background:#e67e22">5.0</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>5.0</td><td>33.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%;background:#e67e22">5.0</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>4.2</td><td>27.8%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:27.77777777777778%;background:#e67e22">4.2</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>4.2</td><td>27.8%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:27.77777777777778%;background:#e67e22">4.2</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>2.5</td><td>16.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:16.666666666666664%;background:#e67e22">2.5</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：陆奕彤、任思羽、俞成辉、雷清和、曹钰蔚、段云思源、王艺润、王喻婕、吴俊晖、高翊洋、李明远、张静茹、王芊琪、韩利泽、曹家瑞</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q15 · 等差数列(通项+裂项求和)（满分13分）
+<span class="score-rate mastery-mid">得分率60.4% ⚠️ 基本掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:18.367346938775512%;background:#27ae60">满分9</div>
+<div style="width:77.55102040816327%;background:#f39c12">部分38</div>
+<div style="width:4.081632653061225%;background:#e67e22">零分2</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>6组</td><td>9.9</td><td>75.8%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:75.82417582417584%;background:#27ae60">9.9</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>9.8</td><td>75.6%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:75.64102564102565%;background:#27ae60">9.8</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>8.7</td><td>66.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:66.66666666666666%;background:#f39c12">8.7</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>8.5</td><td>65.4%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:65.38461538461539%;background:#f39c12">8.5</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>7.1</td><td>54.9%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:54.94505494505495%;background:#f39c12">7.1</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>6.8</td><td>52.6%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:52.56410256410257%;background:#f39c12">6.8</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>6.0</td><td>46.2%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:46.15384615384615%;background:#e67e22">6.0</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>5.5</td><td>42.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:42.30769230769231%;background:#e67e22">5.5</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：韩利泽、曹家瑞</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q16 · 解三角形(正弦定理+角平分线)（满分15分）
+<span class="score-rate mastery-low">得分率32.9% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:4.081632653061225%;background:#27ae60">满分2</div>
+<div style="width:87.75510204081633%;background:#f39c12">部分43</div>
+<div style="width:8.16326530612245%;background:#e67e22">零分4</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>2组</td><td>7.2</td><td>47.8%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:47.77777777777778%;background:#e67e22">7.2</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>6.6</td><td>44.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:44.0%;background:#e67e22">6.6</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>5.7</td><td>37.8%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:37.777777777777786%;background:#e67e22">5.7</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>5.4</td><td>36.2%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:36.19047619047619%;background:#e67e22">5.4</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>4.0</td><td>26.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:26.666666666666668%;background:#e67e22">4.0</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>3.8</td><td>25.6%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:25.55555555555556%;background:#e67e22">3.8</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>3.7</td><td>24.8%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:24.761904761904763%;background:#e67e22">3.7</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>3.5</td><td>23.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:23.333333333333332%;background:#e67e22">3.5</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：姬瑾萱、邸明启、孙悦瑄、吴俊晖</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q17 · 立体几何(线面垂直+二面角)（满分15分）
+<span class="score-rate mastery-mid">得分率59.3% ⚠️ 基本掌握</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:18.367346938775512%;background:#27ae60">满分9</div>
+<div style="width:79.59183673469387%;background:#f39c12">部分39</div>
+<div style="width:2.0408163265306123%;background:#e67e22">零分1</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>5组</td><td>10.0</td><td>66.7%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:66.66666666666666%;background:#f39c12">10.0</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>9.7</td><td>64.4%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:64.44444444444444%;background:#f39c12">9.7</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>9.5</td><td>63.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:63.33333333333333%;background:#f39c12">9.5</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>9.2</td><td>61.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:61.11111111111111%;background:#f39c12">9.2</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>9.1</td><td>61.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:60.95238095238095%;background:#f39c12">9.1</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>8.8</td><td>58.9%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:58.88888888888889%;background:#f39c12">8.8</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>8.7</td><td>58.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:58.09523809523809%;background:#f39c12">8.7</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>6.3</td><td>42.2%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:42.22222222222222%;background:#e67e22">6.3</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：张子昱</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q18 · 概率(全概率+分布列+递推)（满分17分）
+<span class="score-rate mastery-low">得分率42.0% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:2.0408163265306123%;background:#27ae60">满分1</div>
+<div style="width:89.79591836734694%;background:#f39c12">部分44</div>
+<div style="width:8.16326530612245%;background:#e67e22">零分4</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>5组</td><td>8.8</td><td>51.8%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:51.76470588235295%;background:#f39c12">8.8</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>7.7</td><td>45.4%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:45.378151260504204%;background:#e67e22">7.7</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>7.7</td><td>45.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:45.09803921568628%;background:#e67e22">7.7</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>7.3</td><td>43.1%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:43.13725490196078%;background:#e67e22">7.3</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>7.1</td><td>42.0%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:42.016806722689076%;background:#e67e22">7.1</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>6.8</td><td>40.2%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:40.19607843137255%;background:#e67e22">6.8</div></div></div></td>
+</tr>
+<tr><td>1组</td><td>6.5</td><td>38.2%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:38.23529411764706%;background:#e67e22">6.5</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>5.3</td><td>31.4%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:31.372549019607842%;background:#e67e22">5.3</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：马悦瑄、李宗锴、张子昱、蒋予涵</div>
+<div class="group-header" style="margin:12px 0 4px">
+Q19 · 导数大题(切线+零点+极值点偏移)（满分17分）
+<span class="score-rate mastery-low">得分率28.5% ❌ 需加强</span></div>
+<div class="segment-bar" style="height:22px;margin:8px 0">
+<div style="width:95.91836734693877%;background:#f39c12">部分47</div>
+<div style="width:4.081632653061225%;background:#e67e22">零分2</div>
+</div>
+<div class="overflow-wrap"><table style="font-size:12px"><tr><th>组别</th><th>均分</th><th>得分率</th><th>分布</th></tr>
+<tr><td>1组</td><td>5.8</td><td>34.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:34.31372549019608%;background:#e67e22">5.8</div></div></div></td>
+</tr>
+<tr><td>6组</td><td>5.1</td><td>30.3%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:30.252100840336137%;background:#e67e22">5.1</div></div></div></td>
+</tr>
+<tr><td>2组</td><td>5.0</td><td>29.4%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:29.411764705882355%;background:#e67e22">5.0</div></div></div></td>
+</tr>
+<tr><td>5组</td><td>5.0</td><td>29.4%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:29.411764705882355%;background:#e67e22">5.0</div></div></div></td>
+</tr>
+<tr><td>8组</td><td>4.9</td><td>28.6%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:28.57142857142857%;background:#e67e22">4.9</div></div></div></td>
+</tr>
+<tr><td>4组</td><td>4.7</td><td>27.5%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:27.450980392156865%;background:#e67e22">4.7</div></div></div></td>
+</tr>
+<tr><td>7组</td><td>4.5</td><td>26.5%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:26.47058823529412%;background:#e67e22">4.5</div></div></div></td>
+</tr>
+<tr><td>3组</td><td>3.7</td><td>21.6%</td>
+<td><div class="bar-container"><div class="bar-track"><div class="bar-fill" style="width:21.56862745098039%;background:#e67e22">3.7</div></div></div></td>
+</tr>
+</table></div>
+<div style="font-size:12px;color:#e67e22;margin:4px 0">零分：赵子恒、段云思源</div>
+</div>
+</div></body></html>

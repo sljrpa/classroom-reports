@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>孙麟博 · 月考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e74c3c; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e74c3c; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .communicate-box { background: #f5eef8; border-radius: 8px; padding: 16px; }
+  .communicate-box h3 { color: #8e44ad; margin-bottom: 12px; }
+  .communicate-item { margin: 8px 0; padding-left: 8px; border-left: 3px solid #8e44ad; font-size: 14px; }
+  .eval-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 10px 0; }
+  .eval-box h3 { color: #2c3e50; margin-bottom: 10px; font-size: 16px; }
+  .eval-box ul { padding-left: 20px; }
+  .eval-box li { margin: 6px 0; font-size: 14px; }
+  .path-item { display: flex; margin: 12px 0; }
+  .path-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; flex-shrink: 0; margin-right: 12px; font-size: 15px; }
+  .path-icon.urgent { background: #e74c3c; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { background: #e8e8e8; border-radius: 4px; height: 16px; overflow: hidden; }
+  .score-bar .fill { height: 100%; border-radius: 4px; }
+  .score-bar .fill.green { background: #2ecc71; }
+  .score-bar .fill.yellow { background: #f1c40f; }
+  .score-bar .fill.red { background: #e74c3c; }
+  .score-bar .fill.blue { background: #3498db; }
+  .empty-section { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>孙麟博 · 月考分析报告</h1>
+    <div class="subtitle">2026年6月高三月考 | 一班</div>
+    <div class="score-big">82<span style="font-size:20px">/150</span></div>
+    <div class="score-label">预估分 | 得分率 54.7% | 校次 86 | 班次 21</div>
+  </div>
+
+  <div class="section">
+  <h2>📊 整体得分概览</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th></tr>
+    <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>35</td><td>87.5%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:87.5%"></div></div></td>
+  </tr>
+    <tr>
+    <td>多选题 (Q9-Q11)</td><td>18</td><td>12</td><td>66.7%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:66.7%"></div></div></td>
+  </tr>
+    <tr>
+    <td>填空题 (Q12-Q14)</td><td>15</td><td>5</td><td>33.3%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
+  </tr>
+    <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>52</td><td>71.2%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:71.2%"></div></div></td>
+  </tr>
+    <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>30 估</td><td>39.0%</td>
+    <td><div class="score-bar"><div class="fill red" style="width:39.0%"></div></div></td>
+  </tr>
+    <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>预估分</td><td>150</td><td>82</td><td>54.7%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:54.7%"></div></div></td>
+  </tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>❌ 未掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+    <tr>
+    <td>Q6</td><td>排列问题（A₄¹⁰分步分配）</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">排列组合未掌握</td>
+  </tr>  <tr>
+    <td>Q11</td><td>利用导数研究函数零点、对称中心、切线、单调性综合判断</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">导数综合未掌握</td>
+  </tr>  <tr>
+    <td>Q13</td><td>回归方程过样本中心点+残差=观测值−预测值</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">线性回归残差未掌握</td>
+  </tr>  <tr>
+    <td>Q14</td><td>导数求切线方程+切线与二次曲线相切条件求参</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">切线与曲线相切未掌握</td>
+  </tr>  <tr>
+    <td>Q15-2</td><td>裂项相消法求和（1/(aₙ·aₙ₊₁)型）</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会裂项相消</td>
+  </tr>  <tr>
+    <td>Q16-2</td><td>余弦定理+角平分线分面积法求角平分线长</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会角平分线长度</td>
+  </tr>  <tr>
+    <td>Q18-3</td><td>马尔科夫链</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会马尔科夫链</td>
+  </tr>  <tr>
+    <td>Q19-3</td><td>极值点偏移+构造函数证明不等式</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会极值点偏移证明</td>
+  </tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>⚠️ 部分掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+    <tr>
+    <td>Q15-1</td><td>等比中项列方程求等差数列公差+通项公式</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>5/6</td>
+    <td class="wrap-cell">求通项公式有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
+  </tr>  <tr>
+    <td>Q16-1</td><td>正弦定理边化角+两角和正弦展开求角</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>1/7</td>
+    <td class="wrap-cell">正弦定理求角有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
+  </tr>  <tr>
+    <td>Q17-2</td><td>建系法求二面角（法向量法）</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>7/8</td>
+    <td class="wrap-cell">建系求二面角有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
+  </tr>  <tr>
+    <td>Q18-1+2</td><td>全概率公式+条件概率+离散型随机变量分布列与数学期望</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>5/10</td>
+    <td class="wrap-cell">全概率公式与分布列有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
+  </tr>  <tr>
+    <td>Q19-2</td><td>分离参数法+数形结合研究函数极值求参数范围</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>1/6</td>
+    <td class="wrap-cell">分离参数求范围有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
+  </tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>✅ 已掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+    <tr>
+    <td>Q1</td><td>复数除法运算求虚部</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q2</td><td>补集与交集的混合运算</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q3</td><td>已知向量垂直求参数（坐标运算）</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q4</td><td>余弦定理，SAS求边</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q5</td><td>等差等比，化归求首项</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q7</td><td>圆台体积与侧面积公式+外接球表面积</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q8</td><td>分段函数零点个数转化为交点问题求参数范围</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q9</td><td>三角函数平移与横坐标伸缩变换判断性质</td><td>6/6 ✓</td>
+  </tr>  <tr>
+    <td>Q10</td><td>正四棱柱中空间距离、外接球、线面垂直、点到平面距离综合判断</td><td>6/6 ✓</td>
+  </tr>  <tr>
+    <td>Q12</td><td>两角差余弦展开+齐次化切+二倍角求值</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q17-1</td><td>勾股定理逆定理+面面垂直性质定理证线面垂直</td><td>7/7 估 ✓</td>
+  </tr>  <tr>
+    <td>Q19-1</td><td>导数的几何意义求切线方程</td><td>4/4 估 ✓</td>
+  </tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>💬 师生待沟通</h2>
+  <div class="communicate-box">
+  <h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+  <div class="communicate-item">Q6（排列组合）：错了，需要确认错因</div><div class="communicate-item">Q13（线性回归残差）：错了，需要确认错因</div><div class="communicate-item">QQ15-1（等比中项列方程求等差数列公差+通项公式）：得5/6分（推断值），需确认具体卡点</div><div class="communicate-item">QQ16-1（正弦定理边化角+两角和正弦展开求角）：得1/7分（推断值），需确认具体卡点</div><div class="communicate-item">QQ17-2（建系法求二面角（法向量法））：得7/8分（推断值），需确认具体卡点</div><div class="communicate-item">QQ18-1+2（全概率公式+条件概率+离散型随机变量分布列与数学期望）：得5/10分（推断值），需确认具体卡点</div><div class="communicate-item">QQ19-2（分离参数法+数形结合研究函数极值求参数范围）：得1/6分（推断值），需确认具体卡点</div>
+  </div></div>
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+<div class="question-box wrong">
+  <div class="q-title">Q6 | 排列问题（A₄¹⁰分步分配） | 0/5</div>
+  <div class="q-content">4张不同优惠券分给10人，每人最多1张，求分法种数</div>
+  <div class="q-answer">✅ 正确答案：A</div>
+  <div class="q-student">❌ 孙麟博作答：错选</div>
+  <div class="q-error">⚠️ 排列组合未掌握</div>
+</div>
+<div class="question-box wrong">
+  <div class="q-title">Q11 | 利用导数研究函数零点、对称中心、切线、单调性综合判断 | 0/6</div>
+  <div class="q-content">f(x)=eˣ(2x+1)/x，判断零点/对称中心/切线/单调性四个说法</div>
+  <div class="q-answer">✅ 正确答案：AC</div>
+  <div class="q-student">❌ 孙麟博作答：错选</div>
+  <div class="q-error">⚠️ 导数综合未掌握</div>
+</div>
+<div class="question-box wrong">
+  <div class="q-title">Q13 | 回归方程过样本中心点+残差=观测值−预测值 | 0/5</div>
+  <div class="q-content">ŷ=0.4x+â，x̄=20，ȳ=7，数据(30,n)残差0.6，求n</div>
+  <div class="q-student">❌ 孙麟博作答：不会</div>
+  <div class="q-error">⚠️ 线性回归残差未掌握</div>
+</div>
+<div class="question-box wrong">
+  <div class="q-title">Q14 | 导数求切线方程+切线与二次曲线相切条件求参 | 0/5</div>
+  <div class="q-content">y=x+lnx在(1,1)处切线与y=x²−2x−a相切，求a</div>
+  <div class="q-student">❌ 孙麟博作答：不会</div>
+  <div class="q-error">⚠️ 切线与曲线相切未掌握</div>
+</div>
+<div class="question-box partial">
+  <div class="q-title">Q15-1 | 等比中项列方程求等差数列公差+通项公式 | 5/6 估</div>
+  <div class="q-content">a₂是a₁,a₅的等比中项，a₁=1，求{aₙ}通项公式</div>
+  <div class="q-student">❌ 孙麟博作答：部分作答</div>
+  <div class="q-error">⚠️ 求通项公式有误</div>
+</div>
+<div class="question-box wrong">
+  <div class="q-title">Q15-2 | 裂项相消法求和（1/(aₙ·aₙ₊₁)型） | 0/7</div>
+  <div class="q-content">bₙ=1/(aₙ·aₙ₊₁)，求Sₙ</div>
+  <div class="q-student">❌ 孙麟博作答：不会</div>
+  <div class="q-error">⚠️ 不会裂项相消</div>
+</div>
+<div class="question-box partial">
+  <div class="q-title">Q16-1 | 正弦定理边化角+两角和正弦展开求角 | 1/7 估</div>
+  <div class="q-content">csinB+√3·bcosC=√3·a，求角B</div>
+  <div class="q-student">❌ 孙麟博作答：部分作答</div>
+  <div class="q-error">⚠️ 正弦定理求角有误</div>
+</div>
+<div class="question-box wrong">
+  <div class="q-title">Q16-2 | 余弦定理+角平分线分面积法求角平分线长 | 0/8</div>
+  <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
+  <div class="q-student">❌ 孙麟博作答：不会</div>
+  <div class="q-error">⚠️ 不会角平分线长度</div>
+</div>
+<div class="question-box partial">
+  <div class="q-title">Q17-2 | 建系法求二面角（法向量法） | 7/8 估</div>
+  <div class="q-content">求二面角B−PD−C的余弦值</div>
+  <div class="q-student">❌ 孙麟博作答：部分作答</div>
+  <div class="q-error">⚠️ 建系求二面角有误</div>
+</div>
+<div class="question-box partial">
+  <div class="q-title">Q18-1+2 | 全概率公式+条件概率+离散型随机变量分布列与数学期望 | 5/10 估</div>
+  <div class="q-content">第一次命中概率3/4；X表示前两次命中次数，求分布列与E(X)</div>
+  <div class="q-student">❌ 孙麟博作答：部分作答</div>
+  <div class="q-error">⚠️ 全概率公式与分布列有误</div>
+</div>
+<div class="question-box wrong">
+  <div class="q-title">Q18-3 | 马尔科夫链 | 0/7</div>
+  <div class="q-content">求Pᵢ的取值范围</div>
+  <div class="q-student">❌ 孙麟博作答：不会</div>
+  <div class="q-error">⚠️ 不会马尔科夫链</div>
+</div>
+<div class="question-box partial">
+  <div class="q-title">Q19-2 | 分离参数法+数形结合研究函数极值求参数范围 | 1/6 估</div>
+  <div class="q-content">f'(x)有三个不同零点，求a的取值范围</div>
+  <div class="q-student">❌ 孙麟博作答：部分作答</div>
+  <div class="q-error">⚠️ 分离参数求范围有误</div>
+</div>
+<div class="question-box wrong">
+  <div class="q-title">Q19-3 | 极值点偏移+构造函数证明不等式 | 0/7</div>
+  <div class="q-content">h(x)有三个极值点x₁,x₂,x₃，证明h(x₁)·h(x₂)·h(x₃)≥−1/e−1</div>
+  <div class="q-student">❌ 孙麟博作答：不会</div>
+  <div class="q-error">⚠️ 不会极值点偏移证明</div>
+</div>
+</div>
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="eval-box"><h3>💪 亮点</h3><ul>
+<li>单选题得分率87.5%，基础不错</li>
+<li>已掌握知识点：复数、集合、向量、余弦定理、等差等比、圆台外接球、分段函数零点、三角函数图象变换等12个</li>
+</ul></div>
+<div class="eval-box"><h3>⚠️ 核心问题1</h3><p style="font-size:14px">未掌握知识点：排列组合、导数综合、线性回归残差、切线与曲线相切、不会裂项相消、不会角平分线长度等8个</p></div>
+<div class="eval-box"><h3>⚠️ 核心问题2</h3><p style="font-size:14px">解答题得分率仅39.0%，主观题薄弱</p></div>
+</div>
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 核心知识点突破</strong><br>
+  Q15-2（裂项相消法求和（1/(aₙ·a）、Q16-2（余弦定理+角平分线分面积法求角）<br>这些是高考必考的核心题型，必须优先掌握</div>
+</div>
+<div class="path-item">
+  <div class="path-icon important">2</div>
+  <div><strong>📌 基础知识巩固</strong><br>
+  Q6（排列问题（A₄¹⁰分步分配））、Q11（利用导数研究函数零点、对称中心）、Q13（回归方程过样本中心点+残差=观）、Q14（导数求切线方程+切线与二次曲线）<br>这些知识点需要加强练习</div>
+</div>
+<div class="path-item">
+  <div class="path-icon solidify">3</div>
+  <div><strong>✅ 压轴题逐步攻克</strong><br>
+  Q18-3（马尔科夫链）、Q19-3（极值点偏移+构造函数证明不等式）<br>在基础稳固后逐步突破</div>
+</div>
+</div>
+</div>
+</body>
+</html>

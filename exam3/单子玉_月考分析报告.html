@@ -34,322 +34,244 @@
   .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
   .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
   .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
-  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
-  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
-  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
-  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
-  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
-  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
-  .communicate-item:last-child { border-bottom: none; }
-  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
-  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
-  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
-  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .communicate-box { background: #f5eef8; border-radius: 8px; padding: 16px; }
+  .communicate-box h3 { color: #8e44ad; margin-bottom: 12px; }
+  .communicate-item { margin: 8px 0; padding-left: 8px; border-left: 3px solid #8e44ad; font-size: 14px; }
+  .eval-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 10px 0; }
+  .eval-box h3 { color: #2c3e50; margin-bottom: 10px; font-size: 16px; }
+  .eval-box ul { padding-left: 20px; }
+  .eval-box li { margin: 6px 0; font-size: 14px; }
+  .path-item { display: flex; margin: 12px 0; }
+  .path-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; flex-shrink: 0; margin-right: 12px; font-size: 15px; }
   .path-icon.urgent { background: #e74c3c; }
   .path-icon.important { background: #f39c12; }
   .path-icon.solidify { background: #27ae60; }
-  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
-  .score-bar .fill { height: 100%; border-radius: 9px; }
-  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
-  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
-  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
-  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+  .score-bar { background: #e8e8e8; border-radius: 4px; height: 16px; overflow: hidden; }
+  .score-bar .fill { height: 100%; border-radius: 4px; }
+  .score-bar .fill.green { background: #2ecc71; }
+  .score-bar .fill.yellow { background: #f1c40f; }
+  .score-bar .fill.red { background: #e74c3c; }
+  .score-bar .fill.blue { background: #3498db; }
+  .empty-section { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- 头部 -->
-<div class="header">
-  <h1>单子玉 · 月考分析报告</h1>
-  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 5号</div>
-  <div class="score-big">103 / 150</div>
-  <div class="score-label">得分率 68.7%</div>
-</div>
+  <div class="header">
+    <h1>单子玉 · 月考分析报告</h1>
+    <div class="subtitle">2026年6月高三月考 | 三班</div>
+    <div class="score-big">105<span style="font-size:20px">/150</span></div>
+    <div class="score-label">预估分 | 得分率 70.0% | 校次 7 | 班次 3</div>
+  </div>
 
-<!-- 板块1：整体得分概览 -->
-<div class="section">
-<h2>📊 整体得分概览</h2>
-<div class="table-wrap"><table>
-  <tr>
-    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  <div class="section">
+  <h2>📊 整体得分概览</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th></tr>
+    <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>35</td><td>87.5%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:87.5%"></div></div></td>
   </tr>
-  <tr>
-    <td>单选题 (Q1-Q8)</td><td>40</td><td>30</td><td>75.0%</td>
-    <td><div class="score-bar"><div class="fill green" style="width:75.0%"></div></div></td>
-  </tr>
-  <tr>
+    <tr>
     <td>多选题 (Q9-Q11)</td><td>18</td><td>15</td><td>83.3%</td>
     <td><div class="score-bar"><div class="fill green" style="width:83.3%"></div></div></td>
   </tr>
-  <tr>
+    <tr>
     <td>填空题 (Q12-Q14)</td><td>15</td><td>5</td><td>33.3%</td>
     <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
   </tr>
-  <tr style="font-weight:600; background:#f0f4f8;">
-    <td>客观题合计</td><td>73</td><td>50</td><td>68.5%</td>
-    <td><div class="score-bar"><div class="fill yellow" style="width:68.5%"></div></div></td>
+    <tr style="font-weight:600; background:#f0f4f8;">
+    <td>客观题合计</td><td>73</td><td>55</td><td>75.3%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:75.3%"></div></div></td>
   </tr>
-  <tr>
-    <td>解答题 (Q15-Q19)</td><td>77</td><td>55</td><td>71.4%</td>
-    <td><div class="score-bar"><div class="fill green" style="width:71.4%"></div></div></td>
+    <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>50 估</td><td>64.9%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:64.9%"></div></div></td>
   </tr>
-  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
-    <td>总分</td><td>150</td><td>105</td><td>70.0%</td>
-    <td><div class="score-bar"><div class="fill blue" style="width:70.0%"></div></div></td>
+    <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>预估分</td><td>150</td><td>105</td><td>70.0%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:70.0%"></div></div></td>
   </tr>
-</table></div>
-</div>
+  </table></div></div>
 
-<!-- 板块2：未掌握知识点汇总 -->
-<div class="section">
-<h2>❌ 未掌握知识点汇总</h2>
-<div class="table-wrap"><table>
+  <div class="section">
+  <h2>❌ 未掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
   <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
-  <tr>
-    <td>Q7</td><td>圆台与外接球</td><td><span class="tag-fail">不会</span></td>
-    <td>错选C，应该是不会</td>
+    <tr>
+    <td>Q7</td><td>圆台体积与侧面积公式+外接球表面积</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">圆台外接球未掌握</td>
+  </tr>  <tr>
+    <td>Q12</td><td>两角差余弦展开+齐次化切+二倍角求值</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">三角恒等变换未掌握</td>
+  </tr>  <tr>
+    <td>Q13</td><td>回归方程过样本中心点+残差=观测值−预测值</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">线性回归残差未掌握</td>
+  </tr>  <tr>
+    <td>Q16-2</td><td>余弦定理+角平分线分面积法求角平分线长</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会角平分线长度</td>
+  </tr>  <tr>
+    <td>Q18-3</td><td>马尔科夫链</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会马尔科夫链</td>
+  </tr>  <tr>
+    <td>Q19-3</td><td>极值点偏移+构造函数证明不等式</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会极值点偏移证明</td>
   </tr>
-  <tr>
-    <td>Q12</td><td>三角恒等变换</td><td><span class="tag-fail">答错</span></td>
-    <td class="wrap-cell">答26，待沟通确认错因</td>
-  </tr>
-  <tr>
-    <td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">答错</span></td>
-    <td class="wrap-cell">答12.6，待沟通确认错因</td>
-  </tr>
-  <tr>
-    <td>Q19(2)</td><td>导数单调性</td><td><span class="tag-fail">未掌握</span></td>
-    <td>未提及</td>
-  </tr>
-  <tr>
-    <td>Q19(3)</td><td>极值点偏移证明</td><td><span class="tag-fail">未掌握</span></td>
-    <td>未提及</td>
-  </tr>
-</table></div>
-</div>
+  </table></div></div>
 
-<!-- 板块3：部分掌握知识点汇总 -->
-<div class="section">
-<h2>⚠️ 部分掌握知识点汇总</h2>
-<div class="table-wrap"><table>
+  <div class="section">
+  <h2>⚠️ 部分掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
   <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
-  <tr>
-    <td>Q8</td><td>分段函数零点</td><td><span class="tag-partial">待确认</span></td><td>0/5</td>
-    <td class="wrap-cell">会不会不确定</td>
-    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>确认是否掌握零点存在性定理</td>
-  </tr>
-  <tr>
-    <td>Q10</td><td>正四棱柱综合</td><td><span class="tag-partial">部分得分</span></td><td>3/6</td>
-    <td class="wrap-cell">只选B，漏选D</td>
-    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>为什么没选D？不确定还是没看到？</td>
-  </tr>
-  <tr>
-    <td>Q16(2)</td><td>角平分线长度</td><td><span class="tag-partial">部分得分</span></td><td>2/8</td>
-    <td class="wrap-cell">尝试用余弦定理，但没算下去</td>
-    <td class="wrap-cell"><span class="tag-communicate">⚠️待沟通</span>为什么没算完？运算复杂度还是方法不确定？</td>
-  </tr>
-  <tr>
-    <td>Q18(3)</td><td>递推与范围</td><td><span class="tag-partial">部分得分</span></td><td>3/6</td>
-    <td class="wrap-cell">PE=3/4有处理，但未完整</td>
+    <tr>
+    <td>Q10</td><td>正四棱柱中空间距离、外接球、线面垂直、点到平面距离综合判断</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>3/6</td>
+    <td class="wrap-cell">正四棱柱综合部分掌握</td>
     <td></td>
+  </tr>  <tr>
+    <td>Q19-2</td><td>分离参数法+数形结合研究函数极值求参数范围</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>1/6</td>
+    <td class="wrap-cell">分离参数求范围有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
   </tr>
-</table></div>
-</div>
+  </table></div></div>
 
-<!-- 板块4：已掌握知识点汇总 -->
-<div class="section">
-<h2>✅ 已掌握知识点汇总</h2>
-<div class="table-wrap"><table>
+  <div class="section">
+  <h2>✅ 已掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
   <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
-  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
-  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
-  <tr><td>Q3</td><td>向量</td><td>5/5 ✓</td></tr>
-  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
-  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
-  <tr><td>Q6</td><td>排列组合</td><td>5/5 ✓</td></tr>
-  <tr><td>Q9</td><td>三角函数图象变换</td><td>6/6 ✓</td></tr>
-  <tr><td>Q11</td><td>导数综合</td><td>6/6 ✓</td></tr>
-  <tr><td>Q14</td><td>切线与曲线相切</td><td>5/5 ✓</td></tr>
-  <tr><td>Q15(1)</td><td>等差数列通项</td><td>6/6 ✓</td></tr>
-  <tr><td>Q15(2)</td><td>裂项求和</td><td>7/7 ✓</td></tr>
-  <tr><td>Q16(1)</td><td>正弦定理求角</td><td>7/7 ✓</td></tr>
-  <tr><td>Q17(1)</td><td>线面垂直证明</td><td>7/7 ✓</td></tr>
-  <tr><td>Q17(2)</td><td>二面角</td><td>8/8 ✓</td></tr>
-  <tr><td>Q18(1)</td><td>全概率公式</td><td>5/5 ✓</td></tr>
-  <tr><td>Q18(2)</td><td>分布列与期望</td><td>6/6 ✓</td></tr>
-  <tr><td>Q19(1)</td><td>切线方程</td><td>4/4 ✓</td></tr>
-</table></div>
-</div>
+    <tr>
+    <td>Q1</td><td>复数除法运算求虚部</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q2</td><td>补集与交集的混合运算</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q3</td><td>已知向量垂直求参数（坐标运算）</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q4</td><td>余弦定理，SAS求边</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q5</td><td>等差等比，化归求首项</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q6</td><td>排列问题（A₄¹⁰分步分配）</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q8</td><td>分段函数零点个数转化为交点问题求参数范围</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q9</td><td>三角函数平移与横坐标伸缩变换判断性质</td><td>6/6 ✓</td>
+  </tr>  <tr>
+    <td>Q11</td><td>利用导数研究函数零点、对称中心、切线、单调性综合判断</td><td>6/6 ✓</td>
+  </tr>  <tr>
+    <td>Q14</td><td>导数求切线方程+切线与二次曲线相切条件求参</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q15-1</td><td>等比中项列方程求等差数列公差+通项公式</td><td>6/6 估 ✓</td>
+  </tr>  <tr>
+    <td>Q15-2</td><td>裂项相消法求和（1/(aₙ·aₙ₊₁)型）</td><td>7/7 估 ✓</td>
+  </tr>  <tr>
+    <td>Q16-1</td><td>正弦定理边化角+两角和正弦展开求角</td><td>7/7 估 ✓</td>
+  </tr>  <tr>
+    <td>Q17-1</td><td>勾股定理逆定理+面面垂直性质定理证线面垂直</td><td>7/7 估 ✓</td>
+  </tr>  <tr>
+    <td>Q17-2</td><td>建系法求二面角（法向量法）</td><td>8/8 估 ✓</td>
+  </tr>  <tr>
+    <td>Q18-1+2</td><td>全概率公式+条件概率+离散型随机变量分布列与数学期望</td><td>10/10 估 ✓</td>
+  </tr>  <tr>
+    <td>Q19-1</td><td>导数的几何意义求切线方程</td><td>4/4 估 ✓</td>
+  </tr>
+  </table></div></div>
 
-<!-- 板块5：师生待沟通 -->
-<div class="section">
-<h2>💬 师生待沟通</h2>
-<div class="communicate-box">
-<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
-<div class="communicate-item">
-  <strong>Q7（圆台与外接球）：</strong>错选C，需要确认是空间想象问题还是公式不会
-</div>
-<div class="communicate-item">
-  <strong>Q8（分段函数零点）：</strong>会不会不确定，需要确认零点存在性定理是否掌握
-</div>
-<div class="communicate-item">
-  <strong>Q10（正四棱柱综合）：</strong>只选B漏选D，为什么没选D？是不确定D的正确性还是没看到选项内容？
-</div>
-<div class="communicate-item">
-  <strong>Q12（三角恒等变换）：</strong>答26，需要了解计算过程，确认错在哪一步
-</div>
-<div class="communicate-item">
-  <strong>Q13（线性回归残差）：</strong>答12.6，这个答案很特殊，需要了解是怎么算出来的
-</div>
-<div class="communicate-item">
-  <strong>Q16(2)（角平分线长度）：</strong>尝试用余弦定理但没算下去，是运算复杂还是方法不确定？
-</div>
-</div>
-</div>
-
-<!-- 板块6：错题与部分掌握题详细分析 -->
+  <div class="section">
+  <h2>💬 师生待沟通</h2>
+  <div class="communicate-box">
+  <h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+  <div class="communicate-item">Q13（线性回归残差）：错了，需要确认错因</div><div class="communicate-item">QQ19-2（分离参数法+数形结合研究函数极值求参数范围）：得1/6分（推断值），需确认具体卡点</div>
+  </div></div>
 <div class="section">
 <h2>📝 错题与部分掌握题详细分析</h2>
-
-<!-- Q7 -->
 <div class="question-box wrong">
-  <div class="q-title">Q7 | 圆台与外接球 | 0/5</div>
+  <div class="q-title">Q7 | 圆台体积与侧面积公式+外接球表面积 | 0/5</div>
   <div class="q-content">圆台下底半径=2倍上底半径，侧面积3√10π，体积7π，求外接球表面积</div>
-  <div class="q-answer">✅ 正确答案：D（20π）</div>
-  <div class="q-student">❌ 单子玉作答：错选C，应该是不会</div>
-  <div class="q-tip">💡 建议：圆台外接球问题需要先确定球心位置，再用勾股定理建立方程，待沟通确认卡在哪一步</div>
+  <div class="q-answer">✅ 正确答案：D</div>
+  <div class="q-student">❌ 单子玉作答：错选</div>
+  <div class="q-error">⚠️ 圆台外接球未掌握</div>
 </div>
-
-<!-- Q8 -->
-<div class="question-box wrong">
-  <div class="q-title">Q8 | 分段函数零点 | 0/5</div>
-  <div class="q-content">f(x)={eˣ−1,x≤0; lnx+x²,x>0}，g(x)=f(x)−m有两个零点，求m范围</div>
-  <div class="q-answer">✅ 正确答案：C（(−1,0]）</div>
-  <div class="q-student">❌ 单子玉作答：会不会不确定，待沟通</div>
-  <div class="q-tip">💡 建议：确认是否掌握零点存在性定理及数形结合方法</div>
-</div>
-
-<!-- Q10 -->
 <div class="question-box partial">
-  <div class="q-title">Q10 | 正四棱柱综合 | 3/6</div>
+  <div class="q-title">Q10 | 正四棱柱中空间距离、外接球、线面垂直、点到平面距离综合判断 | 3/6</div>
   <div class="q-content">正四棱柱AA₁=2AB=2，O为DCC₁D₁对角线交点，判断四个结论</div>
-  <div class="q-answer">✅ 正确答案：BD</div>
-  <div class="q-student">⚠️ 单子玉作答：只选B，漏选D</div>
-  <div class="q-error">⚠️ 选对B得3分，但漏选D。待沟通：为什么没选D？是不确定D的正确性还是没看到？</div>
+  <div class="q-answer">✅ 正确答案：ACD</div>
+  <div class="q-student">❌ 单子玉作答：部分作答</div>
+  <div class="q-error">⚠️ 正四棱柱综合部分掌握</div>
 </div>
-
-<!-- Q12 -->
 <div class="question-box wrong">
-  <div class="q-title">Q12 | 三角恒等变换 | 0/5</div>
-  <div class="q-content">三角恒等变换填空题</div>
-  <div class="q-student">❌ 单子玉作答：26</div>
-  <div class="q-error">答案错误，待沟通确认计算过程，可能某一步三角公式用错或运算出错</div>
+  <div class="q-title">Q12 | 两角差余弦展开+齐次化切+二倍角求值 | 0/5</div>
+  <div class="q-content">cos(α−π/3)=cosα，求cos2α</div>
+  <div class="q-student">❌ 单子玉作答：不会</div>
+  <div class="q-error">⚠️ 三角恒等变换未掌握</div>
 </div>
-
-<!-- Q13 -->
 <div class="question-box wrong">
-  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
-  <div class="q-content">线性回归残差填空题</div>
-  <div class="q-student">❌ 单子玉作答：12.6</div>
-  <div class="q-error">答案错误，12.6这个答案很特殊，待沟通确认是怎么算出来的</div>
+  <div class="q-title">Q13 | 回归方程过样本中心点+残差=观测值−预测值 | 0/5</div>
+  <div class="q-content">ŷ=0.4x+â，x̄=20，ȳ=7，数据(30,n)残差0.6，求n</div>
+  <div class="q-student">❌ 单子玉作答：不会</div>
+  <div class="q-error">⚠️ 线性回归残差未掌握</div>
 </div>
-
-<!-- Q16(2) -->
-<div class="question-box partial">
-  <div class="q-title">Q16(2) | 角平分线长度 | 2/8</div>
+<div class="question-box wrong">
+  <div class="q-title">Q16-2 | 余弦定理+角平分线分面积法求角平分线长 | 0/8</div>
   <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
-  <div class="q-answer">✅ 正确答案：BD=√6/6</div>
-  <div class="q-student">⚠️ 单子玉作答：尝试用余弦定理，但不知道为什么没有算下去</div>
-  <div class="q-analysis">分析：方法方向是对的，已经知道要用余弦定理，但执行没有完成。可能是运算复杂度导致中途放弃</div>
-  <div class="q-tip">💡 建议：已经选对方法了，就把运算推到底！"开了头就做到底"——中途放弃太可惜了，8分的题拿2分远不如拿6-8分</td>
+  <div class="q-student">❌ 单子玉作答：不会</div>
+  <div class="q-error">⚠️ 不会角平分线长度</div>
 </div>
-
-<!-- Q18(3) -->
-<div class="question-box partial">
-  <div class="q-title">Q18(3) | 递推与范围 | 3/6</div>
-  <div class="q-content">概率递推与范围</div>
-  <div class="q-student">⚠️ 单子玉作答：PE=3/4有处理</div>
-  <div class="q-analysis">分析：条件概率PE有思路，得3分，但后续未完整做出来。第一问和第二问都全对，基础扎实</div>
-</div>
-
-<!-- Q19(2)(3) -->
 <div class="question-box wrong">
-  <div class="q-title">Q19(2)(3) | 导数单调性 + 极值点偏移 | 0/13</div>
-  <div class="q-student">❌ 单子玉作答：未提及</div>
-  <div class="q-analysis">分析：导数压轴后两问，作为全卷最难题，Q19(1)切线方程4/4全对已经很好。后两问是拉分项，后续逐步攻克</div>
+  <div class="q-title">Q18-3 | 马尔科夫链 | 0/7</div>
+  <div class="q-content">求Pᵢ的取值范围</div>
+  <div class="q-student">❌ 单子玉作答：不会</div>
+  <div class="q-error">⚠️ 不会马尔科夫链</div>
 </div>
-
+<div class="question-box partial">
+  <div class="q-title">Q19-2 | 分离参数法+数形结合研究函数极值求参数范围 | 1/6 估</div>
+  <div class="q-content">f'(x)有三个不同零点，求a的取值范围</div>
+  <div class="q-student">❌ 单子玉作答：部分作答</div>
+  <div class="q-error">⚠️ 分离参数求范围有误</div>
 </div>
-
-<!-- 板块7：教师评价 -->
+<div class="question-box wrong">
+  <div class="q-title">Q19-3 | 极值点偏移+构造函数证明不等式 | 0/7</div>
+  <div class="q-content">h(x)有三个极值点x₁,x₂,x₃，证明h(x₁)·h(x₂)·h(x₃)≥−1/e−1</div>
+  <div class="q-student">❌ 单子玉作答：不会</div>
+  <div class="q-error">⚠️ 不会极值点偏移证明</div>
+</div>
+</div>
 <div class="section">
 <h2>🌟 教师评价</h2>
-<div class="teacher-comment">
-<h3>💪 单子玉的答卷亮点</h3>
-<p style="font-size:14px; line-height:1.8;">
-<strong>1. 数列满分！</strong>Q15(1)(2)共13分全部拿下，连向相向处理很准确，非常漂亮。<br><br>
-<strong>2. 立体几何满分！</strong>Q17(1)(2)共15分全部拿下，面面垂直的性质定理会用，数算得对。<br><br>
-<strong>3. 概率统计14/17！</strong>Q18(1)(2)都算对了，Q18(3)也有处理，基础扎实。<br><br>
-<strong>4. 多选题策略不错！</strong>Q9和Q11都全对，没有贪多选错，这个策略很好。<br><br>
-<strong>5. 解答题得分率71.4%，远超多数同学。</strong>该得分的点都得分了，这一点非常难得！
-</p>
+<div class="eval-box"><h3>💪 亮点</h3><ul>
+<li>单选题得分率87.5%，基础不错</li>
+<li>已掌握知识点：复数、集合、向量、余弦定理、等差等比、排列组合、分段函数零点、三角函数图象变换等17个</li>
+</ul></div>
+<div class="eval-box"><h3>⚠️ 核心问题</h3><p style="font-size:14px">未掌握知识点：圆台外接球、三角恒等变换、线性回归残差、不会角平分线长度、不会马尔科夫链、不会极值点偏移证明</p></div>
 </div>
-
-<div class="highlight-box">
-<h3>🌟 核心评价：整体答得非常漂亮，该得分的点都得分了</h3>
-<p style="font-size:14px; line-height:1.8;">
-单子玉这份卷子最大的优点就是<strong>"该拿的分一定拿到"</strong>——数列满分、立体几何满分、概率统计接近满分、解三角形第一问满分、导数第一问满分。稳住的部分远多于丢分的部分，这在全班都是非常难得的。<br><br>
-需要关注的问题：<br><br>
-<strong>① Q7Q8两道单选不会：</strong>圆台外接球和分段函数零点，属于中档偏难题，待沟通确认掌握程度。<br><br>
-<strong>② 填空题只对1个：</strong>Q12答26、Q13答12.6，待沟通确认错因，可能是计算过程有误。<br><br>
-<strong>③ Q16(2)余弦定理没算完：</strong>方法选对了但没有执行到底，有点可惜，8分的题只拿了2分。<br><br>
-<strong>④ Q10漏选D：</strong>多选策略总体不错，但这一题漏选丢3分。
-</p>
-</div>
-</div>
-
-<!-- 板块8：能力诊断与提分路径 -->
 <div class="section">
 <h2>🚀 能力诊断与提分路径</h2>
-
 <div class="path-item">
-  <div class="path-icon important">1</div>
-  <div><strong>📌 Q16(2)余弦定理算到底（预计提6分）</strong><br>
-  方法选对了，但中途放弃。8分的题只拿2分太可惜了。建议：<br>
-  ① 既然已经知道用余弦定理，就把式子列出来，哪怕算不完也有步骤分<br>
-  ② "开了头就做到底"——中途放弃是最亏的
-  </div>
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 核心知识点突破</strong><br>
+  Q16-2（余弦定理+角平分线分面积法求角）<br>这些是高考必考的核心题型，必须优先掌握</div>
 </div>
-
 <div class="path-item">
   <div class="path-icon important">2</div>
-  <div><strong>📌 填空题Q12Q13错因排查（预计提10分）</strong><br>
-  填空题3道只对1道，得分率33.3%，和整体水平不匹配。建议：<br>
-  ① 沟通确认26和12.6是怎么算出来的<br>
-  ② 如果是计算错误，加强填空题的检验习惯<br>
-  ③ 填空题没有步骤分，答案对了才给分，必须确保最终结果正确
-  </div>
+  <div><strong>📌 基础知识巩固</strong><br>
+  Q7（圆台体积与侧面积公式+外接球表）、Q12（两角差余弦展开+齐次化切+二倍）、Q13（回归方程过样本中心点+残差=观）<br>这些知识点需要加强练习</div>
 </div>
-
 <div class="path-item">
-  <div class="path-icon important">3</div>
-  <div><strong>📌 Q7Q8单选攻克（预计提10分）</strong><br>
-  圆台外接球和分段函数零点是中档偏难题。建议：<br>
-  ① 圆台外接球：掌握"球心到各顶点距离相等"列方程的通法<br>
-  ② 分段函数零点：掌握数形结合+零点存在性定理的套路
-  </div>
+  <div class="path-icon solidify">3</div>
+  <div><strong>✅ 压轴题逐步攻克</strong><br>
+  Q18-3（马尔科夫链）、Q19-3（极值点偏移+构造函数证明不等式）<br>在基础稳固后逐步突破</div>
 </div>
-
-<div class="path-item">
-  <div class="path-icon solidify">4</div>
-  <div><strong>✅ 长期攻克：Q18(3)递推与范围 + Q19(2)(3)导数压轴</strong><br>
-  Q18(3)已经有思路（PE=3/4），继续完善即可；Q19后两问是全卷最难题，在基础进一步稳固后系统突破
-  </div>
 </div>
-
-</div>
-
 </div>
 </body>
 </html>

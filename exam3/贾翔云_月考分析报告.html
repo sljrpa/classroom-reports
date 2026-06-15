@@ -34,339 +34,262 @@
   .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
   .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
   .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
-  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #2471a3; }
-  .highlight-box { background: #eaf6ff; border: 1px solid #aed6f1; border-radius: 8px; padding: 16px; margin: 12px 0; }
-  .highlight-box h3 { color: #2980b9; margin-bottom: 8px; }
-  .communicate-box { background: #fef5e7; border: 1px solid #f9e79f; border-radius: 8px; padding: 16px; margin: 12px 0; }
-  .communicate-box h3 { color: #d68910; margin-bottom: 8px; }
-  .communicate-item { padding: 8px 0; border-bottom: 1px dashed #f0d78e; font-size: 14px; }
-  .communicate-item:last-child { border-bottom: none; }
-  .teacher-comment { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border: 1px solid #a9dfbf; border-radius: 8px; padding: 16px; margin: 12px 0; }
-  .teacher-comment h3 { color: #1e8449; margin-bottom: 8px; }
-  .path-item { display: flex; align-items: flex-start; margin: 8px 0; font-size: 14px; }
-  .path-item .path-icon { min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; margin-right: 10px; margin-top: 2px; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .communicate-box { background: #f5eef8; border-radius: 8px; padding: 16px; }
+  .communicate-box h3 { color: #8e44ad; margin-bottom: 12px; }
+  .communicate-item { margin: 8px 0; padding-left: 8px; border-left: 3px solid #8e44ad; font-size: 14px; }
+  .eval-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 10px 0; }
+  .eval-box h3 { color: #2c3e50; margin-bottom: 10px; font-size: 16px; }
+  .eval-box ul { padding-left: 20px; }
+  .eval-box li { margin: 6px 0; font-size: 14px; }
+  .path-item { display: flex; margin: 12px 0; }
+  .path-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; flex-shrink: 0; margin-right: 12px; font-size: 15px; }
   .path-icon.urgent { background: #e74c3c; }
   .path-icon.important { background: #f39c12; }
   .path-icon.solidify { background: #27ae60; }
-  .score-bar { height: 18px; border-radius: 9px; background: #ecf0f1; overflow: hidden; margin: 4px 0; }
-  .score-bar .fill { height: 100%; border-radius: 9px; }
-  .fill.green { background: linear-gradient(90deg, #27ae60, #2ecc71); }
-  .fill.yellow { background: linear-gradient(90deg, #f39c12, #f1c40f); }
-  .fill.red { background: linear-gradient(90deg, #e74c3c, #c0392b); }
-  .fill.blue { background: linear-gradient(90deg, #3498db, #2980b9); }
+  .score-bar { background: #e8e8e8; border-radius: 4px; height: 16px; overflow: hidden; }
+  .score-bar .fill { height: 100%; border-radius: 4px; }
+  .score-bar .fill.green { background: #2ecc71; }
+  .score-bar .fill.yellow { background: #f1c40f; }
+  .score-bar .fill.red { background: #e74c3c; }
+  .score-bar .fill.blue { background: #3498db; }
+  .empty-section { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- 头部 -->
-<div class="header">
-  <h1>贾翔云 · 月考分析报告</h1>
-  <div class="subtitle">2026年6月高三第一次月考 | 高三三班 11号</div>
-  <div class="score-big">97 / 150</div>
-  <div class="score-label">预估分</div>
-</div>
+  <div class="header">
+    <h1>贾翔云 · 月考分析报告</h1>
+    <div class="subtitle">2026年6月高三月考 | 三班</div>
+    <div class="score-big">96<span style="font-size:20px">/150</span></div>
+    <div class="score-label">预估分 | 得分率 64.0% | 校次 30 | 班次 8</div>
+  </div>
 
-<!-- 板块1：整体得分概览 -->
-<div class="section">
-<h2>📊 整体得分概览</h2>
-<div class="table-wrap"><table>
-  <tr>
-    <th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th>
+  <div class="section">
+  <h2>📊 整体得分概览</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th></tr>
+    <tr>
+    <td>单选题 (Q1-Q8)</td><td>40</td><td>40</td><td>100.0%</td>
+    <td><div class="score-bar"><div class="fill green" style="width:100.0%"></div></div></td>
   </tr>
-  <tr>
-    <td>单选题 (Q1-Q8)</td><td>40</td><td>40</td><td>100%</td>
-    <td><div class="score-bar"><div class="fill green" style="width:100%"></div></div></td>
-  </tr>
-  <tr>
+    <tr>
     <td>多选题 (Q9-Q11)</td><td>18</td><td>6</td><td>33.3%</td>
     <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
   </tr>
-  <tr>
+    <tr>
     <td>填空题 (Q12-Q14)</td><td>15</td><td>5</td><td>33.3%</td>
     <td><div class="score-bar"><div class="fill red" style="width:33.3%"></div></div></td>
   </tr>
-  <tr style="font-weight:600; background:#f0f4f8;">
+    <tr style="font-weight:600; background:#f0f4f8;">
     <td>客观题合计</td><td>73</td><td>51</td><td>69.9%</td>
     <td><div class="score-bar"><div class="fill yellow" style="width:69.9%"></div></div></td>
   </tr>
-  <tr>
-    <td>解答题 (Q15-Q19)</td><td>77</td><td>46 估</td><td>59.7%</td>
-    <td><div class="score-bar"><div class="fill yellow" style="width:59.7%"></div></div></td>
+    <tr>
+    <td>解答题 (Q15-Q19)</td><td>77</td><td>45 估</td><td>58.4%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:58.4%"></div></div></td>
   </tr>
-  <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
-    <td>预估分</td><td>150</td><td>97</td><td>64.7%</td>
-    <td><div class="score-bar"><div class="fill blue" style="width:64.7%"></div></div></td>
+    <tr style="font-weight:700; background:#e8f4fd; font-size:15px;">
+    <td>预估分</td><td>150</td><td>96</td><td>64.0%</td>
+    <td><div class="score-bar"><div class="fill yellow" style="width:64.0%"></div></div></td>
   </tr>
-</table></div>
-</div>
+  </table></div></div>
 
-<!-- 板块2：未掌握知识点汇总 -->
-<div class="section">
-<h2>❌ 未掌握知识点汇总</h2>
-<div class="table-wrap"><table>
+  <div class="section">
+  <h2>❌ 未掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
   <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
-  <tr>
-    <td>Q10</td><td>正四棱柱综合</td><td><span class="tag-fail">未掌握</span></td>
-    <td class="wrap-cell">错选C，待沟通</td>
+    <tr>
+    <td>Q10</td><td>正四棱柱中空间距离、外接球、线面垂直、点到平面距离综合判断</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">正四棱柱综合未掌握</td>
+  </tr>  <tr>
+    <td>Q11</td><td>利用导数研究函数零点、对称中心、切线、单调性综合判断</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">导数综合未掌握</td>
+  </tr>  <tr>
+    <td>Q13</td><td>回归方程过样本中心点+残差=观测值−预测值</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">线性回归残差未掌握</td>
+  </tr>  <tr>
+    <td>Q14</td><td>导数求切线方程+切线与二次曲线相切条件求参</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">切线与曲线相切未掌握</td>
+  </tr>  <tr>
+    <td>Q16-2</td><td>余弦定理+角平分线分面积法求角平分线长</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会角平分线长度</td>
+  </tr>  <tr>
+    <td>Q18-3</td><td>马尔科夫链</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会马尔科夫链</td>
+  </tr>  <tr>
+    <td>Q19-3</td><td>极值点偏移+构造函数证明不等式</td>
+    <td><span class="tag-fail">未掌握</span></td>
+    <td class="wrap-cell">不会极值点偏移证明</td>
   </tr>
-  <tr>
-    <td>Q11</td><td>导数综合</td><td><span class="tag-fail">未掌握</span></td>
-    <td class="wrap-cell">错选，待沟通</td>
-  </tr>
-  <tr>
-    <td>Q13</td><td>线性回归残差</td><td><span class="tag-fail">未掌握</span></td>
-    <td class="wrap-cell">没对，待沟通</td>
-  </tr>
-  <tr>
-    <td>Q14</td><td>切线与曲线相切</td><td><span class="tag-fail">未掌握</span></td>
-    <td class="wrap-cell">没对，待沟通</td>
-  </tr>
-  <tr>
-    <td>Q16(2)</td><td>角平分线长度</td><td><span class="tag-fail">未掌握</span></td>
-    <td class="wrap-cell">因(1)角度错导致后面没得分</td>
-  </tr>
-  <tr>
-    <td>Q19(2)</td><td>零点求参数范围</td><td><span class="tag-fail">未掌握</span></td>
-    <td class="wrap-cell">一开始就理解错了，A被搞没，函数变成-1/3x³+3x</td>
-  </tr>
-  <tr>
-    <td>Q19(3)</td><td>极值点偏移证明</td><td><span class="tag-fail">未掌握</span></td>
-    <td>没写</td>
-  </tr>
-</table></div>
-</div>
+  </table></div></div>
 
-<!-- 板块3：部分掌握知识点汇总 -->
-<div class="section">
-<h2>⚠️ 部分掌握知识点汇总</h2>
-<div class="table-wrap"><table>
+  <div class="section">
+  <h2>⚠️ 部分掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
   <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
-  <tr>
-    <td>Q15(2)</td><td>裂项求和</td><td><span class="tag-partial">部分掌握</span></td><td>4/7</td>
-    <td class="wrap-cell">最后一项写成1/(2n-1)应为1/(2n+1)，和好几个同学犯的错一样</td>
-    <td></td>
+    <tr>
+    <td>Q15-2</td><td>裂项相消法求和（1/(aₙ·aₙ₊₁)型）</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>4/7</td>
+    <td class="wrap-cell">裂项相消有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
+  </tr>  <tr>
+    <td>Q16-1</td><td>正弦定理边化角+两角和正弦展开求角</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>5/7</td>
+    <td class="wrap-cell">正弦定理求角有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
+  </tr>  <tr>
+    <td>Q19-2</td><td>分离参数法+数形结合研究函数极值求参数范围</td>
+    <td><span class="tag-partial">部分掌握</span></td>
+    <td>1/6</td>
+    <td class="wrap-cell">分离参数求范围有误</td>
+    <td><span class="tag-communicate">⚠️待沟通确认具体问题</span></td>
   </tr>
-  <tr>
-    <td>Q16(1)</td><td>正弦定理求角</td><td><span class="tag-partial">部分掌握</span></td><td>4/7 估</td>
-    <td class="wrap-cell">sin(B+C)展开式加号写成减号，导致π/3算成2π/3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Q18(3)</td><td>递推与范围</td><td><span class="tag-partial">部分掌握</span></td><td>2/6 估</td>
-    <td class="wrap-cell">有尝试求P1和P2，非常不错</td>
-    <td></td>
-  </tr>
-</table></div>
-</div>
+  </table></div></div>
 
-<!-- 板块4：已掌握知识点汇总 -->
-<div class="section">
-<h2>✅ 已掌握知识点汇总</h2>
-<div class="table-wrap"><table>
+  <div class="section">
+  <h2>✅ 已掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
   <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
-  <tr><td>Q1</td><td>复数</td><td>5/5 ✓</td></tr>
-  <tr><td>Q2</td><td>集合</td><td>5/5 ✓</td></tr>
-  <tr><td>Q3</td><td>向量</td><td>5/5 ✓</td></tr>
-  <tr><td>Q4</td><td>余弦定理</td><td>5/5 ✓</td></tr>
-  <tr><td>Q5</td><td>等差数列</td><td>5/5 ✓</td></tr>
-  <tr><td>Q6</td><td>排列组合</td><td>5/5 ✓</td></tr>
-  <tr><td>Q7</td><td>圆台外接球</td><td>5/5 ✓</td></tr>
-  <tr><td>Q8</td><td>分段函数零点</td><td>5/5 ✓</td></tr>
-  <tr><td>Q9</td><td>三角函数图象变换</td><td>6/6 ✓</td></tr>
-  <tr><td>Q12</td><td>三角恒等变换</td><td>5/5 ✓</td></tr>
-  <tr><td>Q15(1)</td><td>等差数列通项</td><td>6/6 ✓</td></tr>
-  <tr><td>Q17(1)</td><td>线面垂直证明</td><td>7/7 估 ✓</td></tr>
-  <tr><td>Q17(2)</td><td>二面角</td><td>8/8 估 ✓</td></tr>
-  <tr><td>Q18(1)</td><td>全概率公式</td><td>5/5 估 ✓</td></tr>
-  <tr><td>Q18(2)</td><td>分布列与期望</td><td>6/6 估 ✓</td></tr>
-  <tr><td>Q19(1)</td><td>切线方程</td><td>4/4 估 ✓</td></tr>
-</table></div>
-</div>
+    <tr>
+    <td>Q1</td><td>复数除法运算求虚部</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q2</td><td>补集与交集的混合运算</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q3</td><td>已知向量垂直求参数（坐标运算）</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q4</td><td>余弦定理，SAS求边</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q5</td><td>等差等比，化归求首项</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q6</td><td>排列问题（A₄¹⁰分步分配）</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q7</td><td>圆台体积与侧面积公式+外接球表面积</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q8</td><td>分段函数零点个数转化为交点问题求参数范围</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q9</td><td>三角函数平移与横坐标伸缩变换判断性质</td><td>6/6 ✓</td>
+  </tr>  <tr>
+    <td>Q12</td><td>两角差余弦展开+齐次化切+二倍角求值</td><td>5/5 ✓</td>
+  </tr>  <tr>
+    <td>Q15-1</td><td>等比中项列方程求等差数列公差+通项公式</td><td>6/6 估 ✓</td>
+  </tr>  <tr>
+    <td>Q17-1</td><td>勾股定理逆定理+面面垂直性质定理证线面垂直</td><td>7/7 估 ✓</td>
+  </tr>  <tr>
+    <td>Q17-2</td><td>建系法求二面角（法向量法）</td><td>8/8 估 ✓</td>
+  </tr>  <tr>
+    <td>Q18-1+2</td><td>全概率公式+条件概率+离散型随机变量分布列与数学期望</td><td>10/10 估 ✓</td>
+  </tr>  <tr>
+    <td>Q19-1</td><td>导数的几何意义求切线方程</td><td>4/4 估 ✓</td>
+  </tr>
+  </table></div></div>
 
-<!-- 板块5：师生待沟通 -->
-<div class="section">
-<h2>💬 师生待沟通</h2>
-<div class="communicate-box">
-<h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
-<div class="communicate-item">
-  <strong>Q10（正四棱柱综合）：</strong>错选C，需要确认解题思路是什么，C是怎么判断的
-</div>
-<div class="communicate-item">
-  <strong>Q11（导数综合）：</strong>错选，需要确认选了什么以及为什么这么选
-</div>
-<div class="communicate-item">
-  <strong>Q13（线性回归残差）：</strong>没对，待沟通是概念不清还是计算错误
-</div>
-<div class="communicate-item">
-  <strong>Q14（切线与曲线相切）：</strong>没对，待沟通具体卡在哪个环节
-</div>
-</div>
-</div>
-
-<!-- 板块6：错题与部分掌握题详细分析 -->
+  <div class="section">
+  <h2>💬 师生待沟通</h2>
+  <div class="communicate-box">
+  <h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+  <div class="communicate-item">Q13（线性回归残差）：错了，需要确认错因</div><div class="communicate-item">QQ15-2（裂项相消法求和（1/(aₙ·aₙ₊₁)型））：得4/7分（推断值），需确认具体卡点</div><div class="communicate-item">QQ16-1（正弦定理边化角+两角和正弦展开求角）：得5/7分（推断值），需确认具体卡点</div><div class="communicate-item">QQ19-2（分离参数法+数形结合研究函数极值求参数范围）：得1/6分（推断值），需确认具体卡点</div>
+  </div></div>
 <div class="section">
 <h2>📝 错题与部分掌握题详细分析</h2>
-
 <div class="question-box wrong">
-  <div class="q-title">Q10 | 正四棱柱综合 | 0/6</div>
+  <div class="q-title">Q10 | 正四棱柱中空间距离、外接球、线面垂直、点到平面距离综合判断 | 0/6</div>
   <div class="q-content">正四棱柱AA₁=2AB=2，O为DCC₁D₁对角线交点，判断四个结论</div>
-  <div class="q-answer">✅ 正确答案：BD</div>
-  <div class="q-student">❌ 贾翔云作答：错选C</div>
-  <div class="q-error">⚠️ 待沟通：为什么选C？解题思路是什么？</div>
+  <div class="q-answer">✅ 正确答案：ACD</div>
+  <div class="q-student">❌ 贾翔云作答：错选</div>
+  <div class="q-error">⚠️ 正四棱柱综合未掌握</div>
 </div>
-
 <div class="question-box wrong">
-  <div class="q-title">Q11 | 导数综合 | 0/6</div>
+  <div class="q-title">Q11 | 利用导数研究函数零点、对称中心、切线、单调性综合判断 | 0/6</div>
   <div class="q-content">f(x)=eˣ(2x+1)/x，判断零点/对称中心/切线/单调性四个说法</div>
   <div class="q-answer">✅ 正确答案：AC</div>
-  <div class="q-student">❌ 贾翔云作答：错选，待沟通</div>
-  <div class="q-error">⚠️ 待沟通：选了什么？为什么这么选？</div>
+  <div class="q-student">❌ 贾翔云作答：错选</div>
+  <div class="q-error">⚠️ 导数综合未掌握</div>
 </div>
-
 <div class="question-box wrong">
-  <div class="q-title">Q13 | 线性回归残差 | 0/5</div>
-  <div class="q-student">❌ 贾翔云作答：没对，待沟通</div>
+  <div class="q-title">Q13 | 回归方程过样本中心点+残差=观测值−预测值 | 0/5</div>
+  <div class="q-content">ŷ=0.4x+â，x̄=20，ȳ=7，数据(30,n)残差0.6，求n</div>
+  <div class="q-student">❌ 贾翔云作答：不会</div>
+  <div class="q-error">⚠️ 线性回归残差未掌握</div>
 </div>
-
 <div class="question-box wrong">
-  <div class="q-title">Q14 | 切线与曲线相切 | 0/5</div>
+  <div class="q-title">Q14 | 导数求切线方程+切线与二次曲线相切条件求参 | 0/5</div>
   <div class="q-content">y=x+lnx在(1,1)处切线与y=x²−2x−a相切，求a</div>
-  <div class="q-student">❌ 贾翔云作答：没对，待沟通</div>
+  <div class="q-student">❌ 贾翔云作答：不会</div>
+  <div class="q-error">⚠️ 切线与曲线相切未掌握</div>
 </div>
-
 <div class="question-box partial">
-  <div class="q-title">Q15(2) | 裂项求和 | 估4/7</div>
+  <div class="q-title">Q15-2 | 裂项相消法求和（1/(aₙ·aₙ₊₁)型） | 4/7 估</div>
   <div class="q-content">bₙ=1/(aₙ·aₙ₊₁)，求Sₙ</div>
-  <div class="q-answer">✅ 正确答案：Sₙ = n/(2n+1)</div>
-  <div class="q-student">⚠️ 贾翔云作答：最后一项写成1/(2n-1)，应为1/(2n+1)</div>
-  <div class="q-error">🔴 这是全班高频错误！好几个同学都把最后一项写成了1/(2n-1)。问题出在裂项展开时下标对不齐：通项bₙ=1/(aₙ·aₙ₊₁)=1/((2n-1)(2n+1))，裂开是1/(2n-1)−1/(2n+1)，最后一项是−1/(2n+1)，不是−1/(2n-1)</div>
-  <div class="q-tip">💡 建议：裂项展开后，从第一项到最后一项逐项写出来验证，不要凭"感觉"写最后一项</div>
+  <div class="q-student">❌ 贾翔云作答：部分作答</div>
+  <div class="q-error">⚠️ 裂项相消有误</div>
 </div>
-
 <div class="question-box partial">
-  <div class="q-title">Q16(1) | 正弦定理求角 | 估4/7</div>
-  <div class="q-content">利用正弦定理求角B</div>
-  <div class="q-answer">✅ 正确答案：B = π/3</div>
-  <div class="q-student">⚠️ 贾翔云作答：sin(B+C)展开加号写成减号，导致π/3算成2π/3</div>
-  <div class="q-error">🔴 sin(B+C) = sinBcosC + cosBsinC，你把中间的加号写成了减号，展开式写错直接导致角度从π/3变成2π/3。两角和的正弦展开是最基础的公式之一，符号不能错</div>
-  <div class="q-tip">💡 建议：写两角和差公式时，默念"正弦和加差减"——sin(A+B)=sinAcosB+cosAsinB，sin(A-B)=sinAcosB−cosAsinB，加号对应加号</div>
+  <div class="q-title">Q16-1 | 正弦定理边化角+两角和正弦展开求角 | 5/7 估</div>
+  <div class="q-content">csinB+√3·bcosC=√3·a，求角B</div>
+  <div class="q-student">❌ 贾翔云作答：部分作答</div>
+  <div class="q-error">⚠️ 正弦定理求角有误</div>
 </div>
-
 <div class="question-box wrong">
-  <div class="q-title">Q16(2) | 角平分线长度 | 估0/8</div>
+  <div class="q-title">Q16-2 | 余弦定理+角平分线分面积法求角平分线长 | 0/8</div>
   <div class="q-content">b=√3，a+c=2，BD为角B平分线，求BD</div>
-  <div class="q-student">❌ 贾翔云作答：因(1)角度算成2π/3导致后面没得分</div>
-  <div class="q-analysis">分析：连锁反应——sin展开符号错→角度错→余弦定理代入错→整题失分。Q16两问共15分，一个加号变减号就全丢了</div>
+  <div class="q-student">❌ 贾翔云作答：不会</div>
+  <div class="q-error">⚠️ 不会角平分线长度</div>
 </div>
-
-<div class="question-box">
-  <div class="q-title">Q17 | 立体几何 ✅ 两问全对 | 估15/15</div>
-  <div class="q-student">✅ 面面垂直性质定理会使用，第二问也算对了，计算也可以</div>
-</div>
-
-<div class="question-box">
-  <div class="q-title">Q18 | 概率统计 ✅(1)(2)全对，(3)有尝试 | 估13/17</div>
-  <div class="q-student">✅ (1)(2)全对；(3)有尝试求P1和P2，非常不错</div>
-</div>
-
 <div class="question-box wrong">
-  <div class="q-title">Q19(2) | 零点求参数范围 | 估0/6</div>
-  <div class="q-content">利用导数研究函数零点求参数范围</div>
-  <div class="q-student">❌ 贾翔云作答：一开始就理解错了，A被搞没了，函数变成-1/3x³+3x</div>
-  <div class="q-error">🔴 审题就理解错了——参数A在你的计算过程中消失了，函数从含参变成了-1/3x³+3x，说明从一开始就没有正确理解题意，没有带着参数A做分析</div>
-  <div class="q-tip">💡 建议：含参问题时，先把原函数含参形式完整写出，每一步都检查参数A是否还在</div>
+  <div class="q-title">Q18-3 | 马尔科夫链 | 0/7</div>
+  <div class="q-content">求Pᵢ的取值范围</div>
+  <div class="q-student">❌ 贾翔云作答：不会</div>
+  <div class="q-error">⚠️ 不会马尔科夫链</div>
 </div>
-
+<div class="question-box partial">
+  <div class="q-title">Q19-2 | 分离参数法+数形结合研究函数极值求参数范围 | 1/6 估</div>
+  <div class="q-content">f'(x)有三个不同零点，求a的取值范围</div>
+  <div class="q-student">❌ 贾翔云作答：部分作答</div>
+  <div class="q-error">⚠️ 分离参数求范围有误</div>
 </div>
-
-<!-- 板块7：教师评价 -->
+<div class="question-box wrong">
+  <div class="q-title">Q19-3 | 极值点偏移+构造函数证明不等式 | 0/7</div>
+  <div class="q-content">h(x)有三个极值点x₁,x₂,x₃，证明h(x₁)·h(x₂)·h(x₃)≥−1/e−1</div>
+  <div class="q-student">❌ 贾翔云作答：不会</div>
+  <div class="q-error">⚠️ 不会极值点偏移证明</div>
+</div>
+</div>
 <div class="section">
 <h2>🌟 教师评价</h2>
-<div class="teacher-comment">
-<h3>💪 贾翔云的答卷亮点</h3>
-<p style="font-size:14px; line-height:1.8;">
-<strong>1. 单选全对！非常厉害！</strong>8道单选40/40满分，全班最高水平！Q7圆台外接球和Q8分段函数零点都拿下了，这两个题难倒了一大片同学。<br><br>
-<strong>2. Q17立体几何两问全对！</strong>面面垂直性质定理会用，计算也没问题，第二问也算对了。<br><br>
-<strong>3. Q18概率统计(1)(2)全对！</strong>全概率公式和分布列期望都拿下了，(3)还有尝试求P1P2。<br><br>
-<strong>4. Q19(1)切线方程算对了！</strong>4分到手。<br><br>
-<strong>5. Q15(1)等差数列通项全对！</strong>基础扎实。
-</p>
+<div class="eval-box"><h3>💪 亮点</h3><ul>
+<li>单选全对！40/40满分</li>
+<li>已掌握知识点：复数、集合、向量、余弦定理、等差等比、排列组合、圆台外接球、分段函数零点等15个</li>
+</ul></div>
+<div class="eval-box"><h3>⚠️ 核心问题</h3><p style="font-size:14px">未掌握知识点：正四棱柱综合、导数综合、线性回归残差、切线与曲线相切、不会角平分线长度、不会马尔科夫链等7个</p></div>
 </div>
-
-<div class="highlight-box">
-<h3>⚠️ 核心问题1：一个加号毁掉15分——sin展开符号错</h3>
-<p style="font-size:14px; line-height:1.8;">
-贾翔云这张试卷最可惜的地方：<strong>sin(B+C)展开把加号写成减号，导致Q16两问共15分几乎全丢。</strong><br><br>
-sin(B+C) = sinBcosC <strong>+</strong> cosAsinC，你写成了减号→π/3变2π/3→余弦定理代入错→15分变4分。<br><br>
-<strong>两角和差公式是最基础的公式，符号不能错。</strong>写的时候默念"正弦和加差减"——sin(A+B)用加号，sin(A-B)用减号。Q16是你完全有能力做对的题，一个符号毁掉15分太可惜了。
-</p>
-</div>
-
-<div class="highlight-box">
-<h3>⚠️ 核心问题2：多选+填空只拿到11/33——和单选实力严重不匹配</h3>
-<p style="font-size:14px; line-height:1.8;">
-单选40/40满分，但多选+填空只有11/33（33.3%），差距悬殊：<br><br>
-<strong>① Q10/Q11多选全丢：</strong>共12分一分不得，待沟通确认解题思路。<br><br>
-<strong>② Q13/Q14填空全丢：</strong>共10分一分不得，待沟通是概念问题还是计算问题。<br><br>
-<strong>③ Q15(2)裂项最后一项写错：</strong>全班高频错误，最后一项1/(2n+1)写成1/(2n-1)。<br><br>
-<strong>你的实力远不止97分，单选全对说明基础非常扎实。</strong>多选+填空如果稳住，110+完全有能力。
-</p>
-</div>
-</div>
-
-<!-- 板块8：能力诊断与提分路径 -->
 <div class="section">
 <h2>🚀 能力诊断与提分路径</h2>
-
 <div class="path-item">
   <div class="path-icon urgent">1</div>
-  <div><strong>🔥 最紧急：公式符号零失误（预计提15分）</strong><br>
-  sin(B+C)加号变减号，一个符号毁掉Q16两问15分：<br>
-  ① 两角和差公式写完后默念口诀"正弦和加差减"<br>
-  ② 展开式写完后代入特殊角验证（如B=C=π/4）<br>
-  ③ 关键公式一步一查，花5秒省15分
-  </div>
+  <div><strong>🔥 核心知识点突破</strong><br>
+  Q16-2（余弦定理+角平分线分面积法求角）<br>这些是高考必考的核心题型，必须优先掌握</div>
 </div>
-
 <div class="path-item">
-  <div class="path-icon urgent">2</div>
-  <div><strong>🔥 多选+填空稳定性（预计提15-20分）</strong><br>
-  单选40/40但多选+填空只有11/33，差距太大：<br>
-  ① Q10/Q11待沟通确认解题思路，找到选错的原因<br>
-  ② Q13/Q14待沟通确认是概念还是计算问题，对症下药<br>
-  ③ 多选题至少选一个确定的选项保底3分
-  </div>
+  <div class="path-icon important">2</div>
+  <div><strong>📌 基础知识巩固</strong><br>
+  Q10（正四棱柱中空间距离、外接球、线）、Q11（利用导数研究函数零点、对称中心）、Q13（回归方程过样本中心点+残差=观）、Q14（导数求切线方程+切线与二次曲线）<br>这些知识点需要加强练习</div>
 </div>
-
 <div class="path-item">
-  <div class="path-icon important">3</div>
-  <div><strong>📌 裂项求和最后一项验证（预计提3-5分）</strong><br>
-  1/(2n+1)写成1/(2n-1)是全班高频错误：<br>
-  ① 裂项展开后从第一项到最后一项逐项写出<br>
-  ② 验证n=1时最后一项的值是否合理<br>
-  ③ 不要凭"感觉"写最后一项
-  </div>
+  <div class="path-icon solidify">3</div>
+  <div><strong>✅ 压轴题逐步攻克</strong><br>
+  Q18-3（马尔科夫链）、Q19-3（极值点偏移+构造函数证明不等式）<br>在基础稳固后逐步突破</div>
 </div>
-
-<div class="path-item">
-  <div class="path-icon important">4</div>
-  <div><strong>📌 Q19审题：含参问题参数不能丢（预计提6分）</strong><br>
-  参数A在计算过程中消失，函数变成不含参的-1/3x³+3x：<br>
-  ① 先把原函数含参形式完整写出<br>
-  ② 每一步检查参数A是否还在<br>
-  ③ 含参问题的核心就是带着参数做分析
-  </div>
 </div>
-
-<div class="path-item">
-  <div class="path-icon solidify">5</div>
-  <div><strong>✅ 长期攻克：Q19(3)极值点偏移证明</strong><br>
-  属于压轴题，在基础稳定性提升后系统突破</div>
-</div>
-
-</div>
-
 </div>
 </body>
 </html>
