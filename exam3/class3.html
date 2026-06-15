@@ -48,6 +48,13 @@ body {
 }
 .student-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
 .student-left { display: flex; align-items: center; gap: 12px; }
+.student-rank {
+  width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: white; flex-shrink: 0;
+}
+.student-rank.top3 { background: linear-gradient(135deg, #f1c40f, #e67e22); }
+.student-rank.top10 { background: linear-gradient(135deg, #3498db, #2980b9); }
+.student-rank.other { background: #bdc3c7; }
 .student-name { font-size: 15px; font-weight: 600; color: #2c3e50; }
 .student-right { display: flex; align-items: center; gap: 10px; }
 .student-score { font-size: 18px; font-weight: 700; }
@@ -102,55 +109,55 @@ body {
 </div>
 <script>
 const students = [
-  {"name":"曹家瑞","file":"曹家瑞_月考分析报告.html","score":56},
-  {"name":"曹钰蔚","file":"曹钰蔚_月考分析报告.html","score":68},
-  {"name":"单子玉","file":"单子玉_月考分析报告.html","score":105},
-  {"name":"邸明启","file":"邸明启_月考分析报告.html","score":77},
-  {"name":"段云思源","file":"段云思源_月考分析报告.html","score":70},
-  {"name":"冯洪冉","file":"冯洪冉_月考分析报告.html","score":80},
-  {"name":"冯柯锦","file":"冯柯锦_月考分析报告.html","score":70},
-  {"name":"高洪宇","file":"高洪宇_月考分析报告.html","score":92},
-  {"name":"高祎凡","file":"高祎凡_月考分析报告.html","score":79},
-  {"name":"高翊洋","file":"高翊洋_月考分析报告.html","score":47},
-  {"name":"巩子华","file":"巩子华_月考分析报告.html","score":109},
-  {"name":"韩利泽","file":"韩利泽_月考分析报告.html","score":44},
-  {"name":"姬瑾萱","file":"姬瑾萱_月考分析报告.html","score":74},
-  {"name":"贾翔云","file":"贾翔云_月考分析报告.html","score":96},
-  {"name":"姜程洋","file":"姜程洋_月考分析报告.html","score":66},
-  {"name":"蒋予涵","file":"蒋予涵_月考分析报告.html","score":75},
-  {"name":"雷清和","file":"雷清和_月考分析报告.html","score":82},
-  {"name":"李丹妮","file":"李丹妮_月考分析报告.html","score":78},
-  {"name":"李果轩","file":"李果轩_月考分析报告.html","score":91},
-  {"name":"李明远","file":"李明远_月考分析报告.html","score":42},
-  {"name":"李炫增","file":"李炫增_月考分析报告.html","score":91},
-  {"name":"李宗锴","file":"李宗锴_月考分析报告.html","score":57},
-  {"name":"梁卿瑜","file":"梁卿瑜_月考分析报告.html","score":62},
-  {"name":"刘鑫昶","file":"刘鑫昶_月考分析报告.html","score":77},
-  {"name":"刘亦霄","file":"刘亦霄_月考分析报告.html","score":75},
-  {"name":"陆奕彤","file":"陆奕彤_月考分析报告.html","score":70},
-  {"name":"马铄","file":"马铄_月考分析报告.html","score":118},
-  {"name":"马悦瑄","file":"马悦瑄_月考分析报告.html","score":65},
-  {"name":"裴梦琳","file":"裴梦琳_月考分析报告.html","score":99},
-  {"name":"权容同","file":"权容同_月考分析报告.html","score":76},
-  {"name":"任思羽","file":"任思羽_月考分析报告.html","score":72},
-  {"name":"孙悦瑄","file":"孙悦瑄_月考分析报告.html","score":72},
-  {"name":"王芊琪","file":"王芊琪_月考分析报告.html","score":58},
-  {"name":"王潇","file":"王潇_月考分析报告.html","score":89},
-  {"name":"王艺润","file":"王艺润_月考分析报告.html","score":65},
-  {"name":"王喻婕","file":"王喻婕_月考分析报告.html","score":73},
-  {"name":"王祖雄","file":"王祖雄_月考分析报告.html","score":75},
-  {"name":"韦天宇","file":"韦天宇_月考分析报告.html","score":99},
-  {"name":"吴浩铭","file":"吴浩铭_月考分析报告.html","score":104},
-  {"name":"吴俊晖","file":"吴俊晖_月考分析报告.html","score":70},
-  {"name":"颜煜昊","file":"颜煜昊_月考分析报告.html","score":89},
-  {"name":"杨子涵","file":"杨子涵_月考分析报告.html","score":89},
-  {"name":"俞成辉","file":"俞成辉_月考分析报告.html","score":58},
-  {"name":"张静茹","file":"张静茹_月考分析报告.html","score":74},
-  {"name":"张瀞文","file":"张瀞文_月考分析报告.html","score":68},
-  {"name":"张伊璇","file":"张伊璇_月考分析报告.html","score":76},
-  {"name":"张子昱","file":"张子昱_月考分析报告.html","score":55},
-  {"name":"赵子恒","file":"赵子恒_月考分析报告.html","score":89},
-  {"name":"郑智遥","file":"郑智遥_月考分析报告.html","score":103}
+  {"name":"曹家瑞","file":"曹家瑞_月考分析报告.html","score":56,"rank":45},
+  {"name":"曹钰蔚","file":"曹钰蔚_月考分析报告.html","score":68,"rank":36},
+  {"name":"单子玉","file":"单子玉_月考分析报告.html","score":105,"rank":3},
+  {"name":"邸明启","file":"邸明启_月考分析报告.html","score":77,"rank":20},
+  {"name":"段云思源","file":"段云思源_月考分析报告.html","score":70,"rank":32},
+  {"name":"冯洪冉","file":"冯洪冉_月考分析报告.html","score":80,"rank":17},
+  {"name":"冯柯锦","file":"冯柯锦_月考分析报告.html","score":70,"rank":33},
+  {"name":"高洪宇","file":"高洪宇_月考分析报告.html","score":92,"rank":9},
+  {"name":"高祎凡","file":"高祎凡_月考分析报告.html","score":79,"rank":18},
+  {"name":"高翊洋","file":"高翊洋_月考分析报告.html","score":47,"rank":47},
+  {"name":"巩子华","file":"巩子华_月考分析报告.html","score":109,"rank":2},
+  {"name":"韩利泽","file":"韩利泽_月考分析报告.html","score":44,"rank":48},
+  {"name":"姬瑾萱","file":"姬瑾萱_月考分析报告.html","score":74,"rank":27},
+  {"name":"贾翔云","file":"贾翔云_月考分析报告.html","score":96,"rank":8},
+  {"name":"姜程洋","file":"姜程洋_月考分析报告.html","score":66,"rank":38},
+  {"name":"蒋予涵","file":"蒋予涵_月考分析报告.html","score":75,"rank":24},
+  {"name":"雷清和","file":"雷清和_月考分析报告.html","score":82,"rank":16},
+  {"name":"李丹妮","file":"李丹妮_月考分析报告.html","score":78,"rank":19},
+  {"name":"李果轩","file":"李果轩_月考分析报告.html","score":91,"rank":10},
+  {"name":"李明远","file":"李明远_月考分析报告.html","score":42,"rank":49},
+  {"name":"李炫增","file":"李炫增_月考分析报告.html","score":91,"rank":11},
+  {"name":"李宗锴","file":"李宗锴_月考分析报告.html","score":57,"rank":44},
+  {"name":"梁卿瑜","file":"梁卿瑜_月考分析报告.html","score":62,"rank":41},
+  {"name":"刘鑫昶","file":"刘鑫昶_月考分析报告.html","score":77,"rank":21},
+  {"name":"刘亦霄","file":"刘亦霄_月考分析报告.html","score":75,"rank":25},
+  {"name":"陆奕彤","file":"陆奕彤_月考分析报告.html","score":70,"rank":34},
+  {"name":"马铄","file":"马铄_月考分析报告.html","score":118,"rank":1},
+  {"name":"马悦瑄","file":"马悦瑄_月考分析报告.html","score":65,"rank":39},
+  {"name":"裴梦琳","file":"裴梦琳_月考分析报告.html","score":99,"rank":6},
+  {"name":"权容同","file":"权容同_月考分析报告.html","score":76,"rank":22},
+  {"name":"任思羽","file":"任思羽_月考分析报告.html","score":72,"rank":30},
+  {"name":"孙悦瑄","file":"孙悦瑄_月考分析报告.html","score":72,"rank":31},
+  {"name":"王芊琪","file":"王芊琪_月考分析报告.html","score":58,"rank":42},
+  {"name":"王潇","file":"王潇_月考分析报告.html","score":89,"rank":12},
+  {"name":"王艺润","file":"王艺润_月考分析报告.html","score":65,"rank":40},
+  {"name":"王喻婕","file":"王喻婕_月考分析报告.html","score":73,"rank":29},
+  {"name":"王祖雄","file":"王祖雄_月考分析报告.html","score":75,"rank":26},
+  {"name":"韦天宇","file":"韦天宇_月考分析报告.html","score":99,"rank":7},
+  {"name":"吴浩铭","file":"吴浩铭_月考分析报告.html","score":104,"rank":4},
+  {"name":"吴俊晖","file":"吴俊晖_月考分析报告.html","score":70,"rank":35},
+  {"name":"颜煜昊","file":"颜煜昊_月考分析报告.html","score":89,"rank":13},
+  {"name":"杨子涵","file":"杨子涵_月考分析报告.html","score":89,"rank":14},
+  {"name":"俞成辉","file":"俞成辉_月考分析报告.html","score":58,"rank":43},
+  {"name":"张静茹","file":"张静茹_月考分析报告.html","score":74,"rank":28},
+  {"name":"张瀞文","file":"张瀞文_月考分析报告.html","score":68,"rank":37},
+  {"name":"张伊璇","file":"张伊璇_月考分析报告.html","score":76,"rank":23},
+  {"name":"张子昱","file":"张子昱_月考分析报告.html","score":55,"rank":46},
+  {"name":"赵子恒","file":"赵子恒_月考分析报告.html","score":89,"rank":15},
+  {"name":"郑智遥","file":"郑智遥_月考分析报告.html","score":103,"rank":5}
 ];
 const grid = document.getElementById('grid');
 students.forEach(s => {
@@ -158,11 +165,15 @@ students.forEach(s => {
   let cls = 'mid';
   if (pct >= 60) cls = 'high';
   else if (pct < 40) cls = 'low';
+  let rankCls = 'other';
+  if (s.rank <= 3) rankCls = 'top3';
+  else if (s.rank <= 10) rankCls = 'top10';
   const card = document.createElement('a');
   card.className = 'student-card';
   card.href = s.file;
   card.innerHTML = `
     <div class="student-left">
+      <div class="student-rank ${rankCls}">${s.rank}</div>
       <span class="student-name">${s.name}</span>
     </div>
     <div class="student-right">
