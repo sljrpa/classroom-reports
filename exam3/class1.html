@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>高三一班 · 月考分析</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  min-height: 100vh; color: #2c3e50; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.top-bar { height: 4px; background: linear-gradient(90deg, #3498db, #2ecc71); }
+.container { max-width: 800px; margin: 0 auto; padding: 24px 16px 40px; }
+.hero { text-align: center; padding: 30px 20px 24px; margin-bottom: 20px; }
+.hero-icon { font-size: 48px; margin-bottom: 12px; display: block; }
+.hero h1 { font-size: 24px; font-weight: 700; color: #2c3e50; margin-bottom: 4px; }
+.hero .subtitle { font-size: 14px; color: #7f8c8d; }
+.hero .divider { width: 48px; height: 3px; background: #3498db; border-radius: 2px; margin: 12px auto 0; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: #7f8c8d; text-decoration: none; margin-bottom: 16px; transition: color 0.2s; }
+.back-link:hover { color: #2c3e50; }
+.info-bar {
+  background: white; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+}
+.info-item { text-align: center; }
+.info-num { font-size: 20px; font-weight: 700; color: #3498db; }
+.info-label { font-size: 12px; color: #bdc3c7; margin-top: 2px; }
+.report-banner {
+  background: #ebf5fb; border: 2px solid #3498db; border-radius: 12px; padding: 16px 20px;
+  margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between;
+  text-decoration: none; color: inherit; cursor: pointer; transition: transform 0.2s;
+}
+.report-banner:hover { transform: translateY(-2px); }
+.report-banner .left { display: flex; align-items: center; gap: 12px; }
+.report-banner .icon { font-size: 28px; }
+.report-banner .title { font-size: 16px; font-weight: 700; color: #3498db; }
+.report-banner .desc { font-size: 12px; color: #7f8c8d; margin-top: 2px; }
+.report-banner .arrow { font-size: 18px; color: #ccc; }
+.student-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.student-card {
+  background: white; border-radius: 10px; padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: inherit;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+}
+.student-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
+.student-left { display: flex; align-items: center; gap: 12px; }
+.student-rank {
+  width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: white; flex-shrink: 0;
+}
+.student-rank.top3 { background: linear-gradient(135deg, #f1c40f, #e67e22); }
+.student-rank.top10 { background: linear-gradient(135deg, #3498db, #2980b9); }
+.student-rank.other { background: #bdc3c7; }
+.student-name { font-size: 15px; font-weight: 600; color: #2c3e50; }
+.student-right { display: flex; align-items: center; gap: 10px; }
+.student-score { font-size: 18px; font-weight: 700; }
+.student-score.high { color: #27ae60; }
+.student-score.mid { color: #e67e22; }
+.student-score.low { color: #e74c3c; }
+.student-arrow { font-size: 16px; color: #ccc; transition: transform 0.2s; }
+.student-card:hover .student-arrow { transform: translateX(3px); color: #999; }
+.score-bar-wrap { width: 70px; height: 5px; background: #ecf0f1; border-radius: 3px; overflow: hidden; }
+.score-bar { height: 100%; border-radius: 3px; }
+.score-bar.high { background: linear-gradient(90deg, #2ecc71, #27ae60); }
+.score-bar.mid { background: linear-gradient(90deg, #f39c12, #e67e22); }
+.score-bar.low { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+.footer { text-align: center; padding: 24px 16px; color: #bdc3c7; font-size: 13px; line-height: 1.8; }
+.footer .line { width: 32px; height: 2px; background: #ddd; border-radius: 1px; margin: 0 auto 12px; }
+@media (min-width: 480px) { .student-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 700px) { .student-grid { grid-template-columns: 1fr 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="top-bar"></div>
+<div class="container">
+  <a class="back-link" href="exam3.html">‹ 返回月考分析</a>
+  <div class="hero">
+    <span class="hero-icon">📘</span>
+    <h1>高三一班 · 月考分析</h1>
+    <p class="subtitle">2026年6月高三月考 · 逐题估分分析</p>
+    <div class="divider"></div>
+  </div>
+  <div class="info-bar">
+    <div class="info-item"><div class="info-num">52</div><div class="info-label">参评学生</div></div>
+    <div class="info-item"><div class="info-num">75</div><div class="info-label">平均分</div></div>
+    <div class="info-item"><div class="info-num">105</div><div class="info-label">最高分</div></div>
+    <div class="info-item"><div class="info-num">46</div><div class="info-label">最低分</div></div>
+  </div>
+  <a class="report-banner" href="一班月考成绩分析报告.html">
+    <div class="left">
+      <span class="icon">📊</span>
+      <div>
+        <div class="title">高三一班 · 班级总报告</div>
+        <div class="desc">全班数据分析 · 薄弱知识点 · 教学建议</div>
+      </div>
+    </div>
+    <span class="arrow">›</span>
+  </a>
+  <div class="student-grid" id="grid"></div>
+  <div class="footer">
+    <div class="line"></div>
+    <p>本站为只读展示页面，数据仅供家长参考</p>
+    <p>如有疑问请与班主任联系</p>
+  </div>
+</div>
+<script>
+const students = [
+  {
+    "name": "张博涵",
+    "file": "张博涵_月考分析报告.html",
+    "score": 105
+  },
+  {
+    "name": "邵恩福",
+    "file": "邵恩福_月考分析报告.html",
+    "score": 101
+  },
+  {
+    "name": "董啟如",
+    "file": "董啟如_月考分析报告.html",
+    "score": 99
+  },
+  {
+    "name": "王永鑫",
+    "file": "王永鑫_月考分析报告.html",
+    "score": 99
+  },
+  {
+    "name": "杜澄逸",
+    "file": "杜澄逸_月考分析报告.html",
+    "score": 96
+  },
+  {
+    "name": "王露冉",
+    "file": "王露冉_月考分析报告.html",
+    "score": 95
+  },
+  {
+    "name": "齐昱凯",
+    "file": "齐昱凯_月考分析报告.html",
+    "score": 94
+  },
+  {
+    "name": "樊潇阳",
+    "file": "樊潇阳_月考分析报告.html",
+    "score": 93
+  },
+  {
+    "name": "汪祺",
+    "file": "汪祺_月考分析报告.html",
+    "score": 93
+  },
+  {
+    "name": "李大诚",
+    "file": "李大诚_月考分析报告.html",
+    "score": 91
+  },
+  {
+    "name": "齐彬如",
+    "file": "齐彬如_月考分析报告.html",
+    "score": 90
+  },
+  {
+    "name": "和田",
+    "file": "和田_月考分析报告.html",
+    "score": 90
+  },
+  {
+    "name": "乔怡硕",
+    "file": "乔怡硕_月考分析报告.html",
+    "score": 89
+  },
+  {
+    "name": "廖晨琬",
+    "file": "廖晨琬_月考分析报告.html",
+    "score": 88
+  },
+  {
+    "name": "靳雅雯",
+    "file": "靳雅雯_月考分析报告.html",
+    "score": 87
+  },
+  {
+    "name": "康思静",
+    "file": "康思静_月考分析报告.html",
+    "score": 87
+  },
+  {
+    "name": "张楠",
+    "file": "张楠_月考分析报告.html",
+    "score": 87
+  },
+  {
+    "name": "焦钰杰",
+    "file": "焦钰杰_月考分析报告.html",
+    "score": 85
+  },
+  {
+    "name": "康雅馨",
+    "file": "康雅馨_月考分析报告.html",
+    "score": 84
+  },
+  {
+    "name": "甘文怀",
+    "file": "甘文怀_月考分析报告.html",
+    "score": 83
+  },
+  {
+    "name": "白家耀",
+    "file": "白家耀_月考分析报告.html",
+    "score": 82
+  },
+  {
+    "name": "孙麟博",
+    "file": "孙麟博_月考分析报告.html",
+    "score": 82
+  },
+  {
+    "name": "王亦然",
+    "file": "王亦然_月考分析报告.html",
+    "score": 81
+  },
+  {
+    "name": "魏凡丁",
+    "file": "魏凡丁_月考分析报告.html",
+    "score": 81
+  },
+  {
+    "name": "李志豪",
+    "file": "李志豪_月考分析报告.html",
+    "score": 79
+  },
+  {
+    "name": "王志奇",
+    "file": "王志奇_月考分析报告.html",
+    "score": 79
+  },
+  {
+    "name": "崔楠",
+    "file": "崔楠_月考分析报告.html",
+    "score": 78
+  },
+  {
+    "name": "董金昊",
+    "file": "董金昊_月考分析报告.html",
+    "score": 77
+  },
+  {
+    "name": "张柏",
+    "file": "张柏_月考分析报告.html",
+    "score": 71
+  },
+  {
+    "name": "贺瑞琳",
+    "file": "贺瑞琳_月考分析报告.html",
+    "score": 71
+  },
+  {
+    "name": "刘佳阳",
+    "file": "刘佳阳_月考分析报告.html",
+    "score": 68
+  },
+  {
+    "name": "郭子梁",
+    "file": "郭子梁_月考分析报告.html",
+    "score": 67
+  },
+  {
+    "name": "魏煜奇",
+    "file": "魏煜奇_月考分析报告.html",
+    "score": 66
+  },
+  {
+    "name": "张文睿",
+    "file": "张文睿_月考分析报告.html",
+    "score": 66
+  },
+  {
+    "name": "杨时瑞",
+    "file": "杨时瑞_月考分析报告.html",
+    "score": 64
+  },
+  {
+    "name": "马子涵",
+    "file": "马子涵_月考分析报告.html",
+    "score": 62
+  },
+  {
+    "name": "王灿钰",
+    "file": "王灿钰_月考分析报告.html",
+    "score": 61
+  },
+  {
+    "name": "郭文轩",
+    "file": "郭文轩_月考分析报告.html",
+    "score": 60
+  },
+  {
+    "name": "翟可欣",
+    "file": "翟可欣_月考分析报告.html",
+    "score": 60
+  },
+  {
+    "name": "陈存浩",
+    "file": "陈存浩_月考分析报告.html",
+    "score": 59
+  },
+  {
+    "name": "王一林",
+    "file": "王一林_月考分析报告.html",
+    "score": 59
+  },
+  {
+    "name": "王楷文",
+    "file": "王楷文_月考分析报告.html",
+    "score": 58
+  },
+  {
+    "name": "徐恩昌",
+    "file": "徐恩昌_月考分析报告.html",
+    "score": 56
+  },
+  {
+    "name": "李子旭",
+    "file": "李子旭_月考分析报告.html",
+    "score": 56
+  },
+  {
+    "name": "张大佑",
+    "file": "张大佑_月考分析报告.html",
+    "score": 55
+  },
+  {
+    "name": "胡晶善",
+    "file": "胡晶善_月考分析报告.html",
+    "score": 52
+  },
+  {
+    "name": "赵聆羽",
+    "file": "赵聆羽_月考分析报告.html",
+    "score": 52
+  },
+  {
+    "name": "苟宸玮",
+    "file": "苟宸玮_月考分析报告.html",
+    "score": 52
+  },
+  {
+    "name": "徐菡",
+    "file": "徐菡_月考分析报告.html",
+    "score": 48
+  },
+  {
+    "name": "胡敬轶",
+    "file": "胡敬轶_月考分析报告.html",
+    "score": 47
+  },
+  {
+    "name": "焦新越",
+    "file": "焦新越_月考分析报告.html",
+    "score": 47
+  },
+  {
+    "name": "孙启翔",
+    "file": "孙启翔_月考分析报告.html",
+    "score": 46
+  }
+];
+const maxScore = 150;
+const grid = document.getElementById('grid');
+students.forEach((s, i) => {
+  const rank = i + 1;
+  const pct = (s.score / maxScore * 100).toFixed(0);
+  const cls = s.score >= 100 ? 'high' : s.score >= 75 ? 'mid' : 'low';
+  const rankCls = rank <= 3 ? 'top3' : rank <= 10 ? 'top10' : 'other';
+  const card = document.createElement('a');
+  card.className = 'student-card';
+  card.href = encodeURIComponent(s.file);
+  card.innerHTML = `
+    <div class="student-left">
+      <div class="student-rank ${rankCls}">${rank}</div>
+      <div class="student-name">${s.name}</div>
+    </div>
+    <div class="student-right">
+      <div class="score-bar-wrap"><div class="score-bar ${cls}" style="width:${pct}%"></div></div>
+      <div class="student-score ${cls}">${s.score}</div>
+      <span class="student-arrow">›</span>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>
