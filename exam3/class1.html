@@ -169,8 +169,8 @@ students.forEach(s => {
   if (pct >= 60) cls = 'high';
   else if (pct < 40) cls = 'low';
   let rankCls = 'other';
-  if (s.rank <= 3) rankCls = 'top3';
-  else if (s.rank <= 10) rankCls = 'top10';
+  if (s.rank <= 10) rankCls = 'top3';
+  else if (s.rank <= 20) rankCls = 'top10';
   const card = document.createElement('a');
   card.className = 'student-card';
   card.href = s.file;
