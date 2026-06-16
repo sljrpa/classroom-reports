@@ -54,6 +54,27 @@
   .score-bar .fill.red { background: #e74c3c; }
   .score-bar .fill.blue { background: #3498db; }
   .empty-section { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
+  /* 逐题得分一览 */
+  .q-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+  .q-group-label { width: 100%; font-size: 13px; font-weight: 600; color: #7f8c8d; margin: 8px 0 4px; padding-left: 2px; }
+  .q-group-label:first-child { margin-top: 0; }
+  .q-cell {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 56px; height: 56px; border-radius: 8px; font-size: 11px;
+    position: relative; text-decoration: none; color: inherit;
+    transition: transform 0.15s; cursor: default; overflow: hidden;
+  }
+  .q-cell:hover { transform: scale(1.08); }
+  .q-cell .q-num { font-weight: 700; font-size: 12px; position: relative; z-index: 1; }
+  .q-cell .q-score { font-size: 10px; margin-top: 1px; position: relative; z-index: 1; }
+  .q-cell .q-symbol {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-size: 28px; font-weight: 700; opacity: 0.22; pointer-events: none;
+    font-family: "Times New Roman", "STIXGeneral", serif; font-style: italic;
+  }
+  .q-cell.full { background: #d5f5e3; color: #1e8449; }
+  .q-cell.partial { background: #fef5e7; color: #d35400; }
+  .q-cell.zero { background: #fadbd8; color: #c0392b; }
 </style>
 </head>
 <body>
@@ -65,6 +86,42 @@
     <div class="score-big">91<span style="font-size:20px">/150</span></div>
     <div class="score-label">预估分 | 得分率 60.7% | 校次 49 | 班次 10</div>
   </div>
+
+  <div class="section">
+  <h2>📋 逐题得分一览</h2>
+  <div class="q-grid">
+    <div class="q-group-label">单选题</div>
+    <div class="q-cell full"><span class="q-symbol">i</span><span class="q-num">Q1</span><span class="q-score">5/5</span></div>
+    <div class="q-cell zero"><span class="q-symbol">∩</span><span class="q-num">Q2</span><span class="q-score">0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">→</span><span class="q-num">Q3</span><span class="q-score">5/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">cos</span><span class="q-num">Q4</span><span class="q-score">5/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">a₁</span><span class="q-num">Q5</span><span class="q-score">5/5</span></div>
+    <div class="q-cell zero"><span class="q-symbol">C</span><span class="q-num">Q6</span><span class="q-score">0/5</span></div>
+    <div class="q-cell zero"><span class="q-symbol">R</span><span class="q-num">Q7</span><span class="q-score">0/5</span></div>
+    <div class="q-cell zero"><span class="q-symbol">f</span><span class="q-num">Q8</span><span class="q-score">0/5</span></div>
+    <div class="q-group-label">多选题</div>
+    <div class="q-cell full"><span class="q-symbol">ω</span><span class="q-num">Q9</span><span class="q-score">6/6</span></div>
+    <div class="q-cell full"><span class="q-symbol">V</span><span class="q-num">Q10</span><span class="q-score">6/6</span></div>
+    <div class="q-cell full"><span class="q-symbol">f′</span><span class="q-num">Q11</span><span class="q-score">6/6</span></div>
+    <div class="q-group-label">填空题</div>
+    <div class="q-cell zero"><span class="q-symbol">sin</span><span class="q-num">Q12</span><span class="q-score">0/5</span></div>
+    <div class="q-cell zero"><span class="q-symbol">ŷ</span><span class="q-num">Q13</span><span class="q-score">0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">y′</span><span class="q-num">Q14</span><span class="q-score">5/5</span></div>
+    <div class="q-group-label">解答题</div>
+    <div class="q-cell full"><span class="q-symbol">aₙ</span><span class="q-num">Q15①</span><span class="q-score">6/6</span></div>
+    <div class="q-cell partial"><span class="q-symbol">Σ</span><span class="q-num">Q15②</span><span class="q-score">6/7</span></div>
+    <div class="q-cell full"><span class="q-symbol">sinA</span><span class="q-num">Q16①</span><span class="q-score">7/7</span></div>
+    <div class="q-cell zero"><span class="q-symbol">cosA</span><span class="q-num">Q16②</span><span class="q-score">0/8</span></div>
+    <div class="q-cell partial"><span class="q-symbol">⊥</span><span class="q-num">Q17①</span><span class="q-score">4/7</span></div>
+    <div class="q-cell full"><span class="q-symbol">θ</span><span class="q-num">Q17②</span><span class="q-score">8/8</span></div>
+    <div class="q-cell full"><span class="q-symbol">P</span><span class="q-num">Q18①②</span><span class="q-score">10/10</span></div>
+    <div class="q-cell zero"><span class="q-symbol">M</span><span class="q-num">Q18③</span><span class="q-score">0/7</span></div>
+    <div class="q-cell full"><span class="q-symbol">k</span><span class="q-num">Q19①</span><span class="q-score">4/4</span></div>
+    <div class="q-cell partial"><span class="q-symbol">a</span><span class="q-num">Q19②</span><span class="q-score">3/6</span></div>
+    <div class="q-cell zero"><span class="q-symbol">f″</span><span class="q-num">Q19③</span><span class="q-score">0/7</span></div>
+  </div>
+  </div>
+
 
   <div class="section">
   <h2>📊 整体得分概览</h2>
