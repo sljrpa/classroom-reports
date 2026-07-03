@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>薄弱追踪卡片 - 高三三班</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;min-height:100vh;color:#2c3e50}
+.top-bar{height:4px;background:linear-gradient(90deg,#3498db,#2ecc71,#3498db)}
+.container{max-width:600px;margin:0 auto;padding:20px 16px 40px}
+.header{text-align:center;padding:32px 0 24px}
+.header h1{font-size:24px;font-weight:700}
+.header .subtitle{font-size:14px;color:#7f8c8d;margin-top:6px}
+.back{display:inline-block;margin-bottom:16px;color:#3498db;text-decoration:none;font-size:14px}
+.search-box{margin-bottom:16px;position:relative}
+.search-box input{width:100%;padding:12px 16px 12px 40px;border:2px solid #e8ecf1;border-radius:12px;font-size:16px;outline:none;transition:border-color .2s;background:#fff}
+.search-box input:focus{border-color:#3498db}
+.search-box .icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px;color:#bdc3c7}
+.count{text-align:center;font-size:13px;color:#95a5a6;margin-bottom:12px}
+.student-card{display:flex;align-items:center;padding:14px 16px;background:#fff;border-radius:12px;margin-bottom:8px;text-decoration:none;color:inherit;box-shadow:0 1px 6px rgba(0,0,0,.05);transition:transform .15s,box-shadow .15s}
+.student-card:hover{transform:translateX(4px);box-shadow:0 3px 12px rgba(0,0,0,.1)}
+.student-card .name{font-size:16px;font-weight:600;flex:1}
+.student-card .badge{font-size:11px;background:#eaf2f8;color:#3498db;padding:2px 8px;border-radius:10px;margin-right:12px}
+.student-card .arrow{font-size:18px;color:#ccc}
+.footer{text-align:center;padding:20px;font-size:11px;color:#bdc3c7}
+</style>
+</head>
+<body>
+<div class="top-bar"></div>
+<div class="container">
+<a class="back" href="../../index.html">← 返回首页</a>
+<div class="header">
+<h1>📋 薄弱追踪卡片</h1>
+<p class="subtitle">高三三班 · 50人 · 点击查看详情</p>
+</div>
+<div class="search-box">
+<span class="icon">🔍</span>
+<input type="text" id="searchInput" placeholder="搜索学生姓名..." oninput="filterStudents()">
+</div>
+<div class="count" id="countDisplay">共 50 名学生</div>
+<div id="studentList">
+<a class="student-card" href="pdfs/马铄_薄弱追踪.pdf" target="_blank"><div class="name">马铄</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/马悦瑄_薄弱追踪.pdf" target="_blank"><div class="name">马悦瑄</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/颜煜昊_薄弱追踪.pdf" target="_blank"><div class="name">颜煜昊</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/王艺润_薄弱追踪.pdf" target="_blank"><div class="name">王艺润</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/张伊璇_薄弱追踪.pdf" target="_blank"><div class="name">张伊璇</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/蒋予涵_薄弱追踪.pdf" target="_blank"><div class="name">蒋予涵</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/郑智遥_薄弱追踪.pdf" target="_blank"><div class="name">郑智遥</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/巩子华_薄弱追踪.pdf" target="_blank"><div class="name">巩子华</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/陆奕彤_薄弱追踪.pdf" target="_blank"><div class="name">陆奕彤</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/王喻婕_薄弱追踪.pdf" target="_blank"><div class="name">王喻婕</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/李明远_薄弱追踪.pdf" target="_blank"><div class="name">李明远</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/王芊琪_薄弱追踪.pdf" target="_blank"><div class="name">王芊琪</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/吴浩铭_薄弱追踪.pdf" target="_blank"><div class="name">吴浩铭</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/赵子恒_薄弱追踪.pdf" target="_blank"><div class="name">赵子恒</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/梁卿瑜_薄弱追踪.pdf" target="_blank"><div class="name">梁卿瑜</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/李果轩_薄弱追踪.pdf" target="_blank"><div class="name">李果轩</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/段云思源_薄弱追踪.pdf" target="_blank"><div class="name">段云思源</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/韩利泽_薄弱追踪.pdf" target="_blank"><div class="name">韩利泽</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/姜程洋_薄弱追踪.pdf" target="_blank"><div class="name">姜程洋</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/曹钰蔚_薄弱追踪.pdf" target="_blank"><div class="name">曹钰蔚</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/高洪宇_薄弱追踪.pdf" target="_blank"><div class="name">高洪宇</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/冯洪冉_薄弱追踪.pdf" target="_blank"><div class="name">冯洪冉</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/李宗锴_薄弱追踪.pdf" target="_blank"><div class="name">李宗锴</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/高翊洋_薄弱追踪.pdf" target="_blank"><div class="name">高翊洋</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/李炫增_薄弱追踪.pdf" target="_blank"><div class="name">李炫增</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/王潇_薄弱追踪.pdf" target="_blank"><div class="name">王潇</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/刘亦霄_薄弱追踪.pdf" target="_blank"><div class="name">刘亦霄</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/权容同_薄弱追踪.pdf" target="_blank"><div class="name">权容同</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/张静茹_薄弱追踪.pdf" target="_blank"><div class="name">张静茹</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/戴孟澔_薄弱追踪.pdf" target="_blank"><div class="name">戴孟澔</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/单子玉_薄弱追踪.pdf" target="_blank"><div class="name">单子玉</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/姬瑾萱_薄弱追踪.pdf" target="_blank"><div class="name">姬瑾萱</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/邸明启_薄弱追踪.pdf" target="_blank"><div class="name">邸明启</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/刘鑫昶_薄弱追踪.pdf" target="_blank"><div class="name">刘鑫昶</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/裴梦琳_薄弱追踪.pdf" target="_blank"><div class="name">裴梦琳</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/吴俊晖_薄弱追踪.pdf" target="_blank"><div class="name">吴俊晖</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/张子昱_薄弱追踪.pdf" target="_blank"><div class="name">张子昱</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/贾翔云_薄弱追踪.pdf" target="_blank"><div class="name">贾翔云</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/李丹妮_薄弱追踪.pdf" target="_blank"><div class="name">李丹妮</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/任思羽_薄弱追踪.pdf" target="_blank"><div class="name">任思羽</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/俞成辉_薄弱追踪.pdf" target="_blank"><div class="name">俞成辉</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/冯柯锦_薄弱追踪.pdf" target="_blank"><div class="name">冯柯锦</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/张瀞文_薄弱追踪.pdf" target="_blank"><div class="name">张瀞文</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/王祖雄_薄弱追踪.pdf" target="_blank"><div class="name">王祖雄</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/高祎凡_薄弱追踪.pdf" target="_blank"><div class="name">高祎凡</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/韦天宇_薄弱追踪.pdf" target="_blank"><div class="name">韦天宇</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/雷清和_薄弱追踪.pdf" target="_blank"><div class="name">雷清和</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/孙悦瑄_薄弱追踪.pdf" target="_blank"><div class="name">孙悦瑄</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/杨子涵_薄弱追踪.pdf" target="_blank"><div class="name">杨子涵</div><span class="arrow">›</span></a>
+<a class="student-card" href="pdfs/曹家瑞_薄弱追踪.pdf" target="_blank"><div class="name">曹家瑞</div><span class="arrow">›</span></a>
+</div>
+<div class="footer">
+<p>薄弱追踪卡片 · 每次周考更新</p>
+<p>点击学生姓名查看 PDF 报告</p>
+</div>
+</div>
+<script>
+function filterStudents() {
+  var input = document.getElementById('searchInput').value.toLowerCase();
+  var cards = document.querySelectorAll('.student-card');
+  var count = 0;
+  cards.forEach(function(card) {
+    var name = card.querySelector('.name').textContent.toLowerCase();
+    if (name.includes(input)) {
+      card.style.display = '';
+      count++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  document.getElementById('countDisplay').textContent = '显示 ' + count + ' / 50 名学生';
+}
+</script>
+</body>
+</html>
