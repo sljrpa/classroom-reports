@@ -7,7 +7,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;min-height:100vh;color:#2c3e50}
-.top-bar{height:4px;background:linear-gradient(90deg,#2ecc71,#2ecc71,#e67e22)}
+.top-bar{height:4px;background:linear-gradient(90deg,#2ecc71,#2ecc71,#f39c12)}
 .container{max-width:600px;margin:0 auto;padding:20px 16px 40px}
 .header{text-align:center;padding:32px 0 16px}
 .header h1{font-size:22px;font-weight:700}
@@ -15,7 +15,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 .back{display:inline-block;margin-bottom:16px;color:#2ecc71;text-decoration:none;font-size:14px}
 .student-count{text-align:center;font-size:13px;color:#95a5a6;margin-bottom:16px}
 .search-box{position:relative;margin-bottom:16px}
-.search-box input{width:100%;padding:12px 16px 12px 40px;border:1px solid #e0e0e0;border-radius:12px;font-size:15px;outline:none;background:#fff;transition:border-color .2s}
+.search-box input{width:100%;padding:12px 12px 12px 36px;border:1px solid #e0e0e0;border-radius:12px;font-size:15px;outline:none;background:#fff;transition:border-color .2s}
 .search-box input:focus{border-color:#2ecc71}
 .search-box .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px}
 .student-card{display:flex;align-items:center;padding:14px 18px;background:#fff;border-radius:12px;margin-bottom:8px;text-decoration:none;color:inherit;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .15s,box-shadow .15s}
@@ -32,66 +32,64 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 <a class="back" href="index.html">← 返回班级选择</a>
 <div class="header">
 <h1>📋 薄弱追踪卡片</h1>
-<p class="subtitle">高三三班 · 52人 · 点击查看详情</p>
+<p class="subtitle">高三三班 · 50人 · 点击查看详情</p>
 </div>
-
-<div class="search-box">
-    <input type="text" id="searchInput" placeholder="搜索学生姓名..." onkeyup="filterStudents()">
-    <span class="search-icon">🔍</span>
-</div>
-
 <p class="student-count">共 50 名学生</p>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="搜索学生姓名..." onkeyup="filterStudents()">
+<span class="search-icon">🔍</span>
+</div>
 <div id="studentList">
-<a class="student-card" data-name="马铄" href="pdfs/mashuo_薄弱追踪.pdf" target="_blank"><div class="name">马铄</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="马悦瑄" href="pdfs/mayuexuan_薄弱追踪.pdf" target="_blank"><div class="name">马悦瑄</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="颜煜昊" href="pdfs/yanyuhao_薄弱追踪.pdf" target="_blank"><div class="name">颜煜昊</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王艺润" href="pdfs/wangyirun_薄弱追踪.pdf" target="_blank"><div class="name">王艺润</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张伊璇" href="pdfs/zhangyixuan_薄弱追踪.pdf" target="_blank"><div class="name">张伊璇</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="蒋予涵" href="pdfs/jiangyuhan_薄弱追踪.pdf" target="_blank"><div class="name">蒋予涵</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="郑智遥" href="pdfs/zhengzhiyao_薄弱追踪.pdf" target="_blank"><div class="name">郑智遥</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="巩子华" href="pdfs/gongzihua_薄弱追踪.pdf" target="_blank"><div class="name">巩子华</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="陆奕彤" href="pdfs/luyitong_薄弱追踪.pdf" target="_blank"><div class="name">陆奕彤</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王喻婕" href="pdfs/wangyujie_薄弱追踪.pdf" target="_blank"><div class="name">王喻婕</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李明远" href="pdfs/limingyuan_薄弱追踪.pdf" target="_blank"><div class="name">李明远</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王芊琪" href="pdfs/wangqianqi_薄弱追踪.pdf" target="_blank"><div class="name">王芊琪</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="吴浩铭" href="pdfs/wuhaoming_薄弱追踪.pdf" target="_blank"><div class="name">吴浩铭</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="赵子恒" href="pdfs/zhaoziheng_薄弱追踪.pdf" target="_blank"><div class="name">赵子恒</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="梁卿瑜" href="pdfs/liangqingyu_薄弱追踪.pdf" target="_blank"><div class="name">梁卿瑜</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李果轩" href="pdfs/liguoxuan_薄弱追踪.pdf" target="_blank"><div class="name">李果轩</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="段云思源" href="pdfs/duanyunsiyuan_薄弱追踪.pdf" target="_blank"><div class="name">段云思源</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="韩利泽" href="pdfs/hanlize_薄弱追踪.pdf" target="_blank"><div class="name">韩利泽</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="姜程洋" href="pdfs/jiangchengyang_薄弱追踪.pdf" target="_blank"><div class="name">姜程洋</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="曹钰蔚" href="pdfs/caoyuwei_薄弱追踪.pdf" target="_blank"><div class="name">曹钰蔚</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="高洪宇" href="pdfs/gaohongyu_薄弱追踪.pdf" target="_blank"><div class="name">高洪宇</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="冯洪冉" href="pdfs/fenghongran_薄弱追踪.pdf" target="_blank"><div class="name">冯洪冉</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李宗锴" href="pdfs/lizongkai_薄弱追踪.pdf" target="_blank"><div class="name">李宗锴</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="高翊洋" href="pdfs/gaoyiyang_薄弱追踪.pdf" target="_blank"><div class="name">高翊洋</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李炫增" href="pdfs/lixuanzeng_薄弱追踪.pdf" target="_blank"><div class="name">李炫增</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王潇" href="pdfs/wangxiao_薄弱追踪.pdf" target="_blank"><div class="name">王潇</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="刘亦霄" href="pdfs/liuyixiao_薄弱追踪.pdf" target="_blank"><div class="name">刘亦霄</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="权容同" href="pdfs/quanrongtong_薄弱追踪.pdf" target="_blank"><div class="name">权容同</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张静茹" href="pdfs/zhangjingru_薄弱追踪.pdf" target="_blank"><div class="name">张静茹</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="戴孟澔" href="pdfs/daimenghao_薄弱追踪.pdf" target="_blank"><div class="name">戴孟澔</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="单子玉" href="pdfs/danziyu_薄弱追踪.pdf" target="_blank"><div class="name">单子玉</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="姬瑾萱" href="pdfs/jijinxuan_薄弱追踪.pdf" target="_blank"><div class="name">姬瑾萱</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="邸明启" href="pdfs/dimingqi_薄弱追踪.pdf" target="_blank"><div class="name">邸明启</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="刘鑫昶" href="pdfs/liuxinchang_薄弱追踪.pdf" target="_blank"><div class="name">刘鑫昶</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="裴梦琳" href="pdfs/peimenglin_薄弱追踪.pdf" target="_blank"><div class="name">裴梦琳</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="吴俊晖" href="pdfs/wujunhui_薄弱追踪.pdf" target="_blank"><div class="name">吴俊晖</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张子昱" href="pdfs/zhangziyu_薄弱追踪.pdf" target="_blank"><div class="name">张子昱</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="贾翔云" href="pdfs/jiaxiangyun_薄弱追踪.pdf" target="_blank"><div class="name">贾翔云</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李丹妮" href="pdfs/lidanni_薄弱追踪.pdf" target="_blank"><div class="name">李丹妮</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="任思羽" href="pdfs/rensiyu_薄弱追踪.pdf" target="_blank"><div class="name">任思羽</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="俞成辉" href="pdfs/yuchenghui_薄弱追踪.pdf" target="_blank"><div class="name">俞成辉</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="冯柯锦" href="pdfs/fengkejin_薄弱追踪.pdf" target="_blank"><div class="name">冯柯锦</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张瀞文" href="pdfs/zhangjingwen_薄弱追踪.pdf" target="_blank"><div class="name">张瀞文</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王祖雄" href="pdfs/wangzuxiong_薄弱追踪.pdf" target="_blank"><div class="name">王祖雄</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="高祎凡" href="pdfs/gaoyifan_薄弱追踪.pdf" target="_blank"><div class="name">高祎凡</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="韦天宇" href="pdfs/weitianyu_薄弱追踪.pdf" target="_blank"><div class="name">韦天宇</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="雷清和" href="pdfs/leiqinghe_薄弱追踪.pdf" target="_blank"><div class="name">雷清和</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="孙悦瑄" href="pdfs/sunyuexuan_薄弱追踪.pdf" target="_blank"><div class="name">孙悦瑄</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="杨子涵" href="pdfs/yangzihan_薄弱追踪.pdf" target="_blank"><div class="name">杨子涵</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="曹家瑞" href="pdfs/caojiarui_薄弱追踪.pdf" target="_blank"><div class="name">曹家瑞</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="马铄" href="pdfs/mashuo_weakness.pdf" target="_blank"><div class="name">马铄</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="马悦瑄" href="pdfs/mayuexuan_weakness.pdf" target="_blank"><div class="name">马悦瑄</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="颜煜昊" href="pdfs/yanyuhao_weakness.pdf" target="_blank"><div class="name">颜煜昊</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="王艺润" href="pdfs/wangyirun_weakness.pdf" target="_blank"><div class="name">王艺润</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="张伊璇" href="pdfs/zhangyixuan_weakness.pdf" target="_blank"><div class="name">张伊璇</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="蒋予涵" href="pdfs/jiangyuhan_weakness.pdf" target="_blank"><div class="name">蒋予涵</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="郑智遥" href="pdfs/zhengzhiyao_weakness.pdf" target="_blank"><div class="name">郑智遥</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="巩子华" href="pdfs/gongzihua_weakness.pdf" target="_blank"><div class="name">巩子华</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="陆奕彤" href="pdfs/luyitong_weakness.pdf" target="_blank"><div class="name">陆奕彤</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="王喻婕" href="pdfs/wangyujie_weakness.pdf" target="_blank"><div class="name">王喻婕</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="李明远" href="pdfs/limingyuan_weakness.pdf" target="_blank"><div class="name">李明远</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="王芊琪" href="pdfs/wangqianqi_weakness.pdf" target="_blank"><div class="name">王芊琪</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="吴浩铭" href="pdfs/wuhaoming_weakness.pdf" target="_blank"><div class="name">吴浩铭</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="赵子恒" href="pdfs/zhaoziheng_weakness.pdf" target="_blank"><div class="name">赵子恒</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="梁卿瑜" href="pdfs/liangqingyu_weakness.pdf" target="_blank"><div class="name">梁卿瑜</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="李果轩" href="pdfs/liguoxuan_weakness.pdf" target="_blank"><div class="name">李果轩</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="段云思源" href="pdfs/duanyunsiyuan_weakness.pdf" target="_blank"><div class="name">段云思源</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="韩利泽" href="pdfs/hanlize_weakness.pdf" target="_blank"><div class="name">韩利泽</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="姜程洋" href="pdfs/jiangchengyang_weakness.pdf" target="_blank"><div class="name">姜程洋</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="曹钰蔚" href="pdfs/caoyuwei_weakness.pdf" target="_blank"><div class="name">曹钰蔚</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="高洪宇" href="pdfs/gaohongyu_weakness.pdf" target="_blank"><div class="name">高洪宇</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="冯洪冉" href="pdfs/fenghongran_weakness.pdf" target="_blank"><div class="name">冯洪冉</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="李宗锴" href="pdfs/lizongkai_weakness.pdf" target="_blank"><div class="name">李宗锴</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="高翊洋" href="pdfs/gaoyiyang_weakness.pdf" target="_blank"><div class="name">高翊洋</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="李炫增" href="pdfs/lixuanzeng_weakness.pdf" target="_blank"><div class="name">李炫增</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="王潇" href="pdfs/wangxiao_weakness.pdf" target="_blank"><div class="name">王潇</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="刘亦霄" href="pdfs/liuyixiao_weakness.pdf" target="_blank"><div class="name">刘亦霄</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="权容同" href="pdfs/quanrongtong_weakness.pdf" target="_blank"><div class="name">权容同</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="张静茹" href="pdfs/zhangjingru_weakness.pdf" target="_blank"><div class="name">张静茹</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="戴孟澔" href="pdfs/daimenghao_weakness.pdf" target="_blank"><div class="name">戴孟澔</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="单子玉" href="pdfs/danziyu_weakness.pdf" target="_blank"><div class="name">单子玉</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="姬瑾萱" href="pdfs/jijinxuan_weakness.pdf" target="_blank"><div class="name">姬瑾萱</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="邸明启" href="pdfs/dimingqi_weakness.pdf" target="_blank"><div class="name">邸明启</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="刘鑫昶" href="pdfs/liuxinchang_weakness.pdf" target="_blank"><div class="name">刘鑫昶</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="裴梦琳" href="pdfs/peimenglin_weakness.pdf" target="_blank"><div class="name">裴梦琳</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="吴俊晖" href="pdfs/wujunhui_weakness.pdf" target="_blank"><div class="name">吴俊晖</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="张子昱" href="pdfs/zhangziyu_weakness.pdf" target="_blank"><div class="name">张子昱</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="贾翔云" href="pdfs/jiaxiangyun_weakness.pdf" target="_blank"><div class="name">贾翔云</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="李丹妮" href="pdfs/lidanni_weakness.pdf" target="_blank"><div class="name">李丹妮</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="任思羽" href="pdfs/rensiyu_weakness.pdf" target="_blank"><div class="name">任思羽</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="俞成辉" href="pdfs/yuchenghui_weakness.pdf" target="_blank"><div class="name">俞成辉</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="冯柯锦" href="pdfs/fengkejin_weakness.pdf" target="_blank"><div class="name">冯柯锦</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="张瀞文" href="pdfs/zhangjingwen_weakness.pdf" target="_blank"><div class="name">张瀞文</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="王祖雄" href="pdfs/wangzuxiong_weakness.pdf" target="_blank"><div class="name">王祖雄</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="高祎凡" href="pdfs/gaoyifan_weakness.pdf" target="_blank"><div class="name">高祎凡</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="韦天宇" href="pdfs/weitianyu_weakness.pdf" target="_blank"><div class="name">韦天宇</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="雷清和" href="pdfs/leiqinghe_weakness.pdf" target="_blank"><div class="name">雷清和</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="孙悦瑄" href="pdfs/sunyuexuan_weakness.pdf" target="_blank"><div class="name">孙悦瑄</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="杨子涵" href="pdfs/yangzihan_weakness.pdf" target="_blank"><div class="name">杨子涵</div><span class="arrow">›</span></a>
+<a class="student-card" data-name="曹家瑞" href="pdfs/caojiarui_weakness.pdf" target="_blank"><div class="name">曹家瑞</div><span class="arrow">›</span></a>
 
 </div>
 <div class="footer">
