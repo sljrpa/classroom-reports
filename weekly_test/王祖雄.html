@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8">
+<title>王祖雄 · 周考分析报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background: #f5f7fa; color: #2c3e50; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+  .header h1 { font-size: 26px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .score-big { font-size: 48px; font-weight: 800; margin: 10px 0; }
+  .header .score-label { font-size: 14px; opacity: 0.85; }
+  .section { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 18px; color: #2c3e50; border-left: 4px solid #3498db; padding-left: 12px; margin-bottom: 16px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 0; font-size: 14px; min-width: 600px; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; white-space: nowrap; }
+  th { background: #f0f4f8; font-weight: 600; color: #2c3e50; }
+  td { color: #34495e; }
+  td.wrap-cell { white-space: normal; word-break: break-word; min-width: 120px; }
+  .tag-pass { background: #d5f5e3; color: #27ae60; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-fail { background: #fadbd8; color: #e67e22; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-partial { background: #fef9e7; color: #f39c12; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .tag-communicate { background: #f5eef8; color: #8e44ad; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .question-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 12px 0; border-left: 4px solid #bdc3c7; }
+  .question-box.wrong { border-left-color: #e67e22; }
+  .question-box.partial { border-left-color: #f39c12; }
+  .question-box .q-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .question-box .q-content { font-size: 14px; color: #555; margin-bottom: 8px; }
+  .question-box .q-analysis { font-size: 13px; color: #666; }
+  .question-box .q-answer { background: #eafaf1; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 6px; }
+  .question-box .q-student { background: #fdedec; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .question-box .q-error { background: #fef9e7; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; color: #d35400; }
+  .question-box .q-tip { background: #eaf2f8; padding: 6px 10px; border-radius: 6px; font-size: 13px; margin-top: 4px; }
+  .communicate-box { background: #f5eef8; border-radius: 8px; padding: 16px; }
+  .communicate-box h3 { color: #8e44ad; margin-bottom: 12px; }
+  .communicate-item { margin: 8px 0; padding-left: 8px; border-left: 3px solid #8e44ad; font-size: 14px; }
+  .eval-box { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 10px 0; }
+  .eval-box h3 { color: #2c3e50; margin-bottom: 10px; font-size: 16px; }
+  .eval-box ul { padding-left: 20px; }
+  .eval-box li { margin: 6px 0; font-size: 14px; }
+  .path-item { display: flex; margin: 12px 0; }
+  .path-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; flex-shrink: 0; margin-right: 12px; font-size: 15px; }
+  .path-icon.urgent { background: #e67e22; }
+  .path-icon.important { background: #f39c12; }
+  .path-icon.solidify { background: #27ae60; }
+  .score-bar { background: #e8e8e8; border-radius: 4px; height: 16px; overflow: hidden; }
+  .score-bar .fill { height: 100%; border-radius: 4px; }
+  .score-bar .fill.green { background: #2ecc71; }
+  .score-bar .fill.yellow { background: #f1c40f; }
+  .score-bar .fill.red { background: #e67e22; }
+  .score-bar .fill.blue { background: #3498db; }
+  .empty-section { text-align: center; padding: 20px; color: #95a5a6; font-size: 14px; }
+  .q-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+  .q-group-label { width: 100%; font-size: 13px; font-weight: 600; color: #7f8c8d; margin: 8px 0 4px; padding-left: 2px; }
+  .q-group-label:first-child { margin-top: 0; }
+  .q-cell {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 56px; height: 56px; border-radius: 8px; font-size: 11px;
+    position: relative; text-decoration: none; color: inherit;
+    transition: transform 0.15s; cursor: default; overflow: hidden;
+  }
+  .q-cell:hover { transform: scale(1.08); }
+  .q-cell .q-num { font-weight: 700; font-size: 12px; position: relative; z-index: 1; }
+  .q-cell .q-score { font-size: 10px; margin-top: 1px; position: relative; z-index: 1; }
+  .q-cell .q-symbol {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-size: 28px; font-weight: 700; opacity: 0.22; pointer-events: none;
+    font-family: "Times New Roman", "STIXGeneral", serif; font-style: italic;
+  }
+  .q-cell.full { background: #d5f5e3; color: #1e8449; }
+  .q-cell.partial { background: #fef5e7; color: #d35400; }
+  .q-cell.zero { background: #fadbd8; color: #c0392b; }
+</style>
+</head><body><div class="container">
+
+  <div class="header">
+    <h1>王祖雄 · 周考分析报告</h1>
+    <div class="subtitle">第十九周高二数学周测 | 三班</div>
+    <div class="score-big">99.0<span style="font-size:20px">/120</span></div>
+    <div class="score-label">得分率 82.5% | 班次 6 | 班级均分 78.9</div>
+  </div>
+
+  <div class="section">
+  <h2>📋 逐题得分一览</h2>
+  <div class="q-grid">
+    <div class="q-group-label">单选题</div>
+    <div class="q-cell full"><span class="q-symbol">∀</span><span class="q-num">Q1</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">∩</span><span class="q-num">Q2</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">f'</span><span class="q-num">Q3</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">z²</span><span class="q-num">Q4</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">qⁿ</span><span class="q-num">Q5</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">→</span><span class="q-num">Q6</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell zero"><span class="q-symbol">tan</span><span class="q-num">Q7</span><span class="q-score">0.0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">f(-x)</span><span class="q-num">Q8</span><span class="q-score">5.0/5</span></div>
+    <div class="q-group-label">多选题</div>
+    <div class="q-cell partial"><span class="q-symbol">≡</span><span class="q-num">Q9</span><span class="q-score">4.0/6</span></div>
+    <div class="q-cell full"><span class="q-symbol">x̄</span><span class="q-num">Q10</span><span class="q-score">6.0/6</span></div>
+    <div class="q-cell full"><span class="q-symbol">ω</span><span class="q-num">Q11</span><span class="q-score">6.0/6</span></div>
+    <div class="q-group-label">填空题</div>
+    <div class="q-cell full"><span class="q-symbol">≥</span><span class="q-num">Q12</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell full"><span class="q-symbol">f(g)</span><span class="q-num">Q13</span><span class="q-score">5.0/5</span></div>
+    <div class="q-cell zero"><span class="q-symbol">Asin</span><span class="q-num">Q14</span><span class="q-score">0.0/5</span></div>
+    <div class="q-group-label">解答题</div>
+    <div class="q-cell full"><span class="q-symbol">∠C</span><span class="q-num">Q15-1</span><span class="q-score">8/8</span></div>
+    <div class="q-cell full"><span class="q-symbol">CD</span><span class="q-num">Q15-2</span><span class="q-score">7/7</span></div>
+    <div class="q-cell full"><span class="q-symbol">aₙ</span><span class="q-num">Q16-1</span><span class="q-score">6/6</span></div>
+    <div class="q-cell full"><span class="q-symbol">Σ</span><span class="q-num">Q16-2</span><span class="q-score">10/10</span></div>
+    <div class="q-cell full"><span class="q-symbol">⊥</span><span class="q-num">Q17-1</span><span class="q-score">8/8</span></div>
+    <div class="q-cell zero"><span class="q-symbol">θ</span><span class="q-num">Q17-2</span><span class="q-score">0/8</span></div>
+  </div>
+  </div>
+
+  <div class="section">
+  <h2>📊 整体得分概览</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题型</th><th>满分</th><th>得分</th><th>得分率</th><th>可视化</th></tr>
+    <tr><td>单选题 (Q1-Q8)</td><td>40</td><td>35.0</td><td>87.5%</td><td><div class="score-bar"><div class="fill green" style="width:87.5%"></div></div></td></tr>
+    <tr><td>多选题 (Q9-Q11)</td><td>18</td><td>16.0</td><td>88.9%</td><td><div class="score-bar"><div class="fill green" style="width:88.9%"></div></div></td></tr>
+    <tr><td>填空题 (Q12-Q14)</td><td>15</td><td>10.0</td><td>66.7%</td><td><div class="score-bar"><div class="fill yellow" style="width:66.7%"></div></div></td></tr>
+    <tr style="font-weight:600; background:#f0f4f8;"><td>客观题合计</td><td>73</td><td>61.0</td><td>83.6%</td><td><div class="score-bar"><div class="fill green" style="width:83.6%"></div></div></td></tr>
+    <tr><td>解答题 (Q15-Q17)</td><td>47</td><td>38.0</td><td>80.9%</td><td><div class="score-bar"><div class="fill green" style="width:80.9%"></div></div></td></tr>
+    <tr style="font-weight:700; background:#e8f4fd; font-size:15px;"><td>总计</td><td>120</td><td>99.0</td><td>82.5%</td><td><div class="score-bar"><div class="fill green" style="width:82.5%"></div></div></td></tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>❌ 未掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>具体表现</th></tr>
+    <tr><td>Q7</td><td>三角恒等变换·正切和角+二倍角</td><td><span class="tag-fail">未掌握</span></td><td class="wrap-cell">未掌握</td></tr>
+    <tr><td>Q14</td><td>辅助角公式+正弦值域</td><td><span class="tag-fail">未掌握</span></td><td class="wrap-cell">未掌握</td></tr>
+    <tr><td>Q17-2</td><td>建系法求线面角</td><td><span class="tag-fail">未掌握</span></td><td class="wrap-cell">法向量都没算对</td></tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>⚠️ 部分掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>掌握状态</th><th>得分</th><th>具体问题</th><th>沟通需求</th></tr>
+    <tr><td>Q9</td><td>同一函数判定</td><td><span class="tag-partial">部分掌握</span></td><td>4.0/6</td><td class="wrap-cell">部分掌握</td><td></td></tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>✅ 已掌握知识点汇总</h2>
+  <div class="table-wrap"><table>
+  <tr><th>题号</th><th>知识点</th><th>得分</th></tr>
+    <tr><td>Q1</td><td>含全称量词命题否定</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q2</td><td>集合交集运算</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q3</td><td>导数几何意义·过曲线外一点求切线斜率</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q4</td><td>复数方程·虚根成对+韦达定理</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q5</td><td>等比数列前n项和性质</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q6</td><td>向量夹角平分线+数量积运算</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q8</td><td>奇函数性质·求参数</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q10</td><td>样本均值与方差线性变换</td><td>6.0/6 ✓</td></tr>
+    <tr><td>Q11</td><td>三角函数性质</td><td>6.0/6 ✓</td></tr>
+    <tr><td>Q12</td><td>基本不等式求最小值</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q13</td><td>复合函数单调性</td><td>5.0/5 ✓</td></tr>
+    <tr><td>Q15-1</td><td>正余弦定理+恒等变换·求角C</td><td>8/8 ✓</td></tr>
+    <tr><td>Q15-2</td><td>角平分线长度</td><td>7/7 ✓</td></tr>
+    <tr><td>Q16-1</td><td>等比数列通项公式</td><td>6/6 ✓</td></tr>
+    <tr><td>Q16-2</td><td>裂项相消求和</td><td>10/10 ✓</td></tr>
+    <tr><td>Q17-1</td><td>面面垂直证线面垂直</td><td>8/8 ✓</td></tr>
+  </table></div></div>
+
+  <div class="section">
+  <h2>💬 师生待沟通</h2>
+  <div class="communicate-box">
+  <h3>⚠️ 以下题目需要和学生面对面沟通确认</h3>
+  <div class="communicate-item">Q7（三角恒等变换·正切和角+二倍角）：未得分，需要确认错因</div>
+  <div class="communicate-item">Q14（辅助角公式+正弦值域）：未得分，需要确认错因</div>
+  <div class="communicate-item">Q17-2（建系法求线面角）：未得分，需要确认错因</div>
+  <div class="communicate-item">【月考1遗留】分段函数零点（本次关联：Q9）：历史薄弱项，本次仍未完全掌握，需重点关注</div>
+  <div class="communicate-item">【月考1遗留】建系求二面角（本次关联：Q17-2）：历史薄弱项，本次仍未完全掌握，需重点关注</div>
+  <div class="communicate-item">【7.1周考遗留】三角恒等变换（本次关联：Q7）：历史薄弱项，本次仍未完全掌握，需重点关注</div>
+  <div class="communicate-item">【7.1周考遗留】辅助角公式（本次关联：Q14）：历史薄弱项，本次仍未完全掌握，需重点关注</div>
+  </div></div>
+
+<div class="section">
+<h2>📝 错题与部分掌握题详细分析</h2>
+
+  <div class="question-box wrong">
+    <div class="q-title">Q7 | 三角恒等变换·正切和角+二倍角 | 0.0/5</div>
+    <div class="q-student">❌ 王祖雄作答：未掌握</div>
+    <div class="q-error">⚠️ 未掌握</div>
+  </div>
+
+  <div class="question-box partial">
+    <div class="q-title">Q9 | 同一函数判定 | 4.0/6</div>
+    <div class="q-student">⚠️ 王祖雄作答：得4.0/6分</div>
+    <div class="q-error">⚠️ 部分掌握</div>
+  </div>
+
+  <div class="question-box wrong">
+    <div class="q-title">Q14 | 辅助角公式+正弦值域 | 0.0/5</div>
+    <div class="q-student">❌ 王祖雄作答：未掌握</div>
+    <div class="q-error">⚠️ 未掌握</div>
+  </div>
+
+  <div class="question-box wrong">
+    <div class="q-title">Q17-2 | 建系法求线面角 | 0/8</div>
+    <div class="q-student">❌ 王祖雄作答：法向量都没算对</div>
+    <div class="q-error">⚠️ 法向量都没算对</div>
+  </div>
+</div>
+
+<div class="section">
+<h2>🌟 教师评价</h2>
+<div class="eval-box"><h3>💪 亮点</h3><ul>
+<li>单选题35.0/40，基础扎实</li>
+<li>多选题16.0/18，选择能力很强</li>
+<li>填空题10.0/15，填空能力不错</li>
+<li>客观题61.0分，击败班内大部分同学</li>
+<li>已掌握：含全称量词命题否定、集合交集运算、导数几何意义·过曲线外一点求切线斜率、复数方程·虚根成对+韦达定理、等比数列前n项和性质等16个知识点</li>
+</ul></div>
+<div class="eval-box"><h3>⚠️ 核心问题1</h3><p style="font-size:14px">未掌握：三角恒等变换·正切和角+二倍角、辅助角公式+正弦值域、建系法求线面角等3个</p></div>
+</div>
+
+<div class="section">
+<h2>🚀 能力诊断与提分路径</h2>
+
+<div class="path-item">
+  <div class="path-icon urgent">1</div>
+  <div><strong>🔥 核心知识点突破</strong><br>
+  Q17-2（建系法求线面角）<br>解答题完全未得分，必须优先突破，建议回归课本例题+3道同类基础题</div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">2</div>
+  <div><strong>📌 基础知识巩固</strong><br>
+  Q7（三角恒等变换·正切和角+二倍角）<br>客观题未得分，需要加强基础练习</div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon important">3</div>
+  <div><strong>📌 基础知识巩固</strong><br>
+  Q14（辅助角公式+正弦值域）<br>客观题未得分，需要加强基础练习</div>
+</div>
+
+<div class="path-item">
+  <div class="path-icon solidify">4</div>
+  <div><strong>✅ 压轴题逐步攻克</strong><br>
+  Q9（同一函数判定）<br>部分掌握4.0/6分，建议做1-2道变式题巩固，避免细节丢分</div>
+</div>
+</div>
+</div></body></html>
