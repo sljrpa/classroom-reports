@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📘 向量运算真题汇总</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;background:#f5f7fa;color:#2c3e50;line-height:1.7;}
+.container{max-width:960px;margin:0 auto;padding:20px;}
+.title{font-size:22px;font-weight:700;color:#2c3e50;padding:0 0 12px 0;border-bottom:2px solid #ecf0f1;margin-bottom:20px;}
+.card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);margin-bottom:20px;}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
+th{background:#f0f3f5;padding:10px 12px;text-align:left;font-weight:600;border-bottom:2px solid #dce1e6;}
+td{padding:8px 12px;border-bottom:1px solid #ecf0f1;}
+tr:hover td{background:#fafbfc;}
+h1{font-size:20px;margin:16px 0 12px;color:#2c3e50;}
+h2{font-size:17px;margin:20px 0 10px;color:#34495e;padding-bottom:6px;border-bottom:1px solid #ecf0f1;}
+h3{font-size:15px;margin:14px 0 8px;color:#555;}
+p{margin:8px 0;font-size:14px;line-height:1.8;}
+hr{border:none;border-top:1px solid #ecf0f1;margin:20px 0;}
+ul,ol{margin:8px 0 8px 24px;font-size:14px;}
+li{margin:4px 0;}
+code{background:#f0f3f5;padding:2px 6px;border-radius:4px;font-size:13px;}
+.back{display:inline-block;font-size:13px;color:#7f8c8d;text-decoration:none;padding:8px 0;margin-top:8px;}
+.back:hover{color:#3498db;}
+.links{display:flex;flex-direction:column;gap:10px;}
+.lk{display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:12px;text-decoration:none;transition:all .2s ease;font-weight:500;font-size:15px;}
+.lk:hover{transform:translateX(4px);}
+.lk.orange{background:linear-gradient(135deg,#fef5e7,#fdebd0);color:#ca6f1e;}
+.lk.orange:hover{background:linear-gradient(135deg,#fdebd0,#f9cb9c);}
+.lk.blue{background:linear-gradient(135deg,#ebf5fb,#d6eaf8);color:#2874a6;}
+.lk.blue:hover{background:linear-gradient(135deg,#d6eaf8,#aed6f1);}
+.lk.teal{background:linear-gradient(135deg,#e8f8f5,#d1f2eb);color:#1abc9c;}
+.lk.teal:hover{background:linear-gradient(135deg,#d1f2eb,#a3e4d7);}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;}
+.badge.or{background:#fef5e7;color:#ca6f1e;}
+.badge.bl{background:#ebf5fb;color:#2874a6;}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="title">📘 向量运算真题汇总</div>
+<div class="card"><h1>向量运算——高考真题汇总（2016-2026）</h1>
+<p>本文件收录2016-2026年高考数学真题中属于<strong>向量运算</strong>模块的所有小题，按年份降序排列。</p>
+<hr />
+<p><strong>第1题</strong>（2016年 上海春季·17）</p>
+<p>17．（3分）已知向量a→=(1，0)，b→=(1，2)，则向量b→在向量a→方向上的投影为（　　）</p>
+<p>A．1B．2C．（1，0）D．（0，2）</p>
+<hr />
+<p><strong>第2题</strong>（2016年 上海春季·23）</p>
+<p>23．（3分）设单位向量e1→与e2→既不平行也不垂直，对非零向量a→=x1e1→+y1e2→、b→=x2e1→+y2e2→有结论：</p>
+<p>①若x1y2﹣x2y1＝0，则a→∥b→；</p>
+<p>②若x1x2+y1y2＝0，则a→⊥b→．</p>
+<p>关于以上两个结论，正确的判断是（　　）</p>
+<p>A．①成立，②不成立B．①不成立，②成立</p>
+<p>C．①成立，②成立D．①不成立，②不成立</p>
+<hr />
+<p><strong>第3题</strong>（2016年 上海·12）</p>
+<p>12．（4分）在平面直角坐标系中，已知A（1，0），B（0，﹣1），P是曲线y=1-x2上一个动点，则BP→•BA→的取值范围是　                  　 ．</p>
+<hr />
+<p><strong>第4题</strong>（2016年 新课标Ⅰ·理·13）</p>
+<p>13．（5分）设向量a→=（m，1），b→=（1，2），且|a→+b→|2＝|a→|2+|b→|2，则m＝　     　 ．</p>
+<hr />
+<p><strong>第5题</strong>（2016年 新课标Ⅱ·理·3）</p>
+<p>3．（5分）已知向量a→=（1，m），b→=（3，﹣2），且（a→+b→）⊥b→，则m＝（　　）</p>
+<p>A．﹣8B．﹣6C．6D．8</p>
+<hr />
+<p><strong>第6题</strong>（2016年 新课标Ⅲ·理·3）</p>
+<p>3．（5分）已知向量BA→=（12，32），BC→=（32，12），则∠ABC＝（　　）</p>
+<p>A．30°B．45°C．60°D．120°</p>
+<hr />
+<p><strong>第7题</strong>（2016年 北京·4）</p>
+<p>4．（5分）设a→，b→是向量，则“|a→|＝|b→|”是“|a→+b→|＝|a→-b→|”的（　　）</p>
+<p>A．充分而不必要条件</p>
+<p>B．必要而不充分条件</p>
+<p>C．充分必要条件</p>
+<p>D．既不充分也不必要条件</p>
+<hr />
+<p><strong>第8题</strong>（2016年 华侨港澳台·3）</p>
+<p>3．（5分）平面向量a→=（x，3）与b→=（2，y）平行的充分必要条件是（　　）</p>
+<p>A．x＝0，y＝0B．x＝﹣3，y＝﹣2C．xy＝6D．xy＝﹣6</p>
+<hr />
+<p><strong>第9题</strong>（2016年 天津·7）</p>
+<p>7．（5分）已知△ABC是边长为1的等边三角形，点D、E分别是边AB、BC的中点，连接DE并延长到点F，使得DE＝2EF，则AF→•BC→的值为（　　）</p>
+<p>A．-58B．14C．18D．118</p>
+<hr />
+<p><strong>第10题</strong>（2016年 山东·8）</p>
+<p>8．（5分）已知非零向量m→，n→满足4|m→|＝3|n→|，cos＜m→，n→＞=13．若n→⊥（tm→+n→），则实数t的值为（　　）</p>
+<p>A．4B．﹣4C．94D．-94</p>
+<hr />
+<p><strong>第11题</strong>（2016年 江苏·13）</p>
+<p>13．（5分）如图，在△ABC中，D是BC的中点，E，F是AD上的两个三等分点，BA→•CA→=4，BF→•CF→=-1，则BE→•CE→的值是 　                　 ．</p>
+<p><img alt="img" src="img/805589443842_docxword_media_image3.png" /></p>
+<hr />
+<p><strong>第12题</strong>（2016年 浙江·15）</p>
+<p>15．（4分）已知向量a→，b→，|a→|＝1，|b→|＝2，若对任意单位向量e→，均有|a→•e→|+|b→•e→|≤6，则a→•b→的最大值是 　                　 ．</p>
+<p>三、解答题：本大题共5小题，共74分．解答应写出文字说明，证明过程或演算步骤．</p>
+<hr />
+<p><strong>第13题</strong>（2017年 上海·7）</p>
+<p>7．（5分）如图，以长方体ABCD﹣A1B1C1D1的顶点D为坐标原点，过D的三条棱所在的直线为坐标轴，建立空间直角坐标系，若DB1→的坐标为（4，3，2），则AC1→的坐标是 　           　 ．</p>
+<p><img alt="img" src="img/805584869890_docxword_media_image.png" /></p>
+<hr />
+<p><strong>第14题</strong>（2017年 北京·6）</p>
+<p>6．（5分）设m→，n→为非零向量，则“存在负数λ，使得m→=λn→”是“m→•n→＜0”的（　　）</p>
+<p>A．充分而不必要条件</p>
+<p>B．必要而不充分条件</p>
+<p>C．充分必要条件</p>
+<p>D．既不充分也不必要条件</p>
+<hr />
+<p><strong>第15题</strong>（2017年 华侨港澳台·3）</p>
+<p>3．（5分）设向量a→=(3，1)，b→=(-3，1)，则a→和b→的夹角为（　　）</p>
+<p>A．30°B．60°C．120°D．150°</p>
+<hr />
+<p><strong>第16题</strong>（2017年 华侨港澳台·18）</p>
+<p>18．（5分）在空间直角坐标系中，向量a→在三个坐标平面内的正投影长度分别为2，2，1，则|a→|＝　                  　 ．</p>
+<p>三、解答题：本大题共4小题；每小题15分.解答应写出文字说明，证明过程或演算步骤.</p>
+<hr />
+<p><strong>第17题</strong>（2017年 天津·13）</p>
+<p>13．（5分）在△ABC中，∠A＝60°，AB＝3，AC＝2．若BD→=2DC→，AE→=λAC→-AB→（λ∈R），且AD→⋅AE→=-4，则λ的值为　                 　 ．</p>
+<hr />
+<p><strong>第18题</strong>（2017年 山东·12）</p>
+<p>12．（5分）已知e1→，e2→是互相垂直的单位向量，若3e1→-e2→与e1→+λe2→的夹角为60°，则实数λ的值是　                  　 ．</p>
+<hr />
+<p><strong>第19题</strong>（2017年 新课标Ⅰ·13）</p>
+<p>13．（5分）已知向量a→，b→的夹角为60°，|a→|＝2，|b→|＝1，则|a→+2b→|＝　              　 ．</p>
+<hr />
+<p><strong>第20题</strong>（2017年 新课标Ⅱ·12）</p>
+<p>12．（5分）已知△ABC是边长为2的等边三角形，P为平面ABC内一点，则PA→•（PB→+PC→）的最小值是（　　）</p>
+<p>A．﹣2B．-32C．-43D．﹣1</p>
+<p>二、填空题：本题共4小题，每小题5分，共20分。</p>
+<hr />
+<p><strong>第21题</strong>（2017年 新课标Ⅲ·12）</p>
+<p>12．（5分）在矩形ABCD中，AB＝1，AD＝2，动点P在以点C为圆心且与BD相切的圆上．若AP→=λAB→+μAD→，则λ+μ的最大值为（　　）</p>
+<p>A．3B．22C．5D．2</p>
+<p>二、填空题:本题共4小题，每小题5分，共20分。</p>
+<hr />
+<p><strong>第22题</strong>（2017年 江苏·12）</p>
+<p>12．（5分）如图，在同一个平面内，向量OA→，OB→，OC→的模分别为1，1，2，OA→与OC→的夹角为α，且tanα＝7，OB→与OC→的夹角为45°．若OC→=mOA→+nOB→（m，n∈R），则m+n＝　   　 ．</p>
+<p><img alt="img" src="img/805588943106_docxword_media_image3.png" /></p>
+<hr />
+<p><strong>第23题</strong>（2017年 江苏·13）</p>
+<p>13．（5分）在平面直角坐标系xOy中，A（﹣12，0），B（0，6），点P在圆O：x2+y2＝50上．若PA→•PB→≤20，则点P的横坐标的取值范围是　                  　 ．</p>
+<hr />
+<p><strong>第24题</strong>（2017年 浙江·10）</p>
+<p>10．（4分）如图，已知平面四边形ABCD，AB⊥BC，AB＝BC＝AD＝2，CD＝3，AC与BD交于点O，记I1=OA→•OB→，I2=OB→•OC→，I3=OC→•OD→，则（　　）</p>
+<p><img alt="img" src="img/805461364226_docxword_media_image8.png" /></p>
+<p>A．I1＜I2＜I3B．I1＜I3＜I2C．I3＜I1＜I2D．I2＜I1＜I3</p>
+<p>二、填空题：本大题共7小题，多空题每题6分，单空题每题4分，共36分</p>
+<hr />
+<p><strong>第25题</strong>（2017年 浙江·15）</p>
+<p>15．（6分）已知向量a→、b→满足|a→|＝1，|b→|＝2，则|a→+b→|+|a→-b→|的最小值是 　   　 ，最大值是 　              　 ．</p>
+<hr />
+<p><strong>第26题</strong>（2018年 上海·8）</p>
+<p>8．（5分）在平面直角坐标系中，已知点A（﹣1，0）、B（2，0），E、F是y轴上的两个动点，且|EF→|＝2，则AE→⋅BF→的最小值为　     　 ．</p>
+<hr />
+<p><strong>第27题</strong>（2018年 新课标Ⅰ·理·6）</p>
+<p>6．（5分）在△ABC中，AD为BC边上的中线，E为AD的中点，则EB→=（　　）</p>
+<p>A．34AB→-14AC→B．14AB→-34AC→C．34AB→+14AC→D．14AB→+34AC→</p>
+<hr />
+<p><strong>第28题</strong>（2018年 新课标Ⅱ·理·4）</p>
+<p>4．（5分）已知向量a→，b→满足|a→|＝1，a→•b→=-1，则a→•（2a→-b→）＝（　　）</p>
+<p>A．4B．3C．2D．0</p>
+<hr />
+<p><strong>第29题</strong>（2018年 新课标Ⅲ·理·13）</p>
+<p>13．（5分）已知向量a→=（1，2），b→=（2，﹣2），c→=（1，λ）．若c→∥（2a→+b→），则λ＝　                　 ．</p>
+<hr />
+<p><strong>第30题</strong>（2018年 北京·6）</p>
+<p>6．（5分）设a→，b→均为单位向量，则“|a→-3b→|＝|3a→+b→|”是“a→⊥b→”的（　　）</p>
+<p>A．充分而不必要条件</p>
+<p>B．必要而不充分条件</p>
+<p>C．充分必要条件</p>
+<p>D．既不充分也不必要条件</p>
+<hr />
+<p><strong>第31题</strong>（2018年 华侨港澳台·18）</p>
+<p>18．（5分）长方体ABCD﹣A1B1C1D1，AB＝AD＝4，AA1＝8，E、F、G为AB、A1B1、DD1的中点，H为A1D1上一点，则A1H＝1，求异面直线FH与EG所成角的余弦值　                  　 ．</p>
+<p>三、解答题：本大题共4小题，每小题15分.解答应写出文字说明，证明过程或演算步骤.</p>
+<hr />
+<p><strong>第32题</strong>（2018年 天津·8）</p>
+<p>8．（5分）如图，在平面四边形ABCD中，AB⊥BC，AD⊥CD，∠BAD＝120°，AB＝AD＝1．若点E为边CD上的动点，则AE→⋅BE→的最小值为（　　）</p>
+<p><img alt="img" src="img/805875401218_docxword_media_image2.png" /></p>
+<p>A．2116B．32C．2516D．3</p>
+<p>二.填空题：本大题共6小题，每小题5分，共30分.</p>
+<hr />
+<p><strong>第33题</strong>（2018年 浙江·9）</p>
+<p>9．（4分）已知a→，b→，e→是平面向量，e→是单位向量．若非零向量a→与e→的夹角为π3，向量b→满足b→2-4e→•b→+3＝0，则|a→-b→|的最小值是（　　）</p>
+<p>A．3-1B．3+1C．2D．2-3</p>
+<hr />
+<p><strong>第34题</strong>（2019年 上海·3）</p>
+<p><strong>3.（4分）</strong> 已知向量a=(1，0，2)，b=(2，1，0)，则a与b的夹角为______。</p>
+<hr />
+<p><strong>第35题</strong>（2019年 北京·7）</p>
+<p><strong>7.（5分）</strong> 设点A，B，C不共线，则"AB与AC的夹角为锐角"是"|AB+AC|＞|BC|"的（　　）
+- A. 充分而不必要条件
+- B. 必要而不充分条件
+- C. 充分必要条件
+- D. 既不充分也不必要条件</p>
+<hr />
+<p><strong>第36题</strong>（2019年 华侨港澳台·4）</p>
+<p><strong>4.（5分）</strong> 经过点（1，-1，3）且与平面2x+y-z+4＝0平行的平面方程为（　　）
+- A. 2x+y-z+2＝0
+- B. 2x+y+z-6＝0
+- C. 2x+y+z-4＝0
+- D. 2x+y-z-3＝0</p>
+<hr />
+<p><strong>第37题</strong>（2019年 华侨港澳台·14）</p>
+<p><strong>14.（5分）</strong> 已知向量a=(1，m)，b=(3，1)，若a⊥b，则m＝______。</p>
+<hr />
+<p><strong>第38题</strong>（2019年 天津·14）</p>
+<p><strong>14.（5分）</strong> 在四边形ABCD中，AD∥BC，AB＝2√3，AD＝5，∠A＝30°，点E在线段CB的延长线上，且AE＝BE，则BD·AE=______。</p>
+<h2>三、解答题（本大题共6小题，共80分）</h2>
+<hr />
+<p><strong>第39题</strong>（2019年 新课标Ⅰ·7）</p>
+<p><strong>7.（5分）</strong> 已知非零向量a，b满足|a|＝2|b|，且（a-b）⊥b，则a与b的夹角为（　　）
+- A. π/6
+- B. π/3
+- C. 2π/3
+- D. 5π/6</p>
+<hr />
+<p><strong>第40题</strong>（2019年 新课标Ⅱ·3）</p>
+<p><strong>3.（5分）</strong> 已知AB=(2,3)，AC=(3,t)，|BC|＝1，则AB·BC=（　　）
+- A. -3
+- B. -2
+- C. 2
+- D. 3</p>
+<hr />
+<p><strong>第41题</strong>（2019年 新课标Ⅲ·13）</p>
+<p><strong>13.（5分）</strong> 已知a，b为单位向量，且a·b=0，若c=2a-5b，则cos＜a，c＞=______。</p>
+<hr />
+<p><strong>第42题</strong>（2019年 江苏·12）</p>
+<p><strong>12.（5分）</strong> 如图，在△ABC中，D是BC的中点，E在边AB上，BE＝2EA，AD与CE交于点O。若AB·AC=6AO·EC，则AB/AC的值是______。</p>
+<hr />
+<p><strong>第43题</strong>（2019年 浙江·17）</p>
+<p><strong>17.（6分）</strong> 已知正方形ABCD的边长为1。当每个λᵢ（i＝1，2，3，4，5，6）取遍±1时，|λ₁AB+λ₂BC+λ₃CD+λ₄DA+λ₅AC+λ₆BD|的最小值是<strong><em>_</em>_，最大值是</strong>____。</p>
+<h2>三、解答题（本大题共5小题，共74分）</h2>
+<hr />
+<p><strong>第44题</strong>（2020年 江苏·13）</p>
+<p>13．（5分）在△ABC中，AB＝4，AC＝3，∠BAC＝90°，D在边BC上，延长AD到P，使得AP＝9．若PA→=mPB→+（32-m）PC→（m为常数），则CD的长度是 　                  　 ．</p>
+<p><img alt="img" src="img/804545805314_docxword_media_image3.png" /></p>
+<hr />
+<p><strong>第45题</strong>（2020年 浙江·17）</p>
+<p>17．（4分）已知平面单位向量e1→，e2→满足|2e1→-e2→|≤2．设a→=e1→+e2→，b→=3e1→+e2→，向量a→，b→的夹角为θ，则cos2θ的最小值是　                  　 ．</p>
+<p>三、解答题：本大题共5小题，共74分。解答应写出文字说明、证明过程或演算步骤。</p>
+<hr />
+<p><strong>第46题</strong>（2020年 海南·3）</p>
+<p>3．（5分）在△ABC中，D是AB边上的中点，则CB→=（　　）</p>
+<p>A．2CD→+CA→B．CD→-2CA→C．2CD→-CA→D．CD→+2CA→</p>
+<hr />
+<p><strong>第47题</strong>（2020年 新课标Ⅰ·14）</p>
+<p>14．（5分）设a→，b→为单位向量，且|a→+b→|＝1，则|a→-b→|＝　             　 ．</p>
+<hr />
+<p><strong>第48题</strong>（2020年 新课标Ⅱ·13）</p>
+<p>13．（5分）已知单位向量a→，b→的夹角为45°，ka→-b→与a→垂直，则k＝　                  　 ．</p>
+<hr />
+<p><strong>第49题</strong>（2020年 新课标Ⅲ·6）</p>
+<p>6．（5分）已知向量a→，b→满足|a→|＝5，|b→|＝6，a→•b→=-6，则cos＜a→，a→+b→＞=（　　）</p>
+<p>A．-3135B．-1935C．1735D．1935</p>
+<hr />
+<p><strong>第50题</strong>（2020年 新课标Ⅱ·5）</p>
+<p>5．（5分）已知单位向量a→，b→的夹角为60°，则在下列向量中，与b→垂直的是（　　）</p>
+<p>A．a→+2b→B．2a→+b→C．a→-2b→D．2a→-b→</p>
+<hr />
+<p><strong>第51题</strong>（2020年 北京·13）</p>
+<p>13．（5分）已知正方形ABCD的边长为2，点P满足AP→=12（AB→+AC→），则|PD→|＝　             　 ；PB→•PD→=　     　 ．</p>
+<hr />
+<p><strong>第52题</strong>（2020年 华侨港澳台·12）</p>
+<p>12．（5分）设点P1，P2，P3在⊙O上，若OP1→+OP2→+OP3→=0→，则∠P1P2P3＝（　　）
+A．30°B．45°C．60°D．90°</p>
+<p>二、填空题：本题共6小题，每小题5分，共30分。</p>
+<hr />
+<p><strong>第53题</strong>（2020年 上海·12）</p>
+<p>12．（5分）已知a1→，a2→，b1→，b2→，…，bk→（k∈N*）是平面内两两互不相等的向量，满足|a1→-a2→|＝1，且|ai→-bj→|∈{1，2}（其中i＝1，2，j＝1，2，…，k），则k的最大值是　   　 ．</p>
+<p>二、选择题（本大题共4题，每题5分，共20分）</p>
+<hr />
+<p><strong>第54题</strong>（2020年 天津·15）</p>
+<p>15．（5分）如图，在四边形ABCD中，∠B＝60°，AB＝3，BC＝6，且AD→=λBC→，AD→•AB→=-32，则实数λ的值为 　                　 ，若M，N是线段BC上的动点，且|MN→|＝1，则DM→•DN→的最小值为 　                 　 ．</p>
+<p><img alt="img" src="img/804257879810_docxword_media_image6.png" /></p>
+<p>三．解答题：本大题共5小题，共75分．解答应写出文字说明，证明过程或演算步骤．</p>
+<hr />
+<p><strong>第55题</strong>（2020年 山东·7）</p>
+<p>7．（5分）已知P是边长为2的正六边形ABCDEF内的一点，则AP→•AB→的取值范围是（　　）</p>
+<p>A．（﹣2，6）B．（﹣6，2）C．（﹣2，4）D．（﹣4，6）</p>
+<hr />
+<p><strong>第56题</strong>（2021年 山东新高考Ⅰ·10）</p>
+<p>（多选）10．（5分）已知O为坐标原点，点P1（cosα，sinα），P2（cosβ，﹣sinβ），P3（cos（α+β），sin（α+β）），A（1，0），则（　　）</p>
+<p>A．|OP1→|＝|OP2→|B．|AP1→|＝|AP2→|</p>
+<p>C．OA→•OP3→=OP1→•OP2→D．OA→•OP1→=OP2→•OP3→</p>
+<hr />
+<p><strong>第57题</strong>（2021年 上海·4）</p>
+<p>4．（4分）如图正方形ABCD的边长为3，求AB→•AC→=　   　 ．</p>
+<p><img alt="img" src="img/804264693250_docxword_media_image.png" /></p>
+<hr />
+<p><strong>第58题</strong>（2021年 乙卷·理·14）</p>
+<p>14．（5分）已知向量a→=（1，3），b→=（3，4），若（a→-λb→）⊥b→，则λ＝　                　 ．</p>
+<hr />
+<p><strong>第59题</strong>（2021年 浙江·3）</p>
+<p>3．（4分）已知非零向量a→，b→，c→，则“a→•c→=b→•c→”是“a→=b→”的（　　）</p>
+<p>A．充分不必要条件</p>
+<p>B．必要不充分条件</p>
+<p>C．充分必要条件</p>
+<p>D．既不充分也不必要条件</p>
+<hr />
+<p><strong>第60题</strong>（2021年 浙江·17）</p>
+<p>17．（4分）已知平面向量a→，b→，c→（c→≠0→）满足|a→|＝1，|b→|＝2，a→•b→=0，（a→-b→）•c→=0．记平面向量d→在a→，b→方向上的投影分别为x，y，d→-a→在c→方向上的投影为z，则x2+y2+z2的最小值是 　                　 ．</p>
+<p>三、解答题：本大题共5小题，共74分。解答应写出文字说明、证明过程或演算步骤。</p>
+<hr />
+<p><strong>第61题</strong>（2021年 新高考Ⅱ·15）</p>
+<p>15．（5分）已知向量a→+b→+c→=0→，|a→|＝1，|b→|＝|c→|＝2，则a→•b→+b→•c→+c→•a→=　                 　 ．</p>
+<hr />
+<p><strong>第62题</strong>（2021年 北京·13）</p>
+<p>13．（5分）已知向量a→，b→，c→在正方形网格中的位置如图所示，若网格纸上小正方形的边长为1，则（a→+b→）•c→=　   　 ；a→•b→=　   　 ．</p>
+<p><img alt="img" src="img/804193328642_docxword_media_image3.png" /></p>
+<hr />
+<p><strong>第63题</strong>（2021年 天津·15）</p>
+<p>15．（5分）在边长为1的等边三角形ABC中，D为线段BC上的动点，DE⊥AB且交AB于点E，DF∥AB且交AC于点F，则|2BE→+DF→|的值为 　   　 ；（DE→+DF→）•DA→的最小值为 　                  　 ．</p>
+<p>三．解答题：本大题共5小题，共75分．解答应写出文字说明，证明过程或演算步骤．</p>
+<hr />
+<p><strong>第64题</strong>（2021年 华侨港澳台·6）</p>
+<p>6．（5分）已知向量（cosθ，sinθ），（3，﹣4），则•的最大值是（　　）</p>
+<p>A．7 B．5 C．4 D．1</p>
+<hr />
+<p><strong>第65题</strong>（2021年 辽宁新高考Ⅱ·15）</p>
+<p>15．（5分）已知向量a→+b→+c→=0→，|a→|＝1，|b→|＝|c→|＝2，则a→•b→+b→•c→+c→•a→=　                 　 ．</p>
+<hr />
+<p><strong>第66题</strong>（2021年 甲卷·理·14）</p>
+<p>14．（5分）已知向量a→=（3，1），b→=（1，0），c→=a→+kb→．若a→⊥c→，则k＝　                  　 ．</p>
+<hr />
+<p><strong>第67题</strong>（2022年 新高考Ⅰ·3）</p>
+<p>3．（5分）在△ABC中，点D在边AB上，BD＝2DA．记CA→=m→，CD→=n→，则CB→=（　　）</p>
+<p>A．3m→-2n→B．﹣2m→+3n→C．3m→+2n→D．2m→+3n→</p>
+<hr />
+<p><strong>第68题</strong>（2022年 天津·14）</p>
+<p>14．（5分）在△ABC中，点D为AC的中点，点E满足CB→=2BE→．记CA→=a→，CB→=b→，用a→，b→表示DE→=　                  　 ，若AB⊥DE，则∠ACB的最大值为 　                　 ．</p>
+<hr />
+<p><strong>第69题</strong>（2022年 乙卷·理·3）</p>
+<p>3．（5分）已知向量a→，b→满足|a→|＝1，|b→|=3，|a→-2b→|＝3，则a→•b→=（　　）</p>
+<p>A．﹣2B．﹣1C．1D．2</p>
+<hr />
+<p><strong>第70题</strong>（2022年 华侨港澳台·3）</p>
+<p>3．（5分）已知向量（x+2，1+x），（x﹣2，1﹣x）．若∥，则（　　）</p>
+<p>A．x2＝2  B．|x|＝2 C．x2＝3  D．|x|＝3</p>
+<hr />
+<p><strong>第71题</strong>（2022年 华侨港澳台·14）</p>
+<p>14．（5分）已知O为坐标原点，点P在圆（x+1）2+y2＝9上，则|OP|的最小值为 　   　 ．</p>
+<hr />
+<p><strong>第72题</strong>（2022年 新高考Ⅱ·4）</p>
+<p>4．（5分）已知向量a→=（3，4），b→=（1，0），c→=a→+tb→，若＜a→，c→＞=＜b→，c→＞，则t＝（　　）</p>
+<p>A．﹣6B．﹣5C．5D．6</p>
+<hr />
+<p><strong>第73题</strong>（2022年 北京·10）</p>
+<p>10．（4分）在△ABC中，AC＝3，BC＝4，∠C＝90°．P为△ABC所在平面内的动点，且PC＝1，则PA→•PB→的取值范围是（　　）</p>
+<p>A．[﹣5，3]B．[﹣3，5]C．[﹣6，4]D．[﹣4，6]</p>
+<p>二、填空题共5小题，每小题5分，共25分。</p>
+<hr />
+<p><strong>第74题</strong>（2022年 浙江·17）</p>
+<p>17．（4分）设点P在单位圆的内接正八边形A1A2…A8的边A1A2上，则PA1→2+PA2→2+⋯+PA8→2的取值范围是 　                  　 ．</p>
+<p>三、解答题：本大题共5小题，共74分。解答应写出文字说明、证明过程或演算步骤。</p>
+<hr />
+<p><strong>第75题</strong>（2022年 上海·11）</p>
+<p>11．（5分）若平面向量|a→|＝|b→|＝|c→|＝λ，且满足a→•b→=0，a→•c→=2，b→•c→=1，则λ＝　                　 ．</p>
+<hr />
+<p><strong>第76题</strong>（2022年 甲卷·理·13）</p>
+<p>13．（5分）设向量a→，b→的夹角的余弦值为13，且|a→|＝1，|b→|＝3，则（2a→+b→）•b→=　     　 ．</p>
+<hr />
+<p><strong>第77题</strong>（2023年 上海·2）</p>
+<p>2．（4分）已知向量a→=（﹣2，3），b→=（1，2），则a→•b→=　   　 ．</p>
+<hr />
+<p><strong>第78题</strong>（2023年 新高考Ⅰ·3）</p>
+<p>3．（5分）已知向量a→=（1，1），b→=（1，﹣1）．若（a→+λb→）⊥（a→+μb→），则（　　）</p>
+<p>A．λ+μ＝1B．λ+μ＝﹣1C．λμ＝1D．λμ＝﹣1</p>
+<hr />
+<p><strong>第79题</strong>（2023年 新高考Ⅱ·13）</p>
+<p>13．（5分）已知向量a→，b→满足|a→-b→|=3，|a→+b→|＝|2a→-b→|，则|b→|＝　             　 ．</p>
+<hr />
+<p><strong>第80题</strong>（2023年 甲卷·理·4）</p>
+<p>4．（5分）向量|a→|＝|b→|＝1，|c→|=2，且a→+b→+c→=0→，则cos〈a→-c→，b→-c→〉＝（　　）</p>
+<p>A．-15B．-25C．25D．45</p>
+<hr />
+<p><strong>第81题</strong>（2023年 北京·3）</p>
+<p>3．（4分）已知向量a→，b→满足a→+b→=（2，3），a→-b→=（﹣2，1），则|a→|2﹣|b→|2＝（　　）</p>
+<p>A．﹣2B．﹣1C．0D．1</p>
+<hr />
+<p><strong>第82题</strong>（2023年 天津·14）</p>
+<p>14．（5分）在△ABC中，BC＝1，∠A＝60°，AD→=12AB→，CE→=12CD→．记AB→=a→，AC→=b→，用a→和b→表示AE→=　                  　 ；若BF→=13BC→，则AE→•AF→的最大值为 　                  　 ．</p>
+<hr />
+<p><strong>第83题</strong>（2024年 上海·5）</p>
+<p>5．（4分）已知k∈R，a→=（2，5），b→=(6，k)，a→∥b→，则k的值为 　     　 ．</p>
+<hr />
+<p><strong>第84题</strong>（2024年 上海·15）</p>
+<p>15．（5分）定义一个集合Ω，集合元素是空间内的点集，任取P1，P2，P3∈Ω，存在不全为0的实数λ1，λ2，λ3，使得λ1OP1→+λ2OP2→+λ3OP3→=0→．已知（1，0，0）∈Ω，则（0，0，1）∉Ω的充分条件是（　　）</p>
+<p>A．（0，0，0）∈ΩB．（﹣1，0，0）∈Ω</p>
+<p>C．（0，1，0）∈ΩD．（0，0，﹣1）∈Ω</p>
+<hr />
+<p><strong>第85题</strong>（2024年 新高考Ⅰ·3）</p>
+<p>3．（5分）已知向量a→=（0，1），b→=（2，x），若b→⊥（b→-4a→），则x＝（　　）</p>
+<p>A．﹣2B．﹣1C．1D．2</p>
+<hr />
+<p><strong>第86题</strong>（2024年 新高考Ⅱ·3）</p>
+<p>3．（5分）已知向量a→，b→满足：|a→|=1，|a→+2b→|=2，且(b→-2a→)⊥b→，则|b→|＝（　　）</p>
+<p>A．12B．22C．32D．1</p>
+<hr />
+<p><strong>第87题</strong>（2024年 北京·5）</p>
+<p>5．（4分）设a→，b→是向量，则“（a→+b→）•（a→-b→）＝0”是“a→=-b→或a→=b→”的（　　）</p>
+<p>A．充分不必要条件</p>
+<p>B．必要不充分条件</p>
+<p>C．充要条件</p>
+<p>D．既不充分也不必要条件</p>
+<hr />
+<p><strong>第88题</strong>（2024年 台湾甲卷·6）</p>
+<p>（多选）6．（8分）坐标空间中，考虑满足内积u→•v→=15与外积u→×v→=（﹣1，0，3）的两向量u→、v→．试选出正确的选项（　　）</p>
+<p>A．u→与v→的夹角θ（其中0≤θ≤π，π为圆周率）大于π4</p>
+<p>B．u→可能为（1，0，﹣1）</p>
+<p>C．|u→|+|v→|≥25</p>
+<p>D．若已知v→，则u→可以被唯一决定</p>
+<p>E．若已知|u→|+|v→|，则|v→|可以被唯一决定</p>
+<hr />
+<p><strong>第89题</strong>（2024年 天津·14）</p>
+<p>14．（5分）已知正方形ABCD的边长为1，DE→=2EC→．若BE→=λBA→+μBC→，其中λ，μ为实数，则λ+μ＝　                　 ；设F是线段BE上的动点，G为线段AF的中点，则AF→⋅DG→的最小值为 　                  　 ．</p>
+<hr />
+<p><strong>第90题</strong>（2025年 新高考Ⅰ·6）</p>
+<p>6．（5分）帆船比赛中，运动员可借助风力计测定风速的大小和方向，测出的结果在航海学中称为视风风速，视风风速对应的向量是真风风速对应的向量与船行风速对应的向量之和，其中船行风速对应的向量与船速对应的向量大小相等，方向相反．如表给出了部分风力等级、名称与风速大小的对应关系．已知某帆船运动员在某时刻测得的视风风速对应的向量与船速对应的向量如图（风速的大小和向量的大小相同，单位m/s），则真风为（　　）</p>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>风速大小m/s</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>1.1～3.3</td>
+<td>轻风</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.4～5.4</td>
+<td>微风</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5.5～7.9</td>
+<td>和风</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8.0～10.1</td>
+<td>劲风</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="img" src="img/804261139458_docxword_media_image3.png" /></p>
+<p>A．轻风B．微风C．和风D．劲风</p>
+<hr />
+<p><strong>第91题</strong>（2025年 新高考Ⅱ·12）</p>
+<p>12．（5分）已知平面向量a→=（x，1），b→=（x﹣1，2x），若a→⊥（a→-b→），则|a→|＝　             　 ．</p>
+<hr />
+<p><strong>第92题</strong>（2025年 北京·10）</p>
+<p>10．（4分）已知平面直角坐标系xOy中，|OA→|＝|OB→|=2，|AB→|＝2．设C（3，4），则|2CA→+AB→|的取值范围是（　　）</p>
+<p>A．[6，14]B．[6，12]C．[8，14]D．[8，12]</p>
+<p>二、填空题。共5小题，每小题5分，共25分。</p>
+<hr />
+<p><strong>第93题</strong>（2025年 天津·14）</p>
+<p>14．（5分）△ABC中，D为AB边中点，CE→=13CD→，AB→=a→，AC→=b→，则AE→=　                  　 （用a→，b→表示）；若|AE→|＝5，AE⊥CB，则AE→⋅CD→=　      　 ．</p>
+<hr />
+<p><strong>第94题</strong>（2026年 上海·3）</p>
+<p>3．（4分）已知向量a→=(x，3)，b→=(4，6)且a→∥b→，则x＝　   　 ．</p>
+<hr />
+<p><strong>第95题</strong>（2026年 上海·10）</p>
+<p>10．（5分）在△ABC中，D、E在边BC上，且BD→=DE→=EC→，|AD→|=1，AD→与AE→所成的夹角为π3，则AB→⋅AC→的最大值为　                  　 ．</p>
+<p><img alt="img" src="img/807797668610_docxword_media_image.png" /></p>
+<hr /></div>
+<a class="back" href="../modules.html">← 返回真题研究</a>
+</div>
+</body>
+</html>
