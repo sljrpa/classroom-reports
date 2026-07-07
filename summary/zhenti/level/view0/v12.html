@@ -12,16 +12,22 @@ body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;b
 .back-btn:hover{background:#e8ecef;color:#2c3e50;}
 .pdf-title{font-size:14px;font-weight:600;color:#2c3e50;text-align:center;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .dl-btn{display:flex;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:500;color:#fff;background:linear-gradient(135deg,#3498db,#2980b9);transition:all .15s;white-space:nowrap;box-shadow:0 2px 6px rgba(52,152,219,0.3);}
-.dl-btn:hover{background:linear-gradient(135deg,#2980b9,#2471a3);transform:translateY(-1px);box-shadow:0 3px 8px rgba(52,152,219,0.4);}
+.dl-btn:hover{background:linear-gradient(135deg,#2980b9,#2471a3);}
 .pdf-frame{width:100%;height:calc(100vh - 52px);border:none;}
+.fallback{display:none;padding:40px 20px;text-align:center;}
+.fallback a{display:inline-block;margin-top:16px;padding:10px 24px;border-radius:10px;background:#3498db;color:#fff;text-decoration:none;font-size:14px;}
 </style>
 </head>
 <body>
 <div class="topbar">
   <a class="back-btn" href="../水平0.html">← 返回</a>
   <span class="pdf-title">模块十 圆锥曲线</span>
-  <a class="dl-btn" href="../水平0/%E6%A8%A1%E5%9D%97%E5%8D%81_%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF.pdf" download>⬇ 下载</a>
+  <a class="dl-btn" href="https://sljrpa.github.io/classroom-reports/summary/zhenti/level/%E6%B0%B4%E5%B9%B30/%E6%A8%A1%E5%9D%97%E5%8D%81_%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF.pdf" download>⬇ 下载</a>
 </div>
-<iframe class="pdf-frame" src="../水平0/%E6%A8%A1%E5%9D%97%E5%8D%81_%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF.pdf"></iframe>
+<iframe class="pdf-frame" src="https://docs.google.com/gview?url=https%3A%2F%2Fsljrpa.github.io%2Fclassroom-reports%2Fsummary%2Fzhenti%2Flevel%2F%25E6%25B0%25B4%25E5%25B9%25B30%2F%25E6%25A8%25A1%25E5%259D%2597%25E5%258D%2581_%25E5%259C%2586%25E9%2594%25A5%25E6%259B%25B2%25E7%25BA%25BF.pdf&embedded=true" onload="this.style.display='block'" onerror="this.style.display='none';document.querySelector('.fallback').style.display='block'"></iframe>
+<div class="fallback">
+  <p>预览加载失败</p>
+  <a href="https://sljrpa.github.io/classroom-reports/summary/zhenti/level/%E6%B0%B4%E5%B9%B30/%E6%A8%A1%E5%9D%97%E5%8D%81_%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF.pdf" download>点击下载PDF</a>
+</div>
 </body>
 </html>
