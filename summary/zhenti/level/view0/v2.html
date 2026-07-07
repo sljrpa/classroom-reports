@@ -2,26 +2,60 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>模块二 复数</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;background:#f5f7fa;}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#525659;}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#fff;border-bottom:1px solid #e8ecef;position:sticky;top:0;z-index:10;gap:8px;}
-.back-btn{display:flex;align-items:center;gap:4px;padding:6px 12px;border-radius:8px;text-decoration:none;font-size:13px;color:#7f8c8d;background:#f5f7fa;transition:all .15s;white-space:nowrap;}
-.back-btn:hover{background:#e8ecef;color:#2c3e50;}
+.back-btn{display:flex;align-items:center;padding:6px 12px;border-radius:8px;text-decoration:none;font-size:13px;color:#7f8c8d;background:#f5f7fa;white-space:nowrap;}
+.back-btn:hover{background:#e8ecef;}
 .pdf-title{font-size:14px;font-weight:600;color:#2c3e50;text-align:center;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.dl-btn{display:flex;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:500;color:#fff;background:linear-gradient(135deg,#3498db,#2980b9);transition:all .15s;white-space:nowrap;box-shadow:0 2px 6px rgba(52,152,219,0.3);}
+.dl-btn{display:flex;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:500;color:#fff;background:linear-gradient(135deg,#3498db,#2980b9);white-space:nowrap;box-shadow:0 2px 6px rgba(52,152,219,0.3);}
 .dl-btn:hover{background:linear-gradient(135deg,#2980b9,#2471a3);}
-.pdf-frame{width:100%;height:calc(100vh - 52px);border:none;}
+#canvas-container{display:flex;flex-direction:column;align-items:center;padding:10px 0;}
+canvas{max-width:100%;height:auto;margin-bottom:8px;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.loading{text-align:center;padding:60px 20px;color:#fff;font-size:16px;}
 </style>
 </head>
 <body>
 <div class="topbar">
   <a class="back-btn" href="../水平0.html">← 返回</a>
   <span class="pdf-title">模块二 复数</span>
-  <a class="dl-btn" href="%E6%B0%B4%E5%B9%B30/%E6%A8%A1%E5%9D%97%E4%BA%8C_%E5%A4%8D%E6%95%B0.pdf" download>⬇ 下载</a>
+  <a class="dl-btn" href="../%E6%B0%B4%E5%B9%B30/%E6%A8%A1%E5%9D%97%E4%BA%8C_%E5%A4%8D%E6%95%B0.pdf" download>⬇ 下载</a>
 </div>
-<iframe class="pdf-frame" src="https://docs.google.com/gview?url=https%3A%2F%2Fsljrpa.github.io%2Fclassroom-reports%2Fsummary%2Fzhenti%2Flevel%2F%E6%B0%B4%E5%B9%B30%2F%E6%A8%A1%E5%9D%97%E4%BA%8C_%E5%A4%8D%E6%95%B0.pdf&embedded=true"></iframe>
+<div id="canvas-container">
+  <div class="loading" id="loading">正在加载文档...</div>
+</div>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const url='../%E6%B0%B4%E5%B9%B30/%E6%A8%A1%E5%9D%97%E4%BA%8C_%E5%A4%8D%E6%95%B0.pdf';
+async function renderPDF(){
+  const loading=document.getElementById('loading');
+  try{
+    const pdf=await pdfjsLib.getDocument(url).promise;
+    loading.style.display='none';
+    const container=document.getElementById('canvas-container');
+    for(let i=1;i<=pdf.numPages;i++){
+      const page=await pdf.getPage(i);
+      const vw=window.innerWidth-20;
+      const vp=page.getViewport({scale:1});
+      const scale=vw/vp.width;
+      const viewport=page.getViewport({scale:scale});
+      const canvas=document.createElement('canvas');
+      const ctx=canvas.getContext('2d');
+      canvas.height=viewport.height;
+      canvas.width=viewport.width;
+      container.appendChild(canvas);
+      await page.render({canvasContext:ctx,viewport:viewport}).promise;
+    }
+  }catch(e){
+    loading.textContent='加载失败，请点击下载按钮下载查看';
+    console.error(e);
+  }
+}
+renderPDF();
+</script>
 </body>
 </html>
