@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高三一班·课堂表现W5班级总报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; line-height: 1.7; }
+  
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+    color: white; padding: 48px 32px; text-align: center; position: relative; overflow: hidden;
+  }
+  .header::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(52,152,219,0.1) 0%, transparent 60%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  .header h1 { font-size: 2.2em; font-weight: 800; margin-bottom: 8px; position: relative; letter-spacing: 2px; }
+  .header .subtitle { font-size: 1.1em; opacity: 0.85; position: relative; }
+  .header .period { display: inline-block; background: rgba(52,152,219,0.3); border: 1px solid rgba(52,152,219,0.5); padding: 4px 18px; border-radius: 20px; margin-top: 12px; font-size: 0.95em; position: relative; }
+  
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+  
+  .section { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .section-title { font-size: 1.4em; font-weight: 700; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 3px solid #3498db; display: flex; align-items: center; gap: 10px; }
+  .section-title .icon { font-size: 1.3em; }
+  
+  /* Group Rankings */
+  .rank-list { display: flex; flex-direction: column; gap: 12px; }
+  .rank-item { display: flex; align-items: center; padding: 16px 20px; border-radius: 12px; transition: transform 0.2s; border: 1px solid #eee; }
+  .rank-item:hover { transform: translateX(4px); }
+  .rank-item.gold { background: linear-gradient(135deg, #FFF8E1, #FFFDE7); border-color: #FFD700; }
+  .rank-item.silver { background: linear-gradient(135deg, #F5F5F5, #FAFAFA); border-color: #C0C0C0; }
+  .rank-item.bronze { background: linear-gradient(135deg, #FFF3E0, #FBE9E7); border-color: #CD7F32; }
+  .rank-badge { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1em; margin-right: 16px; flex-shrink: 0; }
+  .gold .rank-badge { background: #FFD700; color: #5D4037; }
+  .silver .rank-badge { background: #C0C0C0; color: #424242; }
+  .bronze .rank-badge { background: #CD7F32; color: white; }
+  .rank-item:not(.gold):not(.silver):not(.bronze) .rank-badge { background: #3498db; color: white; }
+  .rank-info { flex: 1; }
+  .rank-group-name { font-weight: 700; font-size: 1.15em; }
+  .rank-details { font-size: 0.9em; color: #7f8c8d; margin-top: 2px; }
+  .rank-score { font-size: 1.4em; font-weight: 800; color: #2c3e50; margin-right: 16px; }
+  
+  /* Top 20 Table */
+  .top20-table { width: 100%; border-collapse: collapse; }
+  .top20-table th { background: #3498db; color: white; padding: 12px 16px; font-size: 0.95em; }
+  .top20-table td { padding: 10px 16px; border-bottom: 1px solid #f0f0f0; }
+  .top20-table tr:hover { background: #f8f9fa; }
+  .top20-table .medal { font-size: 1.2em; }
+  .score-bar { height: 6px; border-radius: 3px; background: #3498db; }
+  
+  /* Warning Box */
+  .warning-box { background: #FFF8E1; border: 1px solid #FFB300; border-radius: 12px; padding: 16px 20px; margin-top: 20px; }
+  .warning-box .title { font-weight: 700; color: #E65100; margin-bottom: 8px; }
+  .warning-item { padding: 6px 0; border-bottom: 1px dashed #FFE082; }
+  .warning-item:last-child { border-bottom: none; }
+  
+  /* Award Section */
+  .award-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .award-card { border-radius: 12px; padding: 20px; border: 1px solid #eee; }
+  .award-card.purple { background: linear-gradient(135deg, #F3E5F5, #FCE4EC); border-color: #9b59b6; }
+  .award-card.orange { background: linear-gradient(135deg, #FFF3E0, #FBE9E7); border-color: #e67e22; }
+  .award-card.blue { background: linear-gradient(135deg, #E3F2FD, #E8EAF6); border-color: #3498db; }
+  .award-card.green { background: linear-gradient(135deg, #E8F5E9, #F1F8E9); border-color: #27ae60; }
+  .award-card.teal { background: linear-gradient(135deg, #E0F2F1, #E8F5E9); border-color: #009688; }
+  .award-card.indigo { background: linear-gradient(135deg, #E8EAF6, #F3E5F5); border-color: #5C6BC0; }
+  .award-card h4 { font-size: 1.1em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .award-card ul { list-style: none; padding: 0; }
+  .award-card li { padding: 4px 0; font-size: 0.92em; color: #555; }
+  .award-card li::before { content: '✦'; margin-right: 6px; color: #9b59b6; }
+  .award-card.orange li::before { color: #e67e22; }
+  .award-card.blue li::before { color: #3498db; }
+  .award-card.green li::before { color: #27ae60; }
+  .award-card.teal li::before { color: #009688; }
+  .award-card.indigo li::before { color: #5C6BC0; }
+  
+  /* Behavior Warning */
+  .behavior-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .behavior-table th { background: #FFF3E0; color: #E65100; padding: 10px 16px; font-size: 0.95em; text-align: left; }
+  .behavior-table td { padding: 10px 16px; border-bottom: 1px solid #f0f0f0; }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.85em; font-weight: 600; }
+  .tag-cheat { background: #FFF3E0; color: #E65100; }
+  .tag-sleep { background: #F3E5F5; color: #7B1FA2; }
+  .tag-zero { background: #ECEFF1; color: #546E7A; }
+  
+  /* Group Data Table */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.92em; }
+  .data-table th { background: #2c3e50; color: white; padding: 10px 12px; text-align: center; }
+  .data-table td { padding: 8px 12px; border-bottom: 1px solid #f0f0f0; text-align: center; }
+  .data-table tr:hover { background: #f8f9fa; }
+  .data-table .highlight { font-weight: 700; color: #3498db; }
+  
+  /* Insights */
+  .insight-list { display: flex; flex-direction: column; gap: 16px; }
+  .insight-item { display: flex; gap: 14px; padding: 16px; border-radius: 12px; background: #f8f9fa; border-left: 4px solid #3498db; }
+  .insight-item.up { border-left-color: #27ae60; }
+  .insight-item.alert { border-left-color: #e67e22; }
+  .insight-item .num { font-size: 1.6em; font-weight: 800; color: #3498db; line-height: 1; min-width: 50px; text-align: center; }
+  .insight-item.up .num { color: #27ae60; }
+  .insight-item.alert .num { color: #e67e22; }
+  .insight-item .text { flex: 1; }
+  .insight-item .text strong { display: block; margin-bottom: 4px; }
+  
+  /* Footer */
+  .footer { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); color: white; padding: 40px 32px; text-align: center; margin-top: 24px; }
+  .footer .quote { font-size: 1.2em; font-style: italic; opacity: 0.9; max-width: 700px; margin: 0 auto 16px; line-height: 1.8; }
+  .footer .meta { font-size: 0.85em; opacity: 0.6; }
+
+  /* Overview Cards */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .overview-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border-top: 4px solid #3498db;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .overview-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  .overview-card.blue { border-top-color: #3498db; }
+  .overview-card.orange { border-top-color: #e67e22; }
+  .overview-card.purple { border-top-color: #9b59b6; }
+  .overview-card.green { border-top-color: #27ae60; }
+  .overview-card .card-icon { font-size: 1.5em; margin-bottom: 6px; }
+  .overview-card .card-label { font-size: 0.92em; color: #7f8c8d; font-weight: 600; margin-bottom: 10px; }
+  .overview-card .card-value { font-size: 1.8em; font-weight: 800; color: #2c3e50; margin-bottom: 6px; }
+  .overview-note {
+    text-align: center;
+    font-size: 0.85em;
+    color: #95a5a6;
+    margin-top: 4px;
+    padding-top: 8px;
+  }
+  @media (max-width: 768px) {
+    .overview-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Warrior Cards */
+  .warrior-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .warrior-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 4px solid #3498db;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .warrior-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+  .warrior-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .warrior-name { font-size: 1.15em; font-weight: 800; color: #2c3e50; }
+  .warrior-group { font-size: 0.82em; color: #7f8c8d; font-weight: 600; }
+  .warrior-stats { font-size: 0.88em; color: #555; margin-bottom: 8px; }
+  .warrior-stats span { margin-right: 8px; }
+  .warrior-trait {
+    font-size: 0.9em; font-weight: 700; color: #9b59b6; margin-bottom: 6px;
+    padding: 2px 8px; background: #F3E5F5; border-radius: 6px; display: inline-block;
+  }
+  .warrior-comment { font-size: 0.88em; color: #666; line-height: 1.65; }
+
+  /* Leader Cards */
+  .leader-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .leader-card {
+    background: linear-gradient(135deg, #fffbf0, #fff8e1);
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #ffe082;
+  }
+  .leader-name {
+    font-size: 1.1em;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 4px;
+  }
+  .leader-group {
+    font-size: 0.82em;
+    color: #795548;
+    font-weight: 600;
+    background: rgba(255,215,0,0.2);
+    padding: 2px 8px;
+    border-radius: 8px;
+  }
+  .leader-score {
+    font-size: 0.85em;
+    color: #27ae60;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .leader-comment {
+    font-size: 0.88em;
+    color: #555;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 768px) {
+    .award-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.5em; }
+    .rank-item { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div style="position:sticky;top:0;z-index:9999;background:white;padding:10px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;gap:8px;">
+<a href="../class1-w5.html" style="color:#3498db;text-decoration:none;font-size:14px;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:20px;background:#f5f7fa;"><span>←</span> 返回</a>
+<a href="pdfs/class.pdf" download style="color:#fff;text-decoration:none;font-size:13px;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:20px;background:linear-gradient(135deg,#3498db,#2980b9);box-shadow:0 2px 6px rgba(52,152,219,0.3);">⬇ 下载PDF</a>
+</div>
+
+
+<!-- ============ HEADER ============ -->
+<div class="header">
+  <h1>📊 高三一班 · 课堂表现W5班级总报告</h1>
+  <div class="subtitle">每一份互动都值得被看见，每一次进步都值得被铭记</div>
+  <div class="period">📅 第十九周：6月30日 — 7月4日</div>
+</div>
+
+<div class="container">
+
+<!-- ============ SECTION 1: 全班数据总览 ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">📊</span>全班数据总览 · W5</div>
+  
+  <div class="overview-grid">
+    <div class="overview-card blue">
+      <div class="card-icon">✋</div>
+      <div class="card-label">作答次数</div>
+      <div class="card-value">171</div>
+    </div>
+    <div class="overview-card orange">
+      <div class="card-icon">❓</div>
+      <div class="card-label">质疑次数</div>
+      <div class="card-value">51</div>
+    </div>
+    <div class="overview-card purple">
+      <div class="card-icon">🎤</div>
+      <div class="card-label">展讲次数</div>
+      <div class="card-value">39</div>
+    </div>
+    <div class="overview-card green">
+      <div class="card-icon">🏆</div>
+      <div class="card-label">全班总分</div>
+      <div class="card-value">5955</div>
+    </div>
+  </div>
+  <div class="overview-note">全班总分 = 个人总分合计(4400) + 组内加分合计(1555)</div>
+</div>
+
+<!-- ============ SECTION 2: 各组积分排名 ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">🏆</span>各组积分排名</div>
+  
+  <div class="rank-list">
+    <div class="rank-item gold">
+      <div class="rank-badge">1</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第6组</div>
+        <div class="rank-details">组长：杜澄逸 · 个人740 + 组内180</div>
+      </div>
+      <div class="rank-score">920分</div>
+    </div>
+    <div class="rank-item silver">
+      <div class="rank-badge">2</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第3组</div>
+        <div class="rank-details">组长：齐昱凯 · 个人600 + 组内230</div>
+      </div>
+      <div class="rank-score">830分</div>
+    </div>
+    <div class="rank-item bronze">
+      <div class="rank-badge">3</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第5组</div>
+        <div class="rank-details">组长：董啟如/张楠 · 个人590 + 组内200</div>
+      </div>
+      <div class="rank-score">790分</div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-badge">4</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第4组</div>
+        <div class="rank-details">组长：甘文怀 · 个人600 + 组内160</div>
+      </div>
+      <div class="rank-score">760分</div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-badge">5</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第2组</div>
+        <div class="rank-details">组长：康思静 · 个人530 + 组内210</div>
+      </div>
+      <div class="rank-score">740分</div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-badge">6</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第1组</div>
+        <div class="rank-details">组长：王永鑫 · 个人500 + 组内220</div>
+      </div>
+      <div class="rank-score">720分</div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-badge">7</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第7组</div>
+        <div class="rank-details">组长：张博涵 · 个人550 + 组内120</div>
+      </div>
+      <div class="rank-score">670分</div>
+    </div>
+    <div class="rank-item">
+      <div class="rank-badge">8</div>
+      <div class="rank-info">
+        <div class="rank-group-name">第8组</div>
+        <div class="rank-details">组长：汪祺 · 个人290 + 组内235</div>
+      </div>
+      <div class="rank-score">525分</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION 3: 个人积分排名 TOP20 ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌟</span>个人积分排名 TOP20</div>
+  
+  <table class="top20-table">
+    <thead>
+      <tr><th style="width:60px">排名</th><th>姓名</th><th style="width:60px">组别</th><th style="width:70px">作答</th><th style="width:70px">质疑</th><th style="width:70px">展讲</th><th style="width:80px">总分</th><th>得分条</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="medal">🥇</td><td><strong>康思静</strong></td><td>2组</td><td>5</td><td>1</td><td>2</td><td><strong>260</strong></td><td><div class="score-bar" style="width:100%;background:#FFD700"></div></td></tr>
+      <tr><td class="medal">🥈</td><td><strong>邵恩福</strong></td><td>6组</td><td>6</td><td>3</td><td>3</td><td><strong>240</strong></td><td><div class="score-bar" style="width:92%;background:#C0C0C0"></div></td></tr>
+      <tr><td class="medal">🥉</td><td><strong>张楠</strong></td><td>5组</td><td>8</td><td>2</td><td>2</td><td><strong>200</strong></td><td><div class="score-bar" style="width:77%;background:#CD7F32"></div></td></tr>
+      <tr><td>4</td><td>甘文怀</td><td>4组</td><td>5</td><td>5</td><td>1</td><td>190</td><td><div class="score-bar" style="width:73%"></div></td></tr>
+      <tr><td>5</td><td>张博涵</td><td>7组</td><td>3</td><td>4</td><td>2</td><td>190</td><td><div class="score-bar" style="width:73%"></div></td></tr>
+      <tr><td>6</td><td>陈存浩</td><td>1组</td><td>11</td><td>2</td><td>1</td><td>190</td><td><div class="score-bar" style="width:73%"></div></td></tr>
+      <tr><td>7</td><td>崔楠</td><td>4组</td><td>3</td><td>1</td><td>3</td><td>170</td><td><div class="score-bar" style="width:65%"></div></td></tr>
+      <tr><td>8</td><td>张文睿</td><td>3组</td><td>5</td><td>2</td><td>2</td><td>170</td><td><div class="score-bar" style="width:65%"></div></td></tr>
+      <tr><td>9</td><td>齐昱凯</td><td>3组</td><td>7</td><td>0</td><td>2</td><td>150</td><td><div class="score-bar" style="width:58%"></div></td></tr>
+      <tr><td>10</td><td>孙麟博</td><td>8组</td><td>5</td><td>0</td><td>2</td><td>130</td><td><div class="score-bar" style="width:50%"></div></td></tr>
+      <tr><td>11</td><td>魏凡丁</td><td>5组</td><td>3</td><td>3</td><td>1</td><td>130</td><td><div class="score-bar" style="width:50%"></div></td></tr>
+      <tr><td>12</td><td>董啟如</td><td>5组</td><td>5</td><td>2</td><td>1</td><td>130</td><td><div class="score-bar" style="width:50%"></div></td></tr>
+      <tr><td>13</td><td>王亦然</td><td>1组</td><td>4</td><td>2</td><td>1</td><td>120</td><td><div class="score-bar" style="width:46%"></div></td></tr>
+      <tr><td>14</td><td>李志豪</td><td>7组</td><td>2</td><td>3</td><td>1</td><td>120</td><td><div class="score-bar" style="width:46%"></div></td></tr>
+      <tr><td>15</td><td>白家耀</td><td>3组</td><td>6</td><td>1</td><td>1</td><td>120</td><td><div class="score-bar" style="width:46%"></div></td></tr>
+      <tr><td>16</td><td>王一林</td><td>3组</td><td>4</td><td>1</td><td>1</td><td>100</td><td><div class="score-bar" style="width:38%"></div></td></tr>
+      <tr><td>17</td><td>王永鑫</td><td>1组</td><td>4</td><td>3</td><td>0</td><td>100</td><td><div class="score-bar" style="width:38%"></div></td></tr>
+      <tr><td>18</td><td>杜澄逸</td><td>6组</td><td>6</td><td>0</td><td>1</td><td>100</td><td><div class="score-bar" style="width:38%"></div></td></tr>
+      <tr><td>19</td><td>王楷文</td><td>6组</td><td>3</td><td>1</td><td>1</td><td>90</td><td><div class="score-bar" style="width:35%"></div></td></tr>
+      <tr><td>20</td><td>廖晨琬</td><td>2组</td><td>3</td><td>1</td><td>1</td><td>90</td><td><div class="score-bar" style="width:35%"></div></td></tr>
+    </tbody>
+  </table>
+  
+  <div class="warning-box">
+    <div class="title">⚠️ 负向行为警示</div>
+    <div class="warning-item"><span class="tag tag-cheat">作弊</span> <strong>魏凡丁</strong>（5组）：<strong>-50分</strong> — 考试作弊1次，扣50分；虽有作答3次+质疑3次+展讲1次，但诚信红线不可触碰</div>
+    <div class="warning-item"><span class="tag tag-sleep">睡觉</span> <strong>孙麟博</strong>（8组）：<strong>-20分</strong> — 上课睡觉1次，扣20分；作答5次展讲2次值得肯定，但课堂纪律需遵守</div>
+    <div class="warning-item"><span class="tag tag-sleep">睡觉</span> <strong>徐菡</strong>（2组）：<strong>-20分</strong> — 上课睡觉1次，扣20分；当周总分仅20分，需提升学习状态</div>
+  </div>
+</div>
+
+<!-- ============ SECTION 4: 行为越级表彰 ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌟</span>行为越级表彰</div>
+  
+  <div class="award-grid">
+    
+    <div class="award-card purple">
+      <h4>🎤 展讲突破奖</h4>
+      <p style="font-size:0.88em;color:#7B1FA2;margin-bottom:10px;">W4未展讲 → W5展讲≥2次，勇敢站上讲台！</p>
+      <ul>
+        <li><strong>康思静</strong>（2组）— W4展讲0次 → W5展讲2次，从零到双展讲，突破自我！同时以260分拿下全班第一</li>
+        <li><strong>孙麟博</strong>（8组）— W4展讲1次 → W5展讲2次，展讲翻倍，表达力持续提升</li>
+        <li><strong>张文睿</strong>（3组）— W4展讲2次 → W5展讲2次，展讲稳定输出，保持节奏</li>
+        <li><strong>张博涵</strong>（7组）— W4展讲1次 → W5展讲2次，展讲+质疑双提升，全能型组长</li>
+      </ul>
+    </div>
+    
+    <div class="award-card orange">
+      <h4>💡 质疑新星奖</h4>
+      <p style="font-size:0.88em;color:#E65100;margin-bottom:10px;">质疑次数突出，批判性思维觉醒！</p>
+      <ul>
+        <li><strong>甘文怀</strong>（4组）— 质疑5次，全班质疑之王！每一问都切中要害</li>
+        <li><strong>邵恩福</strong>（6组）— 质疑3次，质疑+展讲双突破，深度参与课堂</li>
+        <li><strong>魏凡丁</strong>（5组）— 质疑3次，虽受扣分影响，质疑精神值得肯定</li>
+        <li><strong>李志豪</strong>（7组）— 质疑3次，从旁听者到质疑者，思维品质飞跃</li>
+        <li><strong>张博涵</strong>（7组）— 质疑4次，质疑+展讲+组长，全能担当</li>
+      </ul>
+    </div>
+    
+    <div class="award-card blue">
+      <h4>🚀 作答达人</h4>
+      <p style="font-size:0.88em;color:#1565C0;margin-bottom:10px;">作答次数领先，课堂参与最积极！</p>
+      <ul>
+        <li><strong>陈存浩</strong>（1组）— 作答11次，全班作答之王！几乎每节课都在举手</li>
+        <li><strong>张楠</strong>（5组）— 作答8次，课代表以身作则，作答最积极</li>
+        <li><strong>齐昱凯</strong>（3组）— 作答7次，组长带头冲锋</li>
+        <li><strong>杜澄逸</strong>（6组）— 作答6次，冠军组组长实至名归</li>
+        <li><strong>邵恩福</strong>（6组）— 作答6次，6组双核之一</li>
+      </ul>
+    </div>
+    
+    <div class="award-card green">
+      <h4>📈 组别新格局</h4>
+      <p style="font-size:0.88em;color:#2E7D32;margin-bottom:10px;">换组后的新面貌，各展风采！</p>
+      <ul>
+        <li><strong>第6组</strong>：换组后以920分强势夺冠！邵恩福240分+杜澄逸100分双核驱动</li>
+        <li><strong>第3组</strong>：830分稳居第二，齐昱凯、张文睿、白家耀组成铁三角</li>
+        <li><strong>第5组</strong>：790分季军，双组长董啟如/张楠配合默契</li>
+        <li><strong>第1组</strong>：陈存浩11次作答领跑全组，新组合充满活力</li>
+        <li><strong>第8组</strong>：组内加分235分最高，团队凝聚力强，期待更多个人突破</li>
+      </ul>
+    </div>
+    
+    <div class="award-card teal">
+      <h4>🔥 全勤战士（三项全能：作答+质疑+展讲）</h4>
+      <p style="font-size:0.88em;color:#00695C;margin-bottom:10px;">全周在作答、质疑、展讲三项均有活跃表现，共<strong>19人</strong>！</p>
+      <ul>
+        <li><strong>康思静</strong>（2组）：作答5次 质疑1次 展讲2次 — 260分全班第一 👑</li>
+        <li><strong>邵恩福</strong>（6组）：作答6次 质疑3次 展讲3次 — 240分，三项全面爆发</li>
+        <li><strong>张楠</strong>（5组）：作答8次 质疑2次 展讲2次 — 200分，课代表全能</li>
+        <li><strong>甘文怀</strong>（4组）：作答5次 质疑5次 展讲1次 — 190分，质疑之王</li>
+        <li><strong>张博涵</strong>（7组）：作答3次 质疑4次 展讲2次 — 190分</li>
+        <li><strong>陈存浩</strong>（1组）：作答11次 质疑2次 展讲1次 — 190分，作答之王</li>
+        <li>还有 <strong>崔楠</strong>、<strong>张文睿</strong>、<strong>齐昱凯</strong>、<strong>魏凡丁</strong>、<strong>董啟如</strong>、<strong>孙麟博</strong>、<strong>王亦然</strong>、<strong>李志豪</strong>、<strong>白家耀</strong>、<strong>王一林</strong>、<strong>王永鑫</strong>、<strong>杜澄逸</strong>、<strong>王楷文</strong> 共13位全能战士</li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+<!-- ============ SECTION 5: 全能战士荣誉殿堂 ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌈</span>全能战士荣誉殿堂</div>
+  
+  <p style="margin-bottom:20px;color:#555;font-size:1.05em;line-height:1.8;">
+    一班本周最耀眼的群体——他们在<strong style="color:#3498db">作答</strong>、<strong style="color:#e67e22">质疑</strong>、<strong style="color:#9b59b6">展讲</strong>三项均有活跃表现，真正做到"能说、敢问、会讲"。全班共有<strong>19位全能战士</strong>，每一位都有自己独特的闪光点！
+  </p>
+  
+  <h3 style="font-size:1.2em;margin-bottom:16px;color:#2c3e50;border-left:4px solid #9b59b6;padding-left:12px;">✨ 特点突出的全能战士</h3>
+  
+  <div class="warrior-grid">
+
+    <div class="warrior-card" style="border-top:4px solid #FFD700">
+      <div class="warrior-header">
+        <div class="warrior-name">康思静</div>
+        <div class="warrior-group">2组 · 260分 👑</div>
+      </div>
+      <div class="warrior-stats">作答5 · 质疑1 · 展讲2</div>
+      <div class="warrior-trait">👑 全班之冠</div>
+      <div class="warrior-comment">260分，全班第一！从W4展讲0次到W5展讲2次，突破自我的勇气令人敬佩。作为2组组长兼课代表，你用行动证明：真正的领导者不是喊口号，而是用实力说话。作答5次稳定输出，质疑1次精准备考，展讲2次从容自信——全能型课代表，当之无愧！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #e67e22">
+      <div class="warrior-header">
+        <div class="warrior-name">邵恩福</div>
+        <div class="warrior-group">6组 · 240分</div>
+      </div>
+      <div class="warrior-stats">作答6 · 质疑3 · 展讲3</div>
+      <div class="warrior-trait">🔥 三项最均衡</div>
+      <div class="warrior-comment">全班最均衡的全能战士！作答6次、质疑3次、展讲3次——每一项都亮眼。你是6组夺冠的核心引擎，三项全面开花让对手无懈可击。240分的高分证明：不偏科才是最强的竞争力！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #3498db">
+      <div class="warrior-header">
+        <div class="warrior-name">陈存浩</div>
+        <div class="warrior-group">1组 · 190分</div>
+      </div>
+      <div class="warrior-stats">作答11 · 质疑2 · 展讲1</div>
+      <div class="warrior-trait">✋ 作答之王</div>
+      <div class="warrior-comment">11次作答，全班第一！你几乎每节课都在举手，这份课堂投入度无人能及。质疑2次说明你不只是在抢答，还在深入思考。1次展讲虽然不多，但"从做到讲"的升级已经开始了。继续加油，你的勤奋是1组最亮的星！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #9b59b6">
+      <div class="warrior-header">
+        <div class="warrior-name">甘文怀</div>
+        <div class="warrior-group">4组 · 190分</div>
+      </div>
+      <div class="warrior-stats">作答5 · 质疑5 · 展讲1</div>
+      <div class="warrior-trait">❓ 质疑之王</div>
+      <div class="warrior-comment">5次质疑，全班最高！你不满足于表面答案，总是追问"为什么"，这种批判性思维是最高级的学习能力。作为4组组长，你用质疑精神为全组树立了思考的标杆。作答5次+展讲1次保证了全面性，质疑5次才是你的灵魂标签！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #27ae60">
+      <div class="warrior-header">
+        <div class="warrior-name">张博涵</div>
+        <div class="warrior-group">7组 · 190分 📚课代表</div>
+      </div>
+      <div class="warrior-stats">作答3 · 质疑4 · 展讲2</div>
+      <div class="warrior-trait">🎯 精准质疑型课代表</div>
+      <div class="warrior-comment">质疑4次+展讲2次——你用"少而精"的方式诠释了何为深度参与。作为7组组长兼课代表，你的每一次质疑都精准有力，每一次展讲都条理清晰。190分不是靠数量堆出来的，而是靠质量赢得的！课代表的担当，你拿捏得恰到好处。</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #009688">
+      <div class="warrior-header">
+        <div class="warrior-name">崔楠</div>
+        <div class="warrior-group">4组 · 170分</div>
+      </div>
+      <div class="warrior-stats">作答3 · 质疑1 · 展讲3</div>
+      <div class="warrior-trait">🎤 展讲达人</div>
+      <div class="warrior-comment">3次展讲——全班展讲次数最多的同学之一！你选择用站上讲台的方式来参与课堂，每一次都从容自信。质疑1次说明你也敢于发问，作答3次保证了基本盘。4组有你和甘文怀一"问"一"讲"的组合，真是绝配！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #3498db">
+      <div class="warrior-header">
+        <div class="warrior-name">张楠</div>
+        <div class="warrior-group">5组 · 200分 📚课代表</div>
+      </div>
+      <div class="warrior-stats">作答8 · 质疑2 · 展讲2</div>
+      <div class="warrior-trait">⚡ 课代表全能战士</div>
+      <div class="warrior-comment">8次作答、2次质疑、2次展讲——每一项都有贡献，真正的"六边形战士"！作为5组双组长之一兼课代表，200分的高分证明了你的实力。你用行动告诉全班：课代表不是只管收作业，更要在课堂上带头冲锋！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #e67e22">
+      <div class="warrior-header">
+        <div class="warrior-name">魏凡丁</div>
+        <div class="warrior-group">5组 · 130分</div>
+      </div>
+      <div class="warrior-stats">作答3 · 质疑3 · 展讲1</div>
+      <div class="warrior-trait">🔄 跌倒再来的勇士</div>
+      <div class="warrior-comment">作答3次、质疑3次、展讲1次——三项全能本应更高分，却因1次作弊被扣50分。130分不是你的真实水平，3次质疑说明你的思考深度，1次展讲说明你有表达的勇气。诚信是最重要的品格，吸取教训、重新出发，你的能力值得更好的成绩！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #5C6BC0">
+      <div class="warrior-header">
+        <div class="warrior-name">张文睿</div>
+        <div class="warrior-group">3组 · 170分</div>
+      </div>
+      <div class="warrior-stats">作答5 · 质疑2 · 展讲2</div>
+      <div class="warrior-trait">📊 稳健全能</div>
+      <div class="warrior-comment">作答5次、质疑2次、展讲2次——三项数据均衡且稳定，没有短板。你是3组稳居第二的"定海神针"，不抢风头但永远可靠。这种稳健的全能型选手，是团队最需要的人！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #9b59b6">
+      <div class="warrior-header">
+        <div class="warrior-name">董啟如</div>
+        <div class="warrior-group">5组 · 130分 🎖️组长</div>
+      </div>
+      <div class="warrior-stats">作答5 · 质疑2 · 展讲1</div>
+      <div class="warrior-trait">🤝 双组长默契搭档</div>
+      <div class="warrior-comment">作为5组双组长之一，你和张楠搭档带领全组拿下季军！作答5次展现了参与度，质疑2次说明你在思考，展讲1次说明你敢于表达。双组长制度下你展现了出色的配合能力，130分的全能表现值得肯定！</div>
+    </div>
+
+  </div>
+
+  <h3 style="font-size:1.2em;margin:28px 0 16px;color:#2c3e50;border-left:4px solid #3498db;padding-left:12px;">💪 同样耀眼的全能战士</h3>
+  
+  <div class="warrior-grid">
+
+    <div class="warrior-card" style="border-top:4px solid #e67e22">
+      <div class="warrior-header">
+        <div class="warrior-name">齐昱凯</div>
+        <div class="warrior-group">3组 · 150分 🎖️组长</div>
+      </div>
+      <div class="warrior-stats">作答7 · 质疑0 · 展讲2</div>
+      <div class="warrior-trait">🎤 讲台型组长</div>
+      <div class="warrior-comment">7次作答+2次展讲——你是3组的"冲锋队长"！虽然质疑为0，但作答和展讲的双输出足以支撑150分。作为组长带领3组拿下830分第二名，你的领导力有目共睹。下次试试质疑，三条腿走路会更稳！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #27ae60">
+      <div class="warrior-header">
+        <div class="warrior-name">孙麟博</div>
+        <div class="warrior-group">8组 · 130分</div>
+      </div>
+      <div class="warrior-stats">作答5 · 质疑0 · 展讲2</div>
+      <div class="warrior-trait">🌱 破茧全能</div>
+      <div class="warrior-comment">作答5次、展讲2次——虽然因1次睡觉被扣20分，但你的课堂活跃度值得肯定。展讲从W4的1次提升到W5的2次，进步明显。纪律问题要重视，能力已经在路上，加油！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #3498db">
+      <div class="warrior-header">
+        <div class="warrior-name">王亦然</div>
+        <div class="warrior-group">1组 · 120分</div>
+      </div>
+      <div class="warrior-stats">作答4 · 质疑2 · 展讲1</div>
+      <div class="warrior-trait">📈 稳步全能</div>
+      <div class="warrior-comment">作答4次、质疑2次、展讲1次——120分的三项全能选手！每一项都在稳步推进，没有短板。继续这个节奏，下周冲击150分！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #e67e22">
+      <div class="warrior-header">
+        <div class="warrior-name">李志豪</div>
+        <div class="warrior-group">7组 · 120分</div>
+      </div>
+      <div class="warrior-stats">作答2 · 质疑3 · 展讲1</div>
+      <div class="warrior-trait">❓ 深度思考者</div>
+      <div class="warrior-comment">质疑3次——比作答还多！你属于"少做多想"的类型，2次作答也许不多，但3次质疑说明你在认真听课并深度加工信息。1次展讲展现了表达力，继续保持思考的深度！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #009688">
+      <div class="warrior-header">
+        <div class="warrior-name">白家耀</div>
+        <div class="warrior-group">3组 · 120分</div>
+      </div>
+      <div class="warrior-stats">作答6 · 质疑1 · 展讲1</div>
+      <div class="warrior-trait">⚡ 高频作答全能</div>
+      <div class="warrior-comment">6次作答是全能战士中作答频率最高的之一！你在3组的贡献不可或缺，质疑1次+展讲1次完成了全能认证。继续提升质疑和展讲的次数，120→150分不是梦！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #5C6BC0">
+      <div class="warrior-header">
+        <div class="warrior-name">王一林</div>
+        <div class="warrior-group">3组 · 100分</div>
+      </div>
+      <div class="warrior-stats">作答4 · 质疑1 · 展讲1</div>
+      <div class="warrior-trait">🌱 低调全能</div>
+      <div class="warrior-comment">作答4次、质疑1次、展讲1次——100分的三项全能，每一分都是实打实的！3组能有830分的成绩，离不开你这样低调但可靠的贡献者。继续加油，全能之路越走越宽！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #3498db">
+      <div class="warrior-header">
+        <div class="warrior-name">王永鑫</div>
+        <div class="warrior-group">1组 · 100分 🎖️组长</div>
+      </div>
+      <div class="warrior-stats">作答4 · 质疑3 · 展讲0</div>
+      <div class="warrior-trait">💪 质疑型组长</div>
+      <div class="warrior-comment">作为1组组长，质疑3次展现了你的思考深度！作答4次保证参与度，虽然展讲暂未突破，但质疑精神才是最宝贵的领导品质。带领新组合的1组拿下720分，你的凝聚力值得肯定。下次站上讲台，你一定能行！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #FFD700">
+      <div class="warrior-header">
+        <div class="warrior-name">杜澄逸</div>
+        <div class="warrior-group">6组 · 100分 🎖️组长</div>
+      </div>
+      <div class="warrior-stats">作答6 · 质疑0 · 展讲1</div>
+      <div class="warrior-trait">🏆 冠军组长</div>
+      <div class="warrior-comment">带领6组以920分强势夺冠！虽然个人"仅"100分，但组长的价值不在个人得分——你营造了积极向上的组内氛围，让邵恩福(240分)等核心成员充分爆发。冠军组的背后，是组长默默的付出和凝聚力。向你致敬！</div>
+    </div>
+
+    <div class="warrior-card" style="border-top:4px solid #27ae60">
+      <div class="warrior-header">
+        <div class="warrior-name">王楷文</div>
+        <div class="warrior-group">6组 · 90分</div>
+      </div>
+      <div class="warrior-stats">作答3 · 质疑1 · 展讲1</div>
+      <div class="warrior-trait">🌱 起步全能</div>
+      <div class="warrior-comment">作答3次、质疑1次、展讲1次——90分的三项全能，"从无到有"本身就是最大的突破！作为6组冠军团队的一员，你在团队氛围中不断成长。保持这个势头，下周冲击120分！</div>
+    </div>
+
+  </div>
+
+  <!-- 组长表彰 -->
+  <h3 style="font-size:1.2em;margin:28px 0 16px;color:#2c3e50;border-left:4px solid #FFD700;padding-left:12px;">🎖️ 致敬每一位组长</h3>
+  
+  <p style="margin-bottom:16px;color:#666;font-size:0.95em;">组长是班级的脊梁。他们不仅要自己努力，还要带动全组前进。本周每一位组长都在用行动诠释"担当"二字。</p>
+  
+  <div class="leader-grid">
+
+    <div class="leader-card">
+      <div class="leader-name">王永鑫 <span class="leader-group">1组组长</span></div>
+      <div class="leader-score">100分 · 质疑3次</div>
+      <div class="leader-comment">质疑3次的组长最有深度！你用批判性思维为1组树立了"敢问"的标杆。新组合的磨合需要时间，720分是个不错的起点。你的质疑精神会感染更多组员，继续带领1组前行！</div>
+    </div>
+
+    <div class="leader-card" style="border:2px solid #FFD700">
+      <div class="leader-name">康思静 <span class="leader-group">2组组长 · 课代表 🏆</span></div>
+      <div class="leader-score">260分 · 全班第一</div>
+      <div class="leader-comment">260分全班第一！组长+课代表双重身份，你用实力诠释了何为"以身作则"。W4展讲0次→W5展讲2次的突破令人动容，作答5次+质疑1次+展讲2次，全能型课代表当之无愧。2组740分有你最大的贡献！</div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-name">齐昱凯 <span class="leader-group">3组组长</span></div>
+      <div class="leader-score">150分 · 作答7次展讲2次</div>
+      <div class="leader-comment">7次作答+2次展讲——你是3组的"冲锋队长"！带领3组拿下830分第二名，张文睿、白家耀等成员在你带动下全面开花。组长的担当+学霸的实力，让人敬佩！</div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-name">甘文怀 <span class="leader-group">4组组长</span></div>
+      <div class="leader-score">190分 · 质疑5次全场最高</div>
+      <div class="leader-comment">质疑5次——全班质疑之王！你用"敢于发问"的精神带领4组拿下760分，崔楠(170分)和你一"问"一"讲"的搭档堪称绝配。质疑型组长，全班学习的榜样！</div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-name">董啟如/张楠 <span class="leader-group">5组双组长</span></div>
+      <div class="leader-score">130分/200分 · 课代表张楠</div>
+      <div class="leader-comment">双组长制度是5组的创新！张楠作为课代表以200分位列全班第三，董啟如130分同样全能。两人配合默契，带领5组拿下790分季军。双组长、双核心、双倍战斗力！</div>
+    </div>
+
+    <div class="leader-card" style="border:2px solid #FFD700">
+      <div class="leader-name">杜澄逸 <span class="leader-group">6组组长 🏆</span></div>
+      <div class="leader-score">100分 · 带领冠军组</div>
+      <div class="leader-comment">带领6组以920分强势夺冠——这是最大的荣耀！虽然个人分数不是最高，但组长的价值在于营造氛围。邵恩福(240分)在你的带动下全面爆发，冠军组的凝聚力就是最好的证明！</div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-name">张博涵 <span class="leader-group">7组组长 · 课代表</span></div>
+      <div class="leader-score">190分 · 质疑4次展讲2次</div>
+      <div class="leader-comment">组长+课代表双重身份！质疑4次+展讲2次——你用"精准而有深度"的方式参与课堂。190分证明了质量比数量更重要。7组670分，你的领导力功不可没！</div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-name">汪祺 <span class="leader-group">8组组长</span></div>
+      <div class="leader-score">80分 · 组内加分235最高</div>
+      <div class="leader-comment">8组虽然总分525排在末位，但组内加分235分是全班最高！这说明你们组的团队凝聚力极强，大家互相帮助、共同加分。个人80分不算高，但作为组长你的凝聚力让人敬佩。相信在团队氛围带动下，8组下周会更好！</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ SECTION 6: 负向行为警示 ⚠️ ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">⚠️</span>负向行为警示</div>
+  
+  <table class="behavior-table">
+    <thead>
+      <tr><th>姓名</th><th>组别</th><th>行为类型</th><th>次数</th><th>扣分</th><th>当周总分</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>魏凡丁</strong></td>
+        <td>5组</td>
+        <td><span class="tag tag-cheat">作弊</span></td>
+        <td>1次</td>
+        <td style="color:#e67e22;font-weight:700">-50分</td>
+        <td>130分（含扣分前180分）</td>
+      </tr>
+      <tr>
+        <td><strong>孙麟博</strong></td>
+        <td>8组</td>
+        <td><span class="tag tag-sleep">睡觉</span></td>
+        <td>1次</td>
+        <td style="color:#e67e22;font-weight:700">-20分</td>
+        <td>130分（含扣分前150分）</td>
+      </tr>
+      <tr>
+        <td><strong>徐菡</strong></td>
+        <td>2组</td>
+        <td><span class="tag tag-sleep">睡觉</span></td>
+        <td>1次</td>
+        <td style="color:#e67e22;font-weight:700">-20分</td>
+        <td>20分</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p style="margin-top:16px;font-size:0.9em;color:#7f8c8d;">📌 本周共3人次负向行为：1次作弊（魏凡丁）+ 2次睡觉（孙麟博、徐菡）。诚信是底线，纪律是保障——希望同学们引以为戒，诚信考试、专注课堂。</p>
+</div>
+
+<!-- ============ SECTION 7: 各组数据汇总 ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">📋</span>各组数据汇总</div>
+  
+  <table class="data-table">
+    <thead>
+      <tr><th>排名</th><th>组别</th><th>作答</th><th>质疑</th><th>展讲</th><th>个人总分</th><th>组内加分</th><th>组总分</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🥇</td><td><strong>第6组</strong></td><td>24</td><td>9</td><td>8</td><td>740</td><td>180</td><td class="highlight">920</td></tr>
+      <tr><td>🥈</td><td><strong>第3组</strong></td><td>28</td><td>4</td><td>6</td><td>600</td><td>230</td><td class="highlight">830</td></tr>
+      <tr><td>🥉</td><td><strong>第5组</strong></td><td>23</td><td>8</td><td>5</td><td>590</td><td>200</td><td class="highlight">790</td></tr>
+      <tr><td>4</td><td>第4组</td><td>22</td><td>11</td><td>4</td><td>600</td><td>160</td><td>760</td></tr>
+      <tr><td>5</td><td>第2组</td><td>14</td><td>2</td><td>6</td><td>530</td><td>210</td><td>740</td></tr>
+      <tr><td>6</td><td>第1组</td><td>28</td><td>7</td><td>2</td><td>500</td><td>220</td><td>720</td></tr>
+      <tr><td>7</td><td>第7组</td><td>17</td><td>9</td><td>5</td><td>550</td><td>120</td><td>670</td></tr>
+      <tr><td>8</td><td>第8组</td><td>15</td><td>1</td><td>3</td><td>290</td><td>235</td><td>525</td></tr>
+    </tbody>
+    <tfoot>
+      <tr style="background:#f8f9fa;font-weight:700">
+        <td>—</td><td>合计</td><td>171</td><td>51</td><td>39</td><td>4400</td><td>1555</td><td>5955</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- ============ SECTION 8: 核心洞察 ============ -->
+<div class="section">
+  <div class="section-title"><span class="icon">💎</span>核心洞察</div>
+  
+  <div class="insight-list">
+    
+    <div class="insight-item up">
+      <div class="num">01</div>
+      <div class="text">
+        <strong>6组强势夺冠，换组后新格局成型</strong>
+        6组以920分拔得头筹，邵恩福(240分)和杜澄逸(100分)双核驱动，展讲8次全班最多。换组后各组重新磨合，6组率先找到化学反应，成为新格局的领跑者。
+      </div>
+    </div>
+    
+    <div class="insight-item up">
+      <div class="num">02</div>
+      <div class="text">
+        <strong>19人全能战士，课堂参与度极高</strong>
+        全班19人实现了作答+质疑+展讲三项全能，占比超过一半！康思静(260分)从W4展讲0次突破到W5展讲2次并拿下全班第一，邵恩福三项均衡(6+3+3)获得240分，一班的课堂活跃度令人欣喜。
+      </div>
+    </div>
+    
+    <div class="insight-item">
+      <div class="num">03</div>
+      <div class="text">
+        <strong>质疑精神爆发，4组质疑11次领跑</strong>
+        4组以11次质疑位居各组之首，甘文怀个人5次质疑堪称"质疑之王"。全班51次质疑说明一班的同学不再满足于被动接受，而是主动探究、深度思考，这是最可贵的成长。
+      </div>
+    </div>
+    
+    <div class="insight-item alert">
+      <div class="num">04</div>
+      <div class="text">
+        <strong>诚信红线不可触碰</strong>
+        魏凡丁因作弊被扣50分，从180分降至130分，排名直接受影响。考试作弊不仅损害个人成绩，更破坏班级诚信氛围。一次失误可以改正，但诚信的底线绝不能逾越。
+      </div>
+    </div>
+    
+    <div class="insight-item alert">
+      <div class="num">05</div>
+      <div class="text">
+        <strong>8组个人分最低，需要更多突破</strong>
+        8组个人总分仅290分，是唯一低于500分的组。虽然组内加分235分最高（团队凝聚力强），但个人活跃度仍需大幅提升。汪祺(80分)作为组长需要带动更多组员参与课堂。
+      </div>
+    </div>
+    
+    <div class="insight-item alert">
+      <div class="num">06</div>
+      <div class="text">
+        <strong>课堂纪律需持续关注</strong>
+        本周2人次上课睡觉（孙麟博、徐菡），1人次作弊（魏凡丁）。睡觉不仅影响个人学习，更影响课堂氛围；徐菡当周仅20分，学习状态堪忧，需重点关注和帮助。
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="quote">
+    "每一次举手作答，都是勇气的展现；<br>
+    每一次质疑发问，都是思维的火花；<br>
+    每一次站上展讲台，都是成长的印记。<br>
+    W5，一班换组后新格局初现，19人全能闪耀！"
+  </div>
+  <div class="meta">高三一班课堂表现W5周报 · 数据周期 2026.6.30 - 7.4</div>
+</div>
+
+</body>
+</html>
