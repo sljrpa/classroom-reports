@@ -12,15 +12,20 @@ body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;b
 .topbar .back:hover{color:#3498db;}
 .container{max-width:960px;margin:0 auto;padding:12px 20px 30px;}
 .title{font-size:22px;font-weight:700;color:#2c3e50;text-align:center;margin-bottom:24px;}
-.card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);margin-bottom:24px;}
-.card-title{font-size:17px;font-weight:700;color:#2c3e50;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid #eee;}
-.clist{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-@media(max-width:600px){.clist{grid-template-columns:1fr;}}
-.cbtn{display:flex;align-items:center;gap:14px;background:#fff;border-radius:12px;padding:18px 22px;text-decoration:none;color:#2c3e50;box-shadow:0 2px 12px rgba(0,0,0,0.05);transition:all .2s ease;border:1px solid transparent;}
-.cbtn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1);border-color:#e0e0e0;}
-.cbtn .ico{font-size:28px;}
-.cbtn b{font-size:16px;display:block;}
-.cbtn span{font-size:13px;color:#888;}
+.card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);}
+.intro{font-size:15px;line-height:1.9;color:#555;padding:18px 22px;background:linear-gradient(135deg,#f0f7ff,#e3f0fc);border-radius:12px;border-left:4px solid #3498db;margin-bottom:24px;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:700px){.cols{grid-template-columns:1fr;}}
+.cls{border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:all .25s ease;display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;overflow:hidden;}
+.cls::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;opacity:.1;}
+.cls:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.12);}
+.cls.c1{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;}
+.cls.c1::before{background:#fff;}
+.cls.c3{background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;}
+.cls.c3::before{background:#fff;}
+.cls .icon{font-size:48px;margin-bottom:4px;}
+.cls .name{font-size:20px;font-weight:700;letter-spacing:1px;}
+.cls .desc{font-size:13px;opacity:.85;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;}
 </style>
 </head>
 <body>
@@ -29,17 +34,19 @@ body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;b
 <a class="back" href="../pingjia.html">← 返回周次</a>
 </div>
 <div class="container">
-<div class="title">第5周 · 选择班级</div>
+<div class="title">📋 课堂评价报告 <span style="font-size:14px;color:#888;font-weight:400;">W5 · 6.29 — 7.3</span></div>
 <div class="card">
-<div class="card-title">选择班级查看报告</div>
-<div class="clist">
-  <a class="cbtn" href="#" onclick="alert('第5周一班报告待上传');return false;">
-    <span class="ico">📘</span>
-    <div><b>一班</b><br><span>暂无报告</span></div>
+<div class="intro">选择班级，查看该班第5周课堂表现报告。</div>
+<div class="cols">
+  <a class="cls c1" href="../../class1-w5.html">
+    <div class="icon">🎓</div>
+    <div class="name">高三一班</div>
+    <div class="desc">8个小组 · 第5周课堂表现</div>
   </a>
-  <a class="cbtn" href="#" onclick="alert('第5周三班报告待上传');return false;">
-    <span class="ico">📗</span>
-    <div><b>三班</b><br><span>暂无报告</span></div>
+  <a class="cls c3" href="../../class3-w5.html">
+    <div class="icon">📚</div>
+    <div class="name">高三三班</div>
+    <div class="desc">8个小组 · 第5周课堂表现</div>
   </a>
 </div>
 </div>

@@ -16,15 +16,16 @@ body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;c
 .intro{font-size:15px;line-height:1.9;color:#555;padding:18px 22px;background:linear-gradient(135deg,#f0f7ff,#e3f0fc);border-radius:12px;border-left:4px solid #3498db;margin-bottom:24px;}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 @media(max-width:700px){.cols{grid-template-columns:1fr;}}
-.cls{border-radius:14px;padding:28px 24px;text-decoration:none;text-align:center;transition:all .2s ease;display:flex;flex-direction:column;align-items:center;gap:8px;}
-.cls:hover{transform:translateY(-3px);}
-.cls.c1{background:linear-gradient(135deg,#ebf5fb,#d6eaf8);color:#2874a6;}
-.cls.c1:hover{background:linear-gradient(135deg,#d6eaf8,#aed6f1);}
-.cls.c3{background:linear-gradient(135deg,#eafaf1,#d5f5e3);color:#1e8449;}
-.cls.c3:hover{background:linear-gradient(135deg,#d5f5e3,#abebc6);}
-.cls .num{font-size:36px;font-weight:800;opacity:.15;}
-.cls .name{font-size:18px;font-weight:700;}
-.cls .desc{font-size:13px;opacity:.7;}
+.cls{border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:all .25s ease;display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;overflow:hidden;}
+.cls::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;opacity:.1;}
+.cls:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.12);}
+.cls.c1{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;}
+.cls.c1::before{background:#fff;}
+.cls.c3{background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;}
+.cls.c3::before{background:#fff;}
+.cls .icon{font-size:48px;margin-bottom:4px;}
+.cls .name{font-size:20px;font-weight:700;letter-spacing:1px;}
+.cls .desc{font-size:13px;opacity:.85;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;}
 </style>
 </head>
 <body>
@@ -35,14 +36,14 @@ body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;c
 <div class="intro">选择班级，查看该班第1-3周课堂表现报告。</div>
 <div class="cols">
   <a class="cls c1" href="../../class1.html">
-    <div class="num">1</div>
+    <div class="icon">🎓</div>
     <div class="name">高三一班</div>
-    <div class="desc">9个小组 · 课堂表现三周对比</div>
+    <div class="desc">9个小组 · 三周对比</div>
   </a>
   <a class="cls c3" href="../../class3.html">
-    <div class="num">3</div>
+    <div class="icon">📚</div>
     <div class="name">高三三班</div>
-    <div class="desc">9个小组 · 课堂表现三周对比</div>
+    <div class="desc">9个小组 · 三周对比</div>
   </a>
 </div>
 </div>
