@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>班级报告</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;color:#2c3e50;line-height:1.7;}
+.topbar{max-width:960px;margin:0 auto;padding:20px 20px 0;display:flex;justify-content:space-between;align-items:center;}
+.topbar .back{font-size:13px;color:#7f8c8d;text-decoration:none;padding:6px 14px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.topbar .back:hover{color:#3498db;}
+.container{max-width:960px;margin:0 auto;padding:12px 20px 30px;}
+.title{text-align:center;font-size:22px;font-weight:700;color:#2c3e50;margin-bottom:24px;}
+.card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);}
+.intro{font-size:15px;line-height:1.9;color:#555;padding:18px 22px;background:linear-gradient(135deg,#f0f7ff,#e3f0fc);border-radius:12px;border-left:4px solid #3498db;margin-bottom:24px;}
+.weeks{display:flex;flex-direction:column;gap:14px;}
+.wk{display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:14px;text-decoration:none;transition:all .2s ease;}
+.wk:hover{transform:translateX(4px);}
+.wk .badge{display:inline-flex;align-items:center;justify-content:center;min-width:56px;height:36px;border-radius:10px;color:#fff;font-size:14px;font-weight:600;padding:0 10px;}
+.wk .txt{flex:1;}
+.wk .txt b{display:block;font-size:16px;font-weight:600;color:#2c3e50;margin-bottom:2px;}
+.wk .txt span{font-size:13px;color:#888;}
+.wk.purple{background:linear-gradient(135deg,#f5eef8,#ebdef0);}.wk.purple .badge{background:#9b59b6;}.wk.purple:hover{background:linear-gradient(135deg,#ebdef0,#d7bde2);}
+.wk.orange{background:linear-gradient(135deg,#fef9f0,#fdebd0);}.wk.orange .badge{background:#e67e22;}.wk.orange:hover{background:linear-gradient(135deg,#fdebd0,#f9cb9c);}
+.wk.teal{background:linear-gradient(135deg,#e8f8f5,#d1f2eb);}.wk.teal .badge{background:#1abc9c;}.wk.teal:hover{background:linear-gradient(135deg,#d1f2eb,#a3e4d7);}
+</style>
+</head>
+<body>
+<div class="topbar"><span></span><a class="back" href="../pingjia.html">← 返回</a></div>
+<div class="container">
+<div class="title">📋 班级报告</div>
+<div class="card">
+<div class="intro">按教学周次查看一班、三班的班级课堂表现周报告。</div>
+<div class="weeks">
+  <a class="wk purple" href="w1-w3.html">
+    <span class="badge">W1-3</span>
+    <div class="txt"><b>第1-3周报告</b><span>5.18 — 6.5</span></div>
+  </a>
+  <a class="wk orange" href="w4.html">
+    <span class="badge">W4</span>
+    <div class="txt"><b>第4周报告</b><span>日期待补</span></div>
+  </a>
+  <a class="wk teal" href="w5.html">
+    <span class="badge">W5</span>
+    <div class="txt"><b>第5周报告</b><span>日期待补</span></div>
+  </a>
+</div>
+</div>
+</div>
+</body>
+</html>
