@@ -14,20 +14,14 @@ body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;b
 .title{font-size:22px;font-weight:700;color:#2c3e50;text-align:center;margin-bottom:24px;}
 .card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);margin-bottom:24px;}
 .intro{font-size:15px;line-height:1.9;color:#555;padding:20px 24px;background:linear-gradient(135deg,#fdf8ff,#f5eef8);border-radius:12px;border-left:4px solid #9b59b6;margin-bottom:28px;}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-@media(max-width:700px){.cols{grid-template-columns:1fr;}}
-.block{border-radius:14px;padding:24px;display:flex;flex-direction:column;}
-.block.purple{background:linear-gradient(135deg,#f5eef8,#ebdef0);}
-.block.orange{background:linear-gradient(135deg,#fef9f0,#fdebd0);}
-.block-title{font-size:18px;font-weight:700;color:#2c3e50;text-align:center;margin-bottom:4px;}
-.block-sub{font-size:13px;color:#888;text-align:center;margin-bottom:18px;}
-.block-btns{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
-.block-btns a{display:block;text-align:center;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:500;font-size:15px;transition:all .2s ease;}
-.block.purple .block-btns a{background:#fff;color:#7d3c98;border:1px solid #e8daef;}
-.block.purple .block-btns a:hover{background:#f4ecf7;transform:translateY(-1px);}
-.block.orange .block-btns a{background:#fff;color:#ca6f1e;border:1px solid #fae5d3;}
-.block.orange .block-btns a:hover{background:#fef5e7;transform:translateY(-1px);}
-.block-desc{font-size:13px;line-height:1.8;color:#666;border-top:1px solid rgba(0,0,0,0.06);padding-top:14px;}
+.wk{display:flex;align-items:center;gap:18px;background:#fff;border-radius:14px;padding:18px 24px;margin-bottom:14px;text-decoration:none;color:#2c3e50;box-shadow:0 2px 12px rgba(0,0,0,0.05);transition:all .2s ease;}
+.wk:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+.wk .badge{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:48px;border-radius:12px;font-size:16px;font-weight:700;color:#fff;flex-shrink:0;}
+.wk .txt b{font-size:17px;display:block;}
+.wk .txt span{font-size:13px;color:#888;}
+.badge.purple{background:linear-gradient(135deg,#af7ac5,#7d3c98);}
+.badge.orange{background:linear-gradient(135deg,#f0b27a,#e67e22);}
+.badge.teal{background:linear-gradient(135deg,#76d7c4,#17a589);}
 </style>
 </head>
 <body>
@@ -44,30 +38,18 @@ body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;b
   为学生定义了明确的正向行为（作答、质疑、展讲）与负向行为（注意力不集中、上课睡觉），并建立积分规则。两个班积累了集中的过程性数据，逐步实现了从行为类别积分→行为记录→学生行为跟踪→行为越级认定→小组自主KPI制定的五层递进。其中质疑数量增长最为显著，从最初的个位数逐步增加，反映出学生批判性思维的持续激活。
 </div>
 
-<div class="cols">
-  <!-- 班级报告 -->
-  <a class="block-link" href="pingjia/class.html" style="text-decoration:none;">
-  <div class="block purple" style="cursor:pointer;">
-    <div class="block-title">📋 班级报告</div>
-    <div class="block-sub">Class Report</div>
-    <div class="block-btns">
-      <span style="opacity:.7;">按周次查看 · 一班/三班</span>
-    </div>
-    <div class="block-desc">基于课堂行为积分的班级周度汇总报告，涵盖作答、质疑、展讲等行为类别的统计与趋势分析，呈现班级整体行为变化。</div>
-  </div>
-  </a>
-  <!-- 小组报告 -->
-  <a class="block-link" href="pingjia/group.html" style="text-decoration:none;">
-  <div class="block orange" style="cursor:pointer;">
-    <div class="block-title">📈 小组报告</div>
-    <div class="block-sub">Group Report</div>
-    <div class="block-btns">
-      <span style="opacity:.7;">按周次查看 · 一班/三班</span>
-    </div>
-    <div class="block-desc">以小组为维度的行为数据报告，追踪每组在作答、质疑、展讲等指标上的表现，支撑小组KPI自主管理与协作改进。</div>
-  </div>
-  </a>
-</div>
+<a class="wk" href="pingjia/w1-w3.html">
+  <span class="badge purple">W1-3</span>
+  <div class="txt"><b>第1—3周</b><span>5.18 — 6.5</span></div>
+</a>
+<a class="wk" href="pingjia/w4.html">
+  <span class="badge orange">W4</span>
+  <div class="txt"><b>第4周</b><span>6.22 — 6.26</span></div>
+</a>
+<a class="wk" href="pingjia/w5.html">
+  <span class="badge teal">W5</span>
+  <div class="txt"><b>第5周</b><span>6.29 — 7.3</span></div>
+</a>
 </div>
 
 </div>
