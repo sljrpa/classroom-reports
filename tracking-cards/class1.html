@@ -14,96 +14,285 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 .header .subtitle{font-size:13px;color:#7f8c8d;margin-top:6px}
 .back{display:inline-block;margin-bottom:16px;color:#3498db;text-decoration:none;font-size:14px}
 .student-count{text-align:center;font-size:13px;color:#95a5a6;margin-bottom:16px}
-.search-box{position:relative;margin-bottom:16px}
-.search-box input{width:100%;padding:12px 12px 12px 36px;border:1px solid #e0e0e0;border-radius:12px;font-size:15px;outline:none;background:#fff;transition:border-color .2s}
-.search-box input:focus{border-color:#3498db}
-.search-box .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:16px}
 .student-card{display:flex;align-items:center;padding:14px 18px;background:#fff;border-radius:12px;margin-bottom:8px;text-decoration:none;color:inherit;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .15s,box-shadow .15s}
 .student-card:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,0,0,.08)}
 .student-card:active{transform:scale(.98)}
 .student-card .name{flex:1;font-size:16px;font-weight:500}
-.student-card .arrow{font-size:20px;color:#ccc}
+.student-card .stats{font-size:12px;color:#95a5a6}
+.weak-count{color:#764ba2;margin-right:8px}
+.arrow{font-size:20px;color:#ccc}
 .footer{text-align:center;padding:20px;font-size:11px;color:#bdc3c7}
 </style>
 </head>
 <body>
 <div class="top-bar"></div>
 <div class="container">
-<a class="back" href="index.html">← 返回班级选择</a>
+<a class="back" href="index.html">← 返回</a>
 <div class="header">
-<h1>📋 薄弱追踪卡片</h1>
-<p class="subtitle">高三一班 · 52人 · 点击查看详情</p>
+<h1>一班薄弱追踪卡片</h1>
+<p class="subtitle">月考 → 7.1周考 · 薄弱项变化追踪 · 52人</p>
 </div>
-<p class="student-count">共 52 名学生</p>
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="搜索学生姓名..." onkeyup="filterStudents()">
-<span class="search-icon">🔍</span>
+<a class="student-card" href="students/hujingyi.html">
+<div class="name">胡敬轶</div>
+<div class="stats"><span class="weak-count">26项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/hujingshan.html">
+<div class="name">胡晶善</div>
+<div class="stats"><span class="weak-count">26项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/zhangdayou.html">
+<div class="name">张大佑</div>
+<div class="stats"><span class="weak-count">25项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/xuhan.html">
+<div class="name">徐菡</div>
+<div class="stats"><span class="weak-count">25项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/liujiayang.html">
+<div class="name">刘佳阳</div>
+<div class="stats"><span class="weak-count">24项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/jiaoxinyue.html">
+<div class="name">焦新越</div>
+<div class="stats"><span class="weak-count">24项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/gouchenwei.html">
+<div class="name">苟宸玮</div>
+<div class="stats"><span class="weak-count">24项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/zhaolingyu.html">
+<div class="name">赵聆羽</div>
+<div class="stats"><span class="weak-count">24项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/sunqixiang.html">
+<div class="name">孙启翔</div>
+<div class="stats"><span class="weak-count">23项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wangcanyu.html">
+<div class="name">王灿钰</div>
+<div class="stats"><span class="weak-count">23项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/lizixu.html">
+<div class="name">李子旭</div>
+<div class="stats"><span class="weak-count">22项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/cuinan.html">
+<div class="name">崔楠</div>
+<div class="stats"><span class="weak-count">21项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/guowenxuan.html">
+<div class="name">郭文轩</div>
+<div class="stats"><span class="weak-count">21项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/weifanding.html">
+<div class="name">魏凡丁</div>
+<div class="stats"><span class="weak-count">21项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/zhangwenrui.html">
+<div class="name">张文睿</div>
+<div class="stats"><span class="weak-count">20项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/xuenchang.html">
+<div class="name">徐恩昌</div>
+<div class="stats"><span class="weak-count">20项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/yangshirui.html">
+<div class="name">杨时瑞</div>
+<div class="stats"><span class="weak-count">20项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/guoziliang.html">
+<div class="name">郭子梁</div>
+<div class="stats"><span class="weak-count">20项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/weiyuqi.html">
+<div class="name">魏煜奇</div>
+<div class="stats"><span class="weak-count">20项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/jiaoyujie.html">
+<div class="name">焦钰杰</div>
+<div class="stats"><span class="weak-count">19项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wangkaiwen.html">
+<div class="name">王楷文</div>
+<div class="stats"><span class="weak-count">19项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/dongjinhao.html">
+<div class="name">董金昊</div>
+<div class="stats"><span class="weak-count">19项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/zhangbai.html">
+<div class="name">张柏</div>
+<div class="stats"><span class="weak-count">18项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/baijiayao.html">
+<div class="name">白家耀</div>
+<div class="stats"><span class="weak-count">18项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wangzhiqi.html">
+<div class="name">王志奇</div>
+<div class="stats"><span class="weak-count">17项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/lidacheng.html">
+<div class="name">李大诚</div>
+<div class="stats"><span class="weak-count">16项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wangqi.html">
+<div class="name">汪祺</div>
+<div class="stats"><span class="weak-count">16项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wangyiran.html">
+<div class="name">王亦然</div>
+<div class="stats"><span class="weak-count">16项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wangluran.html">
+<div class="name">王露冉</div>
+<div class="stats"><span class="weak-count">16项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/chencunhao.html">
+<div class="name">陈存浩</div>
+<div class="stats"><span class="weak-count">16项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/leiqinghe.html">
+<div class="name">雷清和</div>
+<div class="stats"><span class="weak-count">16项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/mazihan.html">
+<div class="name">马子涵</div>
+<div class="stats"><span class="weak-count">16项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/qiaoyishuo.html">
+<div class="name">乔怡硕</div>
+<div class="stats"><span class="weak-count">15项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/hetian.html">
+<div class="name">和田</div>
+<div class="stats"><span class="weak-count">15项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/sunlinbo.html">
+<div class="name">孙麟博</div>
+<div class="stats"><span class="weak-count">15项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/liaochenwan.html">
+<div class="name">廖晨琬</div>
+<div class="stats"><span class="weak-count">15项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/ganwenhuai.html">
+<div class="name">甘文怀</div>
+<div class="stats"><span class="weak-count">15项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/jinyawen.html">
+<div class="name">靳雅雯</div>
+<div class="stats"><span class="weak-count">15项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/zhangnan.html">
+<div class="name">张楠</div>
+<div class="stats"><span class="weak-count">14项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/duchengyi.html">
+<div class="name">杜澄逸</div>
+<div class="stats"><span class="weak-count">13项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/peimenglin.html">
+<div class="name">裴梦琳</div>
+<div class="stats"><span class="weak-count">13项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/kangsijing.html">
+<div class="name">康思静</div>
+<div class="stats"><span class="weak-count">12项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/lizhihao.html">
+<div class="name">李志豪</div>
+<div class="stats"><span class="weak-count">12项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/qiyukai.html">
+<div class="name">齐昱凯</div>
+<div class="stats"><span class="weak-count">12项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/zhangbohan.html">
+<div class="name">张博涵</div>
+<div class="stats"><span class="weak-count">11项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/yangzihan.html">
+<div class="name">杨子涵</div>
+<div class="stats"><span class="weak-count">11项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/qibinru.html">
+<div class="name">齐彬如</div>
+<div class="stats"><span class="weak-count">11项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wuhaoming.html">
+<div class="name">吴浩铭</div>
+<div class="stats"><span class="weak-count">9项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/wangyongxin.html">
+<div class="name">王永鑫</div>
+<div class="stats"><span class="weak-count">9项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/zhengzhiyao.html">
+<div class="name">郑智遥</div>
+<div class="stats"><span class="weak-count">9项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/shaoenfu.html">
+<div class="name">邵恩福</div>
+<div class="stats"><span class="weak-count">6项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<a class="student-card" href="students/mashuo.html">
+<div class="name">马铄</div>
+<div class="stats"><span class="weak-count">5项薄弱</span></div>
+<span class="arrow">›</span>
+</a>
+<div class="footer">点击查看详情 · 持续薄弱→新暴露→待检验→已改进</div>
 </div>
-<div id="studentList">
-<a class="student-card" data-name="康思静" href="students/kangsijing.html"><div class="name">康思静</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王志奇" href="students/wangzhiqi.html"><div class="name">王志奇</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王露冉" href="students/wangluran.html"><div class="name">王露冉</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="徐恩昌" href="students/xuenchang.html"><div class="name">徐恩昌</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="靳雅雯" href="students/jinyawen.html"><div class="name">靳雅雯</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张文睿" href="students/zhangwenrui.html"><div class="name">张文睿</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="汪祺" href="students/wangqi.html"><div class="name">汪祺</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="焦钰杰" href="students/jiaoyujie.html"><div class="name">焦钰杰</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="陈存浩" href="students/chencunhao.html"><div class="name">陈存浩</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王灿钰" href="students/wangcanyu.html"><div class="name">王灿钰</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="苟宸玮" href="students/gouchenwei.html"><div class="name">苟宸玮</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="郭文轩" href="students/guowenxuan.html"><div class="name">郭文轩</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="刘佳阳" href="students/liujiayang.html"><div class="name">刘佳阳</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="齐彬如" href="students/qibinru.html"><div class="name">齐彬如</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="甘文怀" href="students/ganwenhuai.html"><div class="name">甘文怀</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="和田" href="students/hetian.html"><div class="name">和田</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="魏凡丁" href="students/weifanding.html"><div class="name">魏凡丁</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张大佑" href="students/zhangdayou.html"><div class="name">张大佑</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="董金昊" href="students/dongjinhao.html"><div class="name">董金昊</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张博涵" href="students/zhangbohan.html"><div class="name">张博涵</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="乔怡硕" href="students/qiaoyishuo.html"><div class="name">乔怡硕</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="胡敬轶" href="students/hujingyi.html"><div class="name">胡敬轶</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="胡晶善" href="students/hujingshan.html"><div class="name">胡晶善</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王亦然" href="students/wangyiran.html"><div class="name">王亦然</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="杜澄逸" href="students/duchengyi.html"><div class="name">杜澄逸</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王楷文" href="students/wangkaiwen.html"><div class="name">王楷文</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张柏" href="students/zhangbai.html"><div class="name">张柏</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李子旭" href="students/lizixu.html"><div class="name">李子旭</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="焦新越" href="students/jiaoxinyue.html"><div class="name">焦新越</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="齐昱凯" href="students/qiyukai.html"><div class="name">齐昱凯</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="孙麟博" href="students/sunlinbo.html"><div class="name">孙麟博</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="孙启翔" href="students/sunqixiang.html"><div class="name">孙启翔</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王一林" href="students/wangyilin.html"><div class="name">王一林</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="赵聆羽" href="students/zhaolingyu.html"><div class="name">赵聆羽</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="翟可欣" href="students/dikexin.html"><div class="name">翟可欣</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="王永鑫" href="students/wangyongxin.html"><div class="name">王永鑫</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="崔楠" href="students/cuinan.html"><div class="name">崔楠</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="樊潇阳" href="students/fanxiaoyang.html"><div class="name">樊潇阳</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="马子涵" href="students/mazihan.html"><div class="name">马子涵</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="康雅馨" href="students/kangyaxin.html"><div class="name">康雅馨</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="郭子梁" href="students/guoziliang.html"><div class="name">郭子梁</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="邵恩福" href="students/shaoenfu.html"><div class="name">邵恩福</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="董啟如" href="students/dongqiru.html"><div class="name">董啟如</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="廖晨琬" href="students/liaochenwan.html"><div class="name">廖晨琬</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李志豪" href="students/lizhihao.html"><div class="name">李志豪</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="李大诚" href="students/lidacheng.html"><div class="name">李大诚</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="杨时瑞" href="students/yangshirui.html"><div class="name">杨时瑞</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="张楠" href="students/zhangnan.html"><div class="name">张楠</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="贺瑞琳" href="students/heruilin.html"><div class="name">贺瑞琳</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="魏煜奇" href="students/weiyuqi.html"><div class="name">魏煜奇</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="白家耀" href="students/baijiayao.html"><div class="name">白家耀</div><span class="arrow">›</span></a>
-<a class="student-card" data-name="徐菡" href="students/xuhan.html"><div class="name">徐菡</div><span class="arrow">›</span></a>
-</div>
-<div class="footer">薄弱追踪卡片 · 高三一班 · 月考+周考数据</div>
-</div>
-<script>
-function filterStudents(){
-var q=document.getElementById('searchInput').value.toLowerCase();
-var cards=document.querySelectorAll('.student-card');
-cards.forEach(function(c){
-var n=c.getAttribute('data-name').toLowerCase();
-c.style.display=n.indexOf(q)!==-1?'flex':'none';
-});
-}
-</script>
 </body>
 </html>
