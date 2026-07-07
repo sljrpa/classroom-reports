@@ -23,14 +23,14 @@ canvas{max-width:100%;height:auto;margin-bottom:8px;box-shadow:0 2px 8px rgba(0,
 <div class="topbar">
   <a class="back-btn" href="../水平1.html">← 返回</a>
   <span class="pdf-title">模块四 三角恒等变换</span>
-  <a class="dl-btn" href="../%E6%B0%B4%E5%B9%B31/%E6%A8%A1%E5%9D%97%E5%9B%9B_%E4%B8%89%E8%A7%92%E6%81%92%E7%AD%89%E5%8F%98%E6%8D%A2.pdf" download>⬇ 下载</a>
+  <a class="dl-btn" href="../水平1/模块四_三角恒等变换.pdf" download>⬇ 下载</a>
 </div>
 <div id="canvas-container">
   <div class="loading" id="loading">正在加载文档...</div>
 </div>
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-const url='../%E6%B0%B4%E5%B9%B31/%E6%A8%A1%E5%9D%97%E5%9B%9B_%E4%B8%89%E8%A7%92%E6%81%92%E7%AD%89%E5%8F%98%E6%8D%A2.pdf';
+const url=decodeURI('../水平1/模块四_三角恒等变换.pdf');
 async function renderPDF(){
   const loading=document.getElementById('loading');
   try{
@@ -52,7 +52,7 @@ async function renderPDF(){
     }
   }catch(e){
     loading.textContent='加载失败，请点击下载按钮下载查看';
-    console.error(e);
+    console.error('PDF load error:',e);
   }
 }
 renderPDF();

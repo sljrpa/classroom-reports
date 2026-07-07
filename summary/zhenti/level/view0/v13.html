@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>模块十一 统计（第1-13题）</title>
+<title>模块十一 统计（1-13）</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -22,15 +22,15 @@ canvas{max-width:100%;height:auto;margin-bottom:8px;box-shadow:0 2px 8px rgba(0,
 <body>
 <div class="topbar">
   <a class="back-btn" href="../水平0.html">← 返回</a>
-  <span class="pdf-title">模块十一 统计（第1-13题）</span>
-  <a class="dl-btn" href="../%E6%B0%B4%E5%B9%B30/%E6%A8%A1%E5%9D%97%E5%8D%81%E4%B8%80_%E7%BB%9F%E8%AE%A1_1-13.pdf" download>⬇ 下载</a>
+  <span class="pdf-title">模块十一 统计（1-13）</span>
+  <a class="dl-btn" href="../水平0/模块十一_统计_1-13.pdf" download>⬇ 下载</a>
 </div>
 <div id="canvas-container">
   <div class="loading" id="loading">正在加载文档...</div>
 </div>
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-const url='../%E6%B0%B4%E5%B9%B30/%E6%A8%A1%E5%9D%97%E5%8D%81%E4%B8%80_%E7%BB%9F%E8%AE%A1_1-13.pdf';
+const url=decodeURI('../水平0/模块十一_统计_1-13.pdf');
 async function renderPDF(){
   const loading=document.getElementById('loading');
   try{
@@ -52,7 +52,7 @@ async function renderPDF(){
     }
   }catch(e){
     loading.textContent='加载失败，请点击下载按钮下载查看';
-    console.error(e);
+    console.error('PDF load error:',e);
   }
 }
 renderPDF();
