@@ -23,5 +23,17 @@ body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#525659;}
   <a class="dl" href="2020版课标.pdf" download>📥 下载PDF</a>
 </div>
 <iframe class="viewer" src="2020版课标.pdf" type="application/pdf"></iframe>
+
+<!-- 浏览量计数器 -->
+<p id="view-counter" style="text-align:center;font-size:11px;color:#bdc3c7;padding:8px 0 4px;">本页访问 <span id="vc-num">--</span> 次</p>
+<script>
+(function(){
+  var path = window.location.pathname.replace(/[^a-zA-Z0-9]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+  fetch('https://api.counterapi.dev/v1/sljrpa/' + path + '/up')
+    .then(function(r){return r.json()})
+    .then(function(d){document.getElementById('vc-num').textContent=d.count})
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>

@@ -400,5 +400,17 @@ A．5﹣3iB．﹣5﹣3iC．5+3iD．﹣5+3i</p>
 <hr /></div>
 <a class="back" href="../modules.html">← 返回真题研究</a>
 </div>
+
+<!-- 浏览量计数器 -->
+<p id="view-counter" style="text-align:center;font-size:11px;color:#bdc3c7;padding:8px 0 4px;">本页访问 <span id="vc-num">--</span> 次</p>
+<script>
+(function(){
+  var path = window.location.pathname.replace(/[^a-zA-Z0-9]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+  fetch('https://api.counterapi.dev/v1/sljrpa/' + path + '/up')
+    .then(function(r){return r.json()})
+    .then(function(d){document.getElementById('vc-num').textContent=d.count})
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>

@@ -44,5 +44,17 @@ body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;b
   <a class="lk blue" href="2017/2017年天津市高考数学试卷（理科）.pdf" download><span class="ic">📄</span> <span class="nm">2017年天津市高考数学试卷（理科）</span><span class="badge pdf">PDF</span></a>
   <a class="lk teal" href="2017/2017年华侨、港澳、台联考高考数学试卷.pdf" download><span class="ic">📄</span> <span class="nm">2017年华侨、港澳、台联考高考数学试卷</span><span class="badge pdf">PDF</span></a>
 </div>
+
+<!-- 浏览量计数器 -->
+<p id="view-counter" style="text-align:center;font-size:11px;color:#bdc3c7;padding:8px 0 4px;">本页访问 <span id="vc-num">--</span> 次</p>
+<script>
+(function(){
+  var path = window.location.pathname.replace(/[^a-zA-Z0-9]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+  fetch('https://api.counterapi.dev/v1/sljrpa/' + path + '/up')
+    .then(function(r){return r.json()})
+    .then(function(d){document.getElementById('vc-num').textContent=d.count})
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>
