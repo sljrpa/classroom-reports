@@ -145,6 +145,13 @@ body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;b
 <div class="footer">
   <hr>
   <p>—— 石琳 2026年5月1日至7月8日<br>69天的工作沉淀。</p>
+  <p id="view-counter" style="font-size:11px;color:#bdc3c7;padding-top:8px;">本站累计访问 <span id="vc-num">--</span> 次</p>
+  <script>
+  fetch('https://api.counterapi.dev/v1/sljrpa/classroom-reports/up')
+    .then(function(r){return r.json()})
+    .then(function(d){document.getElementById('vc-num').textContent=d.count})
+    .catch(function(){});
+  </script>
 </div>
 </div>
 </body>
