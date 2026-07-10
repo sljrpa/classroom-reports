@@ -159,7 +159,17 @@ const students = [
   {"name":"赵子恒","file":"赵子恒_月考分析报告.html","score":89,"rank":15},
   {"name":"郑智遥","file":"郑智遥_月考分析报告.html","score":103,"rank":5}
 ];
-const grid = document.getElementById('grid');
+let grid = document.getElementById('grid');
+if (!grid) {
+  grid = document.createElement('div');
+  grid.className = 'student-grid';
+  grid.id = 'grid';
+  const banner = document.querySelector('.report-banner');
+  const infoBar = document.querySelector('.info-bar');
+  const ref = banner || infoBar;
+  if (ref) ref.parentNode.insertBefore(grid, ref.nextSibling);
+  else document.body.appendChild(grid);
+}
 students.forEach(s => {
   const pct = Math.round(s.score / 150 * 100);
   let cls = 'mid';
